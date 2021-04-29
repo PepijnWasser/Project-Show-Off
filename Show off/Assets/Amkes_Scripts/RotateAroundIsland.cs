@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RotateAroundIsland : MonoBehaviour
 {
-    [SerializeField] private float speed = 50.0f;
+    [SerializeField] private float keysSpeed = 50.0f;
+    [SerializeField] private float mouseSpeed = 500.0f;
     private GameObject island;
     private Transform islandTransform;
     private Camera cam;
@@ -19,7 +20,7 @@ public class RotateAroundIsland : MonoBehaviour
     private void Update()
     {
         UseKeyboardControls();
-        //UseMouseControls();
+        UseMouseControls();
     }
 
     private void GetIslandTransform()
@@ -37,13 +38,19 @@ public class RotateAroundIsland : MonoBehaviour
     private void UseKeyboardControls()
     {
         //Rotate around Y-axis (left-right)
-        transform.RotateAround(islandTransform.position, Vector3.up, -Input.GetAxis("Horizontal") * speed * Time.deltaTime);
+        transform.RotateAround(islandTransform.position, Vector3.up, -Input.GetAxis("Horizontal") * keysSpeed * Time.deltaTime);
         //Rotate around X-axis (up-down)
-        transform.RotateAround(islandTransform.position, camTransform.right, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        transform.RotateAround(islandTransform.position, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
     }
 
     private void UseMouseControls()
     {
-        //TODO: Use mouse-controls
+        if (Input.GetMouseButton(0))
+        {
+            //Rotate around Y-axis (left-right)
+            transform.RotateAround(islandTransform.position, Vector3.up, Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime);
+            //Rotate around X-axis (up-down)
+            transform.RotateAround(islandTransform.position, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
+        }
     }
 }
