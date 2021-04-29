@@ -18,8 +18,8 @@ public class RotateAroundIsland : MonoBehaviour
 
     private void Update()
     {
-        transform.RotateAround(islandTransform.position, Vector3.up, -Input.GetAxis("Horizontal") * speed * Time.deltaTime);
-        transform.RotateAround(islandTransform.position, camTransform.right, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        UseKeyboardControls();
+        //UseMouseControls();
     }
 
     private void GetIslandTransform()
@@ -32,5 +32,18 @@ public class RotateAroundIsland : MonoBehaviour
     {
         cam = Camera.main;
         if (cam != null) camTransform = cam.transform;
+    }
+
+    private void UseKeyboardControls()
+    {
+        //Rotate around Y-axis (left-right)
+        transform.RotateAround(islandTransform.position, Vector3.up, -Input.GetAxis("Horizontal") * speed * Time.deltaTime);
+        //Rotate around X-axis (up-down)
+        transform.RotateAround(islandTransform.position, camTransform.right, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+    }
+
+    private void UseMouseControls()
+    {
+        //TODO: Use mouse-controls
     }
 }
