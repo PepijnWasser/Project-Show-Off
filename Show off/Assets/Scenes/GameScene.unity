@@ -166,6 +166,7 @@ MonoBehaviour:
   seaRange:
   - 0.4
   - 1
+  borderSize: 3
   tileXOffset: 1.74
   tileZOffset: 1.54
   tileVariation: 20
