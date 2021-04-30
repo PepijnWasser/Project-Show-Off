@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
       propertyPath: m_Name
-      value: sea variant
+      value: sand variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+      propertyPath: m_TagString
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 2920268999399506293, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
       propertyPath: m_RootOrder
