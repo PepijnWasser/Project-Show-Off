@@ -154,10 +154,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 50
   mapHeight: 50
-  tilePrefabs:
-  - {fileID: 4493272060268440107, guid: 3a090e4e0540d594690cb7162924eb0d, type: 3}
-  - {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
-  - {fileID: 2616160821290808591, guid: 49224334c2aeb4b4a8a9d538b934f4a1, type: 3}
+  grassTile: {fileID: 4493272060268440107, guid: 3a090e4e0540d594690cb7162924eb0d, type: 3}
+  sandTile: {fileID: 2616160821290808591, guid: 49224334c2aeb4b4a8a9d538b934f4a1, type: 3}
+  seaTile: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+  grassRange:
+  - 0
+  - 0.35
+  sandRange:
+  - 0.35
+  - 0.4
+  seaRange:
+  - 0.4
+  - 1
   tileXOffset: 1.74
   tileZOffset: 1.54
   tileVariation: 20
