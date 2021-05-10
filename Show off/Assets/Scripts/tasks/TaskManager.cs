@@ -5,7 +5,7 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
     [SerializeField]
-    public List<Task> potentialTasks;
+    public List<GameObject> potentialTaskObjects;
 
     public int tasksAvailible;
     public int tasksInADay;
@@ -18,6 +18,14 @@ public class TaskManager : MonoBehaviour
 
     private void Start()
     {
+        List<Task> potentialTasks = new List<Task>();
+        foreach(GameObject obj in potentialTaskObjects)
+        {
+            potentialTasks.Add(obj.GetComponent<Task>());
+            GameObject newObject = Instantiate(obj);
+            newObject.transform.parent = this.transform;
+        }
+
         for(int i = 0; i < potentialTasks.Count; i++)
         {
             //tasks that have positive coral and any poularity
@@ -37,7 +45,7 @@ public class TaskManager : MonoBehaviour
             }
         }
 
-        currentTasks = positiveCoralTasks;
+        currentTasks = positivePopularityTasks;
     }
 
     private void Update()
@@ -51,6 +59,7 @@ public class TaskManager : MonoBehaviour
                 completedTasks++;
             }
         }
+        Debug.Log(completedTasks + " tasks completed");
         if(completedTasks >= tasksInADay)
         {
             Debug.Log("Tasks complete");
