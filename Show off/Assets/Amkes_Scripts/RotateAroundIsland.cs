@@ -21,7 +21,7 @@ public class RotateAroundIsland : MonoBehaviour
     private void Update()
     {
         UseKeyboardControls();
-        UseMouseControls();
+        //UseMouseControls();
     }
 
     /*

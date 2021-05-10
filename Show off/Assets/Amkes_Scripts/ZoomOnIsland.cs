@@ -11,7 +11,7 @@ public class ZoomOnIsland : MonoBehaviour
 
     private void Update()
     {
-        UseMouseControls();
+        //UseMouseControls();
         UseKeyboardcontrols();
     }
 
