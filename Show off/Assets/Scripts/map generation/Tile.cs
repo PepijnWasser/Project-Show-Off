@@ -11,28 +11,6 @@ public class Tile : MonoBehaviour
     public int localX;
     public int localZ;
 
-
-    public Tile(GameObject _tilePrefab, int _localX, int _localZ)
-    {
-        tilePrefab = _tilePrefab;
-        localX = _localX;
-        localZ = _localZ;
-    }
-
-    public Tile(Tile _tile)
-    {
-        connectedTiles = _tile.connectedTiles;
-        tilePrefab = _tile.tilePrefab;
-
-        localX = _tile.localX;
-        localZ = _tile.localZ;
-    }
-
-    public Tile(GameObject _tilePrefab, List<Tile> _connectedTiles)
-    {
-        //connectedTiles = _connectedTiles;
-    }
-
     public void UpdateData(Tile _tile)
     {
         connectedTiles = _tile.connectedTiles;
@@ -40,6 +18,13 @@ public class Tile : MonoBehaviour
 
         localX = _tile.localX;
         localZ = _tile.localZ;
+    }
+
+    public void UpdateData(GameObject _tilePrefab, int _localX, int _localZ)
+    {
+        tilePrefab = _tilePrefab;
+        localX = _localX;
+        localZ = _localZ;
     }
 
     public void AddConnectedTile(GameObject _connectedTile)

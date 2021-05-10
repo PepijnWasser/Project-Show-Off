@@ -17,6 +17,7 @@ public class HexMapGenerator : MonoBehaviour
     public List<float> sandRange;
     public List<float> seaRange;
 
+    [Tooltip("bordersize needs to be odd")]
     public int borderSize;
 
     public float tileXOffset;
@@ -60,11 +61,9 @@ public class HexMapGenerator : MonoBehaviour
                     tempObject = Instantiate(seaTile);
                 }
                 tempObject.AddComponent<Tile>();
+                tempObject.GetComponent<Tile>().UpdateData(tempObject, x, z);
 
-                Tile tile = new Tile(tempObject, x, z);
-                tempObject.GetComponent<Tile>().UpdateData(tile);
-
-                placedTiles[x + borderSize, z + borderSize] = tile;
+                placedTiles[x + borderSize, z + borderSize] = tempObject.GetComponent<Tile>();
                 placedObjects[x + borderSize, z + borderSize] = tempObject;
 
                 //position objects
@@ -109,7 +108,6 @@ public class HexMapGenerator : MonoBehaviour
         }
         else
         {
-            Debug.Log(val + "null");
             return seaTile;
         }
     }
@@ -255,6 +253,7 @@ public class HexMapGenerator : MonoBehaviour
                         
                         tempObject.AddComponent<Tile>();
                         tempObject.GetComponent<Tile>().UpdateData(tile);
+                        SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
 
                         tile.tilePrefab = tempObject;
 
