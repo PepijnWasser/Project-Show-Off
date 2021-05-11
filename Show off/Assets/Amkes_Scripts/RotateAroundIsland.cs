@@ -6,31 +6,24 @@ public class RotateAroundIsland : MonoBehaviour
 {
     [SerializeField] private float keysSpeed = 50.0f;
     [SerializeField] private float mouseSpeed = 500.0f;
-    //private GameObject island;
-    //private Transform islandTransform;
     private Vector3 islandOrigin = new Vector3(0.0f, 0.0f, 0.0f);
     private Camera cam;
     private Transform camTransform;
 
+    float xangle = 0.0f;
+    [SerializeField] private float minAngle = 20.0f;
+    [SerializeField] private  float maxAngle = 60.0f;
+
     private void Start()
     {
-        //GetIslandTransform();
         GetCameraTransform();
     }
 
     private void Update()
     {
         UseKeyboardControls();
-        //UseMouseControls();
+        UseMouseControls();
     }
-
-    /*
-    private void GetIslandTransform()
-    {
-        island = GameObject.Find("Island");
-        if (island != null) islandTransform = island.transform;
-    }
-    */
 
     private void GetCameraTransform()
     {
@@ -41,11 +34,24 @@ public class RotateAroundIsland : MonoBehaviour
     private void UseKeyboardControls()
     {
         //Rotate around Y-axis (left-right)
-        //transform.RotateAround(islandTransform.position, Vector3.up, -Input.GetAxis("Horizontal") * keysSpeed * Time.deltaTime);
         transform.RotateAround(islandOrigin, Vector3.up, -Input.GetAxis("Horizontal") * keysSpeed * Time.deltaTime);
+
         //Rotate around X-axis (up-down)
-        //transform.RotateAround(islandTransform.position, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
-        transform.RotateAround(islandOrigin, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
+        xangle = transform.eulerAngles.x;
+        if (xangle >= minAngle && xangle <= maxAngle)
+        {
+            transform.RotateAround(islandOrigin, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
+        }
+        else if (xangle < minAngle && Input.GetAxisRaw("Vertical") == 1)
+        {
+            //Only move up
+            transform.RotateAround(islandOrigin, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
+        }
+        else if (xangle > maxAngle && Input.GetAxisRaw("Vertical") == -1)
+        {
+            //Only move down
+            transform.RotateAround(islandOrigin, camTransform.right, Input.GetAxis("Vertical") * keysSpeed * Time.deltaTime);
+        }
     }
 
     private void UseMouseControls()
@@ -53,11 +59,24 @@ public class RotateAroundIsland : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             //Rotate around Y-axis (left-right)
-            //transform.RotateAround(islandTransform.position, Vector3.up, Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime);
             transform.RotateAround(islandOrigin, Vector3.up, Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime);
+
             //Rotate around X-axis (up-down)
-            //transform.RotateAround(islandTransform.position, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
-            transform.RotateAround(islandOrigin, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
+            xangle = transform.eulerAngles.x;
+            if (xangle >= minAngle && xangle <= maxAngle)
+            {
+                transform.RotateAround(islandOrigin, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
+            }
+            else if (xangle < minAngle && Input.GetAxis("Mouse Y") < 0)
+            {
+                //Only move up
+                transform.RotateAround(islandOrigin, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
+            }
+            else if (xangle > maxAngle && Input.GetAxis("Mouse Y") > 0)
+            {
+                //Only move down
+                transform.RotateAround(islandOrigin, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
+            }
         }
     }
 }
