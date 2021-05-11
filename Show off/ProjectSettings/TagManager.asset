@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grass
+  - Sand
+  - Sea
+  - Hotel
+  - Harbor
+  - CityHall
+  - Lab
+  - TestSite1
+  - TestSite2
   layers:
   - Default
   - TransparentFX

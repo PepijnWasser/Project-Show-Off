@@ -175,7 +175,6 @@ public class HexMapGenerator : MonoBehaviour
                     connectedTiles.Add(newTile);
                     connectedObjects.Add(newObject);
                 }
-
             }
             else
             {
