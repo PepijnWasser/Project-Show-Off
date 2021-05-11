@@ -17,7 +17,6 @@ public class ClickManager : MonoBehaviour
             {
                 if (hit.transform.tag == "Interactable")
                 {
-                    //Debug.Log("Cube clicked");
                     EnergyScript.energy--;
                 }
             }
