@@ -8,9 +8,11 @@ TagManager:
   - Sand
   - Sea
   - Hotel
-  - CropFarm
-  - CowFarm
-  - Recharge
+  - Harbor
+  - CityHall
+  - Lab
+  - TestSite1
+  - TestSite2
   layers:
   - Default
   - TransparentFX

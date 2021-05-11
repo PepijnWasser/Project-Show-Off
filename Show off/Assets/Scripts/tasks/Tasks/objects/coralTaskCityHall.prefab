@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5457171913140889640}
   - component: {fileID: 804420743391831273}
   m_Layer: 0
-  m_Name: BuildHotelTask
+  m_Name: coralTaskCityHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  coralOutcome: -1
-  popularityOutcome: 1
+  coralOutcome: 2
+  popularityOutcome: 0
   energyCost: 0
+  placeOfQuest: 1
   clickTarget: {fileID: 0}

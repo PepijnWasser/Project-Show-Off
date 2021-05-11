@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1691074396422926799
+--- !u!1 &8872494112174361903
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2821104697217702964}
-  - component: {fileID: 6863164485600496669}
+  - component: {fileID: 1858524592877330727}
+  - component: {fileID: 4964598067764722341}
   m_Layer: 0
-  m_Name: BuildCowFarmTask
+  m_Name: negativeTaskLab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2821104697217702964
+--- !u!4 &1858524592877330727
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691074396422926799}
+  m_GameObject: {fileID: 8872494112174361903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -44.46174, y: 39.767155, z: -6.989431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6863164485600496669
+--- !u!114 &4964598067764722341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691074396422926799}
+  m_GameObject: {fileID: 8872494112174361903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e50d200a5c5d3428ea33fe4ba937ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cfb1a99c817c7a419e91271f4e46bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  coralOutcome: -1
-  popularityOutcome: 1
+  coralOutcome: 0
+  popularityOutcome: 0
   energyCost: 0
+  placeOfQuest: 2
   clickTarget: {fileID: 0}
