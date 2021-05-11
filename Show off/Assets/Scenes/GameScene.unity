@@ -677,6 +677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keysSpeed: 50
   mouseSpeed: 500
+  minAngle: 20
+  maxAngle: 50
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0

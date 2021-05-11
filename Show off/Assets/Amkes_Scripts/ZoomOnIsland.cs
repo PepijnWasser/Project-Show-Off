@@ -11,7 +11,8 @@ public class ZoomOnIsland : MonoBehaviour
 
     private void Update()
     {
-        //UseMouseControls();
+        UseMouseControlsFOV();
+        //UseMouseControlsMovement();
         UseKeyboardcontrols();
     }
 
@@ -28,7 +29,7 @@ public class ZoomOnIsland : MonoBehaviour
         Camera.main.fieldOfView = fov;
     }
     
-    private void UseMouseControls()
+    private void UseMouseControlsFOV()
     {
         float fov = Camera.main.fieldOfView;
 
@@ -37,5 +38,18 @@ public class ZoomOnIsland : MonoBehaviour
 
         fov = Mathf.Clamp(fov, minFOV, maxFOV);
         Camera.main.fieldOfView = fov;
+    }
+
+    private void UseMouseControlsMovement()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z + 0.3f);
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z - 0.3f);
+        }
     }
 }
