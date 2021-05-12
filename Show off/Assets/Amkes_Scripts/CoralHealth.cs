@@ -42,31 +42,27 @@ public class CoralHealth : MonoBehaviour
         {
             //Thriving -> Green
             healthImage.color = new Vector4(0, 1, 0, 1);
-            Debug.Log("Color = Green");
         }
         else if (healthScore < 10 && healthScore >= 7)
         {
             //Fairly healthy -> Yellow
             healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
-            Debug.Log("Color = Yellow");
         }
         else if (healthScore < 7 && healthScore >= 4)
         {
             //Fairly damaged -> Orange
             healthImage.color = new Vector4(1, 0.6f, 0, 1);
-            Debug.Log("Color = Orange");
         }
         else if (healthScore < 4 && healthScore > 0)
         {
             //On the brink -> Red
             healthImage.color = new Vector4(1, 0, 0, 1);
-            Debug.Log("Color = Red");
         }
         else if (healthScore == 0)
         {
             //Dead
             healthImage.color = new Vector4(0, 0, 0, 1);
-            Debug.Log("Color = Black");
+            healthText.color = Color.white;
         }
     }
 }
