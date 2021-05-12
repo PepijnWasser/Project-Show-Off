@@ -20,6 +20,10 @@ public class TaskManager : MonoBehaviour
 
     public List<Building> buildingsToHighLight = new List<Building>();
 
+    public delegate void CurrentTasksChanged();
+    public static event CurrentTasksChanged onCurrentTasksChanged;
+
+    int completedTasks = 0;
 
     private void Start()
     {
@@ -29,23 +33,28 @@ public class TaskManager : MonoBehaviour
 
     private void Update()
     {
-        int completedTasks = 0;
+        List<Task> tasksToRemove = new List<Task>();
         foreach (Task task in currentTasks)
         {
             task.Update();
             if (task.completed)
             {
                 completedTasks++;
-                StopHighLightbuildingOfTask(task);
+                tasksToRemove.Add(task);
             }
         }
+        foreach(Task task in tasksToRemove)
+        {
+            EndTask(task);
+        }
+
         if (completedTasks >= tasksInADay)
         {
             Debug.Log("Tasks complete");
+            completedTasks = 0;
             GenerateNewDay();
         }
     }
-
 
     void GenerateNewDay()
     {
@@ -61,18 +70,35 @@ public class TaskManager : MonoBehaviour
         GeneratePositivePopulationTasks(newTasks);
         GenerateNegativeTasks(newTasks);
         currentTasks = newTasks;
+        Debug.Log(newTasks.Count);
+
+        onCurrentTasksChanged?.Invoke();
     }
 
     void GeneratePositiveCoralTasks(List<Task> newTasks)
     {
         if (positiveCoralTasks.Count >= minMaxPositiveCoralTask.x)
         {
+            //trim taskCount
             int taskCount = positiveCoralTasks.Count;
             if (taskCount > minMaxPositiveCoralTask.y)
             {
                 taskCount = (int)minMaxPositiveCoralTask.y;
             }
-            taskCount = Random.Range((int)minMaxPositiveCoralTask.x, (int)minMaxPositiveCoralTask.y + 1);
+            if(taskCount > tasksAvailible)
+            {
+                taskCount = tasksAvailible;
+            }
+            if(taskCount > tasksAvailible - minMaxPositivePopularityTask.x)
+            {
+                taskCount = tasksAvailible - (int)minMaxPositivePopularityTask.x;
+                if(taskCount < minMaxPositiveCoralTask.x)
+                {
+                    Debug.LogWarning("to few PositiveCoralTasks after trimming");
+                }
+            }
+
+            taskCount = Random.Range((int)minMaxPositiveCoralTask.x, taskCount + 1);
             for (int i = 0; i < taskCount; i++)
             {
                 int r = Random.Range(0, positiveCoralTasks.Count);
@@ -89,7 +115,7 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-   void GeneratePositivePopulationTasks(List<Task> newTasks)
+    void GeneratePositivePopulationTasks(List<Task> newTasks)
     {
         if (positivePopularityTasks.Count >= minMaxPositivePopularityTask.x)
         {
@@ -103,6 +129,7 @@ public class TaskManager : MonoBehaviour
                 taskCount = (int)minMaxPositivePopularityTask.y;
             }
 
+            taskCount = Random.Range((int)minMaxPositivePopularityTask.x, taskCount + 1);
             for (int i = 0; i < taskCount; i++)
             {
                 int r = Random.Range(0, positivePopularityTasks.Count);
@@ -135,7 +162,8 @@ public class TaskManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("to few NeutralOrNegativeTasks" + neutralOrNegativeTasks.Count + " " + tasksAvailible + " " + newTasks.Count);
+            Debug.LogWarning("to few NeutralOrNegativeTasks");
+            Debug.Log(newTasks.Count);
         }
     }
 
@@ -186,6 +214,13 @@ public class TaskManager : MonoBehaviour
     void ResetTask(Task taskToReset)
     {
         taskToReset.Reset();
+    }
+
+    void EndTask(Task task)
+    {
+        StopHighLightbuildingOfTask(task);
+        currentTasks.Remove(task);
+        onCurrentTasksChanged?.Invoke();
     }
 
     void SortTasks()
