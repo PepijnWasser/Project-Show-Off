@@ -10,6 +10,7 @@ public class Energy : MonoBehaviour
     public Image energyImage;
     public Text energyText;
     public int energyAmount;
+    public GameManagerScript gameManagerScript;
 
     private void Start()
     {
@@ -43,6 +44,12 @@ public class Energy : MonoBehaviour
         else
         {
             energyImage.sprite = emptyEnergy;
+
+            if(Input.GetMouseButtonUp(2))
+            {
+                energyAmount = 5;
+                gameManagerScript.dayNumber++;
+            }
         }
     }
 }
