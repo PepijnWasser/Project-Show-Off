@@ -5,52 +5,44 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-    public int energy;
-    public int numOfEnergy;
-
-    public Image[] energyPoints;
     public Sprite fullEnergy;
     public Sprite emptyEnergy;
+    public Image energyImage;
+    public Text energyText;
+    public int energyAmount;
+
+    private void Start()
+    {
+        energyAmount = 5;
+        energyText.text = energyAmount.ToString();
+        energyImage.sprite = fullEnergy;
+    }
 
     private void Update()
     {
-        //Make sure energy doesn't go above max amount of energy
-        if (energy > numOfEnergy) energy = numOfEnergy;
-        //Make sure energy doesn't go below 0
-        if (energy < 0) energy = 0;
-        
-        for (int i = 0; i < energyPoints.Length; i++)
+        if (Input.GetKey(KeyCode.C))
         {
-            //Check if sprite i is empty or full
-            if (i < energy)
+            //Left-click -> increase
+            if (Input.GetMouseButtonUp(0))
             {
-                energyPoints[i].sprite = fullEnergy;
+                if (energyAmount < 5) energyAmount++;
             }
-            else
+            //Right-click -> decrease
+            if (Input.GetMouseButtonUp(1))
             {
-                energyPoints[i].sprite = emptyEnergy;
-            }
-
-            //Only display energy-sprites for amount given
-            if (i < numOfEnergy)
-            {
-                energyPoints[i].enabled = true;
-            }
-            else
-            {
-                energyPoints[i].enabled = false;
+                if (energyAmount > 0) energyAmount--;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        energyText.text = energyAmount.ToString();
+
+        if (energyAmount > 0)
         {
-            //Add energy
-            energy++;
+            energyImage.sprite = fullEnergy;
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        else
         {
-            //Subtract energy
-            energy--;
+            energyImage.sprite = emptyEnergy;
         }
     }
 }

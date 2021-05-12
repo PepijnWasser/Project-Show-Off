@@ -17,7 +17,7 @@ public class ClickManager : MonoBehaviour
             {
                 if (hit.transform.tag == "Interactable")
                 {
-                    EnergyScript.energy--;
+                    if (EnergyScript.energyAmount > 0) EnergyScript.energyAmount--;
                 }
             }
         }
