@@ -25,6 +25,10 @@ public class TaskManager : MonoBehaviour
 
     int completedTasks = 0;
 
+    //Amke's mess
+    public Energy energyScript;
+    public TimeScript timeScript;
+
     private void Start()
     {
         SortTasks();
@@ -41,6 +45,8 @@ public class TaskManager : MonoBehaviour
             {
                 completedTasks++;
                 tasksToRemove.Add(task);
+                //Amke's mess
+                if (energyScript.energyAmount > 0) energyScript.energyAmount--;
             }
         }
         foreach(Task task in tasksToRemove)
@@ -61,6 +67,9 @@ public class TaskManager : MonoBehaviour
         StopAllHighLightsOfList(currentTasks);
         GenerateTasksForNewDay();
         StartTasks(currentTasks);
+        //Amke's mess
+        energyScript.energyAmount = tasksInADay;
+        timeScript.dayNumber++;
     }
 
     void GenerateTasksForNewDay()

@@ -564,6 +564,10 @@ PrefabInstance:
       value: Crops-Farm
       objectReference: {fileID: 0}
     - target: {fileID: 1923678665662564381, guid: a0dd26d6b2e2c89408a40c86a562915c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923678665662564381, guid: a0dd26d6b2e2c89408a40c86a562915c, type: 3}
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
@@ -579,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 1923187262089664634, guid: 836f45eb430219b47b24112b24532cb0, type: 3}
       propertyPath: m_Name
       value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923187262089664634, guid: 836f45eb430219b47b24112b24532cb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8982098223792565486, guid: 836f45eb430219b47b24112b24532cb0, type: 3}
       propertyPath: m_RootOrder

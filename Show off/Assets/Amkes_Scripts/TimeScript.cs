@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManagerScript : MonoBehaviour
+public class TimeScript : MonoBehaviour
 {
     //public Energy energyScript;
     public Text timeText;
@@ -12,7 +12,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void Start()
     {
-        dayNumber = 1;
+        dayNumber = 0;
         timeText.text = "Day: " + dayNumber;
         //energy = energyScript.energyAmount;
     }
