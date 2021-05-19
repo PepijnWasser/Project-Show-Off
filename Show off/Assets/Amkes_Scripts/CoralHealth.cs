@@ -7,7 +7,7 @@ public class CoralHealth : MonoBehaviour
 {
     public Text healthText;
     public Image healthImage;
-    private int healthScore;
+    public float healthScore;
 
     private void Start()
     {
