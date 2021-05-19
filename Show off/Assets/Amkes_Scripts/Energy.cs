@@ -10,11 +10,17 @@ public class Energy : MonoBehaviour
     public Image energyImage;
     public Text energyText;
     public int energyAmount;
-    public GameManagerScript gameManagerScript;
+    public TimeScript timeScript;
+    public TaskManager taskManagerScript;
+
+    private int maxEnergyAmount = 0;
+    private int minEnergyAmount = 0;
 
     private void Start()
     {
-        energyAmount = 5;
+        //energyAmount = 5;
+        maxEnergyAmount = taskManagerScript.tasksInADay;
+        energyAmount = maxEnergyAmount;
         energyText.text = energyAmount.ToString();
         energyImage.sprite = fullEnergy;
     }
@@ -26,18 +32,18 @@ public class Energy : MonoBehaviour
             //Left-click -> increase
             if (Input.GetMouseButtonUp(0))
             {
-                if (energyAmount < 5) energyAmount++;
+                if (energyAmount < maxEnergyAmount) energyAmount++;
             }
             //Right-click -> decrease
             if (Input.GetMouseButtonUp(1))
             {
-                if (energyAmount > 0) energyAmount--;
+                if (energyAmount > minEnergyAmount) energyAmount--;
             }
         }
 
         energyText.text = energyAmount.ToString();
 
-        if (energyAmount > 0)
+        if (energyAmount > minEnergyAmount)
         {
             energyImage.sprite = fullEnergy;
         }
@@ -47,8 +53,8 @@ public class Energy : MonoBehaviour
 
             if(Input.GetMouseButtonUp(2))
             {
-                energyAmount = 5;
-                gameManagerScript.dayNumber++;
+                energyAmount = maxEnergyAmount;
+                timeScript.dayNumber++;
             }
         }
     }
