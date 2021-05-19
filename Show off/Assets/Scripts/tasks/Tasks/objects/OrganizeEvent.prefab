@@ -46,5 +46,5 @@ MonoBehaviour:
   completed: 0
   coralOutcome: -2
   popularityOutcome: 2
-  energyCost: 0
+  energyCost: 2
   placeOfQuest: 5

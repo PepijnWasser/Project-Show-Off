@@ -7,9 +7,13 @@ public class Energy : MonoBehaviour
 {
     public Sprite fullEnergy;
     public Sprite emptyEnergy;
+
     public Image energyImage;
+        
     public Text energyText;
+
     public int energyAmount;
+
     public TimeScript timeScript;
     public TaskManager taskManagerScript;
 
@@ -19,14 +23,16 @@ public class Energy : MonoBehaviour
     private void Start()
     {
         //energyAmount = 5;
-        maxEnergyAmount = taskManagerScript.tasksInADay;
+        maxEnergyAmount = taskManagerScript.energy;
         energyAmount = maxEnergyAmount;
         energyText.text = energyAmount.ToString();
         energyImage.sprite = fullEnergy;
+        Debug.Log(energyAmount);
     }
 
     private void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.C))
         {
             //Left-click -> increase
@@ -40,7 +46,8 @@ public class Energy : MonoBehaviour
                 if (energyAmount > minEnergyAmount) energyAmount--;
             }
         }
-
+        */
+        
         energyText.text = energyAmount.ToString();
 
         if (energyAmount > minEnergyAmount)
@@ -50,12 +57,18 @@ public class Energy : MonoBehaviour
         else
         {
             energyImage.sprite = emptyEnergy;
-
+            /*
             if(Input.GetMouseButtonUp(2))
             {
                 energyAmount = maxEnergyAmount;
                 timeScript.dayNumber++;
             }
+            */
         }
+    }
+
+    public void RefillEnergy()
+    {
+        energyAmount = maxEnergyAmount;
     }
 }
