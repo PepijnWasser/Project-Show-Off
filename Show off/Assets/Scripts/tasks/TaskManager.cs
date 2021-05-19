@@ -14,7 +14,7 @@ public class TaskManager : MonoBehaviour
     public List<Task> currentTasks = new List<Task>();
 
     public int tasksAvailible;
-    public int tasksInADay;
+    public int energy;
     public Vector2 minMaxPositiveCoralTask;
     public Vector2 minMaxPositivePopularityTask;
 
@@ -22,8 +22,6 @@ public class TaskManager : MonoBehaviour
 
     public delegate void CurrentTasksChanged();
     public static event CurrentTasksChanged onCurrentTasksChanged;
-
-    int completedTasks = 0;
 
     //Amke's mess
     public Energy energyScript;
@@ -43,10 +41,8 @@ public class TaskManager : MonoBehaviour
             task.Update();
             if (task.completed)
             {
-                completedTasks++;
+                energyScript.energyAmount -= task.energyCost;
                 tasksToRemove.Add(task);
-                //Amke's mess
-                if (energyScript.energyAmount > 0) energyScript.energyAmount--;
             }
         }
         foreach(Task task in tasksToRemove)
@@ -54,10 +50,9 @@ public class TaskManager : MonoBehaviour
             EndTask(task);
         }
 
-        if (completedTasks >= tasksInADay)
+        if (energyScript.energyAmount <= 0)
         {
             Debug.Log("Tasks complete");
-            completedTasks = 0;
             GenerateNewDay();
         }
     }
@@ -67,8 +62,9 @@ public class TaskManager : MonoBehaviour
         StopAllHighLightsOfList(currentTasks);
         GenerateTasksForNewDay();
         StartTasks(currentTasks);
+
         //Amke's mess
-        energyScript.energyAmount = tasksInADay;
+        energyScript.RefillEnergy();
         timeScript.dayNumber++;
     }
 
@@ -175,7 +171,7 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    void StopHighLightbuildingOfTask(Task task)
+    void StopHighlightingbuildingOfTask(Task task)
     {
         bool needToStop = true;
         foreach(Task _task in currentTasks)
@@ -226,7 +222,7 @@ public class TaskManager : MonoBehaviour
 
     void EndTask(Task task)
     {
-        StopHighLightbuildingOfTask(task);
+        StopHighlightingbuildingOfTask(task);
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
     }
