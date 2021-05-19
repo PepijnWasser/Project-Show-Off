@@ -83,7 +83,6 @@ public class TaskManager : MonoBehaviour
         GeneratePositivePopulationTasks(newTasks);
         GenerateNegativeTasks(newTasks);
         currentTasks = newTasks;
-        Debug.Log(newTasks.Count);
 
         onCurrentTasksChanged?.Invoke();
     }
