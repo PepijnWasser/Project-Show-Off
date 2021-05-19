@@ -13,6 +13,8 @@ TagManager:
   - Lab
   - TestSite1
   - TestSite2
+  - Interactable
+  - Energy
   layers:
   - Default
   - TransparentFX
