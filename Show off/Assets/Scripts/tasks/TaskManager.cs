@@ -28,6 +28,7 @@ public class TaskManager : MonoBehaviour
     public TimeScript timeScript;
     public CoralHealth coralScript;
     public PopulationCondition populationScript;
+    public DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -227,6 +228,7 @@ public class TaskManager : MonoBehaviour
         StopHighlightingbuildingOfTask(task);
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
+        dialogueManager.AddMessage(task.outcomeMessage);
     }
 
     void SortTasks()

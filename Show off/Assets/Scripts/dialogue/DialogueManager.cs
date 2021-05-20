@@ -63,4 +63,9 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
         GetComponent<Image>().sprite = blankSprite;
         textBox.SetActive(false);
     }
+
+    public void AddMessage(string messageToAdd)
+    {
+        messages.Add(messageToAdd);
+    }
 }
