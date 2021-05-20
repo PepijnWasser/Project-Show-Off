@@ -9,7 +9,8 @@ public class CompleteTask : MonoBehaviour
 
     private void Start()
     {
-        energyScript = GameObject.FindGameObjectWithTag("Energy");    
+        energyScript = GameObject.FindGameObjectWithTag("Energy");
+        Debug.Log(energyScript);
     }
 
     public void Complete()

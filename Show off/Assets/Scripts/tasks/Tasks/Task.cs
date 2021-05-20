@@ -9,6 +9,8 @@ public abstract class Task : MonoBehaviour
     public float coralOutcome;
     public float popularityOutcome;
     public int energyCost;
+    public string outcomeMessage;
+
     public enum Building
     {
             Harbor,
