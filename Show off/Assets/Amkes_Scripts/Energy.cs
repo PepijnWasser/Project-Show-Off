@@ -17,10 +17,17 @@ public class Energy : MonoBehaviour
     public TimeScript timeScript;
     public TaskManager taskManagerScript;
 
+    private int maxEnergyAmount;
 
+    public delegate void DayCompleted();
+    public static event DayCompleted onDayCompleted;
 
-    private int maxEnergyAmount = 0;
-    private int minEnergyAmount = 0;
+    private void Awake()
+    {
+        TaskManager.onTaskCompleted += RemoveEnergy;
+        TaskManager.onTaskCompleted += UpdateHUD;
+        TaskManager.onTaskCompleted += CheckNewDay;
+    }
 
     private void Start()
     {
@@ -28,26 +35,57 @@ public class Energy : MonoBehaviour
         energyAmount = maxEnergyAmount;
         energyText.text = energyAmount.ToString();
         energyImage.sprite = fullEnergy;
-        Debug.Log(energyAmount);
     }
 
-    private void Update()
+    private void OnDestroy()
+    {
+        TaskManager.onTaskCompleted -= RemoveEnergy;
+        TaskManager.onTaskCompleted -= UpdateHUD;
+        TaskManager.onTaskCompleted -= CheckNewDay;
+    }
+
+    void RemoveEnergy(Task task)
+    {
+        energyAmount -= task.energyCost;
+    }
+
+    void UpdateHUD(Task task)
     {
         energyText.text = energyAmount.ToString();
-
-        if (energyAmount > minEnergyAmount)
+        if (energyAmount > 0)
         {
             energyImage.sprite = fullEnergy;
         }
         else
         {
             energyImage.sprite = emptyEnergy;
-            timeScript.dayNumber += 1;
         }
     }
 
-    public void RefillEnergy()
+    void UpdateHUD()
+    {
+        energyText.text = energyAmount.ToString();
+        if (energyAmount > 0)
+        {
+            energyImage.sprite = fullEnergy;
+        }
+        else
+        {
+            energyImage.sprite = emptyEnergy;
+        }
+    }
+
+    void CheckNewDay(Task task)
+    {
+        if(energyAmount <= 0)
+        {
+            RefillEnergy();
+            onDayCompleted?.Invoke();
+        }
+    }
+    void RefillEnergy()
     {
         energyAmount = maxEnergyAmount;
+        UpdateHUD();
     }
 }

@@ -29,10 +29,20 @@ public class TaskManager : MonoBehaviour
     //Amke's mess
     public Energy energyScript;
 
+    private void Awake()
+    {
+        Energy.onDayCompleted += GenerateNewDay;
+    }
+
     private void Start()
     {
         SortTasks();
         GenerateNewDay();
+    }
+
+    private void OnDestroy()
+    {
+        Energy.onDayCompleted -= GenerateNewDay;
     }
 
     private void Update()
@@ -43,19 +53,12 @@ public class TaskManager : MonoBehaviour
             task.Update();
             if (task.completed)
             {
-                energyScript.energyAmount -= task.energyCost;
                 tasksToRemove.Add(task);
             }
         }
         foreach(Task task in tasksToRemove)
         {
             EndTask(task);
-        }
-
-        if (energyScript.energyAmount <= 0)
-        {
-            Debug.Log("Tasks complete");
-            GenerateNewDay();
         }
     }
 
@@ -64,9 +67,6 @@ public class TaskManager : MonoBehaviour
         StopAllHighLightsOfList(currentTasks);
         GenerateTasksForNewDay();
         StartTasks(currentTasks);
-
-        //Amke's mess
-        energyScript.RefillEnergy();
     }
 
     void GenerateTasksForNewDay()
