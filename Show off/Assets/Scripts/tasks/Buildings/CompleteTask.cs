@@ -19,7 +19,7 @@ public class CompleteTask : MonoBehaviour
         {
             if(task.name == GetComponentInChildren<Text>().text)
             {
-                if(energyScript.GetComponent<Energy>().energyAmount > task.energyCost)
+                if(energyScript.GetComponent<Energy>().energyAmount >= task.energyCost)
                 {
                     task.completed = true;
                 }

@@ -23,12 +23,11 @@ public class TaskManager : MonoBehaviour
     public delegate void CurrentTasksChanged();
     public static event CurrentTasksChanged onCurrentTasksChanged;
 
+    public delegate void TaskCompleted(Task task);
+    public static event TaskCompleted onTaskCompleted;
+
     //Amke's mess
     public Energy energyScript;
-    public TimeScript timeScript;
-    public CoralHealth coralScript;
-    public PopulationCondition populationScript;
-    public DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -68,7 +67,6 @@ public class TaskManager : MonoBehaviour
 
         //Amke's mess
         energyScript.RefillEnergy();
-        timeScript.dayNumber++;
     }
 
     void GenerateTasksForNewDay()
@@ -228,7 +226,7 @@ public class TaskManager : MonoBehaviour
         StopHighlightingbuildingOfTask(task);
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
-        dialogueManager.AddMessage(task.outcomeMessage);
+        onTaskCompleted?.Invoke(task);
     }
 
     void SortTasks()
@@ -261,96 +259,4 @@ public class TaskManager : MonoBehaviour
         }
 
     }
-
-    void UpdateCoral(Task pTask) //Amke
-    {
-        switch(pTask.coralOutcome)
-        {
-            case -2:
-                if (coralScript.healthScore >= 2.0f)
-                {
-                    coralScript.healthScore += -2.0f;
-                } else
-                {
-                    coralScript.healthScore = 0.0f;
-                }
-                break;
-            case -1:
-                if (coralScript.healthScore >= 1.0f)
-                {
-                    coralScript.healthScore += -1.0f;
-                } else
-                {
-                    coralScript.healthScore = 0.0f;
-                }
-                break;
-            case 1:
-                if (coralScript.healthScore <= 9.0f)
-                {
-                    coralScript.healthScore += 1.0f;
-                } else
-                {
-                    coralScript.healthScore = 10.0f;
-                }
-                break;
-            case 2:
-                if (coralScript.healthScore <= 8.0f)
-                {
-                    coralScript.healthScore += 2.0f;
-                }
-                else
-                {
-                    coralScript.healthScore = 10.0f;
-                }
-                break;
-        }
-    }
-
-    void UpdatePopulation(Task pTask) //Amke
-    {
-        switch (pTask.popularityOutcome)
-        {
-            case -2:
-                if (populationScript.populationScore >= 2.0f)
-                {
-                    populationScript.populationScore += -2.0f;
-                }
-                else
-                {
-                    populationScript.populationScore = 0.0f;
-                }
-                break;
-            case -1:
-                if (populationScript.populationScore >= 1.0f)
-                {
-                    populationScript.populationScore += -1.0f;
-                }
-                else
-                {
-                    populationScript.populationScore = 0.0f;
-                }
-                break;
-            case 1:
-                if (populationScript.populationScore <= 9.0f)
-                {
-                    populationScript.populationScore += 1.0f;
-                }
-                else
-                {
-                    populationScript.populationScore = 10.0f;
-                }
-                break;
-            case 2:
-                if (populationScript.populationScore <= 8.0f)
-                {
-                    populationScript.populationScore += 2.0f;
-                }
-                else
-                {
-                    populationScript.populationScore = 10.0f;
-                }
-                break;
-        }
-    }
-
 }
