@@ -764,9 +764,57 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8798236599962461435, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: timeScript
+      value: 
+      objectReference: {fileID: 2078490957}
+    - target: {fileID: 8798236599962461435, guid: a9085e7591c349f44a88591bd483d585, type: 3}
       propertyPath: gameManagerScript
       value: 
       objectReference: {fileID: 2078490957}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral6
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral7
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral8
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral9
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: coral10
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798236600447359030, guid: a9085e7591c349f44a88591bd483d585, type: 3}
+      propertyPath: healthScore
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8798236600474015501, guid: a9085e7591c349f44a88591bd483d585, type: 3}
       propertyPath: m_Pivot.x
       value: 0
