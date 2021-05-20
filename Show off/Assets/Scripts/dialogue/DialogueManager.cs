@@ -19,9 +19,19 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     TextMeshProUGUI tMPro;
 
+    private void Awake()
+    {
+        TaskManager.onTaskCompleted += AddMessage;
+    }
+
     void Start()
     {
         tMPro = tMProObject.GetComponent<TextMeshProUGUI>(); 
+    }
+
+    private void OnDestroy()
+    {
+        TaskManager.onTaskCompleted -= AddMessage;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -64,8 +74,8 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
         textBox.SetActive(false);
     }
 
-    public void AddMessage(string messageToAdd)
+    private void AddMessage(Task task)
     {
-        messages.Add(messageToAdd);
+        messages.Add(task.outcomeMessage);
     }
 }
