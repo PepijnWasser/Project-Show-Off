@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CloseIFClickedSomewhereElse : MonoBehaviour
 {
-    public GameObject button;
     bool active;
 
     void Update()
@@ -16,7 +15,7 @@ public class CloseIFClickedSomewhereElse : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject == this.gameObject)// || hit.collider.gameObject == button)
+                if (hit.collider.gameObject == this.gameObject)
                 {
                     
                 }
