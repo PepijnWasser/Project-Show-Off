@@ -343,6 +343,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2003418051}
     - target: {fileID: 3623076209796715070, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+      propertyPath: activator
+      value: 
+      objectReference: {fileID: 1209844201}
+    - target: {fileID: 3623076209796715070, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -383,6 +387,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2003418051}
     - target: {fileID: 6805157822961696343, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+      propertyPath: activator
+      value: 
+      objectReference: {fileID: 2048916749}
+    - target: {fileID: 6805157822961696343, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 1445891907}
@@ -398,6 +406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+--- !u!1 &1209844201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3073572685572841853, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+  m_PrefabInstance: {fileID: 864845007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1445891904
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +816,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004639288}
   m_CullTransparentMesh: 1
+--- !u!1 &2048916749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6805157823131923896, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+  m_PrefabInstance: {fileID: 864845007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056592283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1175,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!1 &1030948237586618473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1293,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!1 &1552218976987330177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1690,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!1 &3875181409106675415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,6 +2135,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!1 &6608884084415245033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2430,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!1 &7498139500376326679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +2795,7 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
+  m_EventSystem: {fileID: 0}
 --- !u!65 &8285016480117823452
 BoxCollider:
   m_ObjectHideFlags: 0
