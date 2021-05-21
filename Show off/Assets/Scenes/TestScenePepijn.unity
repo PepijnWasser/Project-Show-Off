@@ -1130,13 +1130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056592283}
-  m_LocalRotation: {x: 0.30070576, y: -0, z: -0, w: 0.953717}
-  m_LocalPosition: {x: 0, y: 28.1, z: -52.3}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 40, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 578627374}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &2056592285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,10 +1146,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056592283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 719a2575cc7f9714b9510c702e329311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnergyScript: {fileID: 0}
+  rotationSpeed: 0
 --- !u!114 &2056592286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,11 +1162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1abe0ae8b9189489db9006147c9e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysSensitivity: 7.5
-  mouseSensitivity: 50
-  minDistance: 2
-  maxDistance: 10
-  camPos: {fileID: 2056592284}
+  keyboardSensitivity: 7.5
+  mouseSensitivity: 500
+  minDistance: 18
+  maxDistance: 70
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!114 &2056592287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,15 +1174,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056592283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59fb8b896c82d1045aaab921e2295efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysSpeed: 50
-  mouseSpeed: 500
+  keyboardSpeed: 50
+  mouseSpeed: 100
   minAngle: 20
-  maxAngle: 50
+  maxAngle: 80
 --- !u!81 &2056592288
 AudioListener:
   m_ObjectHideFlags: 0
