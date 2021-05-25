@@ -46,8 +46,9 @@ public class ZoomOnIsland : MonoBehaviour
         Vector3 dVec = targetPos - this.transform.position;
         float distance = dVec.magnitude;
 
-        Debug.Log(distance);
-        if (distance > minDistance)
+        Vector3 newVec = this.transform.position + Vector3.forward * sensitivity * Time.deltaTime;
+
+        if (distance > minDistance && newVec.magnitude > minDistance)
         {
             this.transform.Translate(Vector3.forward * sensitivity * Time.deltaTime);
         }
@@ -62,8 +63,9 @@ public class ZoomOnIsland : MonoBehaviour
         Vector3 dVec = targetPos - this.transform.position;
         float distance = dVec.magnitude;
 
-        Debug.Log(distance);
-        if (distance < maxDistance)
+        Vector3 newVec = this.transform.position + Vector3.forward * -sensitivity * Time.deltaTime;
+
+        if (distance < maxDistance && newVec.magnitude < maxDistance)
         {
             this.transform.Translate(Vector3.forward * -sensitivity * Time.deltaTime);
         }
