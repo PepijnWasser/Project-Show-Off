@@ -38,15 +38,16 @@ public class TutorialManager : MonoBehaviour
 
     private void Update()
     {
-        if(messageIndex == 0 || messageIndex == 1 || messageIndex == 2 || messageIndex == 3)
+        Debug.Log("this is it"+ messageIndex);
+        /*if(messageIndex == 0 || messageIndex == 1 || messageIndex == 2 || messageIndex == 3)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
                 messageIndex += 1;
             }
-        }
-        else if(messageIndex == 4)
+        }*/
+        if(messageIndex == 1)
         {
             arrow.SetActive(true);
             if (buttonClicked)
@@ -54,10 +55,49 @@ public class TutorialManager : MonoBehaviour
                 taskManager.gameObject.SetActive(true);
                 arrow.SetActive(false);
                 dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                messageIndex += 1; 
+            }
+        }
+        else if(messageIndex == 2)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
                 messageIndex += 1;
             }
         }
-        else if(messageIndex == 5)
+        else if(messageIndex == 3)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                messageIndex += 1; //replace this with following pseudo code
+                /*
+                 if(first task is crops farm){
+                 messageIndex=4;
+                 }
+                 else if(first task is cow farm || increase tourism){
+                 messageIndex=5;
+                 }
+                 else if(first task is clean trash){
+                 messageIndex=6;
+                 }
+                 else if(first task is decrease tourism)
+                 {
+                 messageIndex=7;
+                 }
+                 */
+            }
+        }
+        else if (messageIndex == 4 || messageIndex == 5 || messageIndex == 6 || messageIndex == 7)
+        {
+            dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+            if (dayCompleted/*energy runs out day 1?*/)
+            {
+                messageIndex = 8; //display last message when energy runs out day 1
+            }
+        }
+        else if(messageIndex == 8)
         {
             if (dayCompleted)
             {
@@ -82,7 +122,7 @@ public class TutorialManager : MonoBehaviour
 
     void ButtonClicked()
     {
-        if(messageIndex == 4)
+        if(messageIndex == 1)
         {
             buttonClicked = true;
         }
