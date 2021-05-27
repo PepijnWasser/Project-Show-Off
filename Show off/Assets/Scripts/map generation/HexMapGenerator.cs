@@ -31,12 +31,8 @@ public class HexMapGenerator : MonoBehaviour
     Tile[,] placedTiles;
     GameObject[,] placedObjects;
 
-    public int randomSeed;
-
     void Start()
     {
-        UnityEngine.Random.InitState(randomSeed);
-
         randX = UnityEngine.Random.Range(0, 200);
         randY = UnityEngine.Random.Range(0, 200);
 

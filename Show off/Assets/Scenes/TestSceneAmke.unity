@@ -470,9 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f09df5788b1e4149a095709e6a04253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  m_EventSystem: {fileID: 0}
-  activator: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &483898112
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +728,7 @@ RectTransform:
   - {fileID: 1753979610}
   - {fileID: 185212516}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1030,6 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 0}
+  dayNumber: 0
 --- !u!1 &1445891904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1925,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!1 &1030948237586618473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2042,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!1 &1552218976987330177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2438,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!1 &3875181409106675415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2882,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!1 &6608884084415245033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,7 +3000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3073572686785012015, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3073572686785012015, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3290,7 +3285,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!1 &7498139500376326679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,7 +3649,6 @@ MonoBehaviour:
   AcceptButtonPrefab: {fileID: 1647716062576508422, guid: ef84502fa81041143a90877f03aeb846, type: 3}
   taskAtThisLocation: []
   placedListObjects: []
-  m_EventSystem: {fileID: 0}
 --- !u!65 &8285016480117823452
 BoxCollider:
   m_ObjectHideFlags: 0
