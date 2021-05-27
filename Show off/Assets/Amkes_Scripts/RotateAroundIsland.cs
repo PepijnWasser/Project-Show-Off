@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class RotateAroundIsland : MonoBehaviour
 {
-    [SerializeField] private float keyboardSpeed = 50.0f;
-    [SerializeField] private float mouseSpeed = 500.0f;
-    private Vector3 target = new Vector3(0.0f, 0.0f, 0.0f);
+    [SerializeField] private float keyboardSpeed;
+    [SerializeField] private float mouseSpeed;
+    [SerializeField] private float minAngle;
+    [SerializeField] private float maxAngle;
+
+    //public Transform targetTransform;
+
+    private Vector3 target = new Vector3(0,0,0);
     private Transform camTransform;
-
-    float xAngle = 0.0f;
-    [SerializeField] private float minAngle = 20.0f;
-    [SerializeField] private float maxAngle = 60.0f;
-
+    private float xAngle = 0.0f;
+    
     private void Start()
     {
+        //target = targetTransform.position;
         GetCameraTransform();
     }
 
@@ -31,24 +34,27 @@ public class RotateAroundIsland : MonoBehaviour
 
     private void UseKeyboardControls()
     {
-        //Rotate around Y-axis (left-right)
-        transform.RotateAround(target, Vector3.up, -Input.GetAxis("Horizontal") * keyboardSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //Rotate around Y-axis (left-right)
+            transform.RotateAround(target, Vector3.up, -Input.GetAxis("Horizontal") * keyboardSpeed * Time.deltaTime);
 
-        //Rotate around X-axis (up-down)
-        xAngle = transform.eulerAngles.x;
-        if (xAngle >= minAngle && xAngle <= maxAngle)
-        {
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
-        }
-        else if (xAngle < minAngle && Input.GetAxisRaw("Vertical") == 1)
-        {
-            //Only move up
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
-        }
-        else if (xAngle > maxAngle && Input.GetAxisRaw("Vertical") == -1)
-        {
-            //Only move down
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            //Rotate around X-axis (up-down)
+            xAngle = transform.eulerAngles.x;
+            if (xAngle >= minAngle && xAngle <= maxAngle)
+            {
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
+            else if (xAngle < minAngle && Input.GetAxisRaw("Vertical") == 1)
+            {
+                //Only move up
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
+            else if (xAngle > maxAngle && Input.GetAxisRaw("Vertical") == -1)
+            {
+                //Only move down
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -59,7 +65,6 @@ public class RotateAroundIsland : MonoBehaviour
             //Rotate around Y-axis (left-right)
             transform.RotateAround(target, Vector3.up, Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime);
 
-            
             //Rotate around X-axis (up-down)
             xAngle = transform.eulerAngles.x;
             if (CheckValidYMovement())

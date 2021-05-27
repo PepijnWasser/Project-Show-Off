@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ZoomOnIsland : MonoBehaviour
 {
-    [SerializeField] private float keyboardSensitivity = 7.5f;
-    [SerializeField] private float mouseSensitivity = 50.0f;
-    [SerializeField] float minDistance = 4.0f;
-    [SerializeField] float maxDistance = 10.0f;
+    [SerializeField] private float keyboardSensitivity;
+    [SerializeField] private float mouseSensitivity;
+    [SerializeField] float minDistance;
+    [SerializeField] float maxDistance;
 
-    public Vector3 targetPos = new Vector3(0, 0, 0);
+    //public Transform targetTransform;
+
+    private Vector3 targetPos = new Vector3(0,0,0);
+
+    private void Start()
+    {
+        //targetPos = targetTransform.position;
+    }
 
     private void Update()
     {
