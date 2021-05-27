@@ -717,7 +717,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120263424}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3165385900526353435, guid: 38410f0a5ebe62843b0cba9892bb2ae9, type: 2}
   m_audioClip: {fileID: 8300000, guid: c10ac261f9ec9a04cb748e33ca95b193, type: 3}
@@ -1181,6 +1181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834563587}
   - component: {fileID: 1834563586}
+  - component: {fileID: 1834563588}
   m_Layer: 0
   m_Name: TileMapGenerator
   m_TagString: Untagged
@@ -1218,6 +1219,7 @@ MonoBehaviour:
   tileXOffset: 4
   tileZOffset: 3.5
   tileVariation: 15
+  randomSeed: 13
 --- !u!4 &1834563587
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,6 +1234,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834563588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834563585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc9282f85635f9499e3494c3909f975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomSeed: 1
 --- !u!1 &1895893248
 GameObject:
   m_ObjectHideFlags: 0
