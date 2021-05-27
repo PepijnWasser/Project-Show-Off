@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb1a99c817c7a419e91271f4e46bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completed: 0
+  completed: 1
   coralOutcome: 1
   popularityOutcome: 0
-  energyCost: 2
+  energyCost: 1
   outcomeMessage: dit is een outcome
   placeOfQuest: 2
