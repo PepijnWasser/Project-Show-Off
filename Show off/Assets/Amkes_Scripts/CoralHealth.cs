@@ -9,11 +9,47 @@ public class CoralHealth : MonoBehaviour
     public Image healthImage;
     public float healthScore;
 
+    public enum CoralStates
+    {
+        Dead,
+        OnTheBrink,
+        FairlyDamaged,
+        FairlyHealthy,
+        Thriving
+    };
+
+    [Header("Designer-tool: Set Coral States")]
+    public CoralStates coral0;
+    public CoralStates coral1;
+    public CoralStates coral2;
+    public CoralStates coral3;
+    public CoralStates coral4;
+    public CoralStates coral5;
+    public CoralStates coral6;
+    public CoralStates coral7;
+    public CoralStates coral8;
+    public CoralStates coral9;
+    public CoralStates coral10;
+
+    private Dictionary<int, CoralStates> coralHealthLevels = new Dictionary<int, CoralStates>();
+
     private void Start()
     {
         healthScore = 10;
         healthText.text = healthScore.ToString();
         healthImage.color = Color.green;
+
+        coralHealthLevels.Add(0, coral0);
+        coralHealthLevels.Add(1, coral1);
+        coralHealthLevels.Add(2, coral2);
+        coralHealthLevels.Add(3, coral3);
+        coralHealthLevels.Add(4, coral4);
+        coralHealthLevels.Add(5, coral5);
+        coralHealthLevels.Add(6, coral6);
+        coralHealthLevels.Add(7, coral7);
+        coralHealthLevels.Add(8, coral8);
+        coralHealthLevels.Add(9, coral9);
+        coralHealthLevels.Add(10, coral10);
     }
 
     private void Update()
@@ -35,34 +71,64 @@ public class CoralHealth : MonoBehaviour
         healthText.text = healthScore.ToString();
         UpdateColor();
     }
-
     private void UpdateColor()
     {
-        if (healthScore == 10)
+        foreach (var healthLevel in coralHealthLevels)
         {
-            //Thriving -> Green
-            healthImage.color = new Vector4(0, 1, 0, 1);
+            if (healthScore == healthLevel.Key)
+            {
+                if (healthLevel.Value == CoralStates.Dead)
+                {
+                    SetColorDead();
+                }
+                else if (healthLevel.Value == CoralStates.OnTheBrink)
+                {
+                    SetColorOnTheBrink();
+                }
+                else if (healthLevel.Value == CoralStates.FairlyDamaged)
+                {
+                    SetColorFairlyDamaged();
+                }
+                else if (healthLevel.Value == CoralStates.FairlyHealthy)
+                {
+                    SetColorFairlyHealthy();
+                }
+                if (healthLevel.Value == CoralStates.Thriving)
+                {
+                    SetColorThriving();
+                }
+            }
         }
-        else if (healthScore < 10 && healthScore >= 7)
-        {
-            //Fairly healthy -> Yellow
-            healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
-        }
-        else if (healthScore < 7 && healthScore >= 4)
-        {
-            //Fairly damaged -> Orange
-            healthImage.color = new Vector4(1, 0.6f, 0, 1);
-        }
-        else if (healthScore < 4 && healthScore > 0)
-        {
-            //On the brink -> Red
-            healthImage.color = new Vector4(1, 0, 0, 1);
-        }
-        else if (healthScore == 0)
-        {
-            //Dead
-            healthImage.color = new Vector4(0, 0, 0, 1);
-            healthText.color = Color.white;
-        }
+
+    }
+    void SetColorThriving()
+    {
+        //Green
+        healthImage.color = new Vector4(0, 1, 0, 1);
+    }
+
+    void SetColorFairlyHealthy()
+    {
+        //Yellow
+        healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
+    }
+
+    void SetColorFairlyDamaged()
+    {
+        //Orange
+        healthImage.color = new Vector4(1, 0.6f, 0, 1);
+    }
+
+    void SetColorOnTheBrink()
+    {
+        //Red
+        healthImage.color = new Vector4(1, 0, 0, 1);
+    }
+
+    void SetColorDead()
+    {
+        //Black
+        healthImage.color = new Vector4(0, 0, 0, 1);
+        healthText.color = Color.white;
     }
 }

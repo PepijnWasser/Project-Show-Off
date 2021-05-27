@@ -5,28 +5,27 @@ using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour
 {
-    //public Energy energyScript;
     public Text timeText;
-    public int dayNumber;
-    //private int energy;
+    int dayNumber = 1;
+
+    private void Awake()
+    {
+        Energy.onDayCompleted += AddDay;
+    }
 
     private void Start()
     {
-        dayNumber = 0;
         timeText.text = "Day: " + dayNumber;
-        //energy = energyScript.energyAmount;
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        /*
-        if (energy == 0)
-        {
-            dayNumber++;
-            energy = 5;
-        }
-        */
+        Energy.onDayCompleted -= AddDay;
+    }
 
+    void AddDay()
+    {
+        dayNumber += 1;
         timeText.text = "Day: " + dayNumber;
     }
 }

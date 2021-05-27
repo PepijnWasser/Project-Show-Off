@@ -1,32 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro;
 
 public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Sprite blankSprite;
     public Sprite hoverSprite;
 
-    public GameObject tMProObject;
-
     public GameObject textBox;
+    public GameObject textBoxTutorial;
+
+    bool tutorialFinished = false; 
 
     public List<string> messages = new List<string>();
     List<string> usedMessages = new List<string>();
 
-    TextMeshProUGUI tMPro;
+    TextMeshProUGUI text;
+    TextMeshProUGUI textTutorial;
 
-    void Start()
+    private void Awake()
     {
-        tMPro = tMProObject.GetComponent<TextMeshProUGUI>(); 
+        TaskManager.onTaskCompleted += AddMessage;
+        text = textBox.GetComponentInChildren<TextMeshProUGUI>();
+        textTutorial = textBoxTutorial.GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+
+    private void OnDestroy()
+    {
+        TaskManager.onTaskCompleted -= AddMessage;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(messages.Count > 0)
+        if(messages.Count > 0 && tutorialFinished)
         {
             string randomMessage = messages[Random.Range(0, messages.Count)];
             textBox.SetActive(true);
@@ -37,9 +46,16 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     void UseMessage(string message)
     {
-        tMPro.text = message;
+        text.text = message;
         usedMessages.Add(message);
         messages.Remove(message);
+    }
+
+    public void UseTutorialMessage(string message)
+    {
+        textBoxTutorial.SetActive(true);
+        textTutorial.text = message;
+        usedMessages.Add(message);
     }
 
     void TestAvailibleMessages()
@@ -52,7 +68,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(messages.Count > 0)
+        if(messages.Count > 0 && tutorialFinished)
         {
             GetComponent<Image>().sprite = hoverSprite;
         }
@@ -62,10 +78,17 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         GetComponent<Image>().sprite = blankSprite;
         textBox.SetActive(false);
+
     }
 
-    public void AddMessage(string messageToAdd)
+    private void AddMessage(Task task)
     {
-        messages.Add(messageToAdd);
+        messages.Add(task.outcomeMessage);
+    }
+
+    public void FinishTutorial()
+    {
+        textBoxTutorial.SetActive(false);
+        tutorialFinished = true;
     }
 }

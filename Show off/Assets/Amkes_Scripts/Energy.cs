@@ -17,58 +17,75 @@ public class Energy : MonoBehaviour
     public TimeScript timeScript;
     public TaskManager taskManagerScript;
 
-    private int maxEnergyAmount = 0;
-    private int minEnergyAmount = 0;
+    private int maxEnergyAmount;
+
+    public delegate void DayCompleted();
+    public static event DayCompleted onDayCompleted;
+
+    private void Awake()
+    {
+        TaskManager.onTaskCompleted += RemoveEnergy;
+        TaskManager.onTaskCompleted += UpdateHUD;
+        TaskManager.onTaskCompleted += CheckNewDay;
+    }
 
     private void Start()
     {
-        //energyAmount = 5;
         maxEnergyAmount = taskManagerScript.energy;
         energyAmount = maxEnergyAmount;
         energyText.text = energyAmount.ToString();
         energyImage.sprite = fullEnergy;
-        Debug.Log(energyAmount);
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        /*
-        if (Input.GetKey(KeyCode.C))
-        {
-            //Left-click -> increase
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (energyAmount < maxEnergyAmount) energyAmount++;
-            }
-            //Right-click -> decrease
-            if (Input.GetMouseButtonUp(1))
-            {
-                if (energyAmount > minEnergyAmount) energyAmount--;
-            }
-        }
-        */
-        
-        energyText.text = energyAmount.ToString();
+        TaskManager.onTaskCompleted -= RemoveEnergy;
+        TaskManager.onTaskCompleted -= UpdateHUD;
+        TaskManager.onTaskCompleted -= CheckNewDay;
+    }
 
-        if (energyAmount > minEnergyAmount)
+    void RemoveEnergy(Task task)
+    {
+        energyAmount -= task.energyCost;
+    }
+
+    void UpdateHUD(Task task)
+    {
+        energyText.text = energyAmount.ToString();
+        if (energyAmount > 0)
         {
             energyImage.sprite = fullEnergy;
         }
         else
         {
             energyImage.sprite = emptyEnergy;
-            /*
-            if(Input.GetMouseButtonUp(2))
-            {
-                energyAmount = maxEnergyAmount;
-                timeScript.dayNumber++;
-            }
-            */
         }
     }
 
-    public void RefillEnergy()
+    void UpdateHUD()
+    {
+        energyText.text = energyAmount.ToString();
+        if (energyAmount > 0)
+        {
+            energyImage.sprite = fullEnergy;
+        }
+        else
+        {
+            energyImage.sprite = emptyEnergy;
+        }
+    }
+
+    void CheckNewDay(Task task)
+    {
+        if(energyAmount <= 0)
+        {
+            RefillEnergy();
+            onDayCompleted?.Invoke();
+        }
+    }
+    void RefillEnergy()
     {
         energyAmount = maxEnergyAmount;
+        UpdateHUD();
     }
 }
