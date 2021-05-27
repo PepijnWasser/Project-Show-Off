@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Flock/Behavior/Avoidance")]
-public class AvoidanceBehavior :  FilteredFlockBehavior
+[CreateAssetMenu(menuName = "Flock/Behavior/SteeredAvoidance")]
+public class SteeredAvoidanceBehavior : FilteredFlockBehavior
 {
+    Vector3 currentVelocity;
+    public float agentSmoothTime = 0.5f;
+
+
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         //if no neighbour, return no adjustment
@@ -25,10 +29,12 @@ public class AvoidanceBehavior :  FilteredFlockBehavior
 
             }
         }
-        if(nAvoid > 0)
+        if (nAvoid > 0)
         {
             avoidanceMove /= nAvoid;
         }
+
+       avoidanceMove = Vector3.SmoothDamp(agent.transform.forward, avoidanceMove, ref currentVelocity, agentSmoothTime);
         return avoidanceMove;
     }
 }

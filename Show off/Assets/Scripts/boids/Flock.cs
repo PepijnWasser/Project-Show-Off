@@ -43,6 +43,7 @@ public class Flock : MonoBehaviour
                 this.transform
                 );
             newAgent.name = "Agent " + i;
+            newAgent.Initialize(this);
             agents.Add(newAgent);
         }
     }
@@ -53,7 +54,6 @@ public class Flock : MonoBehaviour
         {
             List<Transform> context = GetNearbyObjects(agent);
             Vector3 move = behavior.CalculateMove(agent, context, this);
-            Debug.Log("move " + move);
             move *= driveFactor;
             if (move.sqrMagnitude > squareMaxSpeed)
             {

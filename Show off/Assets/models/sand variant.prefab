@@ -12,6 +12,10 @@ PrefabInstance:
       value: sand variant
       objectReference: {fileID: 0}
     - target: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
       propertyPath: m_TagString
       value: Sand
       objectReference: {fileID: 0}
@@ -60,8 +64,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4093154077390993946, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093154077390993946, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 659800d025a98384687e37afc7c91ca5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4711092935659605443, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+    - {fileID: 6826400599457580084, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a4c308a19092b9643a3a50665ba70941, type: 3}

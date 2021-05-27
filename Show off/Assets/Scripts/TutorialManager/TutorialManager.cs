@@ -43,8 +43,6 @@ public class TutorialManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("this is it"+ messageIndex);
-
         if(messageIndex == 1)
         {
             arrow.SetActive(true);
