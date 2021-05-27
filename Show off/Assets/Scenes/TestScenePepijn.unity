@@ -869,7 +869,7 @@ MonoBehaviour:
   tileXOffset: 4
   tileZOffset: 3.5
   tileVariation: 15
-  randomSeed: 1
+  randomSeed: 13
 --- !u!4 &1834563587
 Transform:
   m_ObjectHideFlags: 0

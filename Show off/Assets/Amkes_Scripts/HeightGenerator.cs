@@ -8,6 +8,7 @@ public class HeightGenerator : MonoBehaviour
     
     private List<Transform> children = new List<Transform>();
     private bool createdMap;
+    private Vector3 centerPos = new Vector3(0, 0, 0);
 
     private void Start()
     {
@@ -68,7 +69,26 @@ public class HeightGenerator : MonoBehaviour
         {
             if (children[i].tag == "Grass")
             {
-                children[i].transform.Translate(0, Random.Range(0,3), 0);
+                Vector3 childPos = new Vector3(children[i].position.x, children[i].position.y, children[i].position.z);
+                Vector3 dVec = childPos - centerPos;
+                float distance = dVec.magnitude;
+
+                if (distance >= 0 && distance <= 10)
+                {
+                    children[i].transform.Translate(0, Random.Range(6.0f, 8.0f), 0);
+                }
+                else if (distance > 10 && distance <= 30)
+                {
+                    children[i].transform.Translate(0, Random.Range(4.0f, 6.0f), 0);
+                }
+                else if (distance > 30 && distance <= 60)
+                {
+                    children[i].transform.Translate(0, Random.Range(2.0f, 4.0f), 0);
+                }
+                else if (distance > 60 && distance <= 100)
+                {
+                    children[i].transform.Translate(0, Random.Range(0.0f, 2.0f), 0);
+                }
             }
         }
     }
