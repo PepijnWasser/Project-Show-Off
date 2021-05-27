@@ -15,7 +15,7 @@ public class Flock : MonoBehaviour
     [Range(1f, 100f)]
     public float driveFactor = 10f;
     [Range(1f, 100f)]
-    public float maxSpeed = 5f;
+    public float speed = 5f;
 
     [Range(1f, 100f)]
     public float neighbourRadius = 1.5f;
@@ -29,7 +29,7 @@ public class Flock : MonoBehaviour
 
     void Start()
     {
-        squareMaxSpeed = maxSpeed * maxSpeed;
+        squareMaxSpeed = speed * speed;
         squareNeighbourRadius = neighbourRadius * neighbourRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
 
@@ -55,9 +55,13 @@ public class Flock : MonoBehaviour
             List<Transform> context = GetNearbyObjects(agent);
             Vector3 move = behavior.CalculateMove(agent, context, this);
             move *= driveFactor;
-            if (move.sqrMagnitude > squareMaxSpeed)
+            if (move.y > 0 || move.y < 0)
             {
-                move = move.normalized * maxSpeed;
+                move.y = 0;
+            }
+            if (move.sqrMagnitude != squareMaxSpeed)
+            {
+                move = move.normalized * speed;
             }
             agent.Move(move);
         }   

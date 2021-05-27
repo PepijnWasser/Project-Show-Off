@@ -1022,11 +1022,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 3749694454429826030, guid: bf6761d49e3808d499b7016a131ddc28, type: 3}
   behavior: {fileID: 11400000, guid: 21977371da0065b429781804b12c192e, type: 2}
-  startingCount: 7
+  startingCount: 17
   driveFactor: 7
-  maxSpeed: 15
-  neighbourRadius: 15
-  avoidanceRadiusMultiplier: 0.705
+  speed: 15
+  neighbourRadius: 12
+  avoidanceRadiusMultiplier: 0.5
 --- !u!4 &1582151978
 Transform:
   m_ObjectHideFlags: 0
