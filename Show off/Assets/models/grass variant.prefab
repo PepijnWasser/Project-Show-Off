@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3823731513687322769}
   - component: {fileID: 197951779500179252}
   - component: {fileID: 2691942366278011902}
-  m_Layer: 0
+  - component: {fileID: 4936911006369068156}
+  m_Layer: 8
   m_Name: grass variant
   m_TagString: Grass
   m_Icon: {fileID: 0}
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4936911006369068156
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493272060268440107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.12
+  m_Height: 4.23
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

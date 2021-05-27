@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab173c7833a30049b57c79770e2e903, type: 3}
-  m_Name: composite
+  m_Name: boat composite
   m_EditorClassIdentifier: 
   behaviors:
-  - {fileID: 11400000, guid: 5654920bd24012444b048af0ccb83257, type: 2}
-  - {fileID: 11400000, guid: 8d877250aa7ee1842ad5b30649be38b6, type: 2}
-  - {fileID: 11400000, guid: 4249d79979dab9c42b831dacd44d7844, type: 2}
+  - {fileID: 11400000, guid: 713255a47dee49045849ff2da410b242, type: 2}
+  - {fileID: 11400000, guid: 235a439809fa7174292d16432fa5012d, type: 2}
   - {fileID: 11400000, guid: cf7b7c8df63ae5041a22fb5f3864eac1, type: 2}
-  - {fileID: 11400000, guid: 353ad4c8962b9bf4f9d9b4d814abdd6a, type: 2}
+  - {fileID: 11400000, guid: 06387794802003e4294135afa5f80304, type: 2}
   weights:
+  - 2
+  - 4
   - 1
-  - 3
   - 1
-  - 0.3
-  - 3
