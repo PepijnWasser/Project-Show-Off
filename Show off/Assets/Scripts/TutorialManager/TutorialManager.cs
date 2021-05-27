@@ -17,10 +17,14 @@ public class TutorialManager : MonoBehaviour
     bool dayCompleted = false;
     bool buttonClicked = false;
 
+    float popularityOutcome;
+    float coralOutcome;
+
     private void Awake()
     {
         Energy.onDayCompleted += EnergyDayCompleted;
         taskListButton.onClick.AddListener(ButtonClicked);
+        TaskManager.onTaskCompleted += GetCompletedTaskOutcome;
     }
 
 
@@ -34,19 +38,13 @@ public class TutorialManager : MonoBehaviour
     {
         Energy.onDayCompleted -= EnergyDayCompleted;
         taskListButton.onClick.RemoveListener(ButtonClicked);
+        TaskManager.onTaskCompleted -= GetCompletedTaskOutcome;
     }
 
     private void Update()
     {
         Debug.Log("this is it"+ messageIndex);
-        /*if(messageIndex == 0 || messageIndex == 1 || messageIndex == 2 || messageIndex == 3)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
-                messageIndex += 1;
-            }
-        }*/
+
         if(messageIndex == 1)
         {
             arrow.SetActive(true);
@@ -68,51 +66,77 @@ public class TutorialManager : MonoBehaviour
         }
         else if(messageIndex == 3)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
-                messageIndex += 1; //replace this with following pseudo code
-                /*
-                 if(first task is crops farm){
-                 messageIndex=4;
-                 }
-                 else if(first task is cow farm || increase tourism){
-                 messageIndex=5;
-                 }
-                 else if(first task is clean trash){
-                 messageIndex=6;
-                 }
-                 else if(first task is decrease tourism)
-                 {
-                 messageIndex=7;
-                 }
-                 */
-            }
-        }
-        else if (messageIndex == 4 || messageIndex == 5 || messageIndex == 6 || messageIndex == 7)
-        {
-            dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
-            if (dayCompleted/*energy runs out day 1?*/)
-            {
-                messageIndex = 8; //display last message when energy runs out day 1
-            }
-        }
-        else if(messageIndex == 8)
-        {
             if (dayCompleted)
             {
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                string newMessage = "";
+                if(coralOutcome > 0)
+                {
+                    if(popularityOutcome > 0)
+                    {
+                        newMessage = "Great job. The health of the coral went up, and you gained some popularity.";
+                    }
+                    else if (popularityOutcome == 0)
+                    {
+                        newMessage = "You did well. The coral gained health without sacrificing our popularity.";
+                    }
+                    else
+                    {
+                        newMessage = "You managed to increase the health of the coral, but at the cost of our popularity. Keep ths in mind!";
+                    }
+                }
+                else if(coralOutcome == 0)
+                {
+                    if (popularityOutcome > 0)
+                    {
+                        newMessage = "The popularity of our island went up without sacrificing coral health!";
+                    }
+                    else if (popularityOutcome == 0)
+                    {
+                        newMessage = "your changes resulted in a neutral outcome for the coral and popularity.";
+                    }
+                    else
+                    {
+                        newMessage = "Aah, you lost some popularity. At least the coral is healthy";
+                    }
+                }
+                else if(coralOutcome < 0)
+                {
+                    if (popularityOutcome > 0)
+                    {
+                        newMessage = "Our popularity went up at the cost of some coral health.";
+                    }
+                    else if (popularityOutcome == 0)
+                    {
+                        newMessage = "Ooh, we lost some coral health. no problem, it is only your first day";
+                    }
+                    else
+                    {
+                        newMessage = "That was a bad choise. Both the coral and popularity went down.";
+                    }
+                }
+
+                dialogueManager.UseTutorialMessage(newMessage);
                 messageIndex += 1;
             }
         }
-        else
+        else if (messageIndex == 4)
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                messageIndex += 1; //display last message when energy runs out day 1
+            }
+        }
+        else if(messageIndex == 5)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 dialogueManager.FinishTutorial();
                 Destroy(this.gameObject);
             }
-        }   
+
+        } 
     }
 
     void EnergyDayCompleted()
@@ -126,5 +150,11 @@ public class TutorialManager : MonoBehaviour
         {
             buttonClicked = true;
         }
+    }
+
+    void GetCompletedTaskOutcome(Task task)
+    {
+        coralOutcome += task.coralOutcome;
+        popularityOutcome += task.popularityOutcome;
     }
 }
