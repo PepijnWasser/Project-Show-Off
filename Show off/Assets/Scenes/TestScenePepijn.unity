@@ -1064,6 +1064,10 @@ PrefabInstance:
       value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 6805157824627740238, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
+      propertyPath: fullEnergy
+      value: 
+      objectReference: {fileID: 21300000, guid: 05c38ff242c75a942a379e9dd990d370, type: 3}
+    - target: {fileID: 6805157824627740238, guid: 600b522bc62c9584888e5e2cac6ca14b, type: 3}
       propertyPath: taskManagerScript
       value: 
       objectReference: {fileID: 1808490658}
