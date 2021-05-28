@@ -34,7 +34,7 @@ public class SteeredAvoidanceBehavior : FilteredFlockBehavior
             avoidanceMove /= nAvoid;
         }
 
-       avoidanceMove = Vector3.SmoothDamp(agent.transform.forward, avoidanceMove, ref currentVelocity, agentSmoothTime);
+       avoidanceMove = Vector3.SmoothDamp(agent.transform.forward, avoidanceMove * 2, ref currentVelocity, agentSmoothTime);
         return avoidanceMove;
     }
 }

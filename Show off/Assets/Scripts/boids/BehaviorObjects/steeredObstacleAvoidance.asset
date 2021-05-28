@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: steeredObstacleAvoidance
   m_EditorClassIdentifier: 
   filter: {fileID: 11400000, guid: 8d79a192d742fcc4280b1ca44d1152ae, type: 2}
-  agentSmoothTime: 0.1
+  agentSmoothTime: 0.05

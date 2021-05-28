@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: boat composite
   m_EditorClassIdentifier: 
   behaviors:
-  - {fileID: 11400000, guid: 713255a47dee49045849ff2da410b242, type: 2}
   - {fileID: 11400000, guid: 235a439809fa7174292d16432fa5012d, type: 2}
-  - {fileID: 11400000, guid: cf7b7c8df63ae5041a22fb5f3864eac1, type: 2}
   - {fileID: 11400000, guid: 06387794802003e4294135afa5f80304, type: 2}
+  - {fileID: 11400000, guid: cf7b7c8df63ae5041a22fb5f3864eac1, type: 2}
+  - {fileID: 11400000, guid: 713255a47dee49045849ff2da410b242, type: 2}
   weights:
-  - 4
-  - 8
+  - 5
+  - 1
   - 1
   - 1

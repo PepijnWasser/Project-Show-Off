@@ -46,6 +46,6 @@ MonoBehaviour:
   completed: 0
   coralOutcome: 1
   popularityOutcome: -1
-  energyCost: 1
+  energyCost: 2
   outcomeMessage: dit is een outcome
   placeOfQuest: 5
