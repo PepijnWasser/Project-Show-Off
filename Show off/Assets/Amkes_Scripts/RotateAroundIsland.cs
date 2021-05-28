@@ -31,24 +31,27 @@ public class RotateAroundIsland : MonoBehaviour
 
     private void UseKeyboardControls()
     {
-        //Rotate around Y-axis (left-right)
-        transform.RotateAround(target, Vector3.up, -Input.GetAxis("Horizontal") * keyboardSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //Rotate around Y-axis (left-right)
+            transform.RotateAround(target, Vector3.up, -Input.GetAxis("Horizontal") * keyboardSpeed * Time.deltaTime);
 
-        //Rotate around X-axis (up-down)
-        xAngle = transform.eulerAngles.x;
-        if (xAngle >= minAngle && xAngle <= maxAngle)
-        {
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
-        }
-        else if (xAngle < minAngle && Input.GetAxisRaw("Vertical") == 1)
-        {
-            //Only move up
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
-        }
-        else if (xAngle > maxAngle && Input.GetAxisRaw("Vertical") == -1)
-        {
-            //Only move down
-            transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            //Rotate around X-axis (up-down)
+            xAngle = transform.eulerAngles.x;
+            if (xAngle >= minAngle && xAngle <= maxAngle)
+            {
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
+            else if (xAngle < minAngle && Input.GetAxisRaw("Vertical") == 1)
+            {
+                //Only move up
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
+            else if (xAngle > maxAngle && Input.GetAxisRaw("Vertical") == -1)
+            {
+                //Only move down
+                transform.RotateAround(target, camTransform.right, Input.GetAxis("Vertical") * keyboardSpeed * Time.deltaTime);
+            }
         }
     }
 
