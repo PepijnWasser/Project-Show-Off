@@ -18,6 +18,6 @@ public class StayInRadius : FlockBehavior
             return Vector3.zero;
         }
 
-        return centerOffset.normalized * t * t;
+        return centerOffset * t * t;
     }
 }
