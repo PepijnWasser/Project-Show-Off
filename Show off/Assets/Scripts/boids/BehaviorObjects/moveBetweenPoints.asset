@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f9b5350ae658d141b3a43fd0bc520a8, type: 3}
-  m_Name: steeredAvoidance
+  m_Script: {fileID: 11500000, guid: a25833ff4dbecbf41a0ef51b3e0d2b68, type: 3}
+  m_Name: moveBetweenPoints
   m_EditorClassIdentifier: 
-  filter: {fileID: 11400000, guid: 7a5306e25ffa24b4f890e5702003df89, type: 2}
-  agentSmoothTime: 0.3
+  agentSmoothTime: 7

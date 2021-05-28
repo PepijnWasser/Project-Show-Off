@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f9b5350ae658d141b3a43fd0bc520a8, type: 3}
-  m_Name: steeredObstacleAvoidance
+  m_Name: steeredBoatAvoidance
   m_EditorClassIdentifier: 
-  filter: {fileID: 11400000, guid: 8d79a192d742fcc4280b1ca44d1152ae, type: 2}
-  avoidanceRadiusMultiplier: 0.5
-  agentSmoothTime: 1.5
+  filter: {fileID: 11400000, guid: 7a5306e25ffa24b4f890e5702003df89, type: 2}
+  avoidanceRadiusMultiplier: 0.74
+  agentSmoothTime: 0.15

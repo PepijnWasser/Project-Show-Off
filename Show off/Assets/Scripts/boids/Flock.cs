@@ -8,30 +8,26 @@ public class Flock : MonoBehaviour
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
 
-    [Range(2, 50)]
+    [Range(1, 50)]
     public int startingCount = 25;
     const float agentDensity = 1.5f;
 
     [Range(1f, 100f)]
-    public float driveFactor = 10f;
+    public float speedMultiplier = 10f;
     [Range(1f, 100f)]
     public float maxSpeed = 5f;
 
     [Range(1f, 100f)]
-    public float neighbourRadius = 1.5f;
-    [Range(0f, 1f)]
-    public float avoidanceRadiusMultiplier = 0.5f;
+    public float neighbourRadius = 5f;
 
     float squareMaxSpeed;
     float squareNeighbourRadius;
-    float squareAvoidanceRadius;
-    public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
+
 
     void Start()
     {
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighbourRadius * neighbourRadius;
-        squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
 
         for(int i = 0; i < startingCount; i++)
         {
@@ -54,7 +50,14 @@ public class Flock : MonoBehaviour
         {
             List<Transform> context = GetNearbyObjects(agent);
             Vector3 move = behavior.CalculateMove(agent, context, this);
-            move *= driveFactor;
+            move *= speedMultiplier;
+            float length = move.magnitude;
+            move.y = 0;
+            if(move.magnitude != length)
+            {
+                move = move.normalized * length;
+            }
+
             if (move.sqrMagnitude > squareMaxSpeed)
             {
                 move = move.normalized * maxSpeed;
