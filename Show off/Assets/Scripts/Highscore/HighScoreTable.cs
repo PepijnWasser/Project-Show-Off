@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class HighScoreTable : MonoBehaviour
 {
-    Transform entryContainer;
-    Transform entryTemplate;
-    List<Transform> highScoreEntryTransformList = new List<Transform>();
+    public GameObject entryTemplate;
+    List<GameObject> highScoreEntryGameObjectList = new List<GameObject>();
+    public List<Vector3> entryPositions = new List<Vector3>();
 
     private void Awake()
     {
-        entryContainer = transform.Find("HighScoreEntryContainer");
-        entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
-
-        entryTemplate.gameObject.SetActive(false);
-
-        //AddHighScoreEntry(7, "Rakdos");
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
@@ -34,26 +28,29 @@ public class HighScoreTable : MonoBehaviour
                 }
             }
         }
-        highScoreEntryTransformList = new List<Transform>();
+        highScoreEntryGameObjectList = new List<GameObject>();
 
-        foreach(HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
+        if(highScores.highScoreEntryList.Count != entryPositions.Count)
         {
-            CreateHighScoreEntryTransform(highScoreEntry, entryContainer, highScoreEntryTransformList);
+            Debug.LogError("data mismatch", this);
+        }
+        else
+        {
+            foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
+            {
+                CreateHighScoreEntryTransform(highScoreEntry, highScoreEntryGameObjectList);
+            }
         }
 
     }
     
-    void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container, List<Transform> transformList)
+    void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, List<GameObject> gameObjectList)
     {
-        float templatehight = 20f;
-
-        Transform entryTransform = Instantiate(entryTemplate, container);
-        RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
-        entryRectTransform.anchoredPosition = new Vector2(0, -templatehight * transformList.Count);
-        entryTransform.gameObject.SetActive(true);
+        GameObject entryGameObject = Instantiate(entryTemplate, this.transform);
+        entryGameObject.transform.position = entryPositions[gameObjectList.Count];
 
         
-        int rank = transformList.Count + 1;
+        int rank = gameObjectList.Count + 1;
         string rankString;
         switch (rank)
         {
@@ -64,12 +61,11 @@ public class HighScoreTable : MonoBehaviour
         }
 
 
-        entryTransform.Find("Name").GetComponent<Text>().text = highScoreEntry.name;
-        entryTransform.Find("Position").GetComponent<Text>().text = rankString;
-        entryTransform.Find("Score").GetComponent<Text>().text = highScoreEntry.score.ToString();
+        entryGameObject.transform.Find("Info").transform.Find("Name").GetComponent<Text>().text = highScoreEntry.name;
+        entryGameObject.transform.Find("Info").transform.Find("Points").GetComponent<Text>().text = highScoreEntry.score.ToString();
+        entryGameObject.transform.Find("Position").transform.Find("Position").GetComponent<Text>().text = rankString;
 
-        transformList.Add(entryTransform);
-        
+        gameObjectList.Add(entryGameObject);      
     }
 
     void AddHighScoreEntry(int score, string name)
