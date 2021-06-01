@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class RotateAroundIsland : MonoBehaviour
 {
-    [SerializeField] private float keyboardSpeed;
-    [SerializeField] private float mouseSpeed;
-    [SerializeField] private float minAngle;
-    [SerializeField] private float maxAngle;
-
-    //public Transform targetTransform;
+    public float keyboardSpeed;
+    public float mouseSpeed;
+    public float minAngle;
+    public float maxAngle;
 
     private Vector3 target = new Vector3(0,0,0);
     private Transform camTransform;
@@ -17,7 +15,6 @@ public class RotateAroundIsland : MonoBehaviour
     
     private void Start()
     {
-        //target = targetTransform.position;
         GetCameraTransform();
     }
 

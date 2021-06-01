@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TimeScript : MonoBehaviour
 {
     public Text timeText;
-    int dayNumber = 1;
+
+    private int dayNumber = 1;
 
     private void Awake()
     {

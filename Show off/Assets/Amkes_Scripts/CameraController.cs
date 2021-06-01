@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
     private float curZoom;
     private Camera cam;
 
+    //TODO: not hardcoded KeyCode Q
+
     private void Start()
     {
         cam = Camera.main;

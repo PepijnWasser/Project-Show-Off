@@ -7,13 +7,9 @@ public class Energy : MonoBehaviour
 {
     public Sprite fullEnergy;
     public Sprite emptyEnergy;
-
     public Image energyImage;
-        
     public Text energyText;
-
     public int energyAmount;
-
     public TimeScript timeScript;
     public TaskManager taskManagerScript;
 
