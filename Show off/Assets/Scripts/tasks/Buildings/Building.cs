@@ -8,13 +8,16 @@ public class Building : MonoBehaviour
 {
     public bool showMenu;
     public bool active;
-    public GameObject menu;
-    public GameObject menuPanel;
+    public GameObject taskListCanvas;
+    public GameObject taskListPanel;
     public GameObject taskManager;
     public GameObject AcceptButtonPrefab;
 
+    public List<Renderer> objectsToHighlight;
+
+    [HideInInspector]
     public List<Task> taskAtThisLocation = new List<Task>();
-    public List<GameObject> placedListObjects = new List<GameObject>();
+    List<GameObject> placedListObjects = new List<GameObject>();
 
     public EventSystem m_EventSystem;
 
@@ -81,11 +84,19 @@ public class Building : MonoBehaviour
     {
         if (active)
         {
-            GetComponent<Renderer>().material.color = new Color(1, 1, 0);
+            foreach(Renderer renderer in objectsToHighlight)
+            {
+                renderer.material.color = new Color(1, 1, 0);
+            }
+           // GetComponent<Renderer>().
         }
         else
         {
-            GetComponent<Renderer>().material.color = new Color(0, 0, 0);
+            foreach (Renderer renderer in objectsToHighlight)
+            {
+                renderer.material.color = new Color(0, 0, 0);
+            }
+            //GetComponent<Renderer>().material.color = new Color(0, 0, 0);
         }
     }
 
@@ -117,15 +128,15 @@ public class Building : MonoBehaviour
     }
     void ShowMenu()
     {
-        if (menu != null)
+        if (taskListCanvas != null)
         {
             if (showMenu)
             {
-                menu.SetActive(true);
+                taskListCanvas.SetActive(true);
             }
             else
             {
-                menu.SetActive(false);
+                taskListCanvas.SetActive(false);
             }
         }
     }
@@ -145,9 +156,18 @@ public class Building : MonoBehaviour
         {
             foreach (Task task in taskAtThisLocation)
             {
-                GameObject newObject = Instantiate(AcceptButtonPrefab, menuPanel.transform);
-                newObject.GetComponentInChildren<Text>().text = task.name;
-                placedListObjects.Add(newObject);
+                try
+                {
+                    GameObject newObject = Instantiate(AcceptButtonPrefab, taskListPanel.transform);
+                    newObject.GetComponentInChildren<Text>().text = task.name;
+                    newObject.GetComponent<CompleteTask>().creator = this.gameObject;
+                    placedListObjects.Add(newObject);
+                }
+                catch
+                {
+                    Debug.Log(this.gameObject.name);
+                }
+
             }
         }
     }
@@ -185,7 +205,7 @@ public class Building : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
 
         //Raycast using the Graphics Raycaster and mouse click position
-        m_Raycaster.Raycast(m_PointerEventData, results);
+    
 
         //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
         int falseResuts = 0;
