@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CompleteTask : MonoBehaviour
 {
     GameObject energyScript;
+    public GameObject creator;
 
     private void Start()
     {
@@ -14,7 +15,8 @@ public class CompleteTask : MonoBehaviour
 
     public void Complete()
     {
-        foreach(Task task in this.transform.parent.parent.parent.GetComponent<Building>().taskAtThisLocation)
+        Debug.Log(creator.GetComponent<Building>());
+        foreach(Task task in creator.GetComponent<Building>().taskAtThisLocation)
         {
             if(task.name == GetComponentInChildren<Text>().text)
             {

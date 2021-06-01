@@ -13,7 +13,6 @@ public class MoveBetweenPointsBehavior : FlockBehavior
         moveBetweenPointsSupport flockSupport = flock.gameObject.GetComponent<moveBetweenPointsSupport>();
         Vector3 pointOffset = flockSupport.activepoint - agent.transform.position;
         flockSupport.changePoint(agent);
-        Debug.Log(flockSupport.activepoint);
 
 
         pointOffset = Vector3.SmoothDamp(agent.transform.forward, pointOffset, ref currentVelocity, agentSmoothTime).normalized;
