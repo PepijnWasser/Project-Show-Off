@@ -181,6 +181,7 @@ public class Building : MonoBehaviour
         {
             if (hit.collider.gameObject == this.gameObject)
             {
+                Debug.Log(this.gameObject.name);
                 return true;
             }
             else
@@ -205,7 +206,7 @@ public class Building : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
 
         //Raycast using the Graphics Raycaster and mouse click position
-    
+        m_Raycaster.Raycast(m_PointerEventData, results);
 
         //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
         int falseResuts = 0;
