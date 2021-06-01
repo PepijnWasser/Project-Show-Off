@@ -17,6 +17,7 @@ public class PopulationCondition : MonoBehaviour
     }
     private void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.X))
         {
             //Left-click -> increase
@@ -30,6 +31,7 @@ public class PopulationCondition : MonoBehaviour
                 if (populationScore > 0) populationScore -= 0.5f;
             }
         }
+        */
 
         populationText.text = populationScore.ToString();
         UpdateColor();

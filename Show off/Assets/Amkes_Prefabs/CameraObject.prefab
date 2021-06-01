@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8557608753479634894}
-  - component: {fileID: 8557608753479634895}
   - component: {fileID: 8557608753479634892}
   m_Layer: 0
   m_Name: CameraObject
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -50, y: 45, z: 0}
---- !u!114 &8557608753479634895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557608753479634889}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035d2019f898c0c4d8678220e5b1a8e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
 --- !u!114 &8557608753479634892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,9 +63,6 @@ GameObject:
   - component: {fileID: 8557608753842732374}
   - component: {fileID: 8557608753842732395}
   - component: {fileID: 8557608753842732394}
-  - component: {fileID: 8557608753842732373}
-  - component: {fileID: 8557608753842732372}
-  - component: {fileID: 8557608753842732375}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -152,49 +135,3 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8557608753842732369}
   m_Enabled: 1
---- !u!114 &8557608753842732373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557608753842732369}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fb8b896c82d1045aaab921e2295efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardSpeed: 50
-  mouseSpeed: 100
-  minAngle: 20
-  maxAngle: 80
---- !u!114 &8557608753842732372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557608753842732369}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab1abe0ae8b9189489db9006147c9e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardSensitivity: 7.5
-  mouseSensitivity: 500
-  minDistance: 18
-  maxDistance: 70
---- !u!114 &8557608753842732375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557608753842732369}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e1d7c4d22bac948a646ab44ac0b25e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothness: 5
-  targetObject: {fileID: 8557608753479634894}

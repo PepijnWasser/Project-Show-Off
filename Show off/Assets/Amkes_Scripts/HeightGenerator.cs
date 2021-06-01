@@ -23,7 +23,8 @@ public class HeightGenerator : MonoBehaviour
             CreateTileList();
             SetSeaHeight();
             SetSandHeight();
-            SetGrassHeight();
+            //SetGrassHeight1();
+            SetGrassHeight2();
 
             createdMap = true;
         }
@@ -62,7 +63,7 @@ public class HeightGenerator : MonoBehaviour
         }
     }
 
-    private void SetGrassHeight()
+    private void SetGrassHeight1()
     {
         //Procedurally generate different grass-heights
         for (int i = 0; i < children.Count; i++)
@@ -88,6 +89,33 @@ public class HeightGenerator : MonoBehaviour
                 else if (distance > 60 && distance <= 100)
                 {
                     children[i].transform.Translate(0, Random.Range(0.0f, 2.0f), 0);
+                }
+            }
+        }
+    }
+
+    private void SetGrassHeight2()
+    {
+        //Procedurally generate different grass-heights
+        for (int i = 0; i < children.Count; i++)
+        {
+            if (children[i].tag == "Grass")
+            {
+                Vector3 childPos = new Vector3(children[i].position.x, children[i].position.y, children[i].position.z);
+                Vector3 dVec = childPos - centerPos;
+                float distance = dVec.magnitude;
+
+                if (distance >= 0 && distance <= 30)
+                {
+                    children[i].transform.Translate(0, Random.Range(2.5f, 4.5f), 0);
+                }
+                else if (distance > 30 && distance <= 60)
+                {
+                    children[i].transform.Translate(0, Random.Range(1.0f, 3.0f), 0);
+                }
+                else if (distance > 60 && distance <= 100)
+                {
+                    children[i].transform.Translate(0, Random.Range(0.0f, 1.0f), 0);
                 }
             }
         }

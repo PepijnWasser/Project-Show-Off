@@ -16,8 +16,9 @@ public class CameraController : MonoBehaviour
     private float curXRot;
     private float curZoom;
     private Camera cam;
-
-    //TODO: not hardcoded KeyCode Q
+    private KeyCode zoomInKey = KeyCode.Q;
+    private KeyCode zoomOutKey = KeyCode.E;
+    private KeyCode accesRotationKey = KeyCode.LeftShift;
 
     private void Start()
     {
@@ -31,9 +32,11 @@ public class CameraController : MonoBehaviour
         //Zooming
         ZoomingMouse();
         ZoomingKeys();
+
         //Rotating
         RotatingMouse();
         RotatingKeys();
+
         //Moving
         MovingMouse();
         MovingKeys();
@@ -50,11 +53,11 @@ public class CameraController : MonoBehaviour
     private void ZoomingKeys()
     {
         //Q -> zoom in, E -> zoom out
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(zoomInKey))
         {
             curZoom += 0.01f * -zoomSpeed;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(zoomOutKey))
         {
             curZoom += -0.01f * -zoomSpeed;
         }
@@ -66,7 +69,7 @@ public class CameraController : MonoBehaviour
     private void RotatingMouse()
     {
         //Left-MB + drag to rotate
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             float x = Input.GetAxis("Mouse X");
             float y = Input.GetAxis("Mouse Y");
@@ -80,7 +83,7 @@ public class CameraController : MonoBehaviour
     private void RotatingKeys()
     {
         //Shift + WASD-keys/arrows to rotate
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(accesRotationKey))
         {
             moveSpeed = 0.0f;
             float x = Input.GetAxis("Horizontal");
@@ -89,13 +92,17 @@ public class CameraController : MonoBehaviour
             curXRot += -y * rotateSpeed;
             curXRot = Mathf.Clamp(curXRot, minXRot, maxXrot);
             transform.eulerAngles = new Vector3(curXRot, transform.eulerAngles.y + (x * rotateSpeed), 0.0f);
-        }    
+        }
+        else
+        {
+            moveSpeed = 30.0f;
+        }
     }
 
     private void MovingMouse()
     {
         //Right-MB + drag to move
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             Vector3 forward = cam.transform.forward;
             forward.y = 0.0f;
@@ -108,7 +115,7 @@ public class CameraController : MonoBehaviour
             Vector3 dir = forward * moveZ + right * moveX;
             dir.Normalize();
             dir *= moveSpeed * Time.deltaTime;
-            transform.position += dir;
+            transform.position -= dir;
         }
     }
 

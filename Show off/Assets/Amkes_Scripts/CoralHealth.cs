@@ -54,6 +54,7 @@ public class CoralHealth : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Z))
         {
             //Left-click -> increase
@@ -67,6 +68,7 @@ public class CoralHealth : MonoBehaviour
                 if (healthScore > 0) healthScore--;
             }
         }
+        */
 
         healthText.text = healthScore.ToString();
         UpdateColor();
