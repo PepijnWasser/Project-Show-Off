@@ -511,7 +511,7 @@ MonoBehaviour:
   - {x: 1.5, y: 7.5, z: -10.06}
   - {x: 5, y: 7.5, z: -12.3}
   - {x: 8.5, y: 7.5, z: -10.06}
-  amountOfPositionsDisplayed: 6
+  amountOfPositionsDisplayed: 8
 --- !u!1 &923023051
 GameObject:
   m_ObjectHideFlags: 0
