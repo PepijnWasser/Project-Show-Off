@@ -8,6 +8,7 @@ public class HighScoreTable : MonoBehaviour
     public GameObject entryTemplate;
     List<GameObject> highScoreEntryGameObjectList = new List<GameObject>();
     public List<Vector3> entryPositions = new List<Vector3>();
+    public int amountOfPositionsDisplayed = 8;
 
     private void Awake()
     {
@@ -29,19 +30,17 @@ public class HighScoreTable : MonoBehaviour
             }
         }
         highScoreEntryGameObjectList = new List<GameObject>();
-
-        if(highScores.highScoreEntryList.Count != entryPositions.Count)
+        if(highScores.highScoreEntryList.Count >= amountOfPositionsDisplayed && entryPositions.Count >= amountOfPositionsDisplayed)
         {
-            Debug.LogError("data mismatch", this);
+            for(int i = 0; i <highScores.highScoreEntryList.Count && i < amountOfPositionsDisplayed; i++)
+            {
+                CreateHighScoreEntryTransform(highScores.highScoreEntryList[i], highScoreEntryGameObjectList);
+            }
         }
         else
         {
-            foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
-            {
-                CreateHighScoreEntryTransform(highScoreEntry, highScoreEntryGameObjectList);
-            }
+            Debug.LogError("data mismatch", this);
         }
-
     }
     
     void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, List<GameObject> gameObjectList)
