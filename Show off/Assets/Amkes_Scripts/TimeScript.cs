@@ -7,7 +7,7 @@ public class TimeScript : MonoBehaviour
 {
     public Text timeText;
 
-    private int dayNumber = 1;
+    public int dayNumber = 1;
 
     private void Awake()
     {
