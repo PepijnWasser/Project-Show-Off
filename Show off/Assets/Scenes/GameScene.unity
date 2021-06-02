@@ -170,6 +170,7 @@ MonoBehaviour:
   tileXOffset: 1.74
   tileZOffset: 1.54
   tileVariation: 20
+  randomSeed: 0
 --- !u!4 &44282633
 Transform:
   m_ObjectHideFlags: 0
@@ -375,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fb8b896c82d1045aaab921e2295efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysSpeed: 50
+  keyboardSpeed: 0
   mouseSpeed: 500
   minAngle: 20
   maxAngle: 50
@@ -391,11 +392,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1abe0ae8b9189489db9006147c9e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysSensitivity: 7.5
+  keyboardSensitivity: 0
   mouseSensitivity: 50
   minDistance: 2
   maxDistance: 10
-  camPos: {fileID: 963194228}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0

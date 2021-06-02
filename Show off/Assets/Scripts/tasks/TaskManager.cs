@@ -28,6 +28,7 @@ public class TaskManager : MonoBehaviour
 
     //Amke's mess
     public Energy energyScript;
+    public CoralHealth coralHealthScript;
 
     private void Awake()
     {
@@ -227,6 +228,14 @@ public class TaskManager : MonoBehaviour
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
         onTaskCompleted?.Invoke(task);
+
+        //Amke's mess
+        coralHealthScript.healthScore += task.coralOutcome;
+        if (coralHealthScript.healthScore > 10)
+        {
+            coralHealthScript.healthScore = 10;
+            
+        }
     }
 
     void SortTasks()
