@@ -19,6 +19,7 @@ public class CinematicManager : MonoBehaviour
     public bool badEndingBool;
     public bool finished;
 
+
     private void Start()
     {
         RenderTexture textureToRender;
