@@ -68,7 +68,7 @@ public class CameraController : MonoBehaviour
 
     private void RotatingMouse()
     {
-        //Left-MB + drag to rotate
+        //Right-MB + drag to rotate
         if (Input.GetMouseButton(1))
         {
             float x = Input.GetAxis("Mouse X");
@@ -101,7 +101,7 @@ public class CameraController : MonoBehaviour
 
     private void MovingMouse()
     {
-        //Right-MB + drag to move
+        //Left-MB + drag to move
         if (Input.GetMouseButton(0))
         {
             Vector3 forward = cam.transform.forward;
