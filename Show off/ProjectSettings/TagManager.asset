@@ -15,6 +15,7 @@ TagManager:
   - TestSite2
   - Interactable
   - Energy
+  - DebugText
   layers:
   - Default
   - TransparentFX
