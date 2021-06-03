@@ -54,25 +54,10 @@ public class CoralHealth : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (Input.GetKey(KeyCode.Z))
-        {
-            //Left-click -> increase
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (healthScore < 10) healthScore++;
-            }
-            //Right-click -> decrease
-            if (Input.GetMouseButtonUp(1))
-            {
-                if (healthScore > 0) healthScore--;
-            }
-        }
-        */
-
         healthText.text = healthScore.ToString();
         UpdateColor();
     }
+
     private void UpdateColor()
     {
         foreach (var healthLevel in coralHealthLevels)

@@ -29,6 +29,7 @@ public class TaskManager : MonoBehaviour
     //Amke's mess
     public Energy energyScript;
     public CoralHealth coralHealthScript;
+    public PopulationCondition populationScoreScript;
 
     private void Awake()
     {
@@ -234,8 +235,15 @@ public class TaskManager : MonoBehaviour
         if (coralHealthScript.healthScore > 10)
         {
             coralHealthScript.healthScore = 10;
-            
         }
+
+        populationScoreScript.populationScore += task.popularityOutcome;
+        /*
+        if (populationScoreScript.populationScore > 10)
+        {
+            populationScoreScript.populationScore = 10;
+        }
+        */
     }
 
     void SortTasks()
