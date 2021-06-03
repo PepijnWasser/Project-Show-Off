@@ -9,11 +9,12 @@ public class HighScoreTable : MonoBehaviour
     List<GameObject> highScoreEntryGameObjectList = new List<GameObject>();
     public List<Vector3> entryPositions = new List<Vector3>();
     public int amountOfPositionsDisplayed = 8;
+    HighScores highScores;
 
     private void Awake()
     {
         PlayerPrefs.DeleteKey("highScoreTable");
-        HighScores highScores = GetHighScores();
+        highScores = GetHighScores();
 
         if (highScores == null)
         {
@@ -24,7 +25,6 @@ public class HighScoreTable : MonoBehaviour
 
         if(highScores.highScoreEntryList.Count == 0)
         {
-            Debug.Log("adding scores");
             AddHighScoreEntry(666, "GOD=DOG");
             AddHighScoreEntry(555, "SatanIsReal");
             AddHighScoreEntry(101, "GGStandForGreedyGandalf");
@@ -34,8 +34,6 @@ public class HighScoreTable : MonoBehaviour
             AddHighScoreEntry(9, "Reimu");
             AddHighScoreEntry(-1, "The doctor");
             highScores = GetHighScores();
-
-            Debug.Log(highScores.highScoreEntryList.Count);
         }
         
         for (int i = 0; i < highScores.highScoreEntryList.Count; i++)
@@ -49,11 +47,15 @@ public class HighScoreTable : MonoBehaviour
                     highScores.highScoreEntryList[j] = temp;
                 }
             }
-        }
+        } 
+    }
+
+    private void Start()
+    {
         highScoreEntryGameObjectList = new List<GameObject>();
-        if(entryPositions.Count >= amountOfPositionsDisplayed)
+        if (entryPositions.Count >= amountOfPositionsDisplayed)
         {
-            for(int i = 0; i <highScores.highScoreEntryList.Count && i < amountOfPositionsDisplayed; i++)
+            for (int i = 0; i < highScores.highScoreEntryList.Count && i < amountOfPositionsDisplayed; i++)
             {
                 CreateHighScoreEntryTransform(highScores.highScoreEntryList[i], highScoreEntryGameObjectList);
             }
@@ -66,7 +68,7 @@ public class HighScoreTable : MonoBehaviour
             Debug.LogError("data mismatch", this);
         }
     }
-    
+
     void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, List<GameObject> gameObjectList)
     {
         GameObject entryGameObject = Instantiate(entryTemplate, this.transform);
@@ -91,8 +93,10 @@ public class HighScoreTable : MonoBehaviour
         gameObjectList.Add(entryGameObject);      
     }
 
-    void AddHighScoreEntry(int score, string name)
+
+    public void AddHighScoreEntry(int score, string name)
     {
+        Debug.Log("score: " + score + " name: " + name);
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");

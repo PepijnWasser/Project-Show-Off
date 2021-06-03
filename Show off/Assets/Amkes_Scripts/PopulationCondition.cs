@@ -7,13 +7,19 @@ public class PopulationCondition : MonoBehaviour
 {
     public Text populationText;
     public Image populationImage;
+
+    [HideInInspector]
     public float populationScore;
+    [HideInInspector]
     public float displayScore;
 
-    private void Start()
+    private void Awake()
     {
         populationScore = 5.0f;
         populationText.text = populationScore.ToString();
+
+        displayScore = populationScore * 10;
+        populationText.text = displayScore.ToString();
         //populationImage.color = Color.green;
     }
     private void Update()

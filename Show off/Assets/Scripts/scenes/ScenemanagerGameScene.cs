@@ -7,16 +7,14 @@ public class ScenemanagerGameScene : MonoBehaviour
 {
     public TimeScript time;
 
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    public delegate void DayChangingScene();
+    public static event DayChangingScene onChangingScene;
 
     private void Update()
     {
-        if(time.dayNumber >= 8)
+        if(time.dayNumber >= 0)
         {
+            onChangingScene?.Invoke();
             SceneManager.LoadScene("Resolution screen");
         }
     }
