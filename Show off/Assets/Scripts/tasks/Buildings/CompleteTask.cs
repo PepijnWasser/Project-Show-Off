@@ -15,8 +15,7 @@ public class CompleteTask : MonoBehaviour
 
     public void Complete()
     {
-        Debug.Log(creator.GetComponent<Building>());
-        foreach(Task task in creator.GetComponent<Building>().taskAtThisLocation)
+        foreach (Task task in creator.GetComponent<Building>().taskAtThisLocation)
         {
             if(task.name == GetComponentInChildren<Text>().text)
             {

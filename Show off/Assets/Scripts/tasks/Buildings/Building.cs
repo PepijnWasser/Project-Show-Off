@@ -165,7 +165,7 @@ public class Building : MonoBehaviour
                 }
                 catch
                 {
-                    Debug.Log(this.gameObject.name);
+                    Debug.Log(this.gameObject.name);                 
                 }
 
             }
