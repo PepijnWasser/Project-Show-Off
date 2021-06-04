@@ -12,7 +12,7 @@ public class ScenemanagerGameScene : MonoBehaviour
 
     private void Update()
     {
-        if(time.dayNumber >= 0)
+        if(time.dayNumber >= 7)
         {
             onChangingScene?.Invoke();
             SceneManager.LoadScene("Resolution screen");
