@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: boat composite
   m_EditorClassIdentifier: 
   behaviors:
-  - {fileID: 11400000, guid: 235a439809fa7174292d16432fa5012d, type: 2}
+  - {fileID: 11400000, guid: 353ad4c8962b9bf4f9d9b4d814abdd6a, type: 2}
   - {fileID: 11400000, guid: cf7b7c8df63ae5041a22fb5f3864eac1, type: 2}
   - {fileID: 11400000, guid: 06387794802003e4294135afa5f80304, type: 2}
   - {fileID: 11400000, guid: 6dfa7a994de9fab48bf64c0ec710f6d9, type: 2}
@@ -21,4 +21,4 @@ MonoBehaviour:
   - 9
   - 0.01
   - 1
-  - 0.3
+  - 1

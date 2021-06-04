@@ -42,7 +42,6 @@ public class UIInputWindow : MonoBehaviour
             if(playerInfo != null)
             {
                 playerInfo.playerName = nameField.text;
-                Debug.Log(playerInfo.name);
                 playerInfo.age = Int32.Parse(ageField.text);
             }
         }

@@ -181,7 +181,6 @@ public class Building : MonoBehaviour
         {
             if (hit.collider.gameObject == this.gameObject)
             {
-                Debug.Log(this.gameObject.name);
                 return true;
             }
             else
