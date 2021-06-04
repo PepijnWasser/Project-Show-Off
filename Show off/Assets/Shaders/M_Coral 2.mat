@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Water
-  m_Shader: {fileID: -6465566751694194690, guid: 65bf643ed3b573e41a8a0c24b0ed0187, type: 3}
+  m_Name: M_Coral 2
+  m_Shader: {fileID: -6465566751694194690, guid: 5423a370568e3a74aa7eb579d0bb8d9f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,15 +60,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_27b9c124a762409fa6d9e275a7257db3: 0.69
-    - Vector1_54e497609de2446097311e14dc62c722: -2.92
-    - Vector1_57bccfd36cb8427b9e3aac88f9cf0fdd: -10.23
-    - Vector1_6f87414198d349a386e5a99eed0d04f9: -2.29
-    - Vector1_7901aaf0bafa43019fd2555e1f6673d3: 16.22
-    - Vector1_9488992781ae4ffeafb3c9385c927bb6: 0.3
-    - Vector1_bb71a3f0db484fbfb387b6031b6577d1: 2.96
-    - Vector1_d2fb8c22d8f140d79b4fbfb8790c7b63: 0.38
-    - Vector1_e042e914da264cb3b16ff42bdf11aecf: 0.2
+    - CoralHealth: 1
+    - Vector1_21E3954F: 0.23
+    - Vector1_2D31966B: 1.3
+    - Vector1_427BFF71: 4.93
+    - Vector1_DD821CDE: 0.08
+    - Vector1_ECE62A73: 1.42
+    - Vector1_FE22352B: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -91,19 +89,16 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_326330e5545d491c94c89be699c8833b: {r: 0.267117, g: 0.7681186, b: 0.99300003, a: 1}
-    - Color_5a4393ad38c14171b515b1a39f5ccef1: {r: 0.059904, g: 0.064, b: 0.064, a: 0}
-    - Color_90c2140a43734781b7a6ad64fc6a29a1: {r: 0.41960788, g: 0.9607843, b: 0.5722798, a: 1}
-    - Color_a864e4d9e6d941c5b237a555e395eda0: {r: 0.042, g: 0.042, b: 0.042, a: 0}
-    - Vector2_3b208468cfc241f0a14dfad3dac26fda: {r: 0.59, g: 0.78, b: 0, a: 0}
-    - Vector2_7ed37d3a836a4d7bb54c8617df75e793: {r: 3.78, g: 1.88, b: 0, a: 0}
-    - Vector2_fe0eeb73ddcf4c9999cb00d5a8c286c2: {r: -5e+15, g: 5e+9, b: 0, a: 0}
+    - Color_25D8DFA9: {r: 0.41910702, g: 1, b: 0.10849059, a: 1}
+    - Color_2CFABD6C: {r: 3.9446437, g: 4.0090194, b: 1.9099574, a: 0}
+    - Color_4495BCF1: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+    - Color_E878ADCE: {r: 0.6784314, g: 0.38611677, b: 0.1254902, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4173010362600363853
+--- !u!114 &4492773672389911913
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
