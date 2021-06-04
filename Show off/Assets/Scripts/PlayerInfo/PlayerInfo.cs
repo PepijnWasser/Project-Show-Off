@@ -27,7 +27,8 @@ public class PlayerInfo : MonoBehaviour
     {
         if(instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            Debug.Log("creating instance");
+            DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
 
@@ -41,7 +42,12 @@ public class PlayerInfo : MonoBehaviour
 
     void GetPlayerScore()
     {
-        score = (int)GameObject.FindObjectOfType<PopulationCondition>().displayScore;
+        PopulationCondition condition = GameObject.FindObjectOfType<PopulationCondition>();
+        if (condition != null)
+        {
+            score = (int)condition.displayScore;
+        }
+
     }
 
     public void Reset()
