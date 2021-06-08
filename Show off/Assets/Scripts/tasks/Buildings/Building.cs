@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class Building : MonoBehaviour
 {
     public bool showMenu;
     public bool active;
-    public GameObject taskListCanvas;
-    public GameObject taskListPanel;
+    public GameObject popupCanvas;
     public GameObject taskManager;
-    public GameObject AcceptButtonPrefab;
+    public GameObject popupPrefab;
+    public GameObject contentPanel;
 
     public List<Renderer> objectsToHighlight;
 
@@ -88,7 +89,6 @@ public class Building : MonoBehaviour
             {
                 renderer.material.color = new Color(1, 1, 0);
             }
-           // GetComponent<Renderer>().
         }
         else
         {
@@ -96,7 +96,6 @@ public class Building : MonoBehaviour
             {
                 renderer.material.color = new Color(0, 0, 0);
             }
-            //GetComponent<Renderer>().material.color = new Color(0, 0, 0);
         }
     }
 
@@ -110,7 +109,7 @@ public class Building : MonoBehaviour
             }
             else
             {
-                if (CheckChildUI())
+                if (CheckChildUI() && showMenu)
                 {
                     showMenu = true;
                 }
@@ -128,15 +127,15 @@ public class Building : MonoBehaviour
     }
     void ShowMenu()
     {
-        if (taskListCanvas != null)
+        if (popupCanvas != null)
         {
             if (showMenu)
             {
-                taskListCanvas.SetActive(true);
+                popupCanvas.SetActive(true);
             }
             else
             {
-                taskListCanvas.SetActive(false);
+                popupCanvas.SetActive(false);
             }
         }
     }
@@ -152,20 +151,26 @@ public class Building : MonoBehaviour
 
     void GenerateListPrefabs()
     {
-        if (AcceptButtonPrefab != null)
+        if (popupPrefab != null)
         {
             foreach (Task task in taskAtThisLocation)
             {
                 try
                 {
-                    GameObject newObject = Instantiate(AcceptButtonPrefab, taskListPanel.transform);
-                    newObject.GetComponentInChildren<Text>().text = task.name;
-                    newObject.GetComponent<CompleteTask>().creator = this.gameObject;
+                    GameObject newObject = Instantiate(popupPrefab, contentPanel.transform);
+                    newObject.transform.Find("TaskName").GetComponent<Text>().text = task.name;
+                    newObject.transform.Find("Description").GetComponent<Text>().text = task.description;
+                    
+                    Transform acceptButton = newObject.transform.Find("AcceptButton");
+                    acceptButton.transform.Find("Text").GetComponent<Text>().text = "Accept Task - " + task.energyCost;
+                    acceptButton.GetComponent<CompleteTask>().creator = this.gameObject;
+                    acceptButton.GetComponent<CompleteTask>().taskName = task.name;            
+
                     placedListObjects.Add(newObject);
                 }
-                catch
+                catch(Exception e)
                 {
-                    Debug.Log(this.gameObject.name);                 
+                    Debug.LogError(e.Message, this);                 
                 }
 
             }
@@ -196,6 +201,14 @@ public class Building : MonoBehaviour
 
     bool CheckChildUI()
     {
+        if(m_Raycaster == null)
+        {
+            m_Raycaster = GetComponentInChildren<GraphicRaycaster>();
+            if(m_Raycaster == null)
+            {
+                return false;
+            }
+        }
         //Set up the new Pointer Event
         m_PointerEventData = new PointerEventData(m_EventSystem);
         //Set the Pointer Event Position to that of the mouse position

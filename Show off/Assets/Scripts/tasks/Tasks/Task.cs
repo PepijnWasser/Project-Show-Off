@@ -6,10 +6,14 @@ using UnityEngine;
 public abstract class Task : MonoBehaviour
 {
     public bool completed;
+
+    public int energyCost;
+    public string description;
+
     public float coralOutcome;
     public float popularityOutcome;
-    public int energyCost;
     public string outcomeMessage;
+
 
     public enum Building
     {
