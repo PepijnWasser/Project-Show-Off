@@ -9,6 +9,9 @@ public class TimeScript : MonoBehaviour
 
     public int dayNumber = 1;
 
+    public delegate void OnDayChanged();
+    public static event OnDayChanged onDayNumberChanged;
+
     private void Awake()
     {
         Energy.onDayCompleted += AddDay;
@@ -28,5 +31,6 @@ public class TimeScript : MonoBehaviour
     {
         dayNumber += 1;
         timeText.text = "Day: " + dayNumber;
+        onDayNumberChanged?.Invoke();
     }
 }
