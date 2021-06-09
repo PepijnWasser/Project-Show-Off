@@ -6,12 +6,13 @@ public class AddLatestScore : MonoBehaviour
 {
    HighScoreTable highScoreTable;
 
-    private void Start()
+    private void Awake()
     {
         highScoreTable = GetComponent<HighScoreTable>();
         PlayerInfo playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
         if (playerInfo != null)
         {
+            Debug.Log("adding highscore");
             highScoreTable.AddHighScoreEntry(playerInfo.score, playerInfo.playerName);
         }
         else

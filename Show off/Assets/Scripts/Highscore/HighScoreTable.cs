@@ -35,23 +35,16 @@ public class HighScoreTable : MonoBehaviour
             AddHighScoreEntry(-1, "The doctor");
             highScores = GetHighScores();
         }
-        
-        for (int i = 0; i < highScores.highScoreEntryList.Count; i++)
-        {
-            for(int j = i + 1; j < highScores.highScoreEntryList.Count; j++)
-            {
-                if(highScores.highScoreEntryList[j].score > highScores.highScoreEntryList[i].score)
-                {
-                    HighScoreEntry temp = highScores.highScoreEntryList[i];
-                    highScores.highScoreEntryList[i] = highScores.highScoreEntryList[j];
-                    highScores.highScoreEntryList[j] = temp;
-                }
-            }
-        } 
+        SortEntries(highScores.highScoreEntryList);
     }
 
     private void Start()
     {
+        highScores = GetHighScores();
+        foreach(HighScoreEntry entry in highScores.highScoreEntryList)
+        {
+            Debug.Log(entry.name);
+        }
         highScoreEntryGameObjectList = new List<GameObject>();
         if (entryPositions.Count >= amountOfPositionsDisplayed)
         {
@@ -96,17 +89,34 @@ public class HighScoreTable : MonoBehaviour
 
     public void AddHighScoreEntry(int score, string name)
     {
-        Debug.Log("score: " + score + " name: " + name);
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
 
         highScores.highScoreEntryList.Add(highScoreEntry);
+        SortEntries(highScores.highScoreEntryList);
 
         string json = JsonUtility.ToJson(highScores);
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
+
+    }
+
+    void SortEntries(List<HighScoreEntry> highScoreEntries)
+    {
+        for (int i = 0; i < highScoreEntries.Count; i++)
+        {
+            for (int j = i + 1; j < highScoreEntries.Count; j++)
+            {
+                if (highScoreEntries[j].score > highScoreEntries[i].score)
+                {
+                    HighScoreEntry temp = highScoreEntries[i];
+                    highScoreEntries[i] = highScoreEntries[j];
+                    highScoreEntries[j] = temp;
+                }
+            }
+        }
     }
 
     void CreateHighScoreTableInPlayerPrefs()

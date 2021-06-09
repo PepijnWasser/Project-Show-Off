@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class TaskManager : MonoBehaviour
         }
         foreach(Task task in tasksToRemove)
         {
+            GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "Changing task";
             EndTask(task);
         }
     }
@@ -78,7 +80,6 @@ public class TaskManager : MonoBehaviour
         GeneratePositivePopulationTasks(newTasks);
         GenerateNegativeTasks(newTasks);
         currentTasks = newTasks;
-
         onCurrentTasksChanged?.Invoke();
     }
 
@@ -185,10 +186,14 @@ public class TaskManager : MonoBehaviour
                 break;
             }
         }
-
         if (needToStop)
         {
             GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
+            if(building.GetComponent<Building>() == null)
+            {
+                //GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "error found";
+            }
+
             building.GetComponent<Building>().active = false;
         }
     }
