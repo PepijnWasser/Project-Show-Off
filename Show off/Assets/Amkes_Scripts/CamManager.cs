@@ -30,7 +30,7 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == "Taskboard")
+                if (hit.transform.name == "TaakBord")
                 {
                     //Set Taskboard-cam active
                     ActivateCamera(TaskboardCam);
@@ -38,7 +38,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "Shop")
+                if (hit.transform.name == "Winkel")
                 {
                     //Set Taskboard-cam active
                     ActivateCamera(ShopCam);
@@ -54,7 +54,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "Harbor")
+                if (hit.transform.name == "Haven")
                 {
                     //Set Taskboard-cam active
                     ActivateCamera(HarborCam);
@@ -62,7 +62,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "CityHall")
+                if (hit.transform.name == "Stadhuis")
                 {
                     //Set Taskboard-cam active
                     ActivateCamera(CityHallCam);

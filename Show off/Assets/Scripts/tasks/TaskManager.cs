@@ -31,6 +31,8 @@ public class TaskManager : MonoBehaviour
     public Energy energyScript;
     public CoralHealth coralHealthScript;
     public PopulationCondition populationScoreScript;
+    public ParticleSystem PlusPopularity;
+    public ParticleSystem MinusPopularity;
 
     private void Awake()
     {
@@ -243,6 +245,8 @@ public class TaskManager : MonoBehaviour
         }
 
         populationScoreScript.populationScore += task.popularityOutcome;
+        PlusPopularity.Play();
+        MinusPopularity.Play();
         /*
         if (populationScoreScript.populationScore > 10)
         {
