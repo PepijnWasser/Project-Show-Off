@@ -125,7 +125,7 @@ public class Building : MonoBehaviour
             showMenu = false;
         }
     }
-    void ShowMenu()
+    public void ShowMenu()
     {
         if (popupCanvas != null)
         {
