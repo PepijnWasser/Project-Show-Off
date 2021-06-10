@@ -7,6 +7,8 @@ public class UpdatePopulation : MonoBehaviour
 {
     public Text populationText;
     float populationScore;
+    public ParticleSystem IncreasePopularity;
+    public ParticleSystem DecreasePopularity;
 
 
     private void Awake()
@@ -41,11 +43,11 @@ public class UpdatePopulation : MonoBehaviour
 
         if(task.popularityOutcome > 0)
         {
-
+            IncreasePopularity.Play();
         }
         if(task.popularityOutcome < 0)
         {
-
+            DecreasePopularity.Play();
         }
     }
 
