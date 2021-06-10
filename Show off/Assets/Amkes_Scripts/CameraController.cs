@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     //private KeyCode zoomInKey = KeyCode.Q;
     //private KeyCode zoomOutKey = KeyCode.E;
-    private KeyCode accesRotationKey = KeyCode.LeftShift;
+    //private KeyCode accesRotationKey = KeyCode.LeftShift;
 
     private void Start()
     {
@@ -74,39 +74,32 @@ public class CameraController : MonoBehaviour
 
     private void RotatingMouse()
     {
+        //Right-MB + Drag
         if (Input.GetMouseButton(1))
         {
-            float x = Input.GetAxis("Mouse X");
-            float y = Input.GetAxis("Mouse Y");
-
-            curXRot += -y * rotateSpeed;
-            curXRot = Mathf.Clamp(curXRot, minXRot, maxXrot);
-            transform.eulerAngles = new Vector3(curXRot, transform.eulerAngles.y + (x * rotateSpeed), 0.0f);
+            float x = Input.GetAxisRaw("Mouse X");
+            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (x * rotateSpeed), 0.0f);
         }
     }
 
     private void RotatingKeys()
     {
-        if (Input.GetKey(accesRotationKey))
+        //Q+E keys
+        if (Input.GetKey(KeyCode.Q))
         {
-            moveSpeedKeys = 0.0f;
-            moveSpeedMouse = 0.0f;
-            float x = Input.GetAxis("Horizontal");
-            float y = Input.GetAxis("Vertical");
-
-            curXRot += -y * rotateSpeed;
-            curXRot = Mathf.Clamp(curXRot, minXRot, maxXrot);
-            transform.eulerAngles = new Vector3(curXRot, transform.eulerAngles.y + (x * rotateSpeed), 0.0f);
+            //Left
+            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (-1 * rotateSpeed), 0.0f);
         }
-        else
+        if (Input.GetKey(KeyCode.E))
         {
-            moveSpeedKeys = 30.0f;
-            moveSpeedMouse = 50.0f;
+            //Right
+            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (1 * rotateSpeed), 0.0f);
         }
     }
 
     private void MovingMouse()
     {
+        //Left-MB + Drag
         if (Input.GetMouseButton(0))
         {
             Vector3 forward = cam.transform.forward;
@@ -127,6 +120,7 @@ public class CameraController : MonoBehaviour
 
     private void MovingKeys()
     {
+        //WASD- or Arrow-keys
         Vector3 forward = cam.transform.forward;
         forward.y = 0.0f;
         forward.Normalize();
