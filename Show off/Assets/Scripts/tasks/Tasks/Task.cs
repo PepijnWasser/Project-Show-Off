@@ -17,12 +17,12 @@ public abstract class Task : MonoBehaviour
 
     public enum Building
     {
-            Harbor,
-            CityHall,
+            Haven,
+            Stadhuis,
             Lab,
             Hotel,
-            QuestBoard,
-            Shop
+            TaakBord,
+            Winkel
     }
 
     public Building placeOfQuest;

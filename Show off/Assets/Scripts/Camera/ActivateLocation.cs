@@ -14,7 +14,7 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (this.name == "Shop")
+        if (this.name == "Winkel")
         {
             manager.ActivateCamera(manager.ShopCam);
             GameObject.FindGameObjectWithTag("Shop").GetComponent<Building>().showMenu = true;
@@ -24,17 +24,17 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
             manager.ActivateCamera(manager.HotelCam);
             GameObject.FindGameObjectWithTag("Hotel").GetComponent<Building>().showMenu = true;
         }
-        else if (this.name == "QuestBoard")
+        else if (this.name == "TaakBord")
         {
             manager.ActivateCamera(manager.TaskboardCam);
             GameObject.FindGameObjectWithTag("QuestBoard").GetComponent<Building>().showMenu = true;
         }
-        else if (this.name == "Harbor")
+        else if (this.name == "Haven")
         {
             manager.ActivateCamera(manager.HarborCam);
             GameObject.FindGameObjectWithTag("Harbor").GetComponent<Building>().showMenu = true;
         }
-        else if (this.name == "CityHall")
+        else if (this.name == "Stadhuis")
         {
             manager.ActivateCamera(manager.CityHallCam);
             GameObject.FindGameObjectWithTag("CityHall").GetComponent<Building>().showMenu = true;

@@ -8,14 +8,14 @@ TagManager:
   - Sand
   - Sea
   - Hotel
-  - Harbor
-  - CityHall
   - Lab
   - Interactable
   - Energy
   - DebugText
-  - QuestBoard
-  - Shop
+  - Stadhuis
+  - Haven
+  - Winkel
+  - TaakBord
   layers:
   - Default
   - TransparentFX

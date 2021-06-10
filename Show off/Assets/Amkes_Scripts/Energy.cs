@@ -12,6 +12,7 @@ public class Energy : MonoBehaviour
     public int energyAmount;
     public TimeScript timeScript;
     public TaskManager taskManagerScript;
+    public ParticleSystem MinusEnergy;
 
     private int maxEnergyAmount;
 
@@ -43,6 +44,7 @@ public class Energy : MonoBehaviour
     void RemoveEnergy(Task task)
     {
         energyAmount -= task.energyCost;
+        MinusEnergy.Play();
     }
 
     void UpdateHUD(Task task)
