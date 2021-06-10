@@ -16,7 +16,7 @@ public class UpdatePopulation : MonoBehaviour
 
     private void Start()
     {
-        populationScore = 4;
+        populationScore = 0;
         UpdatePopularityText();
     }
 

@@ -27,11 +27,6 @@ public class TaskManager : MonoBehaviour
     public delegate void TaskCompleted(Task task);
     public static event TaskCompleted onTaskCompleted;
 
-    //Amke's mess
-    public Energy energyScript;
-    public CoralHealth coralHealthScript;
-    public UpdatePopulation populationScoreScript;
-
     private void Awake()
     {
         Energy.onDayCompleted += GenerateNewDay;
@@ -234,13 +229,6 @@ public class TaskManager : MonoBehaviour
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
         onTaskCompleted?.Invoke(task);
-
-        //Amke's mess
-        coralHealthScript.healthScore += task.coralOutcome;
-        if (coralHealthScript.healthScore > 10)
-        {
-            coralHealthScript.healthScore = 10;
-        }
     }
 
     void SortTasks()
