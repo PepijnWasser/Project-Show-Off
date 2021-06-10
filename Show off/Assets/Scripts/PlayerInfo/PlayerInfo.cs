@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -42,10 +44,10 @@ public class PlayerInfo : MonoBehaviour
 
     void GetPlayerScore()
     {
-        PopulationCondition condition = GameObject.FindObjectOfType<PopulationCondition>();
-        if (condition != null)
+        string popularity = GameObject.Find("Popularity").gameObject.GetComponentInChildren<Text>().text;
+        if (popularity != null)
         {
-            score = (int)condition.displayScore;
+            score = Int32.Parse(popularity);
         }
 
     }

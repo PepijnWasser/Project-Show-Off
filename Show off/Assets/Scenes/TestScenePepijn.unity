@@ -8599,7 +8599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1030453166
 Transform:
   m_ObjectHideFlags: 0
@@ -24985,9 +24985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   populationText: {fileID: 6805157824049255784}
-  populationImage: {fileID: 6805157822785211796}
-  populationScore: 3
-  displayScore: 3
 --- !u!222 &6805157823130306873
 CanvasRenderer:
   m_ObjectHideFlags: 0
