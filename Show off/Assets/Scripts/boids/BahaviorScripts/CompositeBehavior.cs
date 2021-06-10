@@ -36,6 +36,8 @@ public class CompositeBehavior : FlockBehavior
             }
         }
 
+        move.Normalize();
+
         return move;
     }
 }

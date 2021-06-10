@@ -14,19 +14,15 @@ public class Flock : MonoBehaviour
 
     [Range(1f, 100f)]
     public float speedMultiplier = 10f;
-    [Range(1f, 100f)]
-    public float maxSpeed = 5f;
 
     [Range(1f, 100f)]
     public float neighbourRadius = 5f;
 
-    float squareMaxSpeed;
     float squareNeighbourRadius;
 
 
     void Start()
     {
-        squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighbourRadius * neighbourRadius;
 
         for(int i = 0; i < startingCount; i++)
@@ -34,7 +30,7 @@ public class Flock : MonoBehaviour
             Vector2 startPos = Random.insideUnitCircle * startingCount * agentDensity;
             FlockAgent newAgent = Instantiate(
                 agentPrefab, 
-                new Vector3(startPos.x, 3, startPos.y),
+                new Vector3(startPos.x + this.transform.position.x, this.transform.position.y, startPos.y + this.transform.position.z),
                 Quaternion.Euler(Vector3.up * Random.Range(0, 360)),
                 this.transform
                 );
@@ -56,11 +52,6 @@ public class Flock : MonoBehaviour
             if(move.magnitude != length)
             {
                 move = move.normalized * length;
-            }
-
-            if (move.sqrMagnitude > squareMaxSpeed)
-            {
-                move = move.normalized * maxSpeed;
             }
             agent.Move(move);
         }   
