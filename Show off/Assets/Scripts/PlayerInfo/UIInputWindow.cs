@@ -20,6 +20,8 @@ public class UIInputWindow : MonoBehaviour
 
     PlayerInfo playerInfo;
 
+    public CameraController camControlScript;
+
     private void Awake()
     {
         PlayerInfo _playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
@@ -31,6 +33,7 @@ public class UIInputWindow : MonoBehaviour
         {
             Debug.LogError("noPlayerInfoFound", this);
         }
+        camControlScript.enabled = false;
     }
 
     public void FinishCompletion()
@@ -44,6 +47,7 @@ public class UIInputWindow : MonoBehaviour
                 playerInfo.playerName = nameField.text;
                 playerInfo.age = Int32.Parse(ageField.text);
             }
+            camControlScript.enabled = true;
         }
         else
         {
