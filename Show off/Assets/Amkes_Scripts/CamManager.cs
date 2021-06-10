@@ -127,16 +127,16 @@ public class CamManager : MonoBehaviour
             }
         }
 
-        SetCamInactive(TaskboardCam);
-        SetCamInactive(ShopCam);
-        SetCamInactive(LabCam);
-        SetCamInactive(HarborCam);
-        SetCamInactive(CityHallCam);
-        SetCamInactive(HotelCam);
-        SetCamInactive(CowFarmCam);
-        SetCamInactive(BusStationCam);
-        SetCamInactive(CropFarmCam);
-        SetCamInactive(MerchFactoryCam);
+        CheckEscapePressed(TaskboardCam);
+        CheckEscapePressed(ShopCam);
+        CheckEscapePressed(LabCam);
+        CheckEscapePressed(HarborCam);
+        CheckEscapePressed(CityHallCam);
+        CheckEscapePressed(HotelCam);
+        CheckEscapePressed(CowFarmCam);
+        CheckEscapePressed(BusStationCam);
+        CheckEscapePressed(CropFarmCam);
+        CheckEscapePressed(MerchFactoryCam);
     }
 
 
@@ -166,13 +166,19 @@ public class CamManager : MonoBehaviour
         return false;
     }
 
-    void ActivateCamera(GameObject camera)
+    public void ActivateCamera(GameObject camera)
     {
         mainCam.SetActive(false);
         camera.SetActive(true);
     }
 
-    private void SetCamInactive(GameObject camera)
+    public void DeActivateCamera(GameObject camera)
+    {
+        mainCam.SetActive(true);
+        camera.SetActive(false);
+    }
+
+    private void CheckEscapePressed(GameObject camera)
     {
         if (camera.activeSelf == true)
         {

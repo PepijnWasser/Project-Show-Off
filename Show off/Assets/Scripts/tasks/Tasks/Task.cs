@@ -22,8 +22,7 @@ public abstract class Task : MonoBehaviour
             Lab,
             Hotel,
             QuestBoard,
-            TestSite1,
-            TestSite2
+            Shop
     }
 
     public Building placeOfQuest;
