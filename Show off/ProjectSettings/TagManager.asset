@@ -11,11 +11,11 @@ TagManager:
   - Harbor
   - CityHall
   - Lab
-  - TestSite1
-  - TestSite2
   - Interactable
   - Energy
   - DebugText
+  - QuestBoard
+  - Shop
   layers:
   - Default
   - TransparentFX

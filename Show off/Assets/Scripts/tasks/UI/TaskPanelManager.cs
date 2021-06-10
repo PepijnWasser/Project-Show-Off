@@ -38,6 +38,7 @@ public class TaskPanelManager : MonoBehaviour
         foreach(Task task in taskManager.GetComponent<TaskManager>().currentTasks)
         {
             GameObject tempObject = Instantiate(taskPanelPrefab, this.transform);
+            tempObject.name = task.placeOfQuest.ToString();
             tempObject.GetComponentInChildren<Text>().text = task.name + " in:\n " + task.placeOfQuest;
             placedPanels.Add(tempObject);
         }
