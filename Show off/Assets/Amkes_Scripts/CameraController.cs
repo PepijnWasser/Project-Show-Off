@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeedKeys;
+    public float moveSpeedMouse;
     public float minXRot;
     public float maxXrot;
     public float minZoom;
@@ -34,21 +35,20 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         //Zooming
-        ZoomingMouse();
+        ZoomingMouse();         //Scrollwheel
         //ZoomingKeys();
 
         //Rotating
-        RotatingMouse();
-        RotatingKeys();
+        RotatingMouse();        //Right-MB + Drag
+        RotatingKeys();         //Q+E keys
 
         //Moving
-        MovingMouse();
-        MovingKeys();
+        MovingMouse();          //Left-MB + Drag
+        MovingKeys();           //WASD- or Arrow-keys
     }
 
     private void ZoomingMouse()
     {
-        //Scrollwheel to zoom
         curZoom += Input.GetAxis("Mouse ScrollWheel") * -zoomSpeed;
         curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
         cam.transform.localPosition = Vector3.up * curZoom;
@@ -74,7 +74,6 @@ public class CameraController : MonoBehaviour
 
     private void RotatingMouse()
     {
-        //Right-MB + drag to rotate
         if (Input.GetMouseButton(1))
         {
             float x = Input.GetAxis("Mouse X");
@@ -88,10 +87,10 @@ public class CameraController : MonoBehaviour
 
     private void RotatingKeys()
     {
-        //Shift + WASD-keys/arrows to rotate
         if (Input.GetKey(accesRotationKey))
         {
-            moveSpeed = 0.0f;
+            moveSpeedKeys = 0.0f;
+            moveSpeedMouse = 0.0f;
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
@@ -101,13 +100,13 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            moveSpeed = 30.0f;
+            moveSpeedKeys = 30.0f;
+            moveSpeedMouse = 50.0f;
         }
     }
 
     private void MovingMouse()
     {
-        //Left-MB + drag to move
         if (Input.GetMouseButton(0))
         {
             Vector3 forward = cam.transform.forward;
@@ -120,14 +119,14 @@ public class CameraController : MonoBehaviour
 
             Vector3 dir = forward * moveZ + right * moveX;
             dir.Normalize();
-            dir *= moveSpeed * Time.deltaTime;
+            dir *= moveSpeedMouse * Time.deltaTime;
             transform.position -= dir;
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxZoom));
         }
     }
 
     private void MovingKeys()
     {
-        //WASD-keys/arrows to move
         Vector3 forward = cam.transform.forward;
         forward.y = 0.0f;
         forward.Normalize();
@@ -138,7 +137,7 @@ public class CameraController : MonoBehaviour
 
         Vector3 dir = forward * moveZ + right * moveX;
         dir.Normalize();
-        dir *= moveSpeed * Time.deltaTime;
+        dir *= moveSpeedKeys * Time.deltaTime;
         transform.position += dir;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxZoom));
     }
