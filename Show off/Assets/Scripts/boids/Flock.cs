@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
-    public FlockAgent agentPrefab;
+    public List<FlockAgent> agentPrefabs;
+
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
 
@@ -29,7 +30,7 @@ public class Flock : MonoBehaviour
         {
             Vector2 startPos = Random.insideUnitCircle * startingCount * agentDensity;
             FlockAgent newAgent = Instantiate(
-                agentPrefab, 
+                agentPrefabs[Random.Range(0, agentPrefabs.Count)], 
                 new Vector3(startPos.x + this.transform.position.x, this.transform.position.y, startPos.y + this.transform.position.z),
                 Quaternion.Euler(Vector3.up * Random.Range(0, 360)),
                 this.transform
