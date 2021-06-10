@@ -32,7 +32,6 @@ public class CamManager : MonoBehaviour
             {
                 if (hit.transform.name == "Taskboard")
                 {
-                    //Debug.Log("Clicked on Taskboard");
                     //Set Taskboard-cam active
                     ActivateCamera(TaskboardCam);
 
@@ -41,7 +40,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "Shop")
                 {
-                    //Debug.Log("Clicked on Shop");
                     //Set Taskboard-cam active
                     ActivateCamera(ShopCam);
 
@@ -50,7 +48,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "Lab")
                 {
-                    //Debug.Log("Clicked on Lab");
                     //Set Taskboard-cam active
                     ActivateCamera(LabCam);
 
@@ -59,7 +56,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "Harbor")
                 {
-                    //Debug.Log("Clicked on Harbor");
                     //Set Taskboard-cam active
                     ActivateCamera(HarborCam);
 
@@ -68,7 +64,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "CityHall")
                 {
-                    //Debug.Log("Clicked on City Hall");
                     //Set Taskboard-cam active
                     ActivateCamera(CityHallCam);
 
@@ -77,7 +72,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "Hotel")
                 {
-                    //Debug.Log("Clicked on Hotel");
                     //Set Taskboard-cam active
                     ActivateCamera(HotelCam);
 
@@ -86,7 +80,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "CowFarm")
                 {
-                    //Debug.Log("Clicked on Cow Farm");
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
                     CowFarmCam.SetActive(true);
@@ -96,7 +89,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "Busstation")
                 {
-                    //Debug.Log("Clicked on Bus Station");
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
                     BusStationCam.SetActive(true);
@@ -106,7 +98,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "CropFarm")
                 {
-                    //Debug.Log("Clicked on Crop Farm");
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
                     CropFarmCam.SetActive(true);
@@ -116,7 +107,6 @@ public class CamManager : MonoBehaviour
                 }
                 if (hit.transform.name == "MerchFactory")
                 {
-                    //Debug.Log("Clicked on Merch Factory");
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
                     MerchFactoryCam.SetActive(true);

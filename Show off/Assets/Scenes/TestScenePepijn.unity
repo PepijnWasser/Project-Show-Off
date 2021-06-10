@@ -8529,7 +8529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1030453166
 Transform:
   m_ObjectHideFlags: 0
@@ -27331,6 +27331,10 @@ MonoBehaviour:
   zoomSpeed: 10.95
   rotateSpeed: 2
   camObject: {fileID: 8557608754263875641}
+  minXBound: -100
+  maxXBound: 100
+  minZBound: -100
+  maxZBound: 100
 --- !u!4 &8557608754263875646
 Transform:
   m_ObjectHideFlags: 0

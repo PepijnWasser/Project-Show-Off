@@ -12,12 +12,16 @@ public class CameraController : MonoBehaviour
     public float zoomSpeed;
     public float rotateSpeed;
     public GameObject camObject;
+    public float minXBound;
+    public float maxXBound;
+    public float minZBound;
+    public float maxZBound;
 
     private float curXRot;
     private float curZoom;
     private Camera cam;
-    private KeyCode zoomInKey = KeyCode.Q;
-    private KeyCode zoomOutKey = KeyCode.E;
+    //private KeyCode zoomInKey = KeyCode.Q;
+    //private KeyCode zoomOutKey = KeyCode.E;
     private KeyCode accesRotationKey = KeyCode.LeftShift;
 
     private void Start()
@@ -31,7 +35,7 @@ public class CameraController : MonoBehaviour
     {
         //Zooming
         ZoomingMouse();
-        ZoomingKeys();
+        //ZoomingKeys();
 
         //Rotating
         RotatingMouse();
@@ -50,6 +54,7 @@ public class CameraController : MonoBehaviour
         cam.transform.localPosition = Vector3.up * curZoom;
     }
 
+    /*
     private void ZoomingKeys()
     {
         //Q -> zoom in, E -> zoom out
@@ -65,6 +70,7 @@ public class CameraController : MonoBehaviour
         curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
         cam.transform.localPosition = Vector3.up * curZoom;
     }
+    */
 
     private void RotatingMouse()
     {
@@ -134,5 +140,6 @@ public class CameraController : MonoBehaviour
         dir.Normalize();
         dir *= moveSpeed * Time.deltaTime;
         transform.position += dir;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxZoom));
     }
 }
