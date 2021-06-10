@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Linde\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -7,11 +7,18 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Amkes_Scripts" t="Include">
-          <e p="ClickManager.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="CameraFollow.cs" t="Include" />
+          <e p="CamManager.cs" t="Include" />
           <e p="CoralHealth.cs" t="Include" />
           <e p="Energy.cs" t="Include" />
+          <e p="HeightGenerator.cs" t="Include" />
+          <e p="LevelGeneration.cs" t="Include" />
+          <e p="MoveAroundIsland.cs" t="Include" />
+          <e p="NoiseMapGeneration.cs" t="Include" />
           <e p="PopulationCondition.cs" t="Include" />
           <e p="RotateAroundIsland.cs" t="Include" />
+          <e p="TileGeneration.cs" t="Include" />
           <e p="TimeScript.cs" t="Include" />
           <e p="ZoomOnIsland.cs" t="Include" />
         </e>
@@ -19,19 +26,64 @@
           <e p="RestartGame.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="boids" t="Include">
+            <e p="BahaviorScripts" t="Include">
+              <e p="AllignmentBehavior.cs" t="Include" />
+              <e p="AvoidanceBehavior.cs" t="Include" />
+              <e p="CohesionBehavior.cs" t="Include" />
+              <e p="CompositeBehavior.cs" t="Include" />
+              <e p="ForwardBehavior.cs" t="Include" />
+              <e p="MoveBetweenPoints.cs" t="Include" />
+              <e p="MoveBetweenPointsBehavior.cs" t="Include" />
+              <e p="StayInRadius.cs" t="Include" />
+              <e p="SteeredAvoidanceBehavior.cs" t="Include" />
+              <e p="SteeredCohesionBehavior.cs" t="Include" />
+            </e>
+            <e p="ContextFilter.cs" t="Include" />
+            <e p="FilteredFlockBehavior.cs" t="Include" />
+            <e p="FilterScripts" t="Include">
+              <e p="PhysicsLayerFilter.cs" t="Include" />
+              <e p="SameFlockFilter.cs" t="Include" />
+            </e>
+            <e p="Flock.cs" t="Include" />
+            <e p="FlockAgent.cs" t="Include" />
+            <e p="FlockBehavior.cs" t="Include" />
+            <e p="moveBetweenPointsSupport.cs" t="Include" />
+          </e>
+          <e p="Camera" t="Include">
+            <e p="ActivateLocation.cs" t="Include" />
+          </e>
           <e p="Cinematic" t="Include">
             <e p="ActivateOnCinematicFinish.cs" t="Include" />
             <e p="CinematicManager.cs" t="Include" />
           </e>
+          <e p="DayTransition" t="Include">
+            <e p="ClockUI.cs" t="Include" />
+            <e p="DayTransitionManager.cs" t="Include" />
+          </e>
           <e p="dialogue" t="Include">
             <e p="DialogueManager.cs" t="Include" />
+          </e>
+          <e p="Highscore" t="Include">
+            <e p="AddLatestScore.cs" t="Include" />
+            <e p="HighScoreTable.cs" t="Include" />
           </e>
           <e p="map generation" t="Include">
             <e p="HexMapGenerator.cs" t="Include" />
             <e p="Tile.cs" t="Include" />
           </e>
+          <e p="PlayerInfo" t="Include">
+            <e p="PlayerInfo.cs" t="Include" />
+            <e p="ResetPlayerInfo.cs" t="Include" />
+            <e p="UIInputWindow.cs" t="Include" />
+          </e>
           <e p="scenes" t="Include">
+            <e p="ScenemanagerGameScene.cs" t="Include" />
+            <e p="SceneManagerResolutionScreen.cs" t="Include" />
             <e p="SwitchSceneOnClick.cs" t="Include" />
+          </e>
+          <e p="Scoring" t="Include">
+            <e p="DisplayCorrectScore.cs" t="Include" />
           </e>
           <e p="Settings" t="Include">
             <e p="SettingsMenu.cs" t="Include" />

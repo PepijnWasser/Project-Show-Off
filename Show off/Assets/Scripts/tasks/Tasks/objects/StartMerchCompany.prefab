@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 1
+  description: Door souvenirs te verkopen zullen de toeristen altijd een aandenken
+    hebben aan hun reis naar Cora Cora.
   coralOutcome: -1
   popularityOutcome: 1
-  energyCost: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 1

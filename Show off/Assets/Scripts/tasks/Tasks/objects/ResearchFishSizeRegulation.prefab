@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 1
+  description: Kleine vissen zullen worden teruggegooid in de zee om groter te worden
+    en zich te voortplanten, hierdoor sterven de vissen niet uit.
   coralOutcome: 1
   popularityOutcome: 0
-  energyCost: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 2

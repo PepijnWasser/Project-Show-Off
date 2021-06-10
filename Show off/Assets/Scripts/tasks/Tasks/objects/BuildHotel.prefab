@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 1
+  description: Bouw een extra resort om nog meer toeristen te kunnen verwelkomen.
   coralOutcome: -1
   popularityOutcome: 1
-  energyCost: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 1

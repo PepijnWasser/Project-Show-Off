@@ -45,8 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completed: 0
   energyCost: 2
-  description: 
+  description: "Openbaar vervoer geheel gratis voor een korte periode, iedereen zal
+    er gebruik van willen maken en hun auto\u2019s laten staan."
   coralOutcome: 1
   popularityOutcome: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 4

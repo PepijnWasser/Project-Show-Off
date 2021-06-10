@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completed: 0
   energyCost: 1
-  description: 
+  description: Plastic en vervuiling in de zee is schadelijk voor het koraalrif en
+    de vissen die daar leven, motiveer toeristen om vuilnis op te ruimen.
   coralOutcome: 1
   popularityOutcome: -1
   outcomeMessage: dit is een outcome

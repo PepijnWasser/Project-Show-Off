@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 2
+  description: Een groot feest is net wat we nodig hebben voor wat leven in de brauwerij,
+    bloemen fakkels, dansen, dit zullen de toeristen niet snel vergeten.
   coralOutcome: -2
   popularityOutcome: 2
-  energyCost: 2
   outcomeMessage: dit is een outcome
   placeOfQuest: 5

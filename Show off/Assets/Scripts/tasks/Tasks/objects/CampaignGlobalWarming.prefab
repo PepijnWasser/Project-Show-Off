@@ -45,8 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completed: 0
   energyCost: 2
-  description: 
+  description: De opwarming van de aarde verhoogt de watertemperatuur naar gevaarlijke
+    getallen. Motiveer mensen om minder vlees en vis te eten, en zuinig om te gaan
+    met stroom.
   coralOutcome: 2
   popularityOutcome: -1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 4
