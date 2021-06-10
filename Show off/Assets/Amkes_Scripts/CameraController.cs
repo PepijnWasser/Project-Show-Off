@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
@@ -8,8 +9,8 @@ public class CameraController : MonoBehaviour
     public float moveSpeedMouse;
     public float minXRot;
     public float maxXrot;
-    public float minZoom;
-    public float maxZoom;
+    public float minFOV;
+    public float maxFOV;
     public float zoomSpeed;
     public float rotateSpeed;
     public GameObject camObject;
@@ -17,26 +18,12 @@ public class CameraController : MonoBehaviour
     public float maxXBound;
     public float minZBound;
     public float maxZBound;
-
-    private float curXRot;
-    private float curZoom;
-    private Camera cam;
-    //private KeyCode zoomInKey = KeyCode.Q;
-    //private KeyCode zoomOutKey = KeyCode.E;
-    //private KeyCode accesRotationKey = KeyCode.LeftShift;
-
-    private void Start()
-    {
-        cam = Camera.main;
-        curZoom = cam.transform.localPosition.y;
-        curXRot = camObject.transform.rotation.x;
-    }
+    public CinemachineVirtualCamera mainCam;
 
     private void Update()
     {
         //Zooming
         ZoomingMouse();         //Scrollwheel
-        //ZoomingKeys();
 
         //Rotating
         RotatingMouse();        //Right-MB + Drag
@@ -49,28 +36,9 @@ public class CameraController : MonoBehaviour
 
     private void ZoomingMouse()
     {
-        curZoom += Input.GetAxis("Mouse ScrollWheel") * -zoomSpeed;
-        curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
-        cam.transform.localPosition = Vector3.up * curZoom;
+        mainCam.m_Lens.FieldOfView += Input.GetAxis("Mouse ScrollWheel") * -zoomSpeed;
+        mainCam.m_Lens.FieldOfView = Mathf.Clamp(mainCam.m_Lens.FieldOfView, minFOV, maxFOV);
     }
-
-    /*
-    private void ZoomingKeys()
-    {
-        //Q -> zoom in, E -> zoom out
-        if (Input.GetKey(zoomInKey))
-        {
-            curZoom += 0.01f * -zoomSpeed;
-        }
-        if (Input.GetKey(zoomOutKey))
-        {
-            curZoom += -0.01f * -zoomSpeed;
-        }
-        
-        curZoom = Mathf.Clamp(curZoom, minZoom, maxZoom);
-        cam.transform.localPosition = Vector3.up * curZoom;
-    }
-    */
 
     private void RotatingMouse()
     {
@@ -102,10 +70,10 @@ public class CameraController : MonoBehaviour
         //Left-MB + Drag
         if (Input.GetMouseButton(0))
         {
-            Vector3 forward = cam.transform.forward;
+            Vector3 forward = mainCam.transform.forward;
             forward.y = 0.0f;
             forward.Normalize();
-            Vector3 right = cam.transform.right.normalized;
+            Vector3 right = mainCam.transform.right.normalized;
 
             float moveX = Input.GetAxisRaw("Mouse X");
             float moveZ = Input.GetAxisRaw("Mouse Y");
@@ -114,17 +82,17 @@ public class CameraController : MonoBehaviour
             dir.Normalize();
             dir *= moveSpeedMouse * Time.deltaTime;
             transform.position -= dir;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxZoom));
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
         }
     }
 
     private void MovingKeys()
     {
         //WASD- or Arrow-keys
-        Vector3 forward = cam.transform.forward;
+        Vector3 forward = mainCam.transform.forward;
         forward.y = 0.0f;
         forward.Normalize();
-        Vector3 right = cam.transform.right.normalized;
+        Vector3 right = mainCam.transform.right.normalized;
 
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
@@ -133,6 +101,6 @@ public class CameraController : MonoBehaviour
         dir.Normalize();
         dir *= moveSpeedKeys * Time.deltaTime;
         transform.position += dir;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxZoom));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
     }
 }
