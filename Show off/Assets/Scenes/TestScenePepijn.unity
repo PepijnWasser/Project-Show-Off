@@ -6529,7 +6529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663692444
 Transform:
   m_ObjectHideFlags: 0
@@ -16430,7 +16430,7 @@ Transform:
   m_GameObject: {fileID: 1639266260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17.88021, y: -7.5903606, z: -9.980929}
-  m_LocalScale: {x: 20, y: 1.609, z: 20}
+  m_LocalScale: {x: 40, y: 1.609, z: 40}
   m_Children: []
   m_Father: {fileID: 652650877}
   m_RootOrder: 5
@@ -17180,6 +17180,14 @@ MonoBehaviour:
   grassTile: {fileID: 4493272060268440107, guid: 3a090e4e0540d594690cb7162924eb0d, type: 3}
   sandTile: {fileID: 2616160821290808591, guid: 49224334c2aeb4b4a8a9d538b934f4a1, type: 3}
   seaTile: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+  specialGrassTiles:
+  - {fileID: 919132149155446097, guid: d009a345a8164664f8f849c7152104ee, type: 3}
+  - {fileID: 919132149155446097, guid: 73f0d086a2d17194e97b02fc549b1e09, type: 3}
+  specialSandTiles:
+  - {fileID: 919132149155446097, guid: f0d3949f0d86fb748ad03a58a17441ff, type: 3}
+  - {fileID: 919132149155446097, guid: b485a057a9d33884caeb07d228706d50, type: 3}
+  - {fileID: 919132149155446097, guid: 65bf1873c2905b04da05789aa3d22223, type: 3}
+  specialSeaTiles: []
   grassRange:
   - 0
   - 0.35
