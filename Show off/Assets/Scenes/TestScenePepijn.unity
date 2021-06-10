@@ -5133,6 +5133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107767249}
   - component: {fileID: 107767250}
+  - component: {fileID: 107767251}
   m_Layer: 0
   m_Name: CamManager
   m_TagString: Untagged
@@ -5178,6 +5179,18 @@ MonoBehaviour:
   BusStationCam: {fileID: 1360438632}
   CropFarmCam: {fileID: 1360438631}
   MerchFactoryCam: {fileID: 1360438630}
+--- !u!114 &107767251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107767248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2252ac8710f8f4b987f37f21529f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &135746211
 GameObject:
   m_ObjectHideFlags: 0
@@ -19142,7 +19155,7 @@ GameObject:
   - component: {fileID: 1030948237586618474}
   m_Layer: 0
   m_Name: Taskboard
-  m_TagString: TestSite2
+  m_TagString: QuestBoard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26422,7 +26435,7 @@ GameObject:
   - component: {fileID: 5731751435925490617}
   m_Layer: 0
   m_Name: pCone13
-  m_TagString: TestSite2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26797,7 +26810,7 @@ GameObject:
   - component: {fileID: 8285016480117823451}
   m_Layer: 0
   m_Name: Shop
-  m_TagString: TestSite1
+  m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
