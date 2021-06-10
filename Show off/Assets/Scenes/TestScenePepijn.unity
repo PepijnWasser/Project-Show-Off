@@ -24096,8 +24096,8 @@ GameObject:
   - component: {fileID: 1030948237586618475}
   - component: {fileID: 1030948237586618474}
   m_Layer: 0
-  m_Name: Taskboard
-  m_TagString: QuestBoard
+  m_Name: TaakBord
+  m_TagString: TaakBord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27248,8 +27248,8 @@ GameObject:
   - component: {fileID: 3875181409106675409}
   - component: {fileID: 3875181409106675414}
   m_Layer: 0
-  m_Name: Harbor
-  m_TagString: Harbor
+  m_Name: Haven
+  m_TagString: Haven
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29173,7 +29173,7 @@ GameObject:
   - component: {fileID: 1939362326}
   m_Layer: 0
   m_Name: pCube7
-  m_TagString: Harbor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31083,8 +31083,8 @@ GameObject:
   - component: {fileID: 7498139500376326673}
   - component: {fileID: 7498139500376326678}
   m_Layer: 0
-  m_Name: CityHall
-  m_TagString: CityHall
+  m_Name: Stadhuis
+  m_TagString: Stadhuis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31695,8 +31695,8 @@ GameObject:
   - component: {fileID: 8285016480117823452}
   - component: {fileID: 8285016480117823451}
   m_Layer: 0
-  m_Name: Shop
-  m_TagString: Shop
+  m_Name: Winkel
+  m_TagString: Winkel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

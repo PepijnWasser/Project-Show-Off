@@ -14,7 +14,7 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (this.name == "Shop")
+        if (this.name == "Winkel")
         {
             manager.ActivateCamera(manager.ShopCam);
         }
@@ -22,15 +22,15 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
         {
             manager.ActivateCamera(manager.HotelCam);
         }
-        else if (this.name == "QuestBoard")
+        else if (this.name == "TaakBord")
         {
             manager.ActivateCamera(manager.TaskboardCam);
         }
-        else if (this.name == "Harbor")
+        else if (this.name == "Haven")
         {
             manager.ActivateCamera(manager.HarborCam);
         }
-        else if (this.name == "CityHall")
+        else if (this.name == "Stadhuis")
         {
             manager.ActivateCamera(manager.CityHallCam);
         }

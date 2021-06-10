@@ -30,7 +30,7 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == "Taskboard")
+                if (hit.transform.name == "TaakBord")
                 {
                     //Debug.Log("Clicked on Taskboard");
                     //Set Taskboard-cam active
@@ -39,7 +39,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "Shop")
+                if (hit.transform.name == "Winkel")
                 {
                     //Debug.Log("Clicked on Shop");
                     //Set Taskboard-cam active
@@ -57,7 +57,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "Harbor")
+                if (hit.transform.name == "Haven")
                 {
                     //Debug.Log("Clicked on Harbor");
                     //Set Taskboard-cam active
@@ -66,7 +66,7 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "CityHall")
+                if (hit.transform.name == "Stadhuis")
                 {
                     //Debug.Log("Clicked on City Hall");
                     //Set Taskboard-cam active
