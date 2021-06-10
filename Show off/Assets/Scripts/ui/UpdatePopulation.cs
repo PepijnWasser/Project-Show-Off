@@ -37,8 +37,16 @@ public class UpdatePopulation : MonoBehaviour
         populationScore += task.popularityOutcome;
 
         float displayScore = populationScore * 10;
-
         populationText.text = displayScore.ToString();
+
+        if(task.popularityOutcome > 0)
+        {
+
+        }
+        if(task.popularityOutcome < 0)
+        {
+
+        }
     }
 
 }

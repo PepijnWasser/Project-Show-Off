@@ -8,6 +8,7 @@ public class UpdateCoralHealth : MonoBehaviour
     float health;
     Text healthText;
 
+
     private void Awake()
     {
         TaskManager.onTaskCompleted += UpdateCoralHealthStat;
@@ -34,5 +35,14 @@ public class UpdateCoralHealth : MonoBehaviour
     {
         health += task.coralOutcome;
         healthText.text = health.ToString();
+
+        if(task.coralOutcome > 0)
+        {
+
+        }
+        if(task.coralOutcome < 0)
+        {
+
+        }
     }
 }
