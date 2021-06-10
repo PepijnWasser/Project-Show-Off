@@ -17,7 +17,7 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
         if (this.name == "Winkel")
         {
             manager.ActivateCamera(manager.ShopCam);
-            GameObject.FindGameObjectWithTag("Shop").GetComponent<Building>().showMenu = true;
+            GameObject.FindGameObjectWithTag("Winkel").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Hotel")
         {
@@ -27,17 +27,17 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
         else if (this.name == "TaakBord")
         {
             manager.ActivateCamera(manager.TaskboardCam);
-            GameObject.FindGameObjectWithTag("QuestBoard").GetComponent<Building>().showMenu = true;
+            GameObject.FindGameObjectWithTag("TaakBord").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Haven")
         {
             manager.ActivateCamera(manager.HarborCam);
-            GameObject.FindGameObjectWithTag("Harbor").GetComponent<Building>().showMenu = true;
+            GameObject.FindGameObjectWithTag("Haven").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Stadhuis")
         {
             manager.ActivateCamera(manager.CityHallCam);
-            GameObject.FindGameObjectWithTag("CityHall").GetComponent<Building>().showMenu = true;
+            GameObject.FindGameObjectWithTag("Stadhuis").GetComponent<Building>().showMenu = true;
         }
         else if(this.name == "Lab")
         {
