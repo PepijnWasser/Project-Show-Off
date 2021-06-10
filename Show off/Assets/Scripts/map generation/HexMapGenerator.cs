@@ -280,8 +280,10 @@ public class HexMapGenerator : MonoBehaviour
         for(int i = 0; i < specialGrassTiles.Count; i++)
         {
             bool tilePlaced = false;
-            while(tilePlaced == false)
+            int j = 0;
+            while(tilePlaced == false && j < 100)
             {
+                j += 1;
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
                 if(tile.tilePrefab.tag == "Grass")
                 {
@@ -309,8 +311,10 @@ public class HexMapGenerator : MonoBehaviour
         for (int i = 0; i < specialSandTiles.Count; i++)
         {
             bool tilePlaced = false;
-            while (tilePlaced == false)
+            int j = 0;
+            while (tilePlaced == false && j < 100)
             {
+                j += 1;
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
                 if (tile.tilePrefab.tag == "Sand")
                 {
@@ -338,8 +342,10 @@ public class HexMapGenerator : MonoBehaviour
         for (int i = 0; i < specialSeaTiles.Count; i++)
         {
             bool tilePlaced = false;
-            while (tilePlaced == false)
+            int j = 0;
+            while (tilePlaced == false && j < 100)
             {
+                j += 1;
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
                 if (tile.tilePrefab.tag == "Sea")
                 {
