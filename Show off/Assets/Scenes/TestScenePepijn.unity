@@ -6280,17 +6280,6 @@ Transform:
   m_Father: {fileID: 652650877}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &581534801 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
-  m_PrefabInstance: {fileID: 2116992710}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20114b032830eec429e5138e91a69046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &606101859
 GameObject:
   m_ObjectHideFlags: 0
@@ -8676,7 +8665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1030453166
 Transform:
   m_ObjectHideFlags: 0
@@ -16946,6 +16935,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765081730}
   m_CullTransparentMesh: 1
+
+--- !u!1 &1777541649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 868176281168993714, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+  m_PrefabInstance: {fileID: 2116992710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1777541653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777541649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b473c7b8838c8b94899afe816bc01526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+
 --- !u!1 &1808490657
 GameObject:
   m_ObjectHideFlags: 0
@@ -17007,11 +17015,13 @@ MonoBehaviour:
   minMaxPositiveCoralTask: {x: 1, y: 2}
   minMaxPositivePopularityTask: {x: 1, y: 2}
   buildingsToHighLight: []
+
   energyScript: {fileID: 6805157823847363201}
   coralHealthScript: {fileID: 581534801}
   populationScoreScript: {fileID: 6805157823130306823}
   PlusPopularity: {fileID: 1568223957}
   MinusPopularity: {fileID: 38890812}
+
 --- !u!4 &1808490659
 Transform:
   m_ObjectHideFlags: 0
@@ -29916,9 +29926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   populationText: {fileID: 6805157824049255784}
-  populationImage: {fileID: 6805157822785211796}
-  populationScore: 3
-  displayScore: 3
 --- !u!222 &6805157823130306873
 CanvasRenderer:
   m_ObjectHideFlags: 0

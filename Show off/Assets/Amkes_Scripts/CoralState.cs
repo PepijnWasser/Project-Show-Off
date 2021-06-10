@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
-public class CoralHealth : MonoBehaviour
+public class CoralState : MonoBehaviour
 {
     public Text healthText;
     public Image healthImage;
-    public float healthScore;
 
     public enum CoralStates
     {
@@ -35,8 +35,6 @@ public class CoralHealth : MonoBehaviour
 
     private void Start()
     {
-        healthScore = 10;
-        healthText.text = healthScore.ToString();
         healthImage.color = Color.green;
 
         coralHealthLevels.Add(0, coral0);
@@ -54,11 +52,11 @@ public class CoralHealth : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = healthScore.ToString();
-        UpdateColor();
+        float healthScore = Int32.Parse(healthText.text);
+        UpdateColor(healthScore);
     }
 
-    private void UpdateColor()
+    private void UpdateColor(float healthScore)
     {
         foreach (var healthLevel in coralHealthLevels)
         {
