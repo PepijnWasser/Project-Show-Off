@@ -22904,6 +22904,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3073572685093113451}
     m_Modifications:
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coral1Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 20b30052601b6d94ca58ead9a40157d8, type: 2}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coral2Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c017b63112113e49a9829e16ee31333, type: 2}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coral3Material
+      value: 
+      objectReference: {fileID: 2100000, guid: d138cd0a721c09c42b15ab8644aac5e3, type: 2}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coral4Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d1580ceb05490947a9154a641d891f7, type: 2}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: numberThriving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: numberOnTheBrink
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: numberFairlyDamaged
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: numberFairlyHealthy
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3801088725428654835, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: m_Pivot.x
       value: 1
