@@ -204,8 +204,15 @@ public class TaskManager : MonoBehaviour
 
     void HighLightbuildingOfTask(Task task)
     {
-        GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
-        building.GetComponent<Building>().active = true;
+        try
+        {
+            GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
+            building.GetComponent<Building>().active = true;
+        }
+        catch
+        {
+            Debug.LogError(task.placeOfQuest);
+        }
     }
 
     void StartTasks(List<Task> tasks)
