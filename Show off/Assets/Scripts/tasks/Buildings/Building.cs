@@ -7,20 +7,27 @@ using System;
 
 public class Building : MonoBehaviour
 {
+    [HideInInspector]
     public bool showMenu;
+
+    [HideInInspector]
     public bool active;
+    
     public GameObject popupCanvas;
-    public GameObject taskManager;
-    public GameObject popupPrefab;
     public GameObject contentPanel;
+
+    public GameObject popupPrefab;
+
+    TaskManager taskManager;
+
 
     public List<Renderer> objectsToHighlight;
 
     [HideInInspector]
     public List<Task> taskAtThisLocation = new List<Task>();
     List<GameObject> placedListObjects = new List<GameObject>();
-
-    public EventSystem m_EventSystem;
+    
+    EventSystem m_EventSystem;
 
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
@@ -35,6 +42,8 @@ public class Building : MonoBehaviour
     private void Start()
     {
         m_Raycaster = GetComponentInChildren<GraphicRaycaster>();
+        taskManager = GameObject.FindObjectOfType<TaskManager>();
+        m_EventSystem = GameObject.FindObjectOfType<EventSystem>();
        
     }
 
@@ -51,6 +60,10 @@ public class Building : MonoBehaviour
 
     void UpdatePanels()
     {
+        if(taskManager == null)
+        {
+            taskManager = GameObject.FindObjectOfType<TaskManager>();
+        }
         UpdateTaskList();
         CheckIfActive();
         UpdateColor();

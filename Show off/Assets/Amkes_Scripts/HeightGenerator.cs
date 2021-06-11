@@ -10,6 +10,10 @@ public class HeightGenerator : MonoBehaviour
     private bool createdMap;
     private Vector3 centerPos = new Vector3(0, 0, 0);
 
+    public List<string> grassTags;
+    public List<string> sandTags;
+    public List<string> seaTags;
+
     private void Start()
     {
         createdMap = false;
@@ -43,7 +47,7 @@ public class HeightGenerator : MonoBehaviour
         //Set standard sea-height
         for (int i = 0; i < children.Count; i++)
         {
-            if (children[i].tag == "Sea")
+            if(seaTags.Contains(children[i].tag))
             {
                 children[i].transform.Translate(0, -2, 0);
             }
@@ -55,7 +59,7 @@ public class HeightGenerator : MonoBehaviour
         //Set standard sand-height
         for (int i = 0; i < children.Count; i++)
         {
-            if (children[i].tag == "Sand")
+            if (sandTags.Contains(children[i].tag))
             {
                 children[i].transform.Translate(0, 0, 0);
             }
@@ -67,7 +71,7 @@ public class HeightGenerator : MonoBehaviour
         //Procedurally generate different grass-heights
         for (int i = 0; i < children.Count; i++)
         {
-            if (children[i].tag == "Grass")
+            if (grassTags.Contains(children[i].tag))
             {
                 Vector3 childPos = new Vector3(children[i].position.x, children[i].position.y, children[i].position.z);
                 Vector3 dVec = childPos - centerPos;

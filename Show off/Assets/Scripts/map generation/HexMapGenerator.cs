@@ -6,12 +6,12 @@ using System;
 public class HexMapGenerator : MonoBehaviour
 {
     public int mapWidth;
-
     public int mapHeight;
 
     public GameObject grassTile;
     public GameObject sandTile;
     public GameObject seaTile;
+    public GameObject coralTile;
 
     public List<GameObject> specialGrassTiles;
     public List<GameObject> specialSandTiles;
@@ -28,6 +28,7 @@ public class HexMapGenerator : MonoBehaviour
     public float tileZOffset;
 
     public float tileVariation;
+    public int coralBlobCount;
 
     int randX;
     int randY;
@@ -49,14 +50,27 @@ public class HexMapGenerator : MonoBehaviour
 
     void CreateTileMap()
     {
+        CreateInitialTileMap();
+
+        ConnectTiles();
+        CreateSandAtBorder();
+
+        PlaceSpecialGrassTiles();
+        PlaceSpecialSandTiles();
+        PlaceSpecialSeaTiles();
+        PlaceCoralTiles();
+    }
+
+    void CreateInitialTileMap()
+    {
         //create array
         placedTiles = new Tile[mapWidth + 2 * borderSize, mapHeight + 2 * borderSize];
         placedObjects = new GameObject[mapWidth + 2 * borderSize, mapHeight + 2 * borderSize];
         float[] centerMapOffset = { mapWidth / 2 * tileXOffset, mapHeight / 2 * tileZOffset };
 
-        for(int x = 0 - borderSize; x < mapWidth + borderSize; x++)
+        for (int x = 0 - borderSize; x < mapWidth + borderSize; x++)
         {
-            for(int z = 0 - borderSize; z < mapHeight + borderSize; z++)
+            for (int z = 0 - borderSize; z < mapHeight + borderSize; z++)
             {
                 //check if within map
                 GameObject tempObject;
@@ -87,11 +101,6 @@ public class HexMapGenerator : MonoBehaviour
                 SetTileInfo(tempObject, x, z);
             }
         }
-        ConnectTiles();
-        UpdateTile();
-        PlaceSpecialGrassTiles();
-        PlaceSpecialSandTiles();
-        PlaceSpecialSeaTiles();
     }
 
     void SetTileInfo(GameObject _gameObject, int _x, int _z)
@@ -123,9 +132,127 @@ public class HexMapGenerator : MonoBehaviour
         }
     }
 
+    void CreateSandAtBorder()
+    {
+        foreach(Tile tile in placedTiles)
+        {
+            if (tile.tilePrefab.tag == "Grass")
+            {
+                foreach(GameObject connectedTile in tile.connectedTiles)
+                {
+                    if(connectedTile.tag == "Sea")
+                    {
+                        ReplaceTileWithPrefab(tile, sandTile);          
+                    }
+                }
+            }
+        }
+    }
+
+    void PlaceSpecialGrassTiles()
+    {
+        for(int i = 0; i < specialGrassTiles.Count; i++)
+        {
+            bool tilePlaced = false;
+            int j = 0;
+            while(tilePlaced == false && j < 100)
+            {
+                j += 1;
+                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
+                if(tile.tilePrefab.tag == "Grass")
+                {
+                    ReplaceTileWithPrefab(tile, specialGrassTiles[i]);
+
+                    tilePlaced = true;
+                }
+            }
+        }
+    }
+
+    void PlaceSpecialSandTiles()
+    {
+        for (int i = 0; i < specialSandTiles.Count; i++)
+        {
+            bool tilePlaced = false;
+            int j = 0;
+            while (tilePlaced == false && j < 100)
+            {
+                j += 1;
+                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
+                if (tile.tilePrefab.tag == "Sand")
+                {
+                    ReplaceTileWithPrefab(tile, specialSandTiles[i]);
+
+                    tilePlaced = true;
+                }
+            }
+        }
+    }
+
+    void PlaceSpecialSeaTiles()
+    {
+        for (int i = 0; i < specialSeaTiles.Count; i++)
+        {
+            bool tilePlaced = false;
+            int j = 0;
+            while (tilePlaced == false && j < 100)
+            {
+                j += 1;
+                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
+                if (tile.tilePrefab.tag == "Sea")
+                {
+                    ReplaceTileWithPrefab(tile, specialSeaTiles[i]);
+
+                    tilePlaced = true;
+                }
+            }
+        }
+    }
+
+    void PlaceCoralTiles()
+    {
+        int patchesPlaced = 0;
+        int j = 0;
+
+        while (patchesPlaced < coralBlobCount && j < 100)
+        {
+            j++;
+            Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
+            if (tile.tilePrefab.tag == "Sea")
+            {
+                ReplaceTileWithPrefab(tile, coralTile);
+
+                patchesPlaced++;
+
+                foreach (GameObject connectedTile in tile.connectedTiles)
+                {
+                    if (connectedTile.tag == "Sea")
+                    {
+                        ReplaceTileWithPrefab(connectedTile.GetComponent<Tile>(), coralTile);
+                    }
+                }
+            }
+        }
+    }
+
+    void ReplaceTileWithPrefab(Tile original, GameObject replacement)
+    {
+        GameObject oldTile = original.tilePrefab;
+        GameObject tempObject = Instantiate(replacement);
+
+        tempObject.transform.position = oldTile.transform.position;
+
+        tempObject.AddComponent<Tile>();
+        tempObject.GetComponent<Tile>().UpdateData(original);
+        SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
+
+        original.tilePrefab = tempObject;
+
+        Destroy(oldTile);
+    }
+
     void ConnectTiles()
     {
-        
         foreach (Tile tile in placedTiles)
         {
             int tileX = tile.localX + borderSize;
@@ -135,9 +262,9 @@ public class HexMapGenerator : MonoBehaviour
             List<GameObject> connectedObjects = new List<GameObject>();
 
             //even
-            if(tileZ % 2 == 1)
+            if (tileZ % 2 == 1)
             {
-                
+
                 //left side
                 if (CheckIfTileExists(tileX - 1, tileZ))
                 {
@@ -245,129 +372,6 @@ public class HexMapGenerator : MonoBehaviour
         }
     }
 
-    void UpdateTile()
-    {
-        foreach(Tile tile in placedTiles)
-        {
-            if (tile.tilePrefab.tag == "Grass")
-            {
-                foreach(GameObject connectedTile in tile.connectedTiles)
-                {
-                    if(connectedTile.tag == "Sea")
-                    {
-                        tile.tilePrefab.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
-                        GameObject oldTile = tile.tilePrefab;
-                        GameObject tempObject = Instantiate(sandTile);
-
-                        tempObject.transform.position = oldTile.transform.position;
-                        
-                        tempObject.AddComponent<Tile>();
-                        tempObject.GetComponent<Tile>().UpdateData(tile);
-                        SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
-
-                        tile.tilePrefab = tempObject;
-
-                        Destroy(oldTile);
-                        
-                    }
-                }
-            }
-        }
-    }
-
-    void PlaceSpecialGrassTiles()
-    {
-        for(int i = 0; i < specialGrassTiles.Count; i++)
-        {
-            bool tilePlaced = false;
-            int j = 0;
-            while(tilePlaced == false && j < 100)
-            {
-                j += 1;
-                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
-                if(tile.tilePrefab.tag == "Grass")
-                {
-                    GameObject oldTile = tile.tilePrefab;
-                    GameObject tempObject = Instantiate(specialGrassTiles[i]);
-
-                    tempObject.transform.position = oldTile.transform.position;
-
-                    tempObject.AddComponent<Tile>();
-                    tempObject.GetComponent<Tile>().UpdateData(tile);
-                    SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
-
-                    tile.tilePrefab = tempObject;
-
-                    Destroy(oldTile);
-
-                    tilePlaced = true;
-                }
-            }
-        }
-    }
-
-    void PlaceSpecialSandTiles()
-    {
-        for (int i = 0; i < specialSandTiles.Count; i++)
-        {
-            bool tilePlaced = false;
-            int j = 0;
-            while (tilePlaced == false && j < 100)
-            {
-                j += 1;
-                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
-                if (tile.tilePrefab.tag == "Sand")
-                {
-                    GameObject oldTile = tile.tilePrefab;
-                    GameObject tempObject = Instantiate(specialSandTiles[i]);
-
-                    tempObject.transform.position = oldTile.transform.position;
-
-                    tempObject.AddComponent<Tile>();
-                    tempObject.GetComponent<Tile>().UpdateData(tile);
-                    SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
-
-                    tile.tilePrefab = tempObject;
-
-                    Destroy(oldTile);
-
-                    tilePlaced = true;
-                }
-            }
-        }
-    }
-
-    void PlaceSpecialSeaTiles()
-    {
-        for (int i = 0; i < specialSeaTiles.Count; i++)
-        {
-            bool tilePlaced = false;
-            int j = 0;
-            while (tilePlaced == false && j < 100)
-            {
-                j += 1;
-                Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
-                if (tile.tilePrefab.tag == "Sea")
-                {
-                    GameObject oldTile = tile.tilePrefab;
-                    GameObject tempObject = Instantiate(specialSeaTiles[i]);
-
-                    tempObject.transform.position = oldTile.transform.position;
-
-                    tempObject.AddComponent<Tile>();
-                    tempObject.GetComponent<Tile>().UpdateData(tile);
-                    SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
-
-                    tile.tilePrefab = tempObject;
-
-                    Destroy(oldTile);
-
-                    tilePlaced = true;
-                }
-            }
-        }
-    }
-
     bool CheckIfTileExists(int tileX, int tileZ)
     {
         if(tileX >= 0 && tileX <= placedTiles.GetLength(0) - 1 && tileZ >= 0 && tileZ <= placedTiles.GetLength(1) - 1)
@@ -379,5 +383,4 @@ public class HexMapGenerator : MonoBehaviour
             return false;
         }
     }
-
 }

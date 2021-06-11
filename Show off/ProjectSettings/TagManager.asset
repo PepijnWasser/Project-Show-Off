@@ -16,6 +16,11 @@ TagManager:
   - Haven
   - Winkel
   - TaakBord
+  - Animal Farm
+  - Resort
+  - BusStop
+  - Fabriek
+  - CropFarm
   layers:
   - Default
   - TransparentFX

@@ -5080,7 +5080,7 @@ RectTransform:
   - {fileID: 1632490393}
   - {fileID: 962780910}
   m_Father: {fileID: 960606012}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5153,7 +5153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &107767250
 MonoBehaviour:
@@ -7529,7 +7529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &864912432
 RectTransform:
@@ -8169,12 +8169,12 @@ Transform:
   m_Children:
   - {fileID: 3073572685937483232}
   - {fileID: 519752225}
-  - {fileID: 1808490659}
   - {fileID: 1029030309}
   - {fileID: 1235579201}
   - {fileID: 854293668}
   - {fileID: 107767249}
   - {fileID: 58904836}
+  - {fileID: 1808490659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8641,7 +8641,7 @@ RectTransform:
   - {fileID: 529177181}
   - {fileID: 849483265}
   m_Father: {fileID: 960606012}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9586,7 +9586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1235579202
 MonoBehaviour:
@@ -9719,7 +9719,7 @@ GameObject:
   - component: {fileID: 1325235709}
   - component: {fileID: 1325235708}
   m_Layer: 5
-  m_Name: BuildingTaskCanvas (1)
+  m_Name: BuildingTaskCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10820,7 +10820,7 @@ GameObject:
   - component: {fileID: 1534165188}
   - component: {fileID: 1534165187}
   m_Layer: 5
-  m_Name: BuildingTaskCanvas (1)
+  m_Name: BuildingTaskCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16969,7 +16969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1808490658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17026,7 +17026,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834173244
 GameObject:
@@ -17177,16 +17177,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 10
   mapHeight: 10
-  grassTile: {fileID: 4493272060268440107, guid: 3a090e4e0540d594690cb7162924eb0d, type: 3}
-  sandTile: {fileID: 2616160821290808591, guid: 49224334c2aeb4b4a8a9d538b934f4a1, type: 3}
-  seaTile: {fileID: 2579772597570591695, guid: a4c308a19092b9643a3a50665ba70941, type: 3}
+  grassTile: {fileID: 6571158744151855111, guid: fbb5869f878a16542a2901cf2bc48c2b, type: 3}
+  sandTile: {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
+  coralTile: {fileID: 4469711446625602720, guid: a70056b9d12f8c6409819baf3c7dde15, type: 3}
   specialGrassTiles:
-  - {fileID: 919132149155446097, guid: d009a345a8164664f8f849c7152104ee, type: 3}
-  - {fileID: 919132149155446097, guid: 73f0d086a2d17194e97b02fc549b1e09, type: 3}
+  - {fileID: 2214503572959605415, guid: 6c550f7a77e5654469a0e4bc524963ba, type: 3}
+  - {fileID: 1103258244758350533, guid: dcbd3e0afd1f54f488bf788179a59ec9, type: 3}
+  - {fileID: 2275035578000867518, guid: 87aea59f2c827ac42ad5be7689053875, type: 3}
+  - {fileID: 1630124106622422704, guid: 2e9988bbef77c1642b87d3c6c8814979, type: 3}
+  - {fileID: 6001653779910244099, guid: 7f0e67bf71ddb8c4098d51d117132c60, type: 3}
+  - {fileID: 8734807494231306490, guid: 1555a1567e129df4793ad213c132ad4a, type: 3}
+  - {fileID: 2163752624296177363, guid: e270bf420492e084caa3ff87d420e2a8, type: 3}
   specialSandTiles:
-  - {fileID: 919132149155446097, guid: f0d3949f0d86fb748ad03a58a17441ff, type: 3}
-  - {fileID: 919132149155446097, guid: b485a057a9d33884caeb07d228706d50, type: 3}
-  - {fileID: 919132149155446097, guid: 65bf1873c2905b04da05789aa3d22223, type: 3}
+  - {fileID: 724764739877640825, guid: 1b19f099600995743b39aefe921eb4d8, type: 3}
+  - {fileID: 4827723487844167958, guid: 81c53647ff832074ead4c6d2625d7b20, type: 3}
+  - {fileID: 7414458281196270555, guid: a27628e4bfeab3b4e8612da036db1bae, type: 3}
+  - {fileID: 5401423383670377031, guid: d8eeb06a73e60e94ba2f5290c9d38d4a, type: 3}
   specialSeaTiles: []
   grassRange:
   - 0
@@ -17201,6 +17208,7 @@ MonoBehaviour:
   tileXOffset: 4
   tileZOffset: 3.5
   tileVariation: 15
+  coralBlobCount: 3
   randomSeed: 2
 --- !u!4 &1834563587
 Transform:
@@ -17228,7 +17236,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc9282f85635f9499e3494c3909f975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomSeed: 5
+  randomSeed: 0
+  grassTags:
+  - Grass
+  - Hotel
+  - Lab
+  - Winkel
+  - Taakbord
+  - CropFarm
+  - AnimalFarm
+  - BusStop
+  - Stadhuis
+  - Fabriek
+  - Untagged
+  sandTags:
+  - Sand
+  - Resort
+  seaTags:
+  - Sea
 --- !u!1 &1834953586
 GameObject:
   m_ObjectHideFlags: 0
@@ -22530,12 +22555,10 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 0}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 0}
   contentPanel: {fileID: 0}
+  popupPrefab: {fileID: 0}
   objectsToHighlight: []
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 0}
 --- !u!65 &1939362327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24174,13 +24197,11 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 1260923456}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 1834173244}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 5731751435925490617}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!65 &1030948237586618475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24614,14 +24635,12 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 1534165185}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 1635977049}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 6676960240136635648}
   - {fileID: 6824241291833658463}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!1 &1552218976987330177
 GameObject:
   m_ObjectHideFlags: 0
@@ -27282,15 +27301,13 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 1372791172}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 2146172041}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 7483894711831479367}
   - {fileID: 5384636767349218481}
   - {fileID: 3932287124141101437}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!1 &3875181409106675415
 GameObject:
   m_ObjectHideFlags: 0
@@ -29250,13 +29267,11 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 1325235706}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 1834953586}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 6824241290883512588}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!1 &6608884084415245033
 GameObject:
   m_ObjectHideFlags: 0
@@ -31118,13 +31133,11 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 1551136694}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 748195201}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 1711813855368177275}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!1 &7498139500376326679
 GameObject:
   m_ObjectHideFlags: 0
@@ -31772,13 +31785,11 @@ MonoBehaviour:
   showMenu: 0
   active: 0
   popupCanvas: {fileID: 2301838898592366585}
-  taskManager: {fileID: 1808490657}
-  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   contentPanel: {fileID: 9046326180453152843}
+  popupPrefab: {fileID: 5375045727337022896, guid: ae801bb58da5c684489c1e216cd3261c, type: 3}
   objectsToHighlight:
   - {fileID: 1711813855320856279}
   taskAtThisLocation: []
-  m_EventSystem: {fileID: 1445891907}
 --- !u!65 &8285016480117823452
 BoxCollider:
   m_ObjectHideFlags: 0
