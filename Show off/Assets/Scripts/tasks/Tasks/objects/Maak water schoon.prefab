@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 2
+  description: Door het water te filteren van microplastics en andere vervuiling
+    wordt het water rond het rif een stuk schoner.
   coralOutcome: 1
   popularityOutcome: 1
-  energyCost: 2
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 2

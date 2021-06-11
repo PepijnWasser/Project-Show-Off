@@ -45,8 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completed: 0
   energyCost: 2
-  description: 
+  description: Motiveer toeristen om groene producten te eten, vee en visserijen
+    vervuilen het milieu, een goede keus voor het koraal en ook nog heel gezond.
   coralOutcome: 1
   popularityOutcome: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 5

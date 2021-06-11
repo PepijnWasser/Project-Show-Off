@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 2
+  description: Groei koraal in de veilige omgeving van het lab, wanneer dit koraal
+    groot en sterk is kunnen we het terugplaatsen in het rif.
   coralOutcome: 0
   popularityOutcome: 0
-  energyCost: 2
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 2

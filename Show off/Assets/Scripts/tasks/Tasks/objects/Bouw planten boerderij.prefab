@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  energyCost: 1
+  description: Groente en fruit verbouwen op Cora Cora zelf. Een milieuvriendelijk
+    alternatief voor vlees en vis.
   coralOutcome: 1
   popularityOutcome: 0
-  energyCost: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 
   placeOfQuest: 1
