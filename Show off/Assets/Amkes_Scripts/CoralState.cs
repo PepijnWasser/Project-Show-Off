@@ -44,7 +44,7 @@ public class CoralState : MonoBehaviour
 
     private void Start()
     {
-        healthImage.color = Color.green;
+        //healthImage.color = Color.green;
 
         coralHealthLevels.Add(0, coral0);
         coralHealthLevels.Add(1, coral1);
@@ -98,7 +98,7 @@ public class CoralState : MonoBehaviour
     void SetColorThriving()
     {
         //Green
-        healthImage.color = new Vector4(0, 1, 0, 1);
+        //healthImage.color = new Vector4(0, 1, 0, 1);
         coral1Material.SetFloat("CoralHealth", numberThriving);
         coral2Material.SetFloat("CoralHealth", numberThriving);
         coral3Material.SetFloat("CoralHealth", numberThriving);
@@ -108,7 +108,7 @@ public class CoralState : MonoBehaviour
     void SetColorFairlyHealthy()
     {
         //Yellow
-        healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
+        //healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
         coral1Material.SetFloat("CoralHealth", numberFairlyHealthy);
         coral2Material.SetFloat("CoralHealth", numberFairlyHealthy);
         coral3Material.SetFloat("CoralHealth", numberFairlyHealthy);
@@ -118,7 +118,7 @@ public class CoralState : MonoBehaviour
     void SetColorFairlyDamaged()
     {
         //Orange
-        healthImage.color = new Vector4(1, 0.6f, 0, 1);
+        //healthImage.color = new Vector4(1, 0.6f, 0, 1);
         coral1Material.SetFloat("CoralHealth", numberFairlyDamaged);
         coral2Material.SetFloat("CoralHealth", numberFairlyDamaged);
         coral3Material.SetFloat("CoralHealth", numberFairlyDamaged);
@@ -128,7 +128,7 @@ public class CoralState : MonoBehaviour
     void SetColorOnTheBrink()
     {
         //Red
-        healthImage.color = new Vector4(1, 0, 0, 1);
+        //healthImage.color = new Vector4(1, 0, 0, 1);
         coral1Material.SetFloat("CoralHealth", numberOnTheBrink);
         coral2Material.SetFloat("CoralHealth", numberOnTheBrink);
         coral3Material.SetFloat("CoralHealth", numberOnTheBrink);
@@ -138,8 +138,8 @@ public class CoralState : MonoBehaviour
     void SetColorDead()
     {
         //Black
-        healthImage.color = new Vector4(0, 0, 0, 1);
-        healthText.color = Color.white;
+        //healthImage.color = new Vector4(0, 0, 0, 1);
+        //healthText.color = Color.white;
         coral1Material.SetFloat("CoralHealth", numberDead);
         coral2Material.SetFloat("CoralHealth", numberDead);
         coral3Material.SetFloat("CoralHealth", numberDead);

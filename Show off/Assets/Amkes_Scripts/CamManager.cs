@@ -20,6 +20,7 @@ public class CamManager : MonoBehaviour
     public GameObject BusStationCam;
     public GameObject CropFarmCam;
     public GameObject MerchFactoryCam;
+    public GameObject CoralReefCam;
 
     void Update()
     {
@@ -127,6 +128,7 @@ public class CamManager : MonoBehaviour
         CheckEscapePressed(BusStationCam);
         CheckEscapePressed(CropFarmCam);
         CheckEscapePressed(MerchFactoryCam);
+        CheckEscapePressed(CoralReefCam);
     }
 
 
