@@ -10,13 +10,12 @@
           <e p="CameraController.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
           <e p="CamManager.cs" t="Include" />
-          <e p="CoralHealth.cs" t="Include" />
+          <e p="CoralState.cs" t="Include" />
           <e p="Energy.cs" t="Include" />
           <e p="HeightGenerator.cs" t="Include" />
           <e p="LevelGeneration.cs" t="Include" />
           <e p="MoveAroundIsland.cs" t="Include" />
           <e p="NoiseMapGeneration.cs" t="Include" />
-          <e p="PopulationCondition.cs" t="Include" />
           <e p="RotateAroundIsland.cs" t="Include" />
           <e p="TileGeneration.cs" t="Include" />
           <e p="TimeScript.cs" t="Include" />
@@ -107,6 +106,8 @@
           </e>
           <e p="ui" t="Include">
             <e p="CloseIFClickedSomewhereElse.cs" t="Include" />
+            <e p="UpdateCoralHealth.cs" t="Include" />
+            <e p="UpdatePopulation.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

@@ -71,15 +71,15 @@ public class TutorialManager : MonoBehaviour
                 {
                     if(popularityOutcome > 0)
                     {
-                        newMessage = "Great job. The health of the coral went up, and you gained some popularity.";
+                        newMessage = "Een zeer goede keuze! De populariteit is niet alleen gestegen, maar het koraalrif is ook gezonder. Goed gedaan!";
                     }
                     else if (popularityOutcome == 0)
                     {
-                        newMessage = "You did well. The coral gained health without sacrificing our popularity.";
+                        newMessage = "Het koraalrif is gezonder geworden. Goed gedaan!";
                     }
                     else
                     {
-                        newMessage = "You managed to increase the health of the coral, but at the cost of our popularity. Keep ths in mind!";
+                        newMessage = "Het koraalrif is gezonder geworden, maar ten koste van de populariteit. Hier moeten we voor oppassen.";
                     }
                 }
                 else if(coralOutcome == 0)
@@ -101,7 +101,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     if (popularityOutcome > 0)
                     {
-                        newMessage = "Our popularity went up at the cost of some coral health.";
+                        newMessage = "De populariteit is gestegen, maar ten koste van de gezondheid van het koraalrif. Hier moeten we voor oppassen.";
                     }
                     else if (popularityOutcome == 0)
                     {
