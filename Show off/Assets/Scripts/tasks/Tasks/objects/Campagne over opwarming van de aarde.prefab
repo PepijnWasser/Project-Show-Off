@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4106272581127919690}
   - component: {fileID: 2744613101868329084}
   m_Layer: 0
-  m_Name: CampaignGlobalWarming
+  m_Name: Campagne over opwarming van de aarde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: De opwarming van de aarde verhoogt de watertemperatuur naar gevaarlijke
     getallen. Motiveer mensen om minder vlees en vis te eten, en zuinig om te gaan
     met stroom.

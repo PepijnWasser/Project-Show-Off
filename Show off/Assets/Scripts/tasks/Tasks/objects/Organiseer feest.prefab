@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2731648902471464340}
   - component: {fileID: 4252099601908450722}
   m_Layer: 0
-  m_Name: OrganizeEvent
+  m_Name: Organiseer feest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: Een groot feest is net wat we nodig hebben voor wat leven in de brauwerij,
     bloemen fakkels, dansen, dit zullen de toeristen niet snel vergeten.
   coralOutcome: -2

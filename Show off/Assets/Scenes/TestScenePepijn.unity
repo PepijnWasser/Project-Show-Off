@@ -7845,7 +7845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 6805157823310648987}
-  numberOfDays: 3
+  numberOfDays: 7
 --- !u!4 &854293668
 Transform:
   m_ObjectHideFlags: 0

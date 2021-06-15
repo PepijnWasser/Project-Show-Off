@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1858524592877330727}
   - component: {fileID: 4964598067764722341}
   m_Layer: 0
-  m_Name: BuildFishery
+  m_Name: Bouw visserij
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
