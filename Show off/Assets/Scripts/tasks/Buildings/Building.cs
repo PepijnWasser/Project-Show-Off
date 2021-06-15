@@ -177,7 +177,16 @@ public class Building : MonoBehaviour
                     Transform acceptButton = newObject.transform.Find("AcceptButton");
                     acceptButton.transform.Find("Text").GetComponent<Text>().text = "Accept Task - " + task.energyCost;
                     acceptButton.GetComponent<CompleteTask>().creator = this.gameObject;
-                    acceptButton.GetComponent<CompleteTask>().taskName = task.name;            
+                    acceptButton.GetComponent<CompleteTask>().taskName = task.name;
+
+                    Transform energyCostText = newObject.transform.Find("EnergyCost").transform.Find("Text");
+                    energyCostText.GetComponent<TMPro.TextMeshProUGUI>().text = task.energyCost.ToString();
+
+                    Transform popularityOutcomeText = newObject.transform.Find("PopularityOutcome").transform.Find("Text");
+                    popularityOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = task.popularityOutcome.ToString();
+
+                    Transform coralOutcomeText = newObject.transform.Find("CoralOutcome").transform.Find("Text");
+                    coralOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = task.coralOutcome.ToString();
 
                     placedListObjects.Add(newObject);
                 }
@@ -185,7 +194,6 @@ public class Building : MonoBehaviour
                 {
                     Debug.LogError(e.Message, this);                 
                 }
-
             }
         }
     }
