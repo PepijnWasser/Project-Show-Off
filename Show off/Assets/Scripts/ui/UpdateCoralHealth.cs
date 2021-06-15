@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UpdateCoralHealth : MonoBehaviour
 {
+    public float startHealth = 6;
     float health;
     Text healthText;
 
@@ -16,7 +17,7 @@ public class UpdateCoralHealth : MonoBehaviour
 
     void Start()
     {
-        health = 10;
+        health = startHealth;
         healthText = GetComponent<Text>();
         UpdateCoralHealthStat();
     }
