@@ -31,6 +31,7 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                //TODO: if hit.getcomponent<camera>...
                 if (hit.transform.name == "TaakBord")
                 {
                     //Set Taskboard-cam active

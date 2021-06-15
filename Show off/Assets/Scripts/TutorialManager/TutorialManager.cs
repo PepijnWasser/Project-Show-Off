@@ -109,7 +109,7 @@ public class TutorialManager : MonoBehaviour
                     }
                     else
                     {
-                        newMessage = "That was a bad choise. Both the coral and popularity went down.";
+                        newMessage = "That was a bad choice. Both the coral and popularity went down.";
                     }
                 }
 

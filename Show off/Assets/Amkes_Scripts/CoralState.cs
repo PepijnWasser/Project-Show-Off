@@ -28,6 +28,7 @@ public class CoralState : MonoBehaviour
     };
 
     [Header("Designer-tool: Set Coral States")]
+    /*
     public CoralStates coral0;
     public CoralStates coral1;
     public CoralStates coral2;
@@ -39,13 +40,15 @@ public class CoralState : MonoBehaviour
     public CoralStates coral8;
     public CoralStates coral9;
     public CoralStates coral10;
+    */
+    public CoralStates[] coralLevels;
 
     private Dictionary<int, CoralStates> coralHealthLevels = new Dictionary<int, CoralStates>();
 
     private void Start()
     {
         //healthImage.color = Color.green;
-
+        /*
         coralHealthLevels.Add(0, coral0);
         coralHealthLevels.Add(1, coral1);
         coralHealthLevels.Add(2, coral2);
@@ -57,6 +60,7 @@ public class CoralState : MonoBehaviour
         coralHealthLevels.Add(8, coral8);
         coralHealthLevels.Add(9, coral9);
         coralHealthLevels.Add(10, coral10);
+        */
     }
 
     private void Update()
