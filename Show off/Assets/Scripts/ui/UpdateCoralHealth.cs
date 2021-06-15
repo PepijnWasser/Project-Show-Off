@@ -8,7 +8,8 @@ public class UpdateCoralHealth : MonoBehaviour
     public float startHealth = 6;
     float health;
     Text healthText;
-
+    public ParticleSystem IncreaseCoral;
+    public ParticleSystem DecreaseCoral;
 
     private void Awake()
     {
@@ -39,11 +40,11 @@ public class UpdateCoralHealth : MonoBehaviour
 
         if(task.coralOutcome > 0)
         {
-
+            IncreaseCoral.Play();
         }
         if(task.coralOutcome < 0)
         {
-
+            DecreaseCoral.Play();
         }
     }
 }

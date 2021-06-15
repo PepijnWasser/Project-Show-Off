@@ -16,13 +16,33 @@ public class CinematicManager : MonoBehaviour
 
     VideoPlayer videoPlayerUsing;
 
-    public bool badEndingBool;
+    public int minScoreForGoodEnd;
+    bool badEndingBool;
+
     public bool finished;
 
 
     private void Start()
     {
         RenderTexture textureToRender;
+
+        PlayerInfo playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
+        if (playerInfo != null)
+        {
+            if(playerInfo.score >= minScoreForGoodEnd)
+            {
+                badEndingBool = false;
+            }
+            else
+            {
+                badEndingBool = true;
+            }
+        }
+        else
+        {
+            Debug.LogError("noPlayerInfoFound", this);
+        }
+
         if (badEndingBool)
         {
             badVideoPlayer.frame = 0;

@@ -601,7 +601,7 @@ MonoBehaviour:
   badEndingTexture: {fileID: 8400000, guid: 55970407f8533ea4f9782fc1ff07946c, type: 2}
   badVideoPlayer: {fileID: 589780047}
   goodVideoPlayer: {fileID: 483136014}
-  badEndingBool: 0
+  minScoreForGoodEnd: 10
   finished: 0
 --- !u!1 &1044256047
 GameObject:

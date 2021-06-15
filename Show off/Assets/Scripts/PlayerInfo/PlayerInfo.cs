@@ -48,6 +48,7 @@ public class PlayerInfo : MonoBehaviour
         if (popularity != null)
         {
             score = Int32.Parse(popularity);
+            Debug.Log(score);
         }
 
     }
