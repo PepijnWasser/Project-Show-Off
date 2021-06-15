@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4380950500058268880}
   - component: {fileID: 2460928573435540710}
   m_Layer: 0
-  m_Name: ResearchFishSizeRegulation
+  m_Name: Kleine vissen terug naar zee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

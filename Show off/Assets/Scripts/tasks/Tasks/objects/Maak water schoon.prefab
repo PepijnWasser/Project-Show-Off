@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1652557129802585132}
   - component: {fileID: 578068028778669082}
   m_Layer: 0
-  m_Name: PurifyWater
+  m_Name: Maak water schoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: Door het water te filteren van microplastics en andere vervuiling
     wordt het water rond het rif een stuk schoner.
   coralOutcome: 1

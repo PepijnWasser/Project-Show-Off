@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7052519721414663464}
   - component: {fileID: 9166284745102552350}
   m_Layer: 0
-  m_Name: PlaceBins
+  m_Name: Plaats prullenbakken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb1a99c817c7a419e91271f4e46bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completed: 1
+  completed: 0
   energyCost: 1
   description: Die Toeristen gooien te veel afval op straat, met een prullenbak hebben
     ze een plek om het kwijt te kunnen.

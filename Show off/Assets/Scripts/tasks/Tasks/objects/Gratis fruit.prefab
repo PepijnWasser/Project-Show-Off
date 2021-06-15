@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1076154054962973263}
   - component: {fileID: 1154608508874455673}
   m_Layer: 0
-  m_Name: FreeFruit
+  m_Name: Gratis fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: Motiveer toeristen om groene producten te eten, vee en visserijen
     vervuilen het milieu, een goede keus voor het koraal en ook nog heel gezond.
   coralOutcome: 1

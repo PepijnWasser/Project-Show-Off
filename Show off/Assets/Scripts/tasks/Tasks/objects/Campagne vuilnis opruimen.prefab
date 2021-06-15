@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7222870447026144558}
   - component: {fileID: 8851385658990261528}
   m_Layer: 0
-  m_Name: CampaignTrashAwareness
+  m_Name: Campagne vuilnis opruimen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
