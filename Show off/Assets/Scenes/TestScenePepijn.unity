@@ -27522,10 +27522,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 10
   mapHeight: 10
-  grassTile: {fileID: 6571158744151855111, guid: fbb5869f878a16542a2901cf2bc48c2b, type: 3}
+  grassTile: {fileID: 4588548666010787942, guid: 52e28eaffaa336e46a92f8a7b875dd0c, type: 3}
   sandTile: {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
-  coralTile: {fileID: 4469711446625602720, guid: a70056b9d12f8c6409819baf3c7dde15, type: 3}
+  coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
   specialGrassTiles:
   - {fileID: 2214503572959605415, guid: 6c550f7a77e5654469a0e4bc524963ba, type: 3}
   - {fileID: 1103258244758350533, guid: dcbd3e0afd1f54f488bf788179a59ec9, type: 3}
