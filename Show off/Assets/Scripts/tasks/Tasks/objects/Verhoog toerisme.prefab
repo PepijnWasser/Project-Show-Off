@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7034368531774968721}
   - component: {fileID: 9184426046241563559}
   m_Layer: 0
-  m_Name: IncreaseTourism
+  m_Name: Verhoog toerisme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

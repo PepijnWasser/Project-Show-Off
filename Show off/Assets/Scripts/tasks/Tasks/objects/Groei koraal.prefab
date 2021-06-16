@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5363060685819598954}
   - component: {fileID: 6091067353369618524}
   m_Layer: 0
-  m_Name: RegenerateCoral
+  m_Name: Groei koraal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: Groei koraal in de veilige omgeving van het lab, wanneer dit koraal
     groot en sterk is kunnen we het terugplaatsen in het rif.
   coralOutcome: 0

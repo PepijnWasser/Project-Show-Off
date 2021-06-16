@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5311755509757105869}
   - component: {fileID: 6295362974034634491}
   m_Layer: 0
-  m_Name: OrganizeDivingClass
+  m_Name: Organiseer duik lessen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

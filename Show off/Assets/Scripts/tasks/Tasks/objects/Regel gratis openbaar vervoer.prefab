@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7216034199889239184}
   - component: {fileID: 8849075070380223654}
   m_Layer: 0
-  m_Name: CampaignPublicTransport
+  m_Name: Regel gratis openbaar vervoer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
-  energyCost: 2
+  energyCost: 1
   description: "Openbaar vervoer geheel gratis voor een korte periode, iedereen zal
     er gebruik van willen maken en hun auto\u2019s laten staan."
   coralOutcome: 1

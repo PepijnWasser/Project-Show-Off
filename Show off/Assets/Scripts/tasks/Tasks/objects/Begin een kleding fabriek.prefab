@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3045979145802427199}
   - component: {fileID: 3796472767486745353}
   m_Layer: 0
-  m_Name: StartMerchCompany
+  m_Name: Begin een kleding fabriek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

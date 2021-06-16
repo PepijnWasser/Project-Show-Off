@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2081692930662108783}
   - component: {fileID: 146668855039524441}
   m_Layer: 0
-  m_Name: BuildPublicTransport
+  m_Name: Zorg voor openbaar vervoer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
