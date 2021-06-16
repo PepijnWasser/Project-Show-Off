@@ -29,10 +29,12 @@ public class HighScoreTable : MonoBehaviour
             AddHighScoreEntry(555, "SatanIsReal");
             AddHighScoreEntry(101, "GGStandForGreedyGandalf");
             AddHighScoreEntry(90, "Peppipeps");
+            AddHighScoreEntry(77, "Vanu");
             AddHighScoreEntry(50, "QuintessentialQ");
             AddHighScoreEntry(15, "Pontiff");
             AddHighScoreEntry(9, "Reimu");
             AddHighScoreEntry(-1, "The doctor");
+            AddHighScoreEntry(-10, "KOWI");
             highScores = GetHighScores();
         }
         SortEntries(highScores.highScoreEntryList);
@@ -125,6 +127,17 @@ public class HighScoreTable : MonoBehaviour
         string json = JsonUtility.ToJson(highScores);
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
+    }
+
+    public float GetAverageScores()
+    {
+        highScores = GetHighScores();
+        int combined = 0;
+        foreach (HighScoreEntry entry in highScores.highScoreEntryList)
+        {
+            combined += entry.score;
+        }
+        return (float)combined / (float)highScores.highScoreEntryList.Count;
     }
 
     HighScores GetHighScores()
