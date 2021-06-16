@@ -22,8 +22,13 @@ public class CamManager : MonoBehaviour
     public GameObject MerchFactoryCam;
     public GameObject CoralReefCam;
 
+  
     void Update()
     {
+       
+      
+      
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
