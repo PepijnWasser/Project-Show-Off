@@ -27471,7 +27471,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 10
   mapHeight: 10
-  grassTile: {fileID: 4588548666010787942, guid: 52e28eaffaa336e46a92f8a7b875dd0c, type: 3}
+  grassTiles:
+  - {fileID: 6331707834421829459, guid: f0873e20127a8af40a582cd3fe22f03c, type: 3}
+  - {fileID: 8783425366139691133, guid: c2f8401412a4fcf49adb7b6d24699e7f, type: 3}
+  - {fileID: 8099763658035717183, guid: 42e2a2c4638bc7e4d93568fd0af8b2c3, type: 3}
   sandTile: {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
   coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
@@ -27538,7 +27541,7 @@ MonoBehaviour:
   - Winkel
   - Taakbord
   - CropFarm
-  - AnimalFarm
+  - Animal Farm
   - BusStop
   - Stadhuis
   - Fabriek

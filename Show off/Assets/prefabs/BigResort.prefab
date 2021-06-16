@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796185923240215196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigResort
   m_TagString: Resort
   m_Icon: {fileID: 0}

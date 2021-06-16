@@ -8,7 +8,7 @@ public class HexMapGenerator : MonoBehaviour
     public int mapWidth;
     public int mapHeight;
 
-    public GameObject grassTile;
+    public List<GameObject> grassTiles;
     public GameObject sandTile;
     public GameObject seaTile;
     public GameObject coralTile;
@@ -116,7 +116,7 @@ public class HexMapGenerator : MonoBehaviour
 
         if(val >= grassRange[0] && val < grassRange[1])
         {
-            return grassTile;
+            return grassTiles[UnityEngine.Random.Range(0, grassTiles.Count)];
         }
         else if(val >= sandRange[0] && val < sandRange[1])
         {

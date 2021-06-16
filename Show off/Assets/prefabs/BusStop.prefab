@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875837250807675572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BusStop
   m_TagString: BusStop
   m_Icon: {fileID: 0}
