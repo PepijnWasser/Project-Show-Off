@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4962891643301204727}
   m_Layer: 8
   m_Name: coral variant
-  m_TagString: Sand
+  m_TagString: Sea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
