@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267821901587325148}
   - component: {fileID: 5116730713423972094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Harbor
   m_TagString: Haven
   m_Icon: {fileID: 0}

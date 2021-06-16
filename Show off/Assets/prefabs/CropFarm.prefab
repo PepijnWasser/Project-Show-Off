@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033003003358196827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CropFarm
   m_TagString: CropFarm
   m_Icon: {fileID: 0}

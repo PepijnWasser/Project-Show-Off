@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4532634980693770735}
   - component: {fileID: 1218132143185821033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CityHall
   m_TagString: Stadhuis
   m_Icon: {fileID: 0}

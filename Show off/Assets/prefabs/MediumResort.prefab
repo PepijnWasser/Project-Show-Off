@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7661823945127147225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MediumResort
   m_TagString: Resort
   m_Icon: {fileID: 0}
