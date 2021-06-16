@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class CamManager : MonoBehaviour
 {
-    private float clicked = 0.0f;
-    private float clickTime = 0.0f;
-    private float clickDelay = 0.5f;
-
     public CameraController cameraControllerScript;
     public GameObject mainCam;
     public GameObject TaskboardCam;
@@ -130,33 +126,6 @@ public class CamManager : MonoBehaviour
         CheckEscapePressed(CropFarmCam);
         CheckEscapePressed(MerchFactoryCam);
         CheckEscapePressed(CoralReefCam);
-    }
-
-
-    private bool DoubleClick()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            clicked++;
-            if (clicked == 1.0f)
-            {
-                clickTime = Time.time;
-            }
-
-        }
-
-        if (clicked > 1 && Time.time - clickTime < clickDelay)
-        {
-            clicked = 0.0f;
-            clickTime = 0.0f;
-            return true;
-        }
-        else if (clicked > 2 || Time.time - clickTime > 1)
-        {
-            clicked = 0.0f;
-        }
-
-        return false;
     }
 
     public void ActivateCamera(GameObject camera)
