@@ -7,7 +7,6 @@ public class CamManager : MonoBehaviour
     public CameraController cameraControllerScript;
     public GameObject mainCam;
     public GameObject CoralReefCam;
-
     public GameObject AnimalFarmCam;
     public GameObject BusStationCam;
     public GameObject CityHallCam;
@@ -19,8 +18,8 @@ public class CamManager : MonoBehaviour
     public GameObject LabCam;
     public GameObject ShopCam;
     public GameObject TaskboardCam;
-
     public Vector3 offset;
+
     private bool isCamerasPlaced;
     [SerializeField] private List<GameObject> cameras = new List<GameObject>();
 
@@ -43,47 +42,47 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == "TaakBord")
+                if (hit.transform.tag == "TaakBord")
                 {
                     ActivateCamera(TaskboardCam);
                 }
-                if (hit.transform.name == "Winkel")
+                if (hit.transform.tag == "Winkel")
                 {
                     ActivateCamera(ShopCam);
                 }
-                if (hit.transform.name == "Lab")
+                if (hit.transform.tag == "Lab")
                 {
                     ActivateCamera(LabCam);
                 }
-                if (hit.transform.name == "Haven")
+                if (hit.transform.tag == "Haven")
                 {
                     ActivateCamera(HarborCam);
                 }
-                if (hit.transform.name == "Stadhuis")
+                if (hit.transform.tag == "Stadhuis")
                 {
                     ActivateCamera(CityHallCam);
                 }
-                if (hit.transform.name == "Hotel")
+                if (hit.transform.tag == "Hotel")
                 {
                     ActivateCamera(HotelCam);
                 }
-                if (hit.transform.name == "AnimalFarm")
+                if (hit.transform.tag == "Animal Farm")
                 {
                     ActivateCamera(AnimalFarmCam);
                 }
-                if (hit.transform.name == "Busstation")
+                if (hit.transform.tag == "BusStop")
                 {
                     ActivateCamera(BusStationCam);
                 }
-                if (hit.transform.name == "CropFarm")
+                if (hit.transform.tag == "CropFarm")
                 {
                     ActivateCamera(CropFarmCam);
                 }
-                if (hit.transform.name == "Factory")
+                if (hit.transform.tag == "Fabriek")
                 {
                     ActivateCamera(FactoryCam);
                 }
-                if (hit.transform.name == "Fishery")
+                if (hit.transform.tag == "Fishery")
                 {
                     ActivateCamera(FisheryCam);
                 }
