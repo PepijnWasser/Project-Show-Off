@@ -184,10 +184,6 @@ public class TaskManager : MonoBehaviour
         if (needToStop)
         {
             GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
-            if(building.GetComponent<Building>() == null)
-            {
-                //GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "error found";
-            }
 
             building.GetComponent<Building>().active = false;
         }
