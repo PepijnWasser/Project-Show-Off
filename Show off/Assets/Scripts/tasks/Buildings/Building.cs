@@ -140,6 +140,7 @@ public class Building : MonoBehaviour
     }
     public void ShowMenu()
     {
+        Debug.Log(showMenu);
         if (popupCanvas != null)
         {
             if (showMenu)
