@@ -19,7 +19,7 @@ public class TimeScript : MonoBehaviour
 
     private void Start()
     {
-        timeText.text = "Day: " + dayNumber;
+        timeText.text = "Dag: " + dayNumber;
     }
 
     private void OnDestroy()
