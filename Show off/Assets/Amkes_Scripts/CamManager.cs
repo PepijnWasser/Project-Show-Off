@@ -22,6 +22,7 @@ public class CamManager : MonoBehaviour
 
     public Vector3 offset;
     private bool isCamerasPlaced;
+    [SerializeField] private List<GameObject> cameras = new List<GameObject>();
 
     private void Start()
     {
@@ -44,114 +45,80 @@ public class CamManager : MonoBehaviour
             {
                 if (hit.transform.name == "TaakBord")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(TaskboardCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "Winkel")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(ShopCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "Lab")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(LabCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "Haven")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(HarborCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "Stadhuis")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(CityHallCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "Hotel")
                 {
-                    //Set Taskboard-cam active
                     ActivateCamera(HotelCam);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
                 }
                 if (hit.transform.name == "AnimalFarm")
                 {
-                    //Set Taskboard-cam active
-                    mainCam.SetActive(false);
-                    AnimalFarmCam.SetActive(true);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
+                    ActivateCamera(AnimalFarmCam);
                 }
                 if (hit.transform.name == "Busstation")
                 {
-                    //Set Taskboard-cam active
-                    mainCam.SetActive(false);
-                    BusStationCam.SetActive(true);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
+                    ActivateCamera(BusStationCam);
                 }
                 if (hit.transform.name == "CropFarm")
                 {
-                    //Set Taskboard-cam active
-                    mainCam.SetActive(false);
-                    CropFarmCam.SetActive(true);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
+                    ActivateCamera(CropFarmCam);
                 }
                 if (hit.transform.name == "Factory")
                 {
-                    //Set Taskboard-cam active
-                    mainCam.SetActive(false);
-                    FactoryCam.SetActive(true);
-
-                    //Disable camera control
-                    cameraControllerScript.enabled = false;
+                    ActivateCamera(FactoryCam);
+                }
+                if (hit.transform.name == "Fishery")
+                {
+                    ActivateCamera(FisheryCam);
                 }
             }
         }
 
-        CheckEscapePressed(TaskboardCam);
-        CheckEscapePressed(ShopCam);
-        CheckEscapePressed(LabCam);
-        CheckEscapePressed(HarborCam);
-        CheckEscapePressed(CityHallCam);
-        CheckEscapePressed(HotelCam);
-        CheckEscapePressed(AnimalFarmCam);
-        CheckEscapePressed(BusStationCam);
-        CheckEscapePressed(CropFarmCam);
-        CheckEscapePressed(FactoryCam);
-        CheckEscapePressed(CoralReefCam);
+        for (int i = 0; i < cameras.Count; i++)
+        {
+            CheckEscapePressed(cameras[i]);
+        }
     }
 
     public void ActivateCamera(GameObject camera)
     {
-        mainCam.SetActive(false);
+        for (int i = 0; i < cameras.Count; i++)
+        {
+            if (cameras[i].gameObject == camera.gameObject)
+            {
+                continue;
+            }
+
+            cameras[i].gameObject.SetActive(false);
+        }
+
         camera.SetActive(true);
+
+        cameraControllerScript.enabled = false;
     }
 
     public void DeActivateCamera(GameObject camera)
     {
-        mainCam.SetActive(true);
         camera.SetActive(false);
+        mainCam.SetActive(true);
+
+        cameraControllerScript.enabled = true;
     }
 
     private void CheckEscapePressed(GameObject camera)
@@ -160,9 +127,7 @@ public class CamManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                camera.SetActive(false);
-                mainCam.SetActive(true);
-                cameraControllerScript.enabled = true;
+                DeActivateCamera(camera);
             }
         }
     }

@@ -5225,6 +5225,20 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438641}
   TaskboardCam: {fileID: 346485695}
   offset: {x: 3, y: 8, z: -5}
+  cameras:
+  - {fileID: 1360438640}
+  - {fileID: 1360438639}
+  - {fileID: 1360438638}
+  - {fileID: 1360438637}
+  - {fileID: 1360438636}
+  - {fileID: 1360438635}
+  - {fileID: 1360438634}
+  - {fileID: 1360438633}
+  - {fileID: 1360438632}
+  - {fileID: 1360438631}
+  - {fileID: 1360438641}
+  - {fileID: 346485695}
+  - {fileID: 218536339}
 --- !u!114 &107767251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18505,7 +18519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960606012
 Transform:
   m_ObjectHideFlags: 0
@@ -44520,6 +44534,7 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438638}
   TaskboardCam: {fileID: 1360438639}
   offset: {x: 0, y: 0, z: 0}
+  cameras: []
 --- !u!4 &8557608753025192614
 Transform:
   m_ObjectHideFlags: 0
