@@ -6,20 +6,35 @@ public class CamManager : MonoBehaviour
 {
     public CameraController cameraControllerScript;
     public GameObject mainCam;
-    public GameObject TaskboardCam;
-    public GameObject ShopCam;
-    public GameObject LabCam;
-    public GameObject HarborCam;
-    public GameObject CityHallCam;
-    public GameObject HotelCam;
-    public GameObject CowFarmCam;
-    public GameObject BusStationCam;
-    public GameObject CropFarmCam;
-    public GameObject MerchFactoryCam;
     public GameObject CoralReefCam;
+
+    public GameObject AnimalFarmCam;
+    public GameObject BusStationCam;
+    public GameObject CityHallCam;
+    public GameObject CropFarmCam;
+    public GameObject FactoryCam;
+    public GameObject FisheryCam;
+    public GameObject HarborCam;
+    public GameObject HotelCam;
+    public GameObject LabCam;
+    public GameObject ShopCam;
+    public GameObject TaskboardCam;
+
+    public Vector3 offset;
+    private bool isCamerasPlaced;
+
+    private void Start()
+    {
+        isCamerasPlaced = false;
+    }
 
     void Update()
     {
+        if (isCamerasPlaced == false)
+        {
+            SetAllVirtualCameras();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -27,7 +42,6 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                //TODO: if hit.getcomponent<camera>...
                 if (hit.transform.name == "TaakBord")
                 {
                     //Set Taskboard-cam active
@@ -76,11 +90,11 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "CowFarm")
+                if (hit.transform.name == "AnimalFarm")
                 {
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
-                    CowFarmCam.SetActive(true);
+                    AnimalFarmCam.SetActive(true);
 
                     //Disable camera control
                     cameraControllerScript.enabled = false;
@@ -103,11 +117,11 @@ public class CamManager : MonoBehaviour
                     //Disable camera control
                     cameraControllerScript.enabled = false;
                 }
-                if (hit.transform.name == "MerchFactory")
+                if (hit.transform.name == "Factory")
                 {
                     //Set Taskboard-cam active
                     mainCam.SetActive(false);
-                    MerchFactoryCam.SetActive(true);
+                    FactoryCam.SetActive(true);
 
                     //Disable camera control
                     cameraControllerScript.enabled = false;
@@ -121,10 +135,10 @@ public class CamManager : MonoBehaviour
         CheckEscapePressed(HarborCam);
         CheckEscapePressed(CityHallCam);
         CheckEscapePressed(HotelCam);
-        CheckEscapePressed(CowFarmCam);
+        CheckEscapePressed(AnimalFarmCam);
         CheckEscapePressed(BusStationCam);
         CheckEscapePressed(CropFarmCam);
-        CheckEscapePressed(MerchFactoryCam);
+        CheckEscapePressed(FactoryCam);
         CheckEscapePressed(CoralReefCam);
     }
 
@@ -146,11 +160,36 @@ public class CamManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                //Debug.Log("Escape-key pressed");
                 camera.SetActive(false);
                 mainCam.SetActive(true);
                 cameraControllerScript.enabled = true;
             }
+        }
+    }
+
+    private void SetAllVirtualCameras()
+    {
+        SetVirtualCamera(AnimalFarmCam, "Animal Farm");
+        SetVirtualCamera(BusStationCam, "BusStop");
+        SetVirtualCamera(CityHallCam, "Stadhuis");
+        SetVirtualCamera(CropFarmCam, "CropFarm");
+        SetVirtualCamera(FactoryCam, "Fabriek");
+        SetVirtualCamera(FisheryCam, "Fishery");
+        SetVirtualCamera(HarborCam, "Haven");
+        SetVirtualCamera(HotelCam, "Hotel");
+        SetVirtualCamera(LabCam, "Lab");
+        SetVirtualCamera(ShopCam, "Winkel");
+        SetVirtualCamera(TaskboardCam, "TaakBord");
+
+        isCamerasPlaced = true;
+    }
+
+    private void SetVirtualCamera(GameObject camera, string tagname)
+    {
+        if (camera != null)
+        {
+            Vector3 buildingPos = GameObject.FindGameObjectWithTag(tagname).transform.position;
+            camera.transform.position = buildingPos + offset;
         }
     }
 }

@@ -5212,17 +5212,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraControllerScript: {fileID: 8557608754263875644}
   mainCam: {fileID: 1360438640}
-  TaskboardCam: {fileID: 1360438639}
-  ShopCam: {fileID: 1360438638}
-  LabCam: {fileID: 1360438637}
-  HarborCam: {fileID: 1360438636}
-  CityHallCam: {fileID: 1360438635}
-  HotelCam: {fileID: 1360438634}
-  CowFarmCam: {fileID: 1360438633}
-  BusStationCam: {fileID: 1360438632}
-  CropFarmCam: {fileID: 1360438631}
-  MerchFactoryCam: {fileID: 1360438630}
   CoralReefCam: {fileID: 218536339}
+  AnimalFarmCam: {fileID: 1360438639}
+  BusStationCam: {fileID: 1360438638}
+  CityHallCam: {fileID: 1360438637}
+  CropFarmCam: {fileID: 1360438636}
+  FactoryCam: {fileID: 1360438635}
+  FisheryCam: {fileID: 1360438634}
+  HarborCam: {fileID: 1360438633}
+  HotelCam: {fileID: 1360438632}
+  LabCam: {fileID: 1360438631}
+  ShopCam: {fileID: 1360438641}
+  TaskboardCam: {fileID: 346485695}
+  offset: {x: 0, y: 10, z: -10}
 --- !u!114 &107767251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5681,6 +5683,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &346485695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346485696}
+  - component: {fileID: 346485697}
+  m_Layer: 0
+  m_Name: CM vcam11 Taskboard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &346485696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346485695}
+  m_LocalRotation: {x: -0, y: 1e-45, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 530147538}
+  m_Father: {fileID: 1360438630}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346485697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346485695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 60
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 530147538}
 --- !u!1 &386492985
 GameObject:
   m_ObjectHideFlags: 0
@@ -11207,6 +11276,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529177180}
   m_CullTransparentMesh: 1
+--- !u!1 &530147537
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530147538}
+  - component: {fileID: 530147539}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530147538
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530147537}
+  m_LocalRotation: {x: -0.25091705, y: -0.036285967, z: 0.009411894, w: 0.96728253}
+  m_LocalPosition: {x: -27.185652, y: -26.078398, z: -27.758806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 346485696}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530147539
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530147537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &539993848
 GameObject:
   m_ObjectHideFlags: 0
@@ -18156,7 +18268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960606012
 Transform:
   m_ObjectHideFlags: 0
@@ -19881,22 +19993,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5487776610883693580, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610883693580, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610883693580, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776610883693581, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 543450653304320891}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776610883693581, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 543450653304320891}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610883693582, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam10 Shop
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776610899655680, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 8285016480117823455}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776610899655680, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 8285016480117823455}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610899655681, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam2 BusStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610899655743, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610899655743, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776610899655743, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611017709400, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.661243
@@ -19933,46 +20077,142 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 8557608754263875646}
+    - target: {fileID: 5487776611032434406, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611032434406, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611032434406, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611032434407, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 6608884084415245036}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611032434407, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 6608884084415245036}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611032434408, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam6 Fishery
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754263, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611182754264, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 3875181409106675410}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611182754264, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 3875181409106675410}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611182754265, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam4 CropFarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611255928094, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611255928094, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611255928094, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611255928095, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1552218976987330180}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611255928095, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1552218976987330180}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611255928160, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam3 CityHall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611316536273, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611316536273, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611316536273, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611316536274, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 543450653454318856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611316536274, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 543450653454318856}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611316536275, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam8 Hotel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611326130526, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611326130526, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611326130526, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611326130527, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1030948237586618476}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611326130527, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1030948237586618476}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776611326130848, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam1 AnimalFarm
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611623431773, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: ShoulderOffset.y
       value: 10
@@ -20029,35 +20269,83 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Cameras
       objectReference: {fileID: 0}
+    - target: {fileID: 5487776612154392219, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612154392219, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612154392219, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612154392220, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 543450652657707271}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612154392220, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 543450652657707271}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612154392221, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam9 Lab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612478991978, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612478991978, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612478991978, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612478991979, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 543450652725236903}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612478991979, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 543450652725236903}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612478991980, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam7 Harbor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612781915878, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612781915878, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612781915878, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612781915879, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 7498139500376326674}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776612781915879, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 7498139500376326674}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487776612781915880, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_Name
+      value: CM vcam5 Factory
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
---- !u!1 &1360438630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5487776610883693582, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+--- !u!4 &1360438630 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5487776611797629161, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
   m_PrefabInstance: {fileID: 1360438629}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1360438631 stripped
@@ -20108,6 +20396,11 @@ GameObject:
 --- !u!1 &1360438640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5487776611017709402, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+  m_PrefabInstance: {fileID: 1360438629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360438641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5487776610883693582, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
   m_PrefabInstance: {fileID: 1360438629}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1360438652 stripped
@@ -27479,18 +27772,21 @@ MonoBehaviour:
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
   coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
   specialGrassTiles:
-  - {fileID: 2214503572959605415, guid: 6c550f7a77e5654469a0e4bc524963ba, type: 3}
-  - {fileID: 1103258244758350533, guid: dcbd3e0afd1f54f488bf788179a59ec9, type: 3}
+  - {fileID: 762395292936592159, guid: dcbd3e0afd1f54f488bf788179a59ec9, type: 3}
   - {fileID: 2275035578000867518, guid: 87aea59f2c827ac42ad5be7689053875, type: 3}
-  - {fileID: 1630124106622422704, guid: 2e9988bbef77c1642b87d3c6c8814979, type: 3}
+  - {fileID: 2214503572959605415, guid: 6c550f7a77e5654469a0e4bc524963ba, type: 3}
+  - {fileID: 1620692239521677402, guid: 2e9988bbef77c1642b87d3c6c8814979, type: 3}
   - {fileID: 6001653779910244099, guid: 7f0e67bf71ddb8c4098d51d117132c60, type: 3}
   - {fileID: 8734807494231306490, guid: 1555a1567e129df4793ad213c132ad4a, type: 3}
   - {fileID: 2163752624296177363, guid: e270bf420492e084caa3ff87d420e2a8, type: 3}
+  - {fileID: 4545357356189013446, guid: 8b0090b278ecf3246b9d0fa5d7d1e915, type: 3}
+  - {fileID: 334941800597609035, guid: dc83d402724897a479c4ccc5df025a68, type: 3}
   specialSandTiles:
   - {fileID: 724764739877640825, guid: 1b19f099600995743b39aefe921eb4d8, type: 3}
-  - {fileID: 4827723487844167958, guid: 81c53647ff832074ead4c6d2625d7b20, type: 3}
+  - {fileID: 760363455712046703, guid: 81c53647ff832074ead4c6d2625d7b20, type: 3}
   - {fileID: 7414458281196270555, guid: a27628e4bfeab3b4e8612da036db1bae, type: 3}
   - {fileID: 5401423383670377031, guid: d8eeb06a73e60e94ba2f5290c9d38d4a, type: 3}
+  - {fileID: 9137587039569953188, guid: 8b211625994f6754290430d7e6fa24bf, type: 3}
   specialSeaTiles: []
   grassRange:
   - 0
@@ -33017,7 +33313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1992168571
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34644,7 +34940,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -38502,8 +38798,8 @@ RectTransform:
   m_Father: {fileID: 1166550743205000744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -39138,7 +39434,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -39608,7 +39904,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -39971,8 +40267,8 @@ RectTransform:
   m_Father: {fileID: 6561537635013563808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -43114,17 +43410,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraControllerScript: {fileID: 8557608754263875644}
   mainCam: {fileID: 1360438640}
-  TaskboardCam: {fileID: 1360438639}
-  ShopCam: {fileID: 1360438638}
-  LabCam: {fileID: 1360438637}
-  HarborCam: {fileID: 1360438636}
-  CityHallCam: {fileID: 1360438635}
-  HotelCam: {fileID: 1360438634}
-  CowFarmCam: {fileID: 1360438633}
-  BusStationCam: {fileID: 1360438632}
-  CropFarmCam: {fileID: 1360438631}
-  MerchFactoryCam: {fileID: 1360438630}
   CoralReefCam: {fileID: 218536339}
+  AnimalFarmCam: {fileID: 0}
+  BusStationCam: {fileID: 1360438632}
+  CityHallCam: {fileID: 1360438635}
+  CropFarmCam: {fileID: 1360438631}
+  FactoryCam: {fileID: 0}
+  FisheryCam: {fileID: 0}
+  HarborCam: {fileID: 1360438636}
+  HotelCam: {fileID: 1360438634}
+  LabCam: {fileID: 1360438637}
+  ShopCam: {fileID: 1360438638}
+  TaskboardCam: {fileID: 1360438639}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!4 &8557608753025192614
 Transform:
   m_ObjectHideFlags: 0
@@ -43456,8 +43754,8 @@ RectTransform:
   m_Father: {fileID: 672863587295953204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

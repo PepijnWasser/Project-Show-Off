@@ -21,6 +21,7 @@ TagManager:
   - BusStop
   - Fabriek
   - CropFarm
+  - Fishery
   layers:
   - Default
   - TransparentFX
