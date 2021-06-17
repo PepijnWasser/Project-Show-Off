@@ -380,7 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8579644448404375581}
   - component: {fileID: 7777323904512964833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lab
   m_TagString: Lab
   m_Icon: {fileID: 0}

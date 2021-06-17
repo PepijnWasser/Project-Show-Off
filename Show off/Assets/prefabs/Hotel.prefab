@@ -803,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7574486102870647395}
   - component: {fileID: 4787482659474446548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hotel
   m_TagString: Hotel
   m_Icon: {fileID: 0}
