@@ -27,8 +27,6 @@ public class TsunamiSound : MonoBehaviour
             Stage1();
             stage1bool = true;
         }
-
-        Debug.Log(Day);
         
         if (Day >= 3)
         {
