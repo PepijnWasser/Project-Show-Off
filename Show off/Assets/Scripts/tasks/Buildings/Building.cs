@@ -100,14 +100,14 @@ public class Building : MonoBehaviour
         {
             foreach(Renderer renderer in objectsToHighlight)
             {
-                renderer.material.color = new Color(1, 1, 0);
+                renderer.material.SetFloat("Glow", 1f);
             }
         }
         else
         {
             foreach (Renderer renderer in objectsToHighlight)
             {
-                renderer.material.color = new Color(0, 0, 0);
+                renderer.material.SetFloat("Glow", 0f);
             }
         }
     }
@@ -140,6 +140,7 @@ public class Building : MonoBehaviour
     }
     public void ShowMenu()
     {
+        Debug.Log(showMenu);
         if (popupCanvas != null)
         {
             if (showMenu)

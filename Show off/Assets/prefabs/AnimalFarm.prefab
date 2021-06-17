@@ -8,11 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4239642057498145598}
-  - component: {fileID: 3842403332726944367}
-  - component: {fileID: 3023511978008217692}
-  - component: {fileID: 5587368388947551782}
-  m_Layer: 0
+  - component: {fileID: 4303007029043468949}
+  - component: {fileID: 5770677085067310667}
+  m_Layer: 8
   m_Name: AnimalFarm
   m_TagString: Animal Farm
   m_Icon: {fileID: 0}
@@ -32,9 +30,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3842403332726944367
-MonoBehaviour:
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
+--- !u!136 &5770677085067310667
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103258244758350533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.84
+  m_Height: 13.52
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1783016370342172614
+PrefabInstance:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

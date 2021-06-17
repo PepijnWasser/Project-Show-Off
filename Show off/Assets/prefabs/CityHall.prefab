@@ -127,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4532634980693770735}
   - component: {fileID: 1218132143185821033}
+  - component: {fileID: 4834638587362412650}
   m_Layer: 8
   m_Name: CityHall
   m_TagString: Stadhuis
@@ -170,6 +171,20 @@ MonoBehaviour:
   objectsToHighlight:
   - {fileID: 8123738076209467171}
   taskAtThisLocation: []
+--- !u!136 &4834638587362412650
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2214503572959605415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.58
+  m_Height: 15.04
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5925993000198353757
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &894998090455675281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -197,7 +212,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925993000198353757}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: -0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 29.609074}
+  m_LocalPosition: {x: 0, y: 0, z: 1.66}
   m_LocalScale: {x: 0.006, y: 0.006, z: 0.006}
   m_Children:
   - {fileID: 3921104775885451357}
@@ -206,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9.402556, y: 11.35036}
+  m_AnchoredPosition: {x: 2.88, y: 6.83}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &4620448157442260635
@@ -339,7 +354,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

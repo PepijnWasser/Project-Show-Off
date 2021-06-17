@@ -14,12 +14,14 @@ public class TsunamiSound : MonoBehaviour
     bool stage2bool = false;
     bool stage3bool = false;
     bool stage4bool = false;
+
     void Start()
     {
         GameObject dayObject = GameObject.Find("TimeText");
         TimeScript timeScript = dayObject.GetComponent<TimeScript>();
         Day = timeScript.dayNumber;
     }
+
     void Update()
     {
         if (stage1bool == false)
@@ -27,8 +29,6 @@ public class TsunamiSound : MonoBehaviour
             Stage1();
             stage1bool = true;
         }
-
-        Debug.Log(Day);
         
         if (Day >= 3)
         {
