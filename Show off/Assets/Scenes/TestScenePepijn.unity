@@ -27616,6 +27616,8 @@ MonoBehaviour:
   - {fileID: 6001653779910244099, guid: 7f0e67bf71ddb8c4098d51d117132c60, type: 3}
   - {fileID: 8734807494231306490, guid: 1555a1567e129df4793ad213c132ad4a, type: 3}
   - {fileID: 2163752624296177363, guid: e270bf420492e084caa3ff87d420e2a8, type: 3}
+  - {fileID: 4545357356189013446, guid: 8b0090b278ecf3246b9d0fa5d7d1e915, type: 3}
+  - {fileID: 334941800597609035, guid: dc83d402724897a479c4ccc5df025a68, type: 3}
   specialSandTiles:
   - {fileID: 724764739877640825, guid: 1b19f099600995743b39aefe921eb4d8, type: 3}
   - {fileID: 4827723487844167958, guid: 81c53647ff832074ead4c6d2625d7b20, type: 3}
@@ -27675,6 +27677,7 @@ MonoBehaviour:
   - BusStop
   - Stadhuis
   - Fabriek
+  - TaakBord
   - Untagged
   sandTags:
   - Sand
@@ -33147,7 +33150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1992168571
 AudioSource:
   m_ObjectHideFlags: 0

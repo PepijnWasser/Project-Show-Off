@@ -38,27 +38,38 @@ public class HexMapGenerator : MonoBehaviour
 
     public int randomSeed;
 
+    int specialTilesPlaced = 0;
+    int generationAttempts = 0;
+
     void Start()
     {
-        UnityEngine.Random.InitState(randomSeed);
+        GenerateNewMap();
+    }
+
+    void SetupNewGeneration()
+    {
+        //UnityEngine.Random.InitState(randomSeed);
 
         randX = UnityEngine.Random.Range(0, 200);
         randY = UnityEngine.Random.Range(0, 200);
 
-        CreateTileMap();
+        specialTilesPlaced = 0;
     }
 
-    void CreateTileMap()
+    void GenerateNewMap()
     {
+        SetupNewGeneration();
         CreateInitialTileMap();
 
         ConnectTiles();
+        
         CreateSandAtBorder();
-
         PlaceSpecialGrassTiles();
         PlaceSpecialSandTiles();
         PlaceSpecialSeaTiles();
         PlaceCoralTiles();
+
+        CheckCorrectGeneration();
     }
 
     void CreateInitialTileMap()
@@ -103,35 +114,6 @@ public class HexMapGenerator : MonoBehaviour
         }
     }
 
-    void SetTileInfo(GameObject _gameObject, int _x, int _z)
-    {
-        _gameObject.transform.parent = transform;
-        _gameObject.name = _x.ToString() + ", " + _z.ToString();
-    }
-
-    GameObject DecideTile(int x, int z)
-    {
-        float val = Mathf.PerlinNoise(x / tileVariation + randX , z / tileVariation + randY);
-        Mathf.Clamp(val, 0, 1);
-
-        if(val >= grassRange[0] && val < grassRange[1])
-        {
-            return grassTiles[UnityEngine.Random.Range(0, grassTiles.Count)];
-        }
-        else if(val >= sandRange[0] && val < sandRange[1])
-        {
-            return sandTile;
-        }
-        else if(val >= seaRange[0] && val <= seaRange[1])
-        {
-            return seaTile;
-        }
-        else
-        {
-            return seaTile;
-        }
-    }
-
     void CreateSandAtBorder()
     {
         foreach(Tile tile in placedTiles)
@@ -161,9 +143,11 @@ public class HexMapGenerator : MonoBehaviour
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
                 if(tile.tilePrefab.tag == "Grass")
                 {
+                    Debug.Log(specialGrassTiles[i].name);
                     ReplaceTileWithPrefab(tile, specialGrassTiles[i]);
 
                     tilePlaced = true;
+                    specialTilesPlaced += 1;
                 }
             }
         }
@@ -184,6 +168,7 @@ public class HexMapGenerator : MonoBehaviour
                     ReplaceTileWithPrefab(tile, specialSandTiles[i]);
 
                     tilePlaced = true;
+                    specialTilesPlaced += 1;
                 }
             }
         }
@@ -204,6 +189,7 @@ public class HexMapGenerator : MonoBehaviour
                     ReplaceTileWithPrefab(tile, specialSeaTiles[i]);
 
                     tilePlaced = true;
+                    specialTilesPlaced += 1;
                 }
             }
         }
@@ -223,6 +209,7 @@ public class HexMapGenerator : MonoBehaviour
                 ReplaceTileWithPrefab(tile, coralTile);
 
                 patchesPlaced++;
+                specialTilesPlaced += 1;
 
                 foreach (GameObject connectedTile in tile.connectedTiles)
                 {
@@ -233,6 +220,57 @@ public class HexMapGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    void CheckCorrectGeneration()
+    {
+        if (specialTilesPlaced == (specialSeaTiles.Count + specialSandTiles.Count + specialGrassTiles.Count + coralBlobCount))
+        {
+            Debug.Log("good generation after:" + generationAttempts);
+        }
+        else
+        {
+            DeleteMap();
+            generationAttempts += 1;
+
+            if(generationAttempts < 30)
+            {
+                GenerateNewMap();
+            }
+            else
+            {
+                Debug.Log("too many attempts");
+            }
+        }
+    }
+
+    GameObject DecideTile(int x, int z)
+    {
+        float val = Mathf.PerlinNoise(x / tileVariation + randX, z / tileVariation + randY);
+        Mathf.Clamp(val, 0, 1);
+
+        if (val >= grassRange[0] && val < grassRange[1])
+        {
+            return grassTiles[UnityEngine.Random.Range(0, grassTiles.Count)];
+        }
+        else if (val >= sandRange[0] && val < sandRange[1])
+        {
+            return sandTile;
+        }
+        else if (val >= seaRange[0] && val <= seaRange[1])
+        {
+            return seaTile;
+        }
+        else
+        {
+            return seaTile;
+        }
+    }
+
+    void SetTileInfo(GameObject _gameObject, int _x, int _z)
+    {
+        _gameObject.transform.parent = transform;
+        _gameObject.name = _x.ToString() + ", " + _z.ToString();
     }
 
     void ReplaceTileWithPrefab(Tile original, GameObject replacement)
@@ -247,6 +285,7 @@ public class HexMapGenerator : MonoBehaviour
         SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
 
         original.tilePrefab = tempObject;
+
 
         Destroy(oldTile);
     }
@@ -369,6 +408,15 @@ public class HexMapGenerator : MonoBehaviour
             // tile.connectedTiles = connectedTiles;
             tile.connectedTiles = connectedObjects;
             tile.tilePrefab.GetComponent<Tile>().UpdateData(tile);
+        }
+    }
+
+    void DeleteMap()
+    {
+        List<GameObject> objectsToDestroy = new List<GameObject>();
+        foreach(GameObject o in placedObjects)
+        {
+            Destroy(o.gameObject);
         }
     }
 
