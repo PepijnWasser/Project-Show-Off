@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
         RotatingKeys();         //Q+E keys
 
         //Moving
-        MovingMouse();          //Left-MB + Drag
+        //MovingMouse();          //Left-MB + Drag
         MovingKeys();           //WASD- or Arrow-keys
     }
 
