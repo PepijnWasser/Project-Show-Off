@@ -49,5 +49,6 @@ MonoBehaviour:
     hebben aan hun reis naar Cora Cora.
   coralOutcome: -1
   popularityOutcome: 1
-  outcomeMessage: 
+  outcomeMessage: Fabrieken en grote bedrijven vervuilen veel meer dan individuen.
+    Vervuiling van lucht en het afval hiervan is schadelijk voor het koraalrif.
   placeOfQuest: 1

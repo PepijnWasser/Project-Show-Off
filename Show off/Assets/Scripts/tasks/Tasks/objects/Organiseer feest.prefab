@@ -49,5 +49,7 @@ MonoBehaviour:
     bloemen fakkels, dansen, dit zullen de toeristen niet snel vergeten.
   coralOutcome: -2
   popularityOutcome: 2
-  outcomeMessage: dit is een outcome
+  outcomeMessage: "Een feest cre\xEBert veel afval wat in de zee kan belanden. Plastic
+    verdwijnt nooit uit het milieu, wanneer het in het water beland geeft het veel
+    schade aan dieren en koraal."
   placeOfQuest: 5
