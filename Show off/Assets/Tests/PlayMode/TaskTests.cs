@@ -67,7 +67,6 @@ public class TaskTests : MonoBehaviour
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
-        Debug.Log(taskManager.currentTasks[0].name);
         bool b = taskManager.currentTasks.Contains(task2.GetComponent<Task>());
         Assert.AreEqual(false, b);
 
@@ -104,7 +103,6 @@ public class TaskTests : MonoBehaviour
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
-        Debug.Log(taskManager.currentTasks[0].name);
         bool b = taskManager.currentTasks.Contains(task2.GetComponent<Task>());
         Assert.AreEqual(true, b);
 
@@ -141,7 +139,6 @@ public class TaskTests : MonoBehaviour
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
-        Debug.Log(taskManager.currentTasks[0].name);
         bool b = taskManager.currentTasks.Contains(task2.GetComponent<Task>());
         Assert.AreEqual(true, b);
 

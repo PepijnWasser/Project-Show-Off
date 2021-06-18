@@ -155,8 +155,8 @@ public class IslandGenerationTests
         islandGenerator.grassTiles = new List<GameObject> { new GameObject()};
         islandGenerator.sandTile = new GameObject();
         islandGenerator.seaTile = new GameObject();
-        islandGenerator.mapWidth = 2;
-        islandGenerator.mapHeight = 2;
+        islandGenerator.mapWidth = 7;
+        islandGenerator.mapHeight = 7;
         islandGenerator.borderSize = 3;
         islandGenerator.tileVariation = 0;
         islandGenerator.tileXOffset = 0;

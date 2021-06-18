@@ -158,7 +158,6 @@ public class HexMapGenerator : MonoBehaviour
                 }                
             }   
         }
-        specialTilesPlaced = 1;
     }
 
     void PlaceSpecialSandTiles()
@@ -235,7 +234,6 @@ public class HexMapGenerator : MonoBehaviour
         if (specialTilesPlaced == (specialSeaTiles.Count + specialSandTiles.Count + specialGrassTiles.Count + coralBlobCount))
         {
             completedGeneration = true;
-            Debug.Log("good generation after:" + generationAttempts);
         }
         else
         {
