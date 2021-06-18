@@ -9,7 +9,7 @@ public class ResetPlayerInfo : MonoBehaviour
         PlayerInfo playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
         if(playerInfo != null)
         {
-            playerInfo.Reset();
+            playerInfo.ResetVariables();
         }
         else
         {

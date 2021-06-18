@@ -29,7 +29,6 @@ public class PlayerInfo : MonoBehaviour
     {
         if(instance == null)
         {
-            Debug.Log("creating instance");
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
@@ -42,18 +41,21 @@ public class PlayerInfo : MonoBehaviour
         ScenemanagerGameScene.onChangingScene -= GetPlayerScore;
     }
 
-    void GetPlayerScore()
+    public void GetPlayerScore()
     {
         string popularity = GameObject.Find("Popularity").gameObject.GetComponentInChildren<Text>().text;
         if (popularity != null)
         {
             score = Int32.Parse(popularity);
-            Debug.Log(score);
+        }
+        else
+        {
+            Debug.Log("no popularity found");
         }
 
     }
 
-    public void Reset()
+    public void ResetVariables()
     {
         score = 0;
         age = 999;

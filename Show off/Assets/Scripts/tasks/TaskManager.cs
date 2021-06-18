@@ -68,7 +68,7 @@ public class TaskManager : MonoBehaviour
         StartTasks(currentTasks);
     }
 
-    void GenerateTasksForNewDay()
+    public void GenerateTasksForNewDay()
     {
         List<Task> newTasks = new List<Task>();
         GeneratePositiveCoralTasks(newTasks);
@@ -234,7 +234,7 @@ public class TaskManager : MonoBehaviour
         onTaskCompleted?.Invoke(task);
     }
 
-    void SortTasks()
+    public void SortTasks()
     {
         List<Task> potentialTasks = new List<Task>();
         foreach (GameObject obj in potentialTaskObjects)
