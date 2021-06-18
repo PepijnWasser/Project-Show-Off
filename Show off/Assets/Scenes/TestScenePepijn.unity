@@ -20908,6 +20908,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 8557608754263875646}
+    - target: {fileID: 5487776611017709402, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 5487776611032434406, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

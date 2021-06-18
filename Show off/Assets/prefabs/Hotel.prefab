@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 4654138217870527399}
   - component: {fileID: 3524257278989659112}
   - component: {fileID: 6751962635174613276}
+  - component: {fileID: 3914641461944714369}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -444,6 +445,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3914641461944714369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521584299123149547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b506cc0236920409d3e7eec0398161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terugButton: {fileID: 6751962635174613276}
+  virtualCameras: {fileID: 5487776611797629162, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
 --- !u!1 &3873622028988378162
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +696,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5128465714917489673}
   m_HandleRect: {fileID: 8980942804089131288}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
