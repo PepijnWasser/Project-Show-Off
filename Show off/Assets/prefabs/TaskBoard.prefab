@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terugButton: {fileID: 6678285029983030532}
-  virtualCameras: {fileID: 5487776611797629162, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
+  virtualCameras: {fileID: 3156795595199415381, guid: 0888fedbd10026647b34134dc40269b6, type: 3}
 --- !u!1 &6973778497169821257
 GameObject:
   m_ObjectHideFlags: 0

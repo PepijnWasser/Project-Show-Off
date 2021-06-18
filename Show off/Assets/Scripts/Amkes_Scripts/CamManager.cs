@@ -150,10 +150,17 @@ public class CamManager : MonoBehaviour
 
     private void SetVirtualCamera(GameObject camera, string tagname)
     {
-        if (camera != null)
+        if (camera.transform != null)
         {
-            Vector3 buildingPos = GameObject.FindGameObjectWithTag(tagname).transform.position;
-            camera.transform.position = buildingPos + offset;
+            if (GameObject.FindGameObjectWithTag(tagname) != null)
+            {
+                Vector3 buildingPos = GameObject.FindGameObjectWithTag(tagname).transform.position;
+                camera.transform.position = buildingPos + offset;
+            }
+            else
+            {
+                camera.gameObject.SetActive(false);
+            }
         }
     }
 }
