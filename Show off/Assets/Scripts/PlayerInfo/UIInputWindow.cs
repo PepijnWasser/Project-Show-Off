@@ -51,7 +51,7 @@ public class UIInputWindow : MonoBehaviour
         }
         else
         {
-            resolutionText.text = "please enter valid credentials";
+            resolutionText.text = "Vul je naam en leeftijd in";
         }
     }
 
@@ -87,20 +87,20 @@ public class UIInputWindow : MonoBehaviour
             else
             {
                 validName = false;
-                resolutionText.text = "Name Can't contain numbers";
+                resolutionText.text = "Naam kan geen nummers bevatten";
             }
         }
         else
         {
             validName = false;
-            resolutionText.text = "Name too long";
+            resolutionText.text = "Naam is te lang";
         }
     }
 
     void ValidateAgeInput(InputField inputField)
     {
         string inputValue = inputField.text;
-        if (inputValue.Length <= 2)
+        if (inputValue.Length <= 3)
         {
             bool isInt = inputValue.All(char.IsDigit);
             if (isInt == true)
@@ -111,13 +111,13 @@ public class UIInputWindow : MonoBehaviour
             else
             {
                 validAge = false;
-                resolutionText.text = "please enter a valid age";
+                resolutionText.text = "Leeftijd kan max 3 tekens bevatten";
             }
         }
         else
         {
             validAge = false;
-            resolutionText.text = "please enter a valid age";
+            resolutionText.text = "Leeftijd kan max 3 tekens bevatten";
         }
     }
 }

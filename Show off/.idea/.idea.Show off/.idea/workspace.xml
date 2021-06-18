@@ -13,12 +13,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TutorialManager/TutorialManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/tasks/Tasks/ApproveAtBuildingTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/tasks/TaskManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInfo/UIInputWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Amkes_Scripts/RotateAroundIsland.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/TutorialManager/TutorialManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerInfo/UIInputWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/tasks/TaskManager.cs" />
       </list>
     </option>
   </component>
@@ -71,6 +76,8 @@
       <workItem from="1622021319585" duration="3789000" />
       <workItem from="1623334039438" duration="24000" />
       <workItem from="1623677666962" duration="264000" />
+      <workItem from="1624007531793" duration="495000" />
+      <workItem from="1624013151803" duration="108000" />
     </task>
     <servers />
   </component>

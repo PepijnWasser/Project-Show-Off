@@ -56,7 +56,7 @@ public class TaskManager : MonoBehaviour
         }
         foreach(Task task in tasksToRemove)
         {
-            GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "Changing task";
+            //GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "Changing task";
             EndTask(task);
         }
     }

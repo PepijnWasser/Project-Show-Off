@@ -22,8 +22,10 @@
           <e p="ZoomOnIsland.cs" t="Include" />
         </e>
         <e p="Luc's stuff" t="Include">
+          <e p="AudioVolume.cs" t="Include" />
           <e p="RestartGame.cs" t="Include" />
         </e>
+        <e p="QuitGame.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="boids" t="Include">
             <e p="BahaviorScripts" t="Include">
@@ -101,11 +103,14 @@
               <e p="TaskPanelManager.cs" t="Include" />
             </e>
           </e>
+          <e p="TsunamiSound.cs" t="Include" />
           <e p="TutorialManager" t="Include">
             <e p="TutorialManager.cs" t="Include" />
           </e>
           <e p="ui" t="Include">
             <e p="CloseIFClickedSomewhereElse.cs" t="Include" />
+            <e p="HoverState.cs" t="Include" />
+            <e p="ShowAverageScores.cs" t="Include" />
             <e p="UpdateCoralHealth.cs" t="Include" />
             <e p="UpdatePopulation.cs" t="Include" />
           </e>
