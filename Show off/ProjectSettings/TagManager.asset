@@ -22,6 +22,11 @@ TagManager:
   - Fabriek
   - CropFarm
   - Fishery
+  - TestSite1
+  - CityHall
+  - TestSite2
+  - Harbor
+  - CamManager
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,9 @@ public class OnTerugButtonClicked : MonoBehaviour
 {
 	public Button terugButton;
 	public Canvas buildingPopup;
+
+	private CamManager camManager;
+	private bool isManagerFound;
 	
 	void Start()
 	{
@@ -14,12 +17,30 @@ public class OnTerugButtonClicked : MonoBehaviour
 		btn.onClick.AddListener(TaskOnClick);
 	}
 
-	void TaskOnClick()
+    private void Update()
+    {
+        if (isManagerFound != true)
+        {
+			if (GameObject.FindGameObjectWithTag("CamManager").GetComponent<CamManager>() != null)
+            {
+				camManager = GameObject.FindGameObjectWithTag("CamManager").GetComponent<CamManager>();
+				isManagerFound = true;
+			}
+		}
+    }
+
+    void TaskOnClick()
 	{
-		Debug.Log("You have clicked the button!");
 		if (buildingPopup.enabled == true)
         {
 			buildingPopup.enabled = false;
         }
+
+		if(isManagerFound == true)
+        {
+			camManager.ActiveCamera.SetActive(false);
+			camManager.mainCam.SetActive(true);
+			camManager.cameraControllerScript.enabled = true;
+		}
 	}
 }

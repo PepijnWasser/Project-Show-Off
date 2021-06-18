@@ -19,6 +19,7 @@ public class CamManager : MonoBehaviour
     public GameObject ShopCam;
     public GameObject TaskboardCam;
     public Vector3 offset;
+    public GameObject ActiveCamera;
 
     private bool isCamerasPlaced;
     [SerializeField] private List<GameObject> cameras = new List<GameObject>();
@@ -97,6 +98,8 @@ public class CamManager : MonoBehaviour
 
     public void ActivateCamera(GameObject camera)
     {
+        ActiveCamera = camera;
+
         for (int i = 0; i < cameras.Count; i++)
         {
             if (cameras[i].gameObject == camera.gameObject)
