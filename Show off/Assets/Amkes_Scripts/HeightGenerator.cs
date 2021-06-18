@@ -5,6 +5,8 @@ using UnityEngine;
 public class HeightGenerator : MonoBehaviour
 {
     public int randomSeed;
+    public float minSeaHeight;
+    public float maxSeaHeight;
     
     private List<Transform> children = new List<Transform>();
     private bool createdMap;
@@ -44,12 +46,12 @@ public class HeightGenerator : MonoBehaviour
 
     private void SetSeaHeight()
     {
-        //Set standard sea-height
+        //Set random sea-height
         for (int i = 0; i < children.Count; i++)
         {
             if(seaTags.Contains(children[i].tag))
             {
-                children[i].transform.Translate(0, -2, 0);
+                children[i].transform.Translate(0, Random.Range(minSeaHeight, maxSeaHeight), 0);
             }
         }
     }

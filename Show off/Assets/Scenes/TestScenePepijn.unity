@@ -29279,6 +29279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSeed: 0
+  minSeaHeight: -4
+  maxSeaHeight: -10
   grassTags:
   - Grass
   - Hotel
