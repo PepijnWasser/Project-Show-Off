@@ -28540,9 +28540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3392efcd27c6a74dbde9cff381a648b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManagerScript: {fileID: 0}
-  timeScript: {fileID: 0}
-  coralStateScript: {fileID: 0}
+  taskManagerScript: {fileID: 1808490658}
+  timeScript: {fileID: 6805157823310648987}
+  coralStateScript: {fileID: 2116992712}
 --- !u!1 &1834173244
 GameObject:
   m_ObjectHideFlags: 0
@@ -35138,6 +35138,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3801088725428654835, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
   m_PrefabInstance: {fileID: 2116992710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116992712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+  m_PrefabInstance: {fileID: 2116992710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20114b032830eec429e5138e91a69046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146172041
 GameObject:
   m_ObjectHideFlags: 0
