@@ -36,8 +36,6 @@ public class HexMapGenerator : MonoBehaviour
     Tile[,] placedTiles;
     GameObject[,] placedObjects;
 
-    public int randomSeed;
-
     int specialTilesPlaced = 0;
     int generationAttempts = 0;
 
@@ -51,7 +49,7 @@ public class HexMapGenerator : MonoBehaviour
 
     void SetupNewGeneration()
     {
-        //UnityEngine.Random.InitState(randomSeed);
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
 
         randX = UnityEngine.Random.Range(0, 200);
         randY = UnityEngine.Random.Range(0, 200);
@@ -142,21 +140,17 @@ public class HexMapGenerator : MonoBehaviour
             bool tilePlaced = false;
             int j = 0;
             
-            while(tilePlaced == false && j < 10)
+            while(tilePlaced == false && j < 20)
             {              
-                j += 1;
+                j = j + 1;
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
-                tilePlaced = true;
-                
                 if(tile.tilePrefab.tag == "Grass")
                 {
-                    Debug.Log(specialGrassTiles[i].name);
                     ReplaceTileWithPrefab(tile, specialGrassTiles[i]);
-
                     tilePlaced = true;
                     specialTilesPlaced += 1;
-                }                
-            }   
+                }      
+            }  
         }
     }
 
@@ -231,8 +225,10 @@ public class HexMapGenerator : MonoBehaviour
 
     void CheckCorrectGeneration()
     {
+        Debug.Log(specialTilesPlaced);
         if (specialTilesPlaced == (specialSeaTiles.Count + specialSandTiles.Count + specialGrassTiles.Count + coralBlobCount))
         {
+            Debug.Log("succesfull generation after " + generationAttempts);
             completedGeneration = true;
         }
         else
@@ -240,7 +236,7 @@ public class HexMapGenerator : MonoBehaviour
             DeleteMap();
             generationAttempts += 1;
 
-            if(generationAttempts < 30)
+            if(generationAttempts < 20)
             {
                 GenerateNewMap();
             }
@@ -291,9 +287,9 @@ public class HexMapGenerator : MonoBehaviour
         tempObject.AddComponent<Tile>();
         tempObject.GetComponent<Tile>().UpdateData(original);
         SetTileInfo(tempObject, oldTile.GetComponent<Tile>().localX, oldTile.GetComponent<Tile>().localZ);
+        tempObject.name = tempObject.name + replacement.name;
 
         original.tilePrefab = tempObject;
-
 
         Destroy(oldTile);
     }
@@ -421,10 +417,9 @@ public class HexMapGenerator : MonoBehaviour
 
     void DeleteMap()
     {
-        List<GameObject> objectsToDestroy = new List<GameObject>();
-        foreach(GameObject o in placedObjects)
+        foreach (Transform child in transform)
         {
-            Destroy(o.gameObject);
+            Destroy(child.gameObject);
         }
     }
 

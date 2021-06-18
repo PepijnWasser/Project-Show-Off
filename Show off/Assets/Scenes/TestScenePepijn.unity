@@ -29218,8 +29218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc96c61fbf96fc3498b1b33f500a5c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapWidth: 10
-  mapHeight: 10
+  mapWidth: 20
+  mapHeight: 20
   grassTiles:
   - {fileID: 6331707834421829459, guid: f0873e20127a8af40a582cd3fe22f03c, type: 3}
   - {fileID: 8783425366139691133, guid: c2f8401412a4fcf49adb7b6d24699e7f, type: 3}
@@ -29230,21 +29230,15 @@ MonoBehaviour:
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
   coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
   specialGrassTiles:
-  - {fileID: 762395292936592159, guid: dcbd3e0afd1f54f488bf788179a59ec9, type: 3}
   - {fileID: 2275035578000867518, guid: 87aea59f2c827ac42ad5be7689053875, type: 3}
   - {fileID: 2214503572959605415, guid: 6c550f7a77e5654469a0e4bc524963ba, type: 3}
-  - {fileID: 1620692239521677402, guid: 2e9988bbef77c1642b87d3c6c8814979, type: 3}
   - {fileID: 6001653779910244099, guid: 7f0e67bf71ddb8c4098d51d117132c60, type: 3}
-  - {fileID: 8734807494231306490, guid: 1555a1567e129df4793ad213c132ad4a, type: 3}
   - {fileID: 2163752624296177363, guid: e270bf420492e084caa3ff87d420e2a8, type: 3}
+  - {fileID: 8734807494231306490, guid: 1555a1567e129df4793ad213c132ad4a, type: 3}
   - {fileID: 4545357356189013446, guid: 8b0090b278ecf3246b9d0fa5d7d1e915, type: 3}
   - {fileID: 334941800597609035, guid: dc83d402724897a479c4ccc5df025a68, type: 3}
   specialSandTiles:
   - {fileID: 724764739877640825, guid: 1b19f099600995743b39aefe921eb4d8, type: 3}
-  - {fileID: 760363455712046703, guid: 81c53647ff832074ead4c6d2625d7b20, type: 3}
-  - {fileID: 7414458281196270555, guid: a27628e4bfeab3b4e8612da036db1bae, type: 3}
-  - {fileID: 5401423383670377031, guid: d8eeb06a73e60e94ba2f5290c9d38d4a, type: 3}
-  - {fileID: 9137587039569953188, guid: 8b211625994f6754290430d7e6fa24bf, type: 3}
   specialSeaTiles: []
   grassRange:
   - 0
@@ -29260,7 +29254,6 @@ MonoBehaviour:
   tileZOffset: 3.5
   tileVariation: 15
   coralBlobCount: 3
-  randomSeed: 0
   completedGeneration: 1
 --- !u!4 &1834563587
 Transform:
