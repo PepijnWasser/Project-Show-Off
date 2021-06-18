@@ -48,5 +48,6 @@ MonoBehaviour:
   description: Bouw een extra resort om nog meer toeristen te kunnen verwelkomen.
   coralOutcome: -1
   popularityOutcome: 1
-  outcomeMessage: 
+  outcomeMessage: Hoe meer toerisme, hoe meer vervuiling en kans op vertrapping van
+    het koraal. Teveel focus op populariteit gaat ten koste van het koraal.
   placeOfQuest: 1

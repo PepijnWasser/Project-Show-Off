@@ -49,5 +49,8 @@ MonoBehaviour:
     de vissen die daar leven, motiveer toeristen om vuilnis op te ruimen.
   coralOutcome: 1
   popularityOutcome: -1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: Plastic verdwijnt nooit uit het milieu, wanneer het in het water
+    komt geeft het veel schade aan dieren en koraal. Het is altijd goed om je afval
+    te scheiden en te recyclen. Toeristen bewust maken van de schade dat afval veroorzaakt
+    zal ze motiveren om de omgeving niet te vervuilen.
   placeOfQuest: 4

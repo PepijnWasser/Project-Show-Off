@@ -17623,7 +17623,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dit is kaal coraal in het panamakanaal van daar
+  m_text: Door vervuiling komt plastic in de zee, deze stukken breken langzaam in
+    kleine stukjes tot microplastics, deze beschadigen het koraal en belanden in
+    ons eten. Door het water te filteren haal je deze kleine stukjes plastic uit
+    het water om zo schade te voorkomen, dit is heel goed voor het koraal.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9356adeef00902742999eb009f81e164, type: 2}
   m_sharedMaterial: {fileID: 2793152478178968214, guid: 9356adeef00902742999eb009f81e164, type: 2}
@@ -17650,8 +17653,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17686,7 +17689,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -40.638023, y: 56.5382, z: -15.414598, w: 99.31808}
+  m_margin: {x: -49.444115, y: 56.5382, z: -19.318865, w: 95.60572}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -17708,7 +17711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26000002, y: 0}
   m_AnchorMax: {x: 0.85, y: 1}
-  m_AnchoredPosition: {x: -11.55501, y: -14.199996}
+  m_AnchoredPosition: {x: -11.55501, y: -18}
   m_SizeDelta: {x: 161.91003, y: 28.400007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &768654324
@@ -29254,6 +29257,7 @@ MonoBehaviour:
   tileVariation: 15
   coralBlobCount: 3
   randomSeed: 0
+  completedGeneration: 1
 --- !u!4 &1834563587
 Transform:
   m_ObjectHideFlags: 0
@@ -34785,7 +34789,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 723, y: 98}
-  m_SizeDelta: {x: 787.19, y: 200}
+  m_SizeDelta: {x: 790, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1949743572
 GameObject:

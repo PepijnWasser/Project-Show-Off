@@ -49,5 +49,7 @@ MonoBehaviour:
     alternatief voor vlees en vis.
   coralOutcome: 1
   popularityOutcome: 0
-  outcomeMessage: 
+  outcomeMessage: Landbouw is een milieuvriendelijk alternatief voor veehouderijen
+    en visserijen. Het is minder schadelijk voor het milieu en beschadigd de koralen
+    niet.
   placeOfQuest: 1

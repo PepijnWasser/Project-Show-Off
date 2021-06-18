@@ -49,5 +49,7 @@ MonoBehaviour:
     kunnen bewonderen. Nu maar hopen dat ze voorzichtig zijn.
   coralOutcome: -1
   popularityOutcome: 1
-  outcomeMessage: dit is een outcome
+  outcomeMessage: 'Onervaren duikers bij kwetsbaar koraal laten is niet een goed
+    idee. Onervaren duikers kunnen het koraal gemakkelijk beschadigen door het per
+    ongeluk te vertrappen of te schaven. '
   placeOfQuest: 5

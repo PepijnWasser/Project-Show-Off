@@ -49,5 +49,7 @@ MonoBehaviour:
     vandaag sluiten we de haven voor nieuwe toeristen.
   coralOutcome: 1
   popularityOutcome: -1
-  outcomeMessage: 
+  outcomeMessage: Hoewel toerisme goed is voor de populariteit en economie, toeristen
+    vervuilen en vertrappen het koraal en het is goed om het koraal soms wat rust
+    te geven hiervan.
   placeOfQuest: 0

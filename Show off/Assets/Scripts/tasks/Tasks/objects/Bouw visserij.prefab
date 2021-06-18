@@ -49,5 +49,8 @@ MonoBehaviour:
     zal men erg op prijs stellen.
   coralOutcome: -1
   popularityOutcome: 1
-  outcomeMessage: 
+  outcomeMessage: Vis is de belangrijkste voedselbron voor Cora Cora, het is belangrijk
+    voor de economie en cultuur, maar het is niet goed voor het koraalrif. Netvissen
+    beschadigd het rif en overbevissing kan vissoorten laten uitsterven waardoor
+    het ecosysteem uit balans raakt.
   placeOfQuest: 1

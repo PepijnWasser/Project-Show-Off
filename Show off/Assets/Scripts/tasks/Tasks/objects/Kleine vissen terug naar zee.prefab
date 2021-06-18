@@ -49,5 +49,7 @@ MonoBehaviour:
     en zich te voortplanten, hierdoor sterven de vissen niet uit.
   coralOutcome: 1
   popularityOutcome: 0
-  outcomeMessage: 
+  outcomeMessage: Jonge kleine vissen terug gooien in de zee zorgt ervoor dat ze
+    kunnen groeien en zich kunnen voortplanten, hierdoor sterven vissoorten niet
+    uit en blijft het ecosysteem in balans, dit is zeer goed voor de koraal gezondheid.
   placeOfQuest: 2

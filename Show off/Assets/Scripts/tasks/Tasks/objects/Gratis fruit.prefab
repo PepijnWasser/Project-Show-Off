@@ -49,5 +49,8 @@ MonoBehaviour:
     vervuilen het milieu, een goede keus voor het koraal en ook nog heel gezond.
   coralOutcome: 1
   popularityOutcome: 1
-  outcomeMessage: 
+  outcomeMessage: Landbouw is een milieuvriendelijk alternatief voor veehouderijen
+    en visserijen. Het is minder schadelijk voor het milieu en beschadigd de koralen
+    niet. Gratis fruit motiveert mensen om hiervoor te kiezen in plaats van vlees
+    of vis.
   placeOfQuest: 5

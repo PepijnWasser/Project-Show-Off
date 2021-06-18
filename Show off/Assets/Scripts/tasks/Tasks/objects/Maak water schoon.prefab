@@ -49,5 +49,8 @@ MonoBehaviour:
     wordt het water rond het rif een stuk schoner.
   coralOutcome: 1
   popularityOutcome: 1
-  outcomeMessage: 
+  outcomeMessage: Door vervuiling komt plastic in de zee, deze stukken breken langzaam
+    in kleine stukjes tot microplastics, deze beschadigen het koraal en belanden
+    in ons eten. Door het water te filteren haal je deze kleine stukjes plastic uit
+    het water om zo schade te voorkomen, dit is heel goed voor het koraal.
   placeOfQuest: 2
