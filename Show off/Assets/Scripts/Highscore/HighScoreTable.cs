@@ -9,7 +9,7 @@ public class HighScoreTable : MonoBehaviour
     List<GameObject> highScoreEntryGameObjectList = new List<GameObject>();
     public List<Vector3> entryPositions = new List<Vector3>();
     public int amountOfPositionsDisplayed = 8;
-    HighScores highScores;
+    HighScores highScores = new HighScores();
 
     private void Awake()
     {
@@ -43,10 +43,6 @@ public class HighScoreTable : MonoBehaviour
     private void Start()
     {
         highScores = GetHighScores();
-        foreach(HighScoreEntry entry in highScores.highScoreEntryList)
-        {
-            Debug.Log(entry.name);
-        }
         highScoreEntryGameObjectList = new List<GameObject>();
         if (entryPositions.Count >= amountOfPositionsDisplayed)
         {
@@ -94,15 +90,16 @@ public class HighScoreTable : MonoBehaviour
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+        HighScores _highScores = JsonUtility.FromJson<HighScores>(jsonString);
 
+        _highScores.highScoreEntryList.Add(highScoreEntry);
         highScores.highScoreEntryList.Add(highScoreEntry);
+        SortEntries(_highScores.highScoreEntryList);
         SortEntries(highScores.highScoreEntryList);
 
-        string json = JsonUtility.ToJson(highScores);
+        string json = JsonUtility.ToJson(_highScores);
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
-
     }
 
     void SortEntries(List<HighScoreEntry> highScoreEntries)
@@ -138,6 +135,17 @@ public class HighScoreTable : MonoBehaviour
             combined += entry.score;
         }
         return (float)combined / (float)highScores.highScoreEntryList.Count;
+    }
+
+    public void DelteEntries()
+    {
+        highScores = new HighScores();
+    }
+
+    public int GetEntryAmount()
+    {
+        HighScores h = highScores;
+        return h.highScoreEntryList.Count;
     }
 
     HighScores GetHighScores()

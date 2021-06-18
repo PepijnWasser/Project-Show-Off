@@ -41,6 +41,9 @@ public class HexMapGenerator : MonoBehaviour
     int specialTilesPlaced = 0;
     int generationAttempts = 0;
 
+    [HideInInspector]
+    public bool completedGeneration = true;
+
     void Start()
     {
         GenerateNewMap();
@@ -135,12 +138,16 @@ public class HexMapGenerator : MonoBehaviour
     {
         for(int i = 0; i < specialGrassTiles.Count; i++)
         {
+            
             bool tilePlaced = false;
             int j = 0;
-            while(tilePlaced == false && j < 100)
-            {
+            
+            while(tilePlaced == false && j < 10)
+            {              
                 j += 1;
                 Tile tile = placedTiles[UnityEngine.Random.Range(0, mapWidth), UnityEngine.Random.Range(0, mapHeight)];
+                tilePlaced = true;
+                
                 if(tile.tilePrefab.tag == "Grass")
                 {
                     Debug.Log(specialGrassTiles[i].name);
@@ -148,9 +155,10 @@ public class HexMapGenerator : MonoBehaviour
 
                     tilePlaced = true;
                     specialTilesPlaced += 1;
-                }
-            }
+                }                
+            }   
         }
+        specialTilesPlaced = 1;
     }
 
     void PlaceSpecialSandTiles()
@@ -226,6 +234,7 @@ public class HexMapGenerator : MonoBehaviour
     {
         if (specialTilesPlaced == (specialSeaTiles.Count + specialSandTiles.Count + specialGrassTiles.Count + coralBlobCount))
         {
+            completedGeneration = true;
             Debug.Log("good generation after:" + generationAttempts);
         }
         else
@@ -239,6 +248,7 @@ public class HexMapGenerator : MonoBehaviour
             }
             else
             {
+                completedGeneration = false;
                 Debug.Log("too many attempts");
             }
         }
