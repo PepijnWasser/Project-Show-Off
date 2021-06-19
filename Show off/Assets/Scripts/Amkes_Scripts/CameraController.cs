@@ -30,7 +30,6 @@ public class CameraController : MonoBehaviour
         RotatingKeys();         //Q+E keys
 
         //Moving
-        //MovingMouse();          //Left-MB + Drag
         MovingKeys();           //WASD- or Arrow-keys
     }
 
@@ -62,27 +61,6 @@ public class CameraController : MonoBehaviour
         {
             //Right
             transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (1 * rotateSpeed), 0.0f);
-        }
-    }
-
-    private void MovingMouse()
-    {
-        //Left-MB + Drag
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 forward = mainCam.transform.forward;
-            forward.y = 0.0f;
-            forward.Normalize();
-            Vector3 right = mainCam.transform.right.normalized;
-
-            float moveX = Input.GetAxisRaw("Mouse X");
-            float moveZ = Input.GetAxisRaw("Mouse Y");
-
-            Vector3 dir = forward * moveZ + right * moveX;
-            dir.Normalize();
-            dir *= moveSpeedMouse * Time.deltaTime;
-            transform.position -= dir;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
         }
     }
 

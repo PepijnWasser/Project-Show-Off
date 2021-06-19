@@ -111,7 +111,6 @@ public class CamManager : MonoBehaviour
         }
 
         camera.SetActive(true);
-
         cameraControllerScript.enabled = false;
     }
 
@@ -119,7 +118,6 @@ public class CamManager : MonoBehaviour
     {
         camera.SetActive(false);
         mainCam.SetActive(true);
-
         cameraControllerScript.enabled = true;
     }
 

@@ -5443,6 +5443,7 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438641}
   TaskboardCam: {fileID: 346485695}
   offset: {x: 0, y: 10, z: -2}
+  ActiveCamera: {fileID: 0}
   cameras:
   - {fileID: 1360438640}
   - {fileID: 1360438639}
@@ -34988,6 +34989,50 @@ PrefabInstance:
       propertyPath: numberFairlyHealthy
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[4]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[5]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[6]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[7]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[8]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[9]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: coralLevels.Array.data[10]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3801088725428654835, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -44807,6 +44852,7 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438638}
   TaskboardCam: {fileID: 1360438639}
   offset: {x: 0, y: 0, z: 0}
+  ActiveCamera: {fileID: 0}
   cameras: []
 --- !u!4 &8557608753025192614
 Transform:
