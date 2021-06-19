@@ -12,7 +12,7 @@ public class TerrainType
 
 public class TileGeneration : MonoBehaviour
 {
-    [SerializeField] NoiseMapGeneration noiseMapGeneration;
+    [SerializeField] private NoiseMapGeneration noiseMapGeneration;
     [SerializeField] private MeshRenderer tileRenderer;
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshCollider meshCollider;
@@ -78,7 +78,7 @@ public class TileGeneration : MonoBehaviour
         return tileTexture;
     }
 
-    TerrainType ChooseTerrainType(float height)
+    private TerrainType ChooseTerrainType(float height)
     {
         //For each terrain type, check if the height is lower than the one for the terrain type
         foreach(TerrainType terrainType in terrainTypes)

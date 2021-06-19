@@ -29,7 +29,7 @@ public class CamManager : MonoBehaviour
         isCamerasPlaced = false;
     }
 
-    void Update()
+    private void Update()
     {
         if (isCamerasPlaced == false)
         {

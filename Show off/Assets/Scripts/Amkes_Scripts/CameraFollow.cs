@@ -11,12 +11,12 @@ public class CameraFollow : MonoBehaviour
     private Vector3 initialOffset;
     private Vector3 cameraPosition;
 
-    void Start()
+    private void Start()
     {
         initialOffset = transform.position - targetObject.position;
     }
 
-    void Update()
+    private void Update()
     {
         cameraPosition = targetObject.position + initialOffset;
         transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothness * Time.deltaTime);

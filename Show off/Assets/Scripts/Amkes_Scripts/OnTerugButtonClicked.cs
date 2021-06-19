@@ -11,7 +11,7 @@ public class OnTerugButtonClicked : MonoBehaviour
 	private CamManager camManager;
 	private bool isManagerFound;
 	
-	void Start()
+	private void Start()
 	{
 		Button btn = terugButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);

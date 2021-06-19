@@ -28,7 +28,6 @@ public class CoralState : MonoBehaviour
     };
 
     [Header("Designer-tool: Set Coral States")]
-    /*
     public CoralStates coral0;
     public CoralStates coral1;
     public CoralStates coral2;
@@ -40,15 +39,11 @@ public class CoralState : MonoBehaviour
     public CoralStates coral8;
     public CoralStates coral9;
     public CoralStates coral10;
-    */
-    public CoralStates[] coralLevels;
 
     private Dictionary<int, CoralStates> coralHealthLevels = new Dictionary<int, CoralStates>();
 
     private void Start()
     {
-        //healthImage.color = Color.green;
-        /*
         coralHealthLevels.Add(0, coral0);
         coralHealthLevels.Add(1, coral1);
         coralHealthLevels.Add(2, coral2);
@@ -60,7 +55,6 @@ public class CoralState : MonoBehaviour
         coralHealthLevels.Add(8, coral8);
         coralHealthLevels.Add(9, coral9);
         coralHealthLevels.Add(10, coral10);
-        */
     }
 
     private void Update()
@@ -77,76 +71,34 @@ public class CoralState : MonoBehaviour
             {
                 if (healthLevel.Value == CoralStates.Dead)
                 {
-                    SetColorDead();
+                    SetState(numberDead);
                 }
                 else if (healthLevel.Value == CoralStates.OnTheBrink)
                 {
-                    SetColorOnTheBrink();
+                    SetState(numberOnTheBrink);
                 }
                 else if (healthLevel.Value == CoralStates.FairlyDamaged)
                 {
-                    SetColorFairlyDamaged();
+                    SetState(numberFairlyDamaged);
                 }
                 else if (healthLevel.Value == CoralStates.FairlyHealthy)
                 {
-                    SetColorFairlyHealthy();
+                    SetState(numberFairlyHealthy);
                 }
                 if (healthLevel.Value == CoralStates.Thriving)
                 {
-                    SetColorThriving();
+                    SetState(numberThriving);
                 }
             }
         }
 
     }
-    void SetColorThriving()
-    {
-        //Green
-        //healthImage.color = new Vector4(0, 1, 0, 1);
-        coral1Material.SetFloat("CoralHealth", numberThriving);
-        coral2Material.SetFloat("CoralHealth", numberThriving);
-        coral3Material.SetFloat("CoralHealth", numberThriving);
-        coral4Material.SetFloat("CoralHealth", numberThriving);
-    }
 
-    void SetColorFairlyHealthy()
+    private void SetState(float stateNum)
     {
-        //Yellow
-        //healthImage.color = new Vector4(1, 0.92f, 0.016f, 1);
-        coral1Material.SetFloat("CoralHealth", numberFairlyHealthy);
-        coral2Material.SetFloat("CoralHealth", numberFairlyHealthy);
-        coral3Material.SetFloat("CoralHealth", numberFairlyHealthy);
-        coral4Material.SetFloat("CoralHealth", numberFairlyHealthy);
-    }
-
-    void SetColorFairlyDamaged()
-    {
-        //Orange
-        //healthImage.color = new Vector4(1, 0.6f, 0, 1);
-        coral1Material.SetFloat("CoralHealth", numberFairlyDamaged);
-        coral2Material.SetFloat("CoralHealth", numberFairlyDamaged);
-        coral3Material.SetFloat("CoralHealth", numberFairlyDamaged);
-        coral4Material.SetFloat("CoralHealth", numberFairlyDamaged);
-    }
-
-    void SetColorOnTheBrink()
-    {
-        //Red
-        //healthImage.color = new Vector4(1, 0, 0, 1);
-        coral1Material.SetFloat("CoralHealth", numberOnTheBrink);
-        coral2Material.SetFloat("CoralHealth", numberOnTheBrink);
-        coral3Material.SetFloat("CoralHealth", numberOnTheBrink);
-        coral4Material.SetFloat("CoralHealth", numberOnTheBrink);
-    }
-
-    void SetColorDead()
-    {
-        //Black
-        //healthImage.color = new Vector4(0, 0, 0, 1);
-        //healthText.color = Color.white;
-        coral1Material.SetFloat("CoralHealth", numberDead);
-        coral2Material.SetFloat("CoralHealth", numberDead);
-        coral3Material.SetFloat("CoralHealth", numberDead);
-        coral4Material.SetFloat("CoralHealth", numberDead);
+        coral1Material.SetFloat("CoralHealth", stateNum);
+        coral2Material.SetFloat("CoralHealth", stateNum);
+        coral3Material.SetFloat("CoralHealth", stateNum);
+        coral4Material.SetFloat("CoralHealth", stateNum);
     }
 }

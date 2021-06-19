@@ -7,14 +7,13 @@ public class HeightGenerator : MonoBehaviour
     public int randomSeed;
     public float minSeaHeight;
     public float maxSeaHeight;
-    
-    private List<Transform> children = new List<Transform>();
-    private bool createdMap;
-    private Vector3 centerPos = new Vector3(0, 0, 0);
-
     public List<string> grassTags;
     public List<string> sandTags;
     public List<string> seaTags;
+
+    private List<Transform> children = new List<Transform>();
+    private bool createdMap;
+    private Vector3 centerPos = new Vector3(0, 0, 0);
 
     private void Start()
     {

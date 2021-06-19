@@ -72,7 +72,7 @@ public class RotateAroundIsland : MonoBehaviour
         }
     }
 
-    bool CheckValidYMovement()
+    private bool CheckValidYMovement()
     {
         bool withinBorders = xAngle >= minAngle && xAngle <= maxAngle;
         bool movingUpAllowed = xAngle < minAngle && Input.GetAxis("Mouse Y") < 0;
@@ -88,7 +88,7 @@ public class RotateAroundIsland : MonoBehaviour
         }
     }
 
-    void MoveCamera()
+    private void MoveCamera()
     {
         transform.RotateAround(target, camTransform.right, -Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime);
     }

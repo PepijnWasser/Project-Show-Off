@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class TimeScript : MonoBehaviour
 {
     public Text timeText;
-
     public int dayNumber = 1;
 
     public delegate void OnDayChanged();
@@ -27,7 +26,7 @@ public class TimeScript : MonoBehaviour
         Energy.onDayCompleted -= AddDay;
     }
 
-    void AddDay()
+    private void AddDay()
     {
         dayNumber += 1;
         timeText.text = "Day: " + dayNumber;

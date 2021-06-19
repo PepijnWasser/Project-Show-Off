@@ -14,10 +14,10 @@ public class Energy : MonoBehaviour
     public TaskManager taskManagerScript;
     public ParticleSystem MinusEnergy;
 
-    private int maxEnergyAmount;
-
     public delegate void DayCompleted();
     public static event DayCompleted onDayCompleted;
+
+    private int maxEnergyAmount;
 
     private void Awake()
     {
@@ -41,13 +41,13 @@ public class Energy : MonoBehaviour
         TaskManager.onTaskCompleted -= CheckNewDay;
     }
 
-    void RemoveEnergy(Task task)
+    private void RemoveEnergy(Task task)
     {
         energyAmount -= task.energyCost;
         MinusEnergy.Play();
     }
 
-    void UpdateHUD(Task task)
+    private void UpdateHUD(Task task)
     {
         energyText.text = energyAmount.ToString();
         if (energyAmount > 0)
@@ -60,7 +60,7 @@ public class Energy : MonoBehaviour
         }
     }
 
-    void UpdateHUD()
+    private void UpdateHUD()
     {
         energyText.text = energyAmount.ToString();
         if (energyAmount > 0)
@@ -73,7 +73,7 @@ public class Energy : MonoBehaviour
         }
     }
 
-    void CheckNewDay(Task task)
+    private void CheckNewDay(Task task)
     {
         if(energyAmount <= 0)
         {
@@ -81,7 +81,7 @@ public class Energy : MonoBehaviour
             onDayCompleted?.Invoke();
         }
     }
-    void RefillEnergy()
+    private void RefillEnergy()
     {
         energyAmount = maxEnergyAmount;
         UpdateHUD();

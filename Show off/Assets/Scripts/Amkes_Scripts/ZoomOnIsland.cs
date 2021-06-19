@@ -17,7 +17,7 @@ public class ZoomOnIsland : MonoBehaviour
         CheckInput();
     }
 
-    void CheckInput()
+    private void CheckInput()
     {
         //Zoom in
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
@@ -42,7 +42,7 @@ public class ZoomOnIsland : MonoBehaviour
         }
     }
 
-    void ZoomIn(float sensitivity)
+    private void ZoomIn(float sensitivity)
     {
         Vector3 dVec = targetPos - this.transform.position;
         float distance = dVec.magnitude;
