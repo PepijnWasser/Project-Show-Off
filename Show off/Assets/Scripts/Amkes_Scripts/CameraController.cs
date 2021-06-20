@@ -5,14 +5,13 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeedKeys;
-    [SerializeField] private float moveSpeedMouse;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float zoomSpeed;
+    [SerializeField] private float rotateSpeed;
     [SerializeField] private float minXRot;
     [SerializeField] private float maxXrot;
     [SerializeField] private float minFOV;
     [SerializeField] private float maxFOV;
-    [SerializeField] private float zoomSpeed;
-    [SerializeField] private float rotateSpeed;
     [SerializeField] private GameObject camObject;
     [SerializeField] private float minXBound;
     [SerializeField] private float maxXBound;
@@ -87,7 +86,7 @@ public class CameraController : MonoBehaviour
 
         Vector3 dir = forward * moveZ + right * moveX;
         dir.Normalize();
-        dir *= moveSpeedKeys * Time.deltaTime;
+        dir *= moveSpeed * Time.deltaTime;
         transform.position += dir;
 
         //Make sure player stays within the playing-field

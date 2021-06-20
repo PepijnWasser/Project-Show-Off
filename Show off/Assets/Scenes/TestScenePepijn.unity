@@ -156,7 +156,7 @@ RectTransform:
   - {fileID: 2069401645}
   - {fileID: 1334159574}
   m_Father: {fileID: 1030453166}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5183,7 +5183,7 @@ GameObject:
   - component: {fileID: 40991510}
   - component: {fileID: 40991509}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CMGTLogoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5428,9 +5428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCamera: {fileID: 0}
-  mainCam: {fileID: 1360438640}
   cameraControllerScript: {fileID: 8557608754263875644}
+  ActiveCamera: {fileID: 0}
+  MainCam: {fileID: 1360438640}
   CoralReefCam: {fileID: 218536339}
   AnimalFarmCam: {fileID: 1360438639}
   BusStationCam: {fileID: 1360438638}
@@ -5961,7 +5961,7 @@ GameObject:
   - component: {fileID: 222925414}
   - component: {fileID: 222925413}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HexarifLogoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6249,7 +6249,7 @@ GameObject:
   - component: {fileID: 415026882}
   - component: {fileID: 415026881}
   m_Layer: 5
-  m_Name: Image
+  m_Name: InputFieldBackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18446,7 +18446,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1030453166}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19236,11 +19236,11 @@ RectTransform:
   m_Children:
   - {fileID: 415026880}
   - {fileID: 1725143989}
+  - {fileID: 28249369}
   - {fileID: 1763670536}
   - {fileID: 918284068}
   - {fileID: 1122437012}
   - {fileID: 1579698589}
-  - {fileID: 28249369}
   - {fileID: 1132728459}
   - {fileID: 222925412}
   - {fileID: 40991508}
@@ -19804,7 +19804,7 @@ RectTransform:
   m_Children:
   - {fileID: 728966608}
   m_Father: {fileID: 1030453166}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27105,7 +27105,7 @@ RectTransform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1030453166}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27664,7 +27664,7 @@ GameObject:
   - component: {fileID: 1642234229}
   - component: {fileID: 1642234228}
   m_Layer: 5
-  m_Name: Image
+  m_Name: OyfoLogoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28075,7 +28075,7 @@ RectTransform:
   - {fileID: 432485668}
   - {fileID: 1398967827}
   m_Father: {fileID: 1030453166}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42832,7 +42832,7 @@ MonoBehaviour:
   energyText: {fileID: 6805157822595521544}
   timeScript: {fileID: 6805157823310648987}
   taskManagerScript: {fileID: 1808490658}
-  MinusEnergy: {fileID: 9121468452943473287}
+  minusEnergy: {fileID: 0}
 --- !u!222 &6805157823847363203
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44837,9 +44837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCamera: {fileID: 0}
-  mainCam: {fileID: 1360438640}
   cameraControllerScript: {fileID: 8557608754263875644}
+  ActiveCamera: {fileID: 0}
+  MainCam: {fileID: 0}
   CoralReefCam: {fileID: 218536339}
   AnimalFarmCam: {fileID: 0}
   BusStationCam: {fileID: 1360438632}
@@ -44897,14 +44897,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3f8e62a0df4d5419455b10d231db78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedKeys: 30
-  moveSpeedMouse: 50
+  moveSpeed: 30
+  zoomSpeed: 20
+  rotateSpeed: 2
   minXRot: -90
   maxXrot: -20
   minFOV: 10
   maxFOV: 80
-  zoomSpeed: 20
-  rotateSpeed: 2
   camObject: {fileID: 8557608754263875641}
   minXBound: -100
   maxXBound: 100

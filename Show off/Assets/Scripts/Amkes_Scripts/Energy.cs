@@ -13,7 +13,7 @@ public class Energy : MonoBehaviour
     [SerializeField] private Text energyText;
     [SerializeField] private TimeScript timeScript;
     [SerializeField] private TaskManager taskManagerScript;
-    [SerializeField] private ParticleSystem MinusEnergy;
+    [SerializeField] private ParticleSystem minusEnergy;
     private int maxEnergyAmount;
 
     public delegate void DayCompleted();
@@ -44,7 +44,7 @@ public class Energy : MonoBehaviour
     private void RemoveEnergy(Task task)
     {
         energyAmount -= task.energyCost;
-        MinusEnergy.Play();
+        minusEnergy.Play();
     }
 
     private void UpdateHUD(Task task)

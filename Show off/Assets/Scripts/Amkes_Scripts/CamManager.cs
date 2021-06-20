@@ -6,7 +6,7 @@ public class CamManager : MonoBehaviour
 {
     public CameraController cameraControllerScript;
     public GameObject ActiveCamera;
-    public GameObject mainCam;
+    public GameObject MainCam;
     public GameObject CoralReefCam;
     public GameObject AnimalFarmCam;
     public GameObject BusStationCam;
@@ -124,7 +124,7 @@ public class CamManager : MonoBehaviour
     {
         //Deactivate building-camera/activate main camera
         camera.SetActive(false);
-        mainCam.SetActive(true);
+        MainCam.SetActive(true);
 
         //Enable movement again when zooming back to main-camera
         cameraControllerScript.enabled = true;

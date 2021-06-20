@@ -7,7 +7,7 @@ public class OnTerugButtonClicked : MonoBehaviour
 {
 	[SerializeField] private Button terugButton;
 	[SerializeField] private Canvas buildingPopup;
-	private CamManager camManager;
+	private CamManager camManagerScript;
 	private bool isManagerFound;
 	
 	private void Start()
@@ -22,13 +22,13 @@ public class OnTerugButtonClicked : MonoBehaviour
         {
 			if (GameObject.FindGameObjectWithTag("CamManager").GetComponent<CamManager>() != null)
             {
-				camManager = GameObject.FindGameObjectWithTag("CamManager").GetComponent<CamManager>();
+				camManagerScript = GameObject.FindGameObjectWithTag("CamManager").GetComponent<CamManager>();
 				isManagerFound = true;
 			}
 		}
     }
 
-    void TaskOnClick()
+    private void TaskOnClick()
 	{
 		//Close the building pop-up
 		if (buildingPopup.enabled == true)
@@ -39,9 +39,9 @@ public class OnTerugButtonClicked : MonoBehaviour
 		//Deactivate the building-camera/activate the main camera + enable movement again
 		if(isManagerFound == true)
         {
-			camManager.ActiveCamera.SetActive(false);
-			camManager.mainCam.SetActive(true);
-			camManager.cameraControllerScript.enabled = true;
+			camManagerScript.ActiveCamera.SetActive(false);
+			camManagerScript.MainCam.SetActive(true);
+			camManagerScript.cameraControllerScript.enabled = true;
 		}
 	}
 }
