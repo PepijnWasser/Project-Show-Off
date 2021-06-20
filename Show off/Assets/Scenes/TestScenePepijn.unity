@@ -42832,7 +42832,7 @@ MonoBehaviour:
   energyText: {fileID: 6805157822595521544}
   timeScript: {fileID: 6805157823310648987}
   taskManagerScript: {fileID: 1808490658}
-  minusEnergy: {fileID: 0}
+  minusEnergy: {fileID: 9121468452943473287}
 --- !u!222 &6805157823847363203
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -23,15 +23,18 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        //Zooming
-        ZoomingMouse();         //Scrollwheel
+        if (mainCam.gameObject != null)
+        {
+            //Zooming
+            ZoomingMouse();         //Scrollwheel
 
-        //Rotating
-        RotatingMouse();        //Right-MB + Drag
-        RotatingKeys();         //Q+E keys
+            //Rotating
+            RotatingMouse();        //Right-MB + Drag
+            RotatingKeys();         //Q+E keys
 
-        //Moving
-        MovingKeys();           //WASD- or Arrow-keys
+            //Moving
+            MovingKeys();           //WASD- or Arrow-keys
+        }
     }
 
     private void ZoomingMouse()
