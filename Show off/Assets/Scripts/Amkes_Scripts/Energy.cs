@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-    public Sprite fullEnergy;
-    public Sprite emptyEnergy;
-    public Image energyImage;
-    public Text energyText;
     public int energyAmount;
-    public TimeScript timeScript;
-    public TaskManager taskManagerScript;
-    public ParticleSystem MinusEnergy;
+
+    [SerializeField] private Sprite fullEnergy;
+    [SerializeField] private Sprite emptyEnergy;
+    [SerializeField] private Image energyImage;
+    [SerializeField] private Text energyText;
+    [SerializeField] private TimeScript timeScript;
+    [SerializeField] private TaskManager taskManagerScript;
+    [SerializeField] private ParticleSystem MinusEnergy;
+    private int maxEnergyAmount;
 
     public delegate void DayCompleted();
     public static event DayCompleted onDayCompleted;
-
-    private int maxEnergyAmount;
 
     private void Awake()
     {

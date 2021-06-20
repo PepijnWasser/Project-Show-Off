@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CamManager : MonoBehaviour
 {
-    public CameraController cameraControllerScript;
+    public GameObject ActiveCamera;
     public GameObject mainCam;
+    public CameraController cameraControllerScript;
     public GameObject CoralReefCam;
     public GameObject AnimalFarmCam;
     public GameObject BusStationCam;
@@ -18,11 +19,10 @@ public class CamManager : MonoBehaviour
     public GameObject LabCam;
     public GameObject ShopCam;
     public GameObject TaskboardCam;
-    public Vector3 offset;
-    public GameObject ActiveCamera;
 
-    private bool isCamerasPlaced;
+    [SerializeField] private Vector3 offset;
     [SerializeField] private List<GameObject> cameras = new List<GameObject>();
+    private bool isCamerasPlaced;
 
     private void Start()
     {

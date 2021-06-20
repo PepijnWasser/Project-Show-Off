@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class ZoomOnIsland : MonoBehaviour
 {
-    public float keyboardSensitivity;
-    public float mouseSensitivity;
-    public float minDistance;
-    public float maxDistance;
-
+    [SerializeField] private float keyboardSensitivity;
+    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private float minDistance;
+    [SerializeField] private float maxDistance;
     private Vector3 targetPos = new Vector3(0,0,0);
 
     private void Update()

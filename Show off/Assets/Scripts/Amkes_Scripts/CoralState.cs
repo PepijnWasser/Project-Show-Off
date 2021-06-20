@@ -7,15 +7,16 @@ using System;
 public class CoralState : MonoBehaviour
 {
     public Text healthText;
-    public Material coral1Material;
-    public Material coral2Material;
-    public Material coral3Material;
-    public Material coral4Material;
-    public float numberDead;
-    public float numberOnTheBrink;
-    public float numberFairlyDamaged;
-    public float numberFairlyHealthy;
-    public float numberThriving;
+
+    [SerializeField] private Material coral1Material;
+    [SerializeField] private Material coral2Material;
+    [SerializeField] private Material coral3Material;
+    [SerializeField] private Material coral4Material;
+    [SerializeField] private float numberDead;
+    [SerializeField] private float numberOnTheBrink;
+    [SerializeField] private float numberFairlyDamaged;
+    [SerializeField] private float numberFairlyHealthy;
+    [SerializeField] private float numberThriving;
 
     public enum CoralStates
     {

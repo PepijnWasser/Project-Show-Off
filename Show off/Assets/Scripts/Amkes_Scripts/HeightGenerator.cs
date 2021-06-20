@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class HeightGenerator : MonoBehaviour
 {
-    public int randomSeed;
-    public float minSeaHeight;
-    public float maxSeaHeight;
-    public List<string> grassTags;
-    public List<string> sandTags;
-    public List<string> seaTags;
-
+    [SerializeField] private int randomSeed;
+    [SerializeField] private float minSeaHeight;
+    [SerializeField] private float maxSeaHeight;
+    [SerializeField] private List<string> grassTags;
+    [SerializeField] private List<string> sandTags;
+    [SerializeField] private List<string> seaTags;
     private List<Transform> children = new List<Transform>();
     private bool createdMap;
     private Vector3 centerPos = new Vector3(0, 0, 0);

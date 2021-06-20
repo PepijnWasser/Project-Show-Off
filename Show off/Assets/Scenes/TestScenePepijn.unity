@@ -5428,8 +5428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraControllerScript: {fileID: 8557608754263875644}
+  ActiveCamera: {fileID: 0}
   mainCam: {fileID: 1360438640}
+  cameraControllerScript: {fileID: 8557608754263875644}
   CoralReefCam: {fileID: 218536339}
   AnimalFarmCam: {fileID: 1360438639}
   BusStationCam: {fileID: 1360438638}
@@ -5443,7 +5444,6 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438641}
   TaskboardCam: {fileID: 346485695}
   offset: {x: 0, y: 10, z: -2}
-  ActiveCamera: {fileID: 0}
   cameras:
   - {fileID: 1360438640}
   - {fileID: 1360438639}
@@ -34222,7 +34222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: besturing
+  m_Text: Besturing
 --- !u!222 &1961940320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34851,7 +34851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: klik op Ailani voor feitjes en tips
+  m_Text: Klik op Ailani voor feitjes en tips
 --- !u!222 &1998795935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42728,8 +42728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f3beecd3bf61342a915b768b385eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 6805157823310648985}
   dayNumber: 1
+  timeText: {fileID: 6805157823310648985}
 --- !u!224 &6805157823310649062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42825,11 +42825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ae9b7fb9c08914db56abfcb0c5fbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyAmount: 0
   fullEnergy: {fileID: 21300000, guid: 9202ddd77fdb5d44f9c052b94bf2755a, type: 3}
   emptyEnergy: {fileID: 21300000, guid: 26530042d7f890741b6e13300ca8b10f, type: 3}
   energyImage: {fileID: 6805157823232835126}
   energyText: {fileID: 6805157822595521544}
-  energyAmount: 0
   timeScript: {fileID: 6805157823310648987}
   taskManagerScript: {fileID: 1808490658}
   MinusEnergy: {fileID: 9121468452943473287}
@@ -44837,8 +44837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraControllerScript: {fileID: 8557608754263875644}
+  ActiveCamera: {fileID: 0}
   mainCam: {fileID: 1360438640}
+  cameraControllerScript: {fileID: 8557608754263875644}
   CoralReefCam: {fileID: 218536339}
   AnimalFarmCam: {fileID: 0}
   BusStationCam: {fileID: 1360438632}
@@ -44852,7 +44853,6 @@ MonoBehaviour:
   ShopCam: {fileID: 1360438638}
   TaskboardCam: {fileID: 1360438639}
   offset: {x: 0, y: 0, z: 0}
-  ActiveCamera: {fileID: 0}
   cameras: []
 --- !u!4 &8557608753025192614
 Transform:

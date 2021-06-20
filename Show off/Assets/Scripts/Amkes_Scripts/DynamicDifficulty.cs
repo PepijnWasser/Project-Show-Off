@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class DynamicDifficulty : MonoBehaviour
 {
-    public TaskManager taskManagerScript;
-    public TimeScript timeScript;
-    public CoralState coralStateScript;
+    [SerializeField] private TaskManager taskManagerScript;
+    [SerializeField] private TimeScript timeScript;
+    [SerializeField] private CoralState coralStateScript;
 
     private void Update()
     {

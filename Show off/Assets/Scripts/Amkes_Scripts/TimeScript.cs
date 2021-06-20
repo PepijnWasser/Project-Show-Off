@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour
 {
-    public Text timeText;
     public int dayNumber = 1;
 
+    [SerializeField] private Text timeText;
+    
     public delegate void OnDayChanged();
     public static event OnDayChanged onDayNumberChanged;
 

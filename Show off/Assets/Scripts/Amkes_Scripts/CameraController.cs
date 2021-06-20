@@ -5,20 +5,20 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    public float moveSpeedKeys;
-    public float moveSpeedMouse;
-    public float minXRot;
-    public float maxXrot;
-    public float minFOV;
-    public float maxFOV;
-    public float zoomSpeed;
-    public float rotateSpeed;
-    public GameObject camObject;
-    public float minXBound;
-    public float maxXBound;
-    public float minZBound;
-    public float maxZBound;
-    public CinemachineVirtualCamera mainCam;
+    [SerializeField] private float moveSpeedKeys;
+    [SerializeField] private float moveSpeedMouse;
+    [SerializeField] private float minXRot;
+    [SerializeField] private float maxXrot;
+    [SerializeField] private float minFOV;
+    [SerializeField] private float maxFOV;
+    [SerializeField] private float zoomSpeed;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private GameObject camObject;
+    [SerializeField] private float minXBound;
+    [SerializeField] private float maxXBound;
+    [SerializeField] private float minZBound;
+    [SerializeField] private float maxZBound;
+    [SerializeField] private CinemachineVirtualCamera mainCam;
 
     private void Update()
     {
@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             float x = Input.GetAxisRaw("Mouse X");
-            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (x * rotateSpeed), 0.0f);
+            SetRotation(x);
         }
     }
 
@@ -55,12 +55,12 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             //Left
-            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (-1 * rotateSpeed), 0.0f);
+            SetRotation(-1);
         }
         if (Input.GetKey(KeyCode.E))
         {
             //Right
-            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (1 * rotateSpeed), 0.0f);
+            SetRotation(1);
         }
     }
 
@@ -80,5 +80,10 @@ public class CameraController : MonoBehaviour
         dir *= moveSpeedKeys * Time.deltaTime;
         transform.position += dir;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
+    }
+
+    private void SetRotation(float rotationDir)
+    {
+        transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (rotationDir * rotateSpeed), 0.0f);
     }
 }

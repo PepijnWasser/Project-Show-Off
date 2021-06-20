@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class OnTerugButtonClicked : MonoBehaviour
 {
-	public Button terugButton;
-	public Canvas buildingPopup;
-
+	[SerializeField] private Button terugButton;
+	[SerializeField] private Canvas buildingPopup;
 	private CamManager camManager;
 	private bool isManagerFound;
 	

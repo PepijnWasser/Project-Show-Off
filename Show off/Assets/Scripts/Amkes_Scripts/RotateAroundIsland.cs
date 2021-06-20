@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class RotateAroundIsland : MonoBehaviour
 {
-    public float keyboardSpeed;
-    public float mouseSpeed;
-    public float minAngle;
-    public float maxAngle;
-
+    [SerializeField] private float keyboardSpeed;
+    [SerializeField] private float mouseSpeed;
+    [SerializeField] private float minAngle;
+    [SerializeField] private float maxAngle;
     private Vector3 target = new Vector3(0,0,0);
     private Transform camTransform;
     private float xAngle = 0.0f;
