@@ -13,6 +13,8 @@ public class Wave
 
 public class NoiseMapGeneration : MonoBehaviour
 {
+    //Generates a matrix representing a noise map, noise in each coordinate
+    //Scale-variable acts as a zoom parameter
     public float[,] GenerateNoiseMap(int mapDepth, int mapWidth, float scale, float offsetX, float offsetZ, Wave[] waves)
     {
         //Create an empty noise map with the mapDepth and mapWidth coordinates

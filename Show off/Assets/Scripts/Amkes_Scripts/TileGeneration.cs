@@ -14,13 +14,13 @@ public class TerrainType
 public class TileGeneration : MonoBehaviour
 {
     [SerializeField] private NoiseMapGeneration noiseMapGeneration;
-    [SerializeField] private MeshRenderer tileRenderer;
-    [SerializeField] private MeshFilter meshFilter;
-    [SerializeField] private MeshCollider meshCollider;
-    [SerializeField] private float mapScale;
-    [SerializeField] private TerrainType[] terrainTypes;
+    [SerializeField] private MeshRenderer tileRenderer;                 //Shows the height map
+    [SerializeField] private MeshFilter meshFilter;                     //Accesses the mesh vertices
+    [SerializeField] private MeshCollider meshCollider;                 //Handles collisions with the tile
+    [SerializeField] private float mapScale;                            //Scale of the height map
+    [SerializeField] private TerrainType[] terrainTypes;                //Available terrain types for level
     [SerializeField] private float heightMultiplier;
-    [SerializeField] private AnimationCurve heightCurve;
+    [SerializeField] private AnimationCurve heightCurve;                //Corrects height generation to make sure water is plane level
     [SerializeField] private Wave[] waves;
 
     private void Start()
@@ -81,7 +81,8 @@ public class TileGeneration : MonoBehaviour
 
     private TerrainType ChooseTerrainType(float height)
     {
-        //For each terrain type, check if the height is lower than the one for the terrain type
+        //For each terrain type, check if the noise-height is lower than the one for the terrain type
+        //Terrain types in editor need to be ascending order, loop picks first available option
         foreach(TerrainType terrainType in terrainTypes)
         {
             if (height < terrainType.height)
