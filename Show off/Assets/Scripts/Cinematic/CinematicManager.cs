@@ -26,6 +26,7 @@ public class CinematicManager : MonoBehaviour
     {
         RenderTexture textureToRender;
 
+        //set ending based on performance
         PlayerInfo playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
         if (playerInfo != null)
         {
@@ -43,6 +44,7 @@ public class CinematicManager : MonoBehaviour
             Debug.LogError("noPlayerInfoFound", this);
         }
 
+        //play video
         if (badEndingBool)
         {
             badVideoPlayer.frame = 0;
@@ -63,6 +65,7 @@ public class CinematicManager : MonoBehaviour
 
     private void Update()
     {
+        //check if video has ended
         if(Convert.ToInt32(videoPlayerUsing.frame) >= Convert.ToInt32(videoPlayerUsing.frameCount - 1))
         {
             finished = true;
