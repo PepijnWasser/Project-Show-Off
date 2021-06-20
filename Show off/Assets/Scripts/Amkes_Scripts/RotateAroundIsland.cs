@@ -12,6 +12,7 @@ public class RotateAroundIsland : MonoBehaviour
     private Vector3 target = new Vector3(0,0,0);
     private Transform camTransform;
     private float xAngle = 0.0f;
+    private KeyCode enableRotation = KeyCode.LeftShift;
     
     private void Start()
     {
@@ -31,7 +32,7 @@ public class RotateAroundIsland : MonoBehaviour
 
     private void UseKeyboardControls()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(enableRotation))
         {
             //Rotate around Y-axis (left-right)
             transform.RotateAround(target, Vector3.up, -Input.GetAxis("Horizontal") * keyboardSpeed * Time.deltaTime);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CamManager : MonoBehaviour
 {
+    public CameraController cameraControllerScript;
     public GameObject ActiveCamera;
     public GameObject mainCam;
-    public CameraController cameraControllerScript;
     public GameObject CoralReefCam;
     public GameObject AnimalFarmCam;
     public GameObject BusStationCam;
@@ -31,11 +31,13 @@ public class CamManager : MonoBehaviour
 
     private void Update()
     {
+        //Set up all cameras
         if (isCamerasPlaced == false)
         {
             SetAllVirtualCameras();
         }
 
+        //Zoom to clicked building (activate building-camera/deactivate main-camera)
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -90,6 +92,7 @@ public class CamManager : MonoBehaviour
             }
         }
 
+        //Check if a camera is activate and escape is pressed to deactivate building-camera/activate main-camera
         for (int i = 0; i < cameras.Count; i++)
         {
             CheckEscapePressed(cameras[i]);
@@ -100,6 +103,7 @@ public class CamManager : MonoBehaviour
     {
         ActiveCamera = camera;
 
+        //Set all cameras inactive, except clicked building-camera
         for (int i = 0; i < cameras.Count; i++)
         {
             if (cameras[i].gameObject == camera.gameObject)
@@ -111,13 +115,18 @@ public class CamManager : MonoBehaviour
         }
 
         camera.SetActive(true);
+
+        //Disable movement when zoomed on building
         cameraControllerScript.enabled = false;
     }
 
     public void DeActivateCamera(GameObject camera)
     {
+        //Deactivate building-camera/activate main camera
         camera.SetActive(false);
         mainCam.SetActive(true);
+
+        //Enable movement again when zooming back to main-camera
         cameraControllerScript.enabled = true;
     }
 
@@ -151,6 +160,7 @@ public class CamManager : MonoBehaviour
 
     private void SetVirtualCamera(GameObject camera, string tagname)
     {
+        //Set up a camera in front of the building
         if (camera.transform != null)
         {
             if (GameObject.FindGameObjectWithTag(tagname) != null)

@@ -33,11 +33,12 @@ public class CoralState : MonoBehaviour
     private void Update()
     {
         float healthScore = Int32.Parse(healthText.text);
-        UpdateColor(healthScore);
+        UpdateState(healthScore);
     }
 
-    private void UpdateColor(float healthScore)
+    private void UpdateState(float healthScore)
     {
+        //Check coral health-score with the set states and update material accordingly
         for (int i = 0; i < coralLevels.Length; i++)
         {
             if (healthScore == (int)coralLevels[i])

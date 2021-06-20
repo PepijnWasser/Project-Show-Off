@@ -10,6 +10,8 @@ public class ZoomOnIsland : MonoBehaviour
     [SerializeField] private float minDistance;
     [SerializeField] private float maxDistance;
     private Vector3 targetPos = new Vector3(0,0,0);
+    private KeyCode zoomInKey = KeyCode.E;
+    private KeyCode zoomOutKey = KeyCode.Q;
 
     private void Update()
     {
@@ -24,7 +26,7 @@ public class ZoomOnIsland : MonoBehaviour
             ZoomIn(mouseSensitivity);
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(zoomInKey))
         {
             ZoomIn(keyboardSensitivity);
         }
@@ -35,7 +37,7 @@ public class ZoomOnIsland : MonoBehaviour
             ZoomOut(mouseSensitivity);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(zoomOutKey))
         {
             ZoomOut(keyboardSensitivity);
         }
@@ -48,6 +50,7 @@ public class ZoomOnIsland : MonoBehaviour
 
         Vector3 newVec = this.transform.position + Vector3.forward * sensitivity * Time.deltaTime;
 
+        //Make sure player doesn't zoom in too much
         if (distance > minDistance && newVec.magnitude > minDistance)
         {
             this.transform.Translate(Vector3.forward * sensitivity * Time.deltaTime);
@@ -65,6 +68,7 @@ public class ZoomOnIsland : MonoBehaviour
 
         Vector3 newVec = this.transform.position + Vector3.forward * -sensitivity * Time.deltaTime;
 
+        //Make sure player doesn't zoom out too much
         if (distance < maxDistance && newVec.magnitude < maxDistance)
         {
             this.transform.Translate(Vector3.forward * -sensitivity * Time.deltaTime);

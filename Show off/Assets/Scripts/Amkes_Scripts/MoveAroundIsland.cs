@@ -16,6 +16,7 @@ public class MoveAroundIsland : MonoBehaviour
     private void UseKeyboardControls()
     {
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        //Make sure speed doesn't go up when moving diagonally
         speed = Mathf.Clamp(speed, 25, 25);
     }
 }

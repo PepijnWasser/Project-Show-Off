@@ -30,11 +30,13 @@ public class OnTerugButtonClicked : MonoBehaviour
 
     void TaskOnClick()
 	{
+		//Close the building pop-up
 		if (buildingPopup.enabled == true)
         {
 			buildingPopup.enabled = false;
         }
 
+		//Deactivate the building-camera/activate the main camera + enable movement again
 		if(isManagerFound == true)
         {
 			camManager.ActiveCamera.SetActive(false);

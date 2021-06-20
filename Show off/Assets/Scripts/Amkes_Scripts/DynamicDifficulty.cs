@@ -11,6 +11,7 @@ public class DynamicDifficulty : MonoBehaviour
 
     private void Update()
     {
+        //Change difficulty according to player's score on day 3 and 6
         if (timeScript.dayNumber == 3 || timeScript.dayNumber == 6)
         {
             float healthScore = Int32.Parse(coralStateScript.healthText.text);

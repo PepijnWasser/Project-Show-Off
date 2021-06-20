@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float minZBound;
     [SerializeField] private float maxZBound;
     [SerializeField] private CinemachineVirtualCamera mainCam;
+    private KeyCode rotateLeft = KeyCode.Q;
+    private KeyCode rotateRight = KeyCode.E;
 
     private void Update()
     {
@@ -35,7 +37,9 @@ public class CameraController : MonoBehaviour
 
     private void ZoomingMouse()
     {
+        //Zoom in or out (changing FOV)
         mainCam.m_Lens.FieldOfView += Input.GetAxis("Mouse ScrollWheel") * -zoomSpeed;
+        //Make sure player doesn't zoom in or out too much
         mainCam.m_Lens.FieldOfView = Mathf.Clamp(mainCam.m_Lens.FieldOfView, minFOV, maxFOV);
     }
 
@@ -52,16 +56,22 @@ public class CameraController : MonoBehaviour
     private void RotatingKeys()
     {
         //Q+E keys
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(rotateLeft))
         {
             //Left
             SetRotation(-1);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(rotateRight))
         {
             //Right
             SetRotation(1);
         }
+    }
+
+    private void SetRotation(float rotationDir)
+    {
+        //Rotate around y-axis (left/right)
+        transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (rotationDir * rotateSpeed), 0.0f);
     }
 
     private void MovingKeys()
@@ -79,11 +89,8 @@ public class CameraController : MonoBehaviour
         dir.Normalize();
         dir *= moveSpeedKeys * Time.deltaTime;
         transform.position += dir;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
-    }
 
-    private void SetRotation(float rotationDir)
-    {
-        transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (rotationDir * rotateSpeed), 0.0f);
+        //Make sure player stays within the playing-field
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXBound, maxXBound), transform.position.y, Mathf.Clamp(transform.position.z, minZBound, maxFOV));
     }
 }
