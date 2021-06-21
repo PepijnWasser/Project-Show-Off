@@ -74,6 +74,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
         }
     }
 
+    //when we exit change the sprite 
     public void OnPointerExit(PointerEventData eventData)
     {
         GetComponent<Image>().sprite = blankSprite;
@@ -81,6 +82,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     }
 
+    //add a message to our message pool
     private void AddMessage(Task task)
     {
         messages.Add(task.outcomeMessage);

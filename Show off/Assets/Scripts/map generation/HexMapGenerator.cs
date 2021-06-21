@@ -73,6 +73,7 @@ public class HexMapGenerator : MonoBehaviour
         CheckCorrectGeneration();
     }
 
+    //create map based on perlin noise
     void CreateInitialTileMap()
     {
         //create array
@@ -115,6 +116,7 @@ public class HexMapGenerator : MonoBehaviour
         }
     }
 
+    //create sand if grass touches water
     void CreateSandAtBorder()
     {
         foreach(Tile tile in placedTiles)
@@ -223,6 +225,7 @@ public class HexMapGenerator : MonoBehaviour
         }
     }
 
+    // makes sure all the special tiles are placed
     void CheckCorrectGeneration()
     {
         Debug.Log(specialTilesPlaced);
