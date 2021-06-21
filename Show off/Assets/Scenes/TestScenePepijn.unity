@@ -27329,7 +27329,7 @@ MonoBehaviour:
   - {fileID: 3749694454429826030, guid: 0c1d9cdbde69c9144a451d3a45de074c, type: 3}
   behavior: {fileID: 11400000, guid: 21977371da0065b429781804b12c192e, type: 2}
   startingCount: 7
-  speedMultiplier: 10
+  speedMultiplier: 4
   neighbourRadius: 20
 --- !u!4 &1582151978
 Transform:
