@@ -295,9 +295,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 2
-  MaxDistance: 5
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1190,13 +1190,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4533e359b97b09c4abb902ee01f950f6, type: 3}
---- !u!4 &8689943730561034324 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4533e359b97b09c4abb902ee01f950f6, type: 3}
-  m_PrefabInstance: {fileID: 9156478528496357311}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &8885436382488302004 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -8908909626372104693, guid: 4533e359b97b09c4abb902ee01f950f6, type: 3}
+  m_PrefabInstance: {fileID: 9156478528496357311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8689943730561034324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4533e359b97b09c4abb902ee01f950f6, type: 3}
   m_PrefabInstance: {fileID: 9156478528496357311}
   m_PrefabAsset: {fileID: 0}
