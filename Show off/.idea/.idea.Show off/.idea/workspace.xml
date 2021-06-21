@@ -13,10 +13,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TutorialManager/TutorialManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Linde's stuff/CreditsToEndscreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Luc's stuff/RestartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/tasks/Tasks/ApproveAtBuildingTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/scenes/SceneManagerResolutionScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cinematic/CinematicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/tasks/TaskManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInfo/UIInputWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Amkes_Scripts/RotateAroundIsland.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/scenes/SwitchSceneOnClick.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -24,6 +28,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TutorialManager/TutorialManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerInfo/UIInputWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/tasks/TaskManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scenes/SceneManagerResolutionScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Luc's stuff/RestartGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Linde's stuff/creditsToEndscreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Linde's stuff/CreditsToEndscreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scenes/SwitchSceneOnClick.cs" />
       </list>
     </option>
   </component>
@@ -78,6 +87,9 @@
       <workItem from="1623677666962" duration="264000" />
       <workItem from="1624007531793" duration="495000" />
       <workItem from="1624013151803" duration="108000" />
+      <workItem from="1624264490861" duration="32000" />
+      <workItem from="1624264632549" duration="513000" />
+      <workItem from="1624265185427" duration="1233000" />
     </task>
     <servers />
   </component>

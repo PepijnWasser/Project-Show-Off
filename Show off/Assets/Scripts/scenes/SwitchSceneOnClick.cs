@@ -11,7 +11,7 @@ public class SwitchSceneOnClick : MonoBehaviour
     {
         if (BigRedButton)
         {
-            SceneManager.LoadScene("EndScreen");
+            SceneManager.LoadScene("Credits"); //"EndScreen" before
         }
     }
 
