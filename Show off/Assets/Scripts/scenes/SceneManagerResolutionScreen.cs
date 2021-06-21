@@ -11,7 +11,7 @@ public class SceneManagerResolutionScreen : MonoBehaviour
     {
         if (cinematicManager.finished)
         {
-            SceneManager.LoadScene("EndScreen");
+            SceneManager.LoadScene("Credits"); //"EndScreen" before
         }
     }
 }
