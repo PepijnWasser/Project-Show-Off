@@ -36,6 +36,7 @@ public class TsunamiSound : MonoBehaviour
             {
                 stage2bool = true;
                 Stage2();
+                stage1.Stop();
             }  
         }
         if (Day >= 5)
@@ -44,6 +45,7 @@ public class TsunamiSound : MonoBehaviour
             {
                 stage3bool = true;
                 Stage3();
+                stage2.Stop();
             }
         }
         if (Day >= 7)
@@ -52,6 +54,7 @@ public class TsunamiSound : MonoBehaviour
             {
                 stage4bool = true;
                 Stage4();
+                stage3.Stop();
             }
         }
     }
