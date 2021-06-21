@@ -5443,7 +5443,7 @@ MonoBehaviour:
   LabCam: {fileID: 1360438631}
   ShopCam: {fileID: 1360438641}
   TaskboardCam: {fileID: 346485695}
-  offset: {x: 0, y: 10, z: -2}
+  offset: {x: 1.5, y: 10, z: -4}
   cameras:
   - {fileID: 1360438640}
   - {fileID: 1360438639}
