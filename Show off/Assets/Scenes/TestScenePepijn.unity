@@ -28914,6 +28914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff8e23f3b8cf6345b8304a693380472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCamera: {fileID: 1360438640}
   stage1: {fileID: 1719126935}
   stage2: {fileID: 1719126934}
   stage3: {fileID: 1719126933}
@@ -35607,6 +35608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff8e23f3b8cf6345b8304a693380472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCamera: {fileID: 0}
   stage1: {fileID: 1992168572}
   stage2: {fileID: 1992168571}
   stage3: {fileID: 1992168576}
@@ -37265,7 +37267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -156.91876, y: 91.61365}
+  m_AnchoredPosition: {x: -165, y: 91.61365}
   m_SizeDelta: {x: 490.9006, y: 876.8665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &736567456013339443
@@ -43842,7 +43844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 459, y: 125.22061}
+  m_AnchoredPosition: {x: 368, y: 125.22061}
   m_SizeDelta: {x: 486.9592, y: 734.5249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6805157823221482138
