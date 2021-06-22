@@ -5456,6 +5456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartCinematicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2828423771423111605, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
+      propertyPath: m_Looping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2828423771423111606, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5507,6 +5511,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2828423771423111606, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
   m_PrefabInstance: {fileID: 106528339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &106528341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2828423771423111604, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
+  m_PrefabInstance: {fileID: 106528339}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &106528342 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 2828423771423111605, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
+  m_PrefabInstance: {fileID: 106528339}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &106528343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106528341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee3b63a7d49d8f45a13baa5f2862270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 106528342}
+  startCinematics: {fileID: 340434247}
+  controlsUI: {fileID: 920024391}
 --- !u!1 &107767248
 GameObject:
   m_ObjectHideFlags: 0
