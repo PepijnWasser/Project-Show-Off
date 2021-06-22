@@ -60,16 +60,16 @@ public class TsunamiSound : MonoBehaviour
         }
         if (ActiveCamera.activeInHierarchy == true)
         {
-            stage1.volume = 0.6f;
-            stage2.volume = 0.6f;
-            stage3.volume = 0.6f;
-            stage4.volume = 0.6f;
+            stage1.volume = 0.25f;
+            stage2.volume = 0.25f;
+            stage3.volume = 0.25f;
+            stage4.volume = 0.25f;
         } else
         {
-            stage1.volume = 0.2f;
-            stage2.volume = 0.2f;
-            stage3.volume = 0.2f;
-            stage4.volume = 0.2f;
+            stage1.volume = 0.1f;
+            stage2.volume = 0.1f;
+            stage3.volume = 0.1f;
+            stage4.volume = 0.1f;
         }
     }
     void Stage1()
