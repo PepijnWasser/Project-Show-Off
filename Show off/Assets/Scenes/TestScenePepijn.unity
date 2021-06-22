@@ -5460,6 +5460,10 @@ PrefabInstance:
       propertyPath: m_Looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2828423771423111605, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 4744884a86bcb4c499e460480bdce131, type: 3}
     - target: {fileID: 2828423771423111606, guid: 3ec64b64dcc716643be3232db134325e, type: 3}
       propertyPath: m_RootOrder
       value: 0
