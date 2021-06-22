@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TsunamiSound : MonoBehaviour
 {
+    public GameObject ActiveCamera;
     GameObject dayObject;
     public AudioSource stage1;
     public AudioSource stage2;
@@ -56,6 +57,19 @@ public class TsunamiSound : MonoBehaviour
                 Stage4();
                 stage3.Stop();
             }
+        }
+        if (ActiveCamera.activeInHierarchy == true)
+        {
+            stage1.volume = 0.6f;
+            stage2.volume = 0.6f;
+            stage3.volume = 0.6f;
+            stage4.volume = 0.6f;
+        } else
+        {
+            stage1.volume = 0.2f;
+            stage2.volume = 0.2f;
+            stage3.volume = 0.2f;
+            stage4.volume = 0.2f;
         }
     }
     void Stage1()
