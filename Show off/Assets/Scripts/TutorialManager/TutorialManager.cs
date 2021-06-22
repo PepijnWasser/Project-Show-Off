@@ -14,7 +14,8 @@ public class TutorialManager : MonoBehaviour
 
     public int messageIndex = 0;
 
-    bool dayCompleted = false;
+    bool firstTaskCompleted = false;
+    bool firstDayCompleted = false;
     bool buttonClicked = false;
 
     float popularityOutcome;
@@ -64,7 +65,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if(messageIndex == 3)
         {
-            if (dayCompleted)
+            if (firstTaskCompleted)
             {
                 string newMessage = "";
                 if(coralOutcome > 0)
@@ -120,7 +121,7 @@ public class TutorialManager : MonoBehaviour
         else if (messageIndex == 4)
         {
 
-            if (Input.GetMouseButtonDown(0))
+            if (firstDayCompleted)
             {
                 dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
                 messageIndex += 1; //display last message when energy runs out day 1
@@ -137,11 +138,6 @@ public class TutorialManager : MonoBehaviour
         } 
     }
 
-    void EnergyDayCompleted()
-    {
-        dayCompleted = true;
-    }
-
     void ButtonClicked()
     {
         if(messageIndex == 1)
@@ -150,9 +146,15 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    void EnergyDayCompleted()
+    {
+        firstDayCompleted = true;
+    }
+
     void GetCompletedTaskOutcome(Task task)
     {
         coralOutcome += task.coralOutcome;
         popularityOutcome += task.popularityOutcome;
+        firstTaskCompleted = true;
     }
 }
