@@ -5943,6 +5943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6902765822973992624, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6902765822973992625, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -26636,8 +26640,8 @@ MonoBehaviour:
   currentTasks: []
   tasksAvailible: 4
   energy: 3
-  minMaxPositiveCoralTask: {x: 1, y: 2}
-  minMaxPositivePopularityTask: {x: 1, y: 2}
+  minMaxPositiveCoralTask: {x: 1, y: 3}
+  minMaxPositivePopularityTask: {x: 1, y: 3}
   buildingsToHighLight: []
 --- !u!4 &1808490659
 Transform:
