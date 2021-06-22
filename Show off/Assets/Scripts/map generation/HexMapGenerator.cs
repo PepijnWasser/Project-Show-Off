@@ -228,7 +228,6 @@ public class HexMapGenerator : MonoBehaviour
     // makes sure all the special tiles are placed
     void CheckCorrectGeneration()
     {
-        Debug.Log(specialTilesPlaced);
         if (specialTilesPlaced == (specialSeaTiles.Count + specialSandTiles.Count + specialGrassTiles.Count + coralBlobCount))
         {
             Debug.Log("succesfull generation after " + generationAttempts);
