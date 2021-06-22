@@ -5945,7 +5945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6902765822973992624, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6902765822973992625, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
       propertyPath: m_RootOrder
@@ -26721,6 +26721,8 @@ MonoBehaviour:
   - {fileID: 334941800597609035, guid: dc83d402724897a479c4ccc5df025a68, type: 3}
   - {fileID: 4545357356189013446, guid: 8b0090b278ecf3246b9d0fa5d7d1e915, type: 3}
   - {fileID: 2163752624296177363, guid: e270bf420492e084caa3ff87d420e2a8, type: 3}
+  - {fileID: 2126721592824323306, guid: 7f91c946239274a42bd7a2220a0939d9, type: 3}
+  - {fileID: 4684116631631327233, guid: b478c5c7dbe74f34f95edbdc76e9963e, type: 3}
   specialSandTiles:
   - {fileID: 724764739877640825, guid: 1b19f099600995743b39aefe921eb4d8, type: 3}
   - {fileID: 7414458281196270555, guid: a27628e4bfeab3b4e8612da036db1bae, type: 3}

@@ -576,9 +576,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1641688137820407376}
+  - component: {fileID: 7937709212908377063}
   m_Layer: 0
-  m_Name: PSO_Asset_AnimalFarm_Hexagon
-  m_TagString: Untagged
+  m_Name: AnimalFarm
+  m_TagString: Animal Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,6 +605,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7937709212908377063
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126721592824323306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 241.49823
+  m_Height: 1175.0635
+  m_Direction: 1
+  m_Center: {x: 13.896227, y: 192.94382, z: 0}
 --- !u!1 &2220049589418384440
 GameObject:
   m_ObjectHideFlags: 0
