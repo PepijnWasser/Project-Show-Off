@@ -9,30 +9,45 @@ public class DynamicDifficulty : MonoBehaviour
     [SerializeField] private TimeScript timeScript;
     [SerializeField] private CoralState coralStateScript;
 
+    bool checkedDay3;
+    bool checkedDay6;
+
     private void Update()
     {
         //Change difficulty according to player's score on day 3 and 6
-        if (timeScript.dayNumber == 3 || timeScript.dayNumber == 6)
+        if (timeScript.dayNumber == 3)
         {
-            float healthScore = Int32.Parse(coralStateScript.healthText.text);
-
-            //Coralhealth <=6           --> 3 good, 1 bad
-            if (healthScore <= 6)
+            if (checkedDay3)
             {
-                taskManagerScript.minMaxPositiveCoralTask = new Vector2(3, 3);
+                checkedDay3 = true;
+                float healthScore = Int32.Parse(coralStateScript.healthText.text);
+                ModifyDificulty(healthScore);
             }
-
-            //Coralhealth >6 && <9      --> nothing changes
-            if (healthScore > 6 && healthScore < 9)
+        }
+        if (timeScript.dayNumber == 6)
+        {
+            if (checkedDay6)
             {
-                taskManagerScript.minMaxPositiveCoralTask = new Vector2(1, 2);
+                checkedDay6 = true;
+                float healthScore = Int32.Parse(coralStateScript.healthText.text);
+                ModifyDificulty(healthScore);            
             }
+        }
+    }
 
-            //Coralhealth >= 9          --> 1 good, 3 bad
-            if (healthScore >= 9)
-            {
-                taskManagerScript.minMaxPositiveCoralTask = new Vector2(1, 1);
-            }
+    void ModifyDificulty(float healthScore)
+    {
+        if(healthScore <= 6)
+        {
+            taskManagerScript.positiveCoralTasksToGenerate = 3;
+        }
+        else if (healthScore <= 8)
+        {
+            taskManagerScript.positiveCoralTasksToGenerate = 2;
+        }
+        else
+        {
+            taskManagerScript.positiveCoralTasksToGenerate = 1;
         }
     }
 }

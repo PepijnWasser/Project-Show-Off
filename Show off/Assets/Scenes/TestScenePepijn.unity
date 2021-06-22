@@ -26636,13 +26636,10 @@ MonoBehaviour:
   - {fileID: 895055916686377312, guid: 3b75ac5f16ca6e843bd7d6a53c95c8de, type: 3}
   positiveCoralTasks: []
   positivePopularityTasks: []
-  neutralOrNegativeTasks: []
   currentTasks: []
   tasksAvailible: 4
+  positiveCoralTasksToGenerate: 2
   energy: 3
-  minMaxPositiveCoralTask: {x: 1, y: 3}
-  minMaxPositivePopularityTask: {x: 1, y: 3}
-  buildingsToHighLight: []
 --- !u!4 &1808490659
 Transform:
   m_ObjectHideFlags: 0
