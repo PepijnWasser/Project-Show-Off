@@ -6381,7 +6381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440397885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 189.00005, y: -152.99994, z: 0}
+  m_LocalPosition: {x: 308, y: -80.99997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1446180011}
@@ -11741,7 +11741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569451461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 189, y: -153, z: 0}
+  m_LocalPosition: {x: 308, y: -81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1344150610}
@@ -16990,11 +16990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -10.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50
+      value: 49.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19487,7 +19487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbdfc8ad671efd54eaba882adf8eb7bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb42b0ddd8331c4ab1e447487aaf1c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26640,13 +26640,10 @@ MonoBehaviour:
   - {fileID: 895055916686377312, guid: 3b75ac5f16ca6e843bd7d6a53c95c8de, type: 3}
   positiveCoralTasks: []
   positivePopularityTasks: []
-  neutralOrNegativeTasks: []
   currentTasks: []
   tasksAvailible: 4
+  positiveCoralTasksToGenerate: 2
   energy: 3
-  minMaxPositiveCoralTask: {x: 1, y: 3}
-  minMaxPositivePopularityTask: {x: 1, y: 3}
-  buildingsToHighLight: []
 --- !u!4 &1808490659
 Transform:
   m_ObjectHideFlags: 0
@@ -32806,6 +32803,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1094861541115759219, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094861541115759219, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -32980,7 +32985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8202095614054275842, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8202095614054275842, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: m_Color.b
@@ -34627,14 +34632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.27627268, g: 0.73021203, b: 0.7830189, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbdfc8ad671efd54eaba882adf8eb7bb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38584,7 +38589,6 @@ GameObject:
   - component: {fileID: 8557608753025192602}
   - component: {fileID: 8557608753025192611}
   - component: {fileID: 8557608753025192610}
-  - component: {fileID: 8557608753025192612}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38619,7 +38623,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: 6545f7a634f20c24fa57b353a449efe7, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38658,35 +38662,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &8557608753025192612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557608753025192609}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89872cb35543ac46a7e1530c14a3fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraControllerScript: {fileID: 8557608754263875644}
-  ActiveCamera: {fileID: 0}
-  MainCam: {fileID: 0}
-  CoralReefCam: {fileID: 218536339}
-  AnimalFarmCam: {fileID: 0}
-  BusStationCam: {fileID: 1360438632}
-  CityHallCam: {fileID: 1360438635}
-  CropFarmCam: {fileID: 1360438631}
-  FactoryCam: {fileID: 0}
-  FisheryCam: {fileID: 0}
-  HarborCam: {fileID: 1360438636}
-  HotelCam: {fileID: 1360438634}
-  LabCam: {fileID: 1360438637}
-  ShopCam: {fileID: 1360438638}
-  TaskboardCam: {fileID: 1360438639}
-  offset: {x: 0, y: 0, z: 0}
-  cameras: []
 --- !u!4 &8557608753025192614
 Transform:
   m_ObjectHideFlags: 0

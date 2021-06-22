@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 1680402632263723631}
   - component: {fileID: 6318986715647104748}
   - component: {fileID: 2751074690772744162}
-  - component: {fileID: 8607695385540677050}
+  - component: {fileID: 5479789438909225652}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -984,8 +984,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6318986715647104748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8607695385540677050
+      m_Calls:
+      - m_Target: {fileID: 5479789438909225652}
+        m_TargetAssemblyTypeName: CloseBuilding, Scripts
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5479789438909225652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -994,11 +1006,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8165187446406541774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b506cc0236920409d3e7eec0398161, type: 3}
+  m_Script: {fileID: 11500000, guid: d455dc31306e49c418e5e99216a83193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terugButton: {fileID: 2751074690772744162}
-  buildingPopup: {fileID: 8065588520566848563}
+  building: {fileID: 2163752624296177363}
 --- !u!1 &8577896830431644090
 GameObject:
   m_ObjectHideFlags: 0

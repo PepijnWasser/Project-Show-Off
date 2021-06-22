@@ -178,6 +178,7 @@ public class Building : MonoBehaviour
                     acceptButton.transform.Find("Text").GetComponent<Text>().text = "Accept Task - " + task.energyCost;
                     acceptButton.GetComponent<CompleteTask>().creator = this.gameObject;
                     acceptButton.GetComponent<CompleteTask>().taskName = task.name;
+                    acceptButton.GetComponent<CloseBuilding>().building = this.gameObject;
 
                     Transform energyCostText = newObject.transform.Find("EnergyCost").transform.Find("Text");
                     energyCostText.GetComponent<TMPro.TextMeshProUGUI>().text = task.energyCost.ToString();
