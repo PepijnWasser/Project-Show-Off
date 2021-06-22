@@ -32,7 +32,6 @@ public class TaskTests : MonoBehaviour
 
         Assert.AreEqual(1, taskManager.positiveCoralTasks.Count);
         Assert.AreEqual(1, taskManager.positivePopularityTasks.Count);
-        Assert.AreEqual(1, taskManager.neutralOrNegativeTasks.Count);
 
         yield return null;
     }
@@ -63,7 +62,7 @@ public class TaskTests : MonoBehaviour
 
         taskManager.potentialTaskObjects = new List<GameObject> { task, task2 };
         taskManager.tasksAvailible = 1;
-        taskManager.minMaxPositiveCoralTask = new Vector2(1, 1);
+        taskManager.positiveCoralTasksToGenerate = 1;
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
@@ -98,8 +97,7 @@ public class TaskTests : MonoBehaviour
 
         taskManager.potentialTaskObjects = new List<GameObject> { task, task2 };
         taskManager.tasksAvailible = 1;
-        taskManager.minMaxPositiveCoralTask = new Vector2(0, 0);
-        taskManager.minMaxPositivePopularityTask = new Vector2(1, 1);
+        taskManager.positiveCoralTasksToGenerate = 0;
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
@@ -134,13 +132,12 @@ public class TaskTests : MonoBehaviour
 
         taskManager.potentialTaskObjects = new List<GameObject> { task, task2 };
         taskManager.tasksAvailible = 1;
-        taskManager.minMaxPositiveCoralTask = new Vector2(0, 0);
-        taskManager.minMaxPositivePopularityTask = new Vector2(0, 0);
+        taskManager.positiveCoralTasksToGenerate = 0;
         taskManager.SortTasks();
         taskManager.GenerateTasksForNewDay();
 
         bool b = taskManager.currentTasks.Contains(task2.GetComponent<Task>());
-        Assert.AreEqual(true, b);
+        Assert.AreEqual(false, b);
 
         yield return null;
     }

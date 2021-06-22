@@ -10,16 +10,13 @@ public class TaskManager : MonoBehaviour
 
     public List<Task> positiveCoralTasks = new List<Task>();
     public List<Task> positivePopularityTasks = new List<Task>();
-    public List<Task> neutralOrNegativeTasks = new List<Task>();
 
+    [HideInInspector]
     public List<Task> currentTasks = new List<Task>();
 
     public int tasksAvailible;
+    public int positiveCoralTasksToGenerate;
     public int energy;
-    public Vector2 minMaxPositiveCoralTask;
-    public Vector2 minMaxPositivePopularityTask;
-
-    public List<Building> buildingsToHighLight = new List<Building>();
 
     public delegate void CurrentTasksChanged();
     public static event CurrentTasksChanged onCurrentTasksChanged;
@@ -56,14 +53,12 @@ public class TaskManager : MonoBehaviour
         }
         foreach(Task task in tasksToRemove)
         {
-            //GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>().text = "Changing task";
             EndTask(task);
         }
     }
 
     void GenerateNewDay()
     {
-        StopAllHighLightsOfList(currentTasks);
         GenerateTasksForNewDay();
         StartTasks(currentTasks);
     }
@@ -72,39 +67,18 @@ public class TaskManager : MonoBehaviour
     {
         List<Task> newTasks = new List<Task>();
         GeneratePositiveCoralTasks(newTasks);
-        GeneratePositivePopulationTasks(newTasks);
-        GenerateNegativeTasks(newTasks);
+        GeneratePositivePopularityTasks(newTasks);
         currentTasks = newTasks;
         onCurrentTasksChanged?.Invoke();
     }
 
     void GeneratePositiveCoralTasks(List<Task> newTasks)
     {
-        if (positiveCoralTasks.Count >= minMaxPositiveCoralTask.x)
+        if (positiveCoralTasks.Count >= positiveCoralTasksToGenerate)
         {
-            //trim taskCount
-            int taskCount = positiveCoralTasks.Count;
-            if (taskCount > minMaxPositiveCoralTask.y)
+            for (int i = 0; i < positiveCoralTasksToGenerate; i++)
             {
-                taskCount = (int)minMaxPositiveCoralTask.y;
-            }
-            if(taskCount > tasksAvailible)
-            {
-                taskCount = tasksAvailible;
-            }
-            if(taskCount > tasksAvailible - minMaxPositivePopularityTask.x)
-            {
-                taskCount = tasksAvailible - (int)minMaxPositivePopularityTask.x;
-                if(taskCount < minMaxPositiveCoralTask.x)
-                {
-                    Debug.LogWarning("to few PositiveCoralTasks after trimming");
-                }
-            }
-
-            taskCount = Random.Range((int)minMaxPositiveCoralTask.x, taskCount + 1);
-            for (int i = 0; i < taskCount; i++)
-            {
-                int r = Random.Range(0, positiveCoralTasks.Count);
+                int r = Random.Range(0, positivePopularityTasks.Count);
                 while (newTasks.Contains(positiveCoralTasks[r]))
                 {
                     r = Random.Range(0, positiveCoralTasks.Count);
@@ -118,22 +92,11 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    void GeneratePositivePopulationTasks(List<Task> newTasks)
+    void GeneratePositivePopularityTasks(List<Task> newTasks)
     {
-        if (positivePopularityTasks.Count >= minMaxPositivePopularityTask.x)
+        if (positivePopularityTasks.Count >= tasksAvailible - positiveCoralTasksToGenerate)
         {
-            int taskCount = positivePopularityTasks.Count;
-            if (taskCount > tasksAvailible - newTasks.Count)
-            {
-                taskCount = tasksAvailible - newTasks.Count;
-            }
-            if (taskCount > minMaxPositivePopularityTask.y)
-            {
-                taskCount = (int)minMaxPositivePopularityTask.y;
-            }
-
-            taskCount = Random.Range((int)minMaxPositivePopularityTask.x, taskCount + 1);
-            for (int i = 0; i < taskCount; i++)
+            for (int i = 0; i < tasksAvailible - positiveCoralTasksToGenerate; i++)
             {
                 int r = Random.Range(0, positivePopularityTasks.Count);
                 while (newTasks.Contains(positivePopularityTasks[r]))
@@ -149,75 +112,12 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    void GenerateNegativeTasks(List<Task> newTasks)
-    {
-        if (neutralOrNegativeTasks.Count >= tasksAvailible - newTasks.Count)
-        {
-            for (int i = newTasks.Count; i < tasksAvailible; i++)
-            {
-                int r = Random.Range(0, neutralOrNegativeTasks.Count);
-                while (newTasks.Contains(neutralOrNegativeTasks[r]))
-                {
-                    r = Random.Range(0, neutralOrNegativeTasks.Count);
-                }
-                newTasks.Add(neutralOrNegativeTasks[r]);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("to few NeutralOrNegativeTasks");
-            Debug.Log(newTasks.Count);
-        }
-    }
-
-    void StopHighlightingbuildingOfTask(Task task)
-    {
-        bool needToStop = true;
-        foreach(Task _task in currentTasks)
-        {
-            if(_task.placeOfQuest == task.placeOfQuest && _task != task && _task.completed == false)
-            {
-                needToStop = false;
-                break;
-            }
-        }
-        if (needToStop)
-        {
-            GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
-
-            building.GetComponent<Building>().active = false;
-        }
-    }
-
-    void StopAllHighLightsOfList(List<Task> taskList)
-    {
-        foreach(Task task in taskList)
-        {
-            GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
-            building.GetComponent<Building>().active = false;
-        }
-    }
-
-    void HighLightbuildingOfTask(Task task)
-    {
-        try
-        {
-            GameObject building = GameObject.FindGameObjectWithTag(task.placeOfQuest.ToString());
-            building.GetComponent<Building>().active = true;
-        }
-        catch
-        {
-            Debug.LogError(task.placeOfQuest);
-        }
-    }
-
     void StartTasks(List<Task> tasks)
     {
         foreach (Task task in tasks)
         {
             ResetTask(task);
             task.StartTask();
-            HighLightbuildingOfTask(task);
         }
     }
 
@@ -228,7 +128,6 @@ public class TaskManager : MonoBehaviour
 
     void EndTask(Task task)
     {
-        StopHighlightingbuildingOfTask(task);
         currentTasks.Remove(task);
         onCurrentTasksChanged?.Invoke();
         onTaskCompleted?.Invoke(task);
@@ -255,11 +154,6 @@ public class TaskManager : MonoBehaviour
             else if (potentialTasks[i].popularityOutcome > 0)
             {
                 positivePopularityTasks.Add(potentialTasks[i]);
-            }
-            //tasks that have neutral or negative popularity and neutral or negative 
-            else
-            {
-                neutralOrNegativeTasks.Add(potentialTasks[i]);
             }
         }
 
