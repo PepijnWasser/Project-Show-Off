@@ -5511,7 +5511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &107767250
 MonoBehaviour:
@@ -18307,7 +18307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &864912432
 RectTransform:
@@ -19154,9 +19154,9 @@ Transform:
   - {fileID: 3073572685937483232}
   - {fileID: 519752225}
   - {fileID: 1029030309}
-  - {fileID: 1235579201}
   - {fileID: 854293668}
   - {fileID: 107767249}
+  - {fileID: 1235579201}
   - {fileID: 58904836}
   - {fileID: 1808490659}
   - {fileID: 663692444}
@@ -20755,7 +20755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960606012}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1235579202
 MonoBehaviour:
@@ -28101,7 +28101,7 @@ MonoBehaviour:
   hourHandTransform: {fileID: 1137893458}
   minuteHandTransform: {fileID: 135746212}
   startTime: 21
-  secondsToPlay: 4
+  secondsToPlay: 2
   hoursToPlay: 10
 --- !u!114 &1632490395
 MonoBehaviour:
