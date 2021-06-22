@@ -116,8 +116,15 @@ public class CamManager : MonoBehaviour
 
         camera.SetActive(true);
 
-        //Disable movement when zoomed on building
-        cameraControllerScript.enabled = false;
+        if(camera == MainCam)
+        {
+            cameraControllerScript.enabled = true;
+        }
+        else
+        {
+            //Disable movement when zoomed on building
+            cameraControllerScript.enabled = false;
+        }
     }
 
     public void DeActivateCamera(GameObject camera)

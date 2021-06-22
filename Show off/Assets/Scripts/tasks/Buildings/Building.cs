@@ -184,10 +184,10 @@ public class Building : MonoBehaviour
                     energyCostText.GetComponent<TMPro.TextMeshProUGUI>().text = task.energyCost.ToString();
 
                     Transform popularityOutcomeText = newObject.transform.Find("PopularityOutcome").transform.Find("Text");
-                    popularityOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = task.popularityOutcome.ToString();
+                    popularityOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = SetPlusOrMinusPopularity(task, task.popularityOutcome);
 
                     Transform coralOutcomeText = newObject.transform.Find("CoralOutcome").transform.Find("Text");
-                    coralOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = task.coralOutcome.ToString();
+                    coralOutcomeText.GetComponent<TMPro.TextMeshProUGUI>().text = SetPlusOrMinusPopularity(task, task.coralOutcome);
 
                     placedListObjects.Add(newObject);
                 }
@@ -196,6 +196,22 @@ public class Building : MonoBehaviour
                     Debug.LogError(e.Message, this);                 
                 }
             }
+        }
+    }
+
+    private string SetPlusOrMinusPopularity(Task task, float outCome)
+    {
+        if (outCome > 0)
+        {
+            return "+";
+        }
+        else if (outCome < 0)
+        {
+            return "-";
+        }
+        else
+        {
+            return outCome.ToString();
         }
     }
 

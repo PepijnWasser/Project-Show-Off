@@ -22,6 +22,9 @@ public class UIInputWindow : MonoBehaviour
 
     public CameraController camControlScript;
 
+    //Amkes variables
+    public GameObject startCinematics;
+
     private void Awake()
     {
         PlayerInfo _playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
@@ -48,7 +51,7 @@ public class UIInputWindow : MonoBehaviour
                 playerInfo.playerName = nameField.text;
                 playerInfo.age = Int32.Parse(ageField.text);
             }
-            camControlScript.enabled = true;
+            startCinematics.SetActive(true);
         }
         else
         {
