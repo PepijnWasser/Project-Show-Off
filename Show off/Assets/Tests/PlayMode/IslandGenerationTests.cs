@@ -22,7 +22,7 @@ public class IslandGenerationTests
         islandGenerator.specialSeaTiles = new List<GameObject>();
         islandGenerator.coralBlobCount = 0;
         islandGenerator.grassTiles = new List<GameObject> { tile };
-        islandGenerator.sandTile = new GameObject();
+        islandGenerator.sandTiles = new List<GameObject>();
         islandGenerator.seaTile = new GameObject();
         islandGenerator.mapWidth = 2;
         islandGenerator.mapHeight = 2;
@@ -56,7 +56,7 @@ public class IslandGenerationTests
         islandGenerator.specialSeaTiles = new List<GameObject>();
         islandGenerator.coralBlobCount = 0;
         islandGenerator.grassTiles = new List<GameObject>();
-        islandGenerator.sandTile = tile;
+        islandGenerator.sandTiles = new List<GameObject> { tile };
         islandGenerator.seaTile = new GameObject();
         islandGenerator.mapWidth = 2;
         islandGenerator.mapHeight = 2;
@@ -90,7 +90,7 @@ public class IslandGenerationTests
         islandGenerator.specialSeaTiles = new List<GameObject> { new GameObject()};
         islandGenerator.coralBlobCount = 0;
         islandGenerator.grassTiles = new List<GameObject>();
-        islandGenerator.sandTile = new GameObject();
+        islandGenerator.sandTiles = new List<GameObject>();
         islandGenerator.seaTile = tile;
         islandGenerator.mapWidth = 2;
         islandGenerator.mapHeight = 2;
@@ -124,7 +124,7 @@ public class IslandGenerationTests
         islandGenerator.specialSeaTiles = new List<GameObject>();
         islandGenerator.coralBlobCount = 2;
         islandGenerator.grassTiles = new List<GameObject>();
-        islandGenerator.sandTile = new GameObject();
+        islandGenerator.sandTiles = new List<GameObject>();
         islandGenerator.seaTile = tile;
         islandGenerator.coralTile = new GameObject();
         islandGenerator.mapWidth = 2;
@@ -153,7 +153,7 @@ public class IslandGenerationTests
         islandGenerator.specialSeaTiles = new List<GameObject>();
         islandGenerator.coralBlobCount = 0;
         islandGenerator.grassTiles = new List<GameObject> { new GameObject()};
-        islandGenerator.sandTile = new GameObject();
+        islandGenerator.sandTiles = new List<GameObject>();
         islandGenerator.seaTile = new GameObject();
         islandGenerator.mapWidth = 7;
         islandGenerator.mapHeight = 7;

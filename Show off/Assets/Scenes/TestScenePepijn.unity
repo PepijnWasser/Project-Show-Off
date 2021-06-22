@@ -26847,7 +26847,14 @@ MonoBehaviour:
   - {fileID: 8099763658035717183, guid: 42e2a2c4638bc7e4d93568fd0af8b2c3, type: 3}
   - {fileID: 6058616442326749321, guid: b6b4156d736421841a8acc98a98f7b25, type: 3}
   - {fileID: 7274875004500096565, guid: 02d5f15b4f20ba14ba3d93589aa1aff1, type: 3}
-  sandTile: {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  sandTiles:
+  - {fileID: 428357798183887086, guid: 30a508974f197d94bb9334927fc219d8, type: 3}
+  - {fileID: 1072450301090340806, guid: 281ef7a1e9a1f314cbca531e4854949b, type: 3}
+  - {fileID: 8484308875876920978, guid: 1aa1f9357991e90479fdecf717b923f4, type: 3}
+  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
   coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
   specialGrassTiles:
@@ -32039,7 +32046,7 @@ RectTransform:
   m_GameObject: {fileID: 1922250020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.6690708, z: 0.5558994}
+  m_LocalScale: {x: 0.59539753, y: 0.6690708, z: 0.5558994}
   m_Children:
   - {fileID: 1949743571}
   - {fileID: 864912432}
@@ -34827,7 +34834,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 53e31e4a682f9324f91fe3d4665675a8, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -37515,10 +37522,10 @@ RectTransform:
   m_Father: {fileID: 3073572685937483232}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 483, y: 125}
-  m_SizeDelta: {x: 486.9592, y: 734.5249}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -164, y: -175}
+  m_SizeDelta: {x: 486.95923, y: 734.5249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6805157823221482138
 MonoBehaviour:
