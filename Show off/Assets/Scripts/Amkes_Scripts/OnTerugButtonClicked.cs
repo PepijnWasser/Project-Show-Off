@@ -31,11 +31,14 @@ public class OnTerugButtonClicked : MonoBehaviour
     private void TaskOnClick()
 	{
 		//Close the building pop-up
-		if (buildingPopup.enabled == true)
+		if (buildingPopup.gameObject != null)
         {
-			buildingPopup.enabled = false;
-        }
-
+			if (buildingPopup.enabled == true)
+			{
+				buildingPopup.enabled = false;
+			}
+		}			
+		
 		//Deactivate the building-camera/activate the main camera + enable movement again
 		if(isManagerFound == true)
         {

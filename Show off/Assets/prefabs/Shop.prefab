@@ -659,6 +659,7 @@ Transform:
   m_Children:
   - {fileID: 8549599522197310499}
   - {fileID: 5183552100433675101}
+  - {fileID: 5998995883993657019}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
@@ -1005,6 +1006,76 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1001 &7625592932916850826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8507505826681685720}
+    m_Modifications:
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967147865714939669, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967147865714939669, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084074188392841781, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+      propertyPath: m_Name
+      value: GroceryShopAudio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+--- !u!4 &5998995883993657019 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4220781760990158385, guid: 31e13097ebf1e914eb89195b839431b4, type: 3}
+  m_PrefabInstance: {fileID: 7625592932916850826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8155172347433118664
 PrefabInstance:
   m_ObjectHideFlags: 0
