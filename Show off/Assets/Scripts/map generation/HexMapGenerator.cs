@@ -9,7 +9,7 @@ public class HexMapGenerator : MonoBehaviour
     public int mapHeight;
 
     public List<GameObject> grassTiles;
-    public GameObject sandTile;
+    public List<GameObject> sandTiles;
     public GameObject seaTile;
     public GameObject coralTile;
 
@@ -127,7 +127,7 @@ public class HexMapGenerator : MonoBehaviour
                 {
                     if(connectedTile.tag == "Sea")
                     {
-                        ReplaceTileWithPrefab(tile, sandTile);          
+                        ReplaceTileWithPrefab(tile, sandTiles[UnityEngine.Random.Range(0, sandTiles.Count)]);          
                     }
                 }
             }
@@ -261,7 +261,7 @@ public class HexMapGenerator : MonoBehaviour
         }
         else if (val >= sandRange[0] && val < sandRange[1])
         {
-            return sandTile;
+            return sandTiles[UnityEngine.Random.Range(0, sandTiles.Count)];
         }
         else if (val >= seaRange[0] && val <= seaRange[1])
         {
