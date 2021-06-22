@@ -36,6 +36,7 @@ public class UIInputWindow : MonoBehaviour
         camControlScript.enabled = false;
     }
 
+    //test if the name and age are valid and puts it in the playerInfo
     public void FinishCompletion()
     {
         if(validName && validAge)
@@ -73,6 +74,7 @@ public class UIInputWindow : MonoBehaviour
         ageField.onValueChanged.RemoveListener(delegate { ValidateAgeInput(ageField); });
     }
 
+    //check if the name is valid
     void ValidateNameInput(InputField inputField)
     {
         string inputValue = inputField.text;
@@ -97,6 +99,7 @@ public class UIInputWindow : MonoBehaviour
         }
     }
 
+    //check if age is valid
     void ValidateAgeInput(InputField inputField)
     {
         string inputValue = inputField.text;

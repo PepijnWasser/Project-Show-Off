@@ -28,6 +28,7 @@ public class DayTransitionManager : MonoBehaviour
         ClockUI.onClockCompleted -= Finish;
     }
 
+    //fade to black
     void StartTransition()
     {
         Color c = blackPanel.GetComponent<Image>().color;
