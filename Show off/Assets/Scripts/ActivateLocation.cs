@@ -14,6 +14,7 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        GameObject.Find("TaskList").gameObject.SetActive(false);
         if (this.name == "Winkel")
         {
             manager.ActivateCamera(manager.ShopCam);
