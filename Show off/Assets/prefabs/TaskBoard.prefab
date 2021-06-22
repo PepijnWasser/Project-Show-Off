@@ -1129,12 +1129,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
       propertyPath: MaxDistance
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
       propertyPath: rolloffMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.8575573
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}

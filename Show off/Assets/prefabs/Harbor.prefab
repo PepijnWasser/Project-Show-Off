@@ -1103,12 +1103,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 267821901587325148}
     m_Modifications:
     - target: {fileID: 2407633750337712124, guid: 2ecd529d678b6de41b576a116d35907d, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407633750337712124, guid: 2ecd529d678b6de41b576a116d35907d, type: 3}
       propertyPath: MaxDistance
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2407633750337712124, guid: 2ecd529d678b6de41b576a116d35907d, type: 3}
       propertyPath: rolloffMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407633750337712124, guid: 2ecd529d678b6de41b576a116d35907d, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.8575573
       objectReference: {fileID: 0}
     - target: {fileID: 2407633750337712124, guid: 2ecd529d678b6de41b576a116d35907d, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value

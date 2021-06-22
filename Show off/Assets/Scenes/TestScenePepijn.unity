@@ -5892,6 +5892,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6902765822973992622, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902765822973992622, guid: 554e134bc6ea9174db4b69a9e21f0661, type: 3}
       propertyPath: Cam.Array.size
       value: 7
       objectReference: {fileID: 0}

@@ -602,6 +602,7 @@ Transform:
   - {fileID: 4749758100471823227}
   - {fileID: 7837084140501429920}
   - {fileID: 2126173681023076318}
+  - {fileID: 5505348652968612930}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2793,3 +2794,77 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1806282384036875755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1641688137820407376}
+    m_Modifications:
+    - target: {fileID: 3702801160392596229, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_Name
+      value: AnimalFarmAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 157.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 157.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 157.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 661
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: MaxDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: de8f96b315cb9bd4487fabf8f07156f7, type: 3}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389677580190194932, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.8575573
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+--- !u!4 &5505348652968612930 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6158629800338446761, guid: d823ba33e847a374082a4e0bb901bc62, type: 3}
+  m_PrefabInstance: {fileID: 1806282384036875755}
+  m_PrefabAsset: {fileID: 0}
