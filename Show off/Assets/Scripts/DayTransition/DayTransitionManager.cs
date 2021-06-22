@@ -36,7 +36,7 @@ public class DayTransitionManager : MonoBehaviour
 
         time = 0;
         fading = true;
-        dayText.text = (timeScript.dayNumber).ToString();
+        dayText.text = "Day " + (timeScript.dayNumber).ToString();
         transitionCanvas.gameObject.SetActive(true);
     }
 
