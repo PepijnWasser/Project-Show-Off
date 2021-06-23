@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 8594869189498279587, guid: 93bee286505cea345a689b1c285223ca, type: 3}
-  spawnrate: 0.5
-  spawnOffset: {x: 30, y: 2}
+  spawnrate: 1
+  spawnOffset: {x: 150, y: 2}
   minMaxBubbleSize: {x: 0.5, y: 2}
 --- !u!1 &509758924
 GameObject:
@@ -806,8 +806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 8594869189498279587, guid: 93bee286505cea345a689b1c285223ca, type: 3}
-  spawnrate: 0.5
-  spawnOffset: {x: 30, y: 2}
+  spawnrate: 1
+  spawnOffset: {x: 150, y: 2}
   minMaxBubbleSize: {x: 0.5, y: 2}
 --- !u!1 &531914630
 GameObject:
@@ -2706,8 +2706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 8594869189498279587, guid: 93bee286505cea345a689b1c285223ca, type: 3}
-  spawnrate: 0.5
-  spawnOffset: {x: 30, y: 2}
+  spawnrate: 1
+  spawnOffset: {x: 150, y: 2}
   minMaxBubbleSize: {x: 0.5, y: 2}
 --- !u!1 &1747173747
 GameObject:
@@ -2893,8 +2893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 8594869189498279587, guid: 93bee286505cea345a689b1c285223ca, type: 3}
-  spawnrate: 0.5
-  spawnOffset: {x: 30, y: 2}
+  spawnrate: 1
+  spawnOffset: {x: 150, y: 2}
   minMaxBubbleSize: {x: 0.5, y: 2}
 --- !u!1 &1799489864
 GameObject:
