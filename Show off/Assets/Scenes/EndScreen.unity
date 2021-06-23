@@ -905,7 +905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: Herstart
 --- !u!222 &825365908
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1564,7 +1564,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 45db831375362904aa4de5f605917636, type: 3}
-    m_FontSize: 37
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1575,7 +1575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Average: 22'
+  m_Text: 'Gemiddelde: 22'
 --- !u!222 &1539182177
 CanvasRenderer:
   m_ObjectHideFlags: 0
