@@ -6,6 +6,32 @@
     <e p="H:\Documenten\Project show-off\Project-Show-Off\Show off" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Ciconia Studio" t="Include">
+          <e p="_Shared Files" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Demo" t="Include">
+                <e p="FreeCam.cs" t="Include" />
+                <e p="FreeCamera.cs" t="Include" />
+                <e p="SuperCamera.cs" t="Include" />
+                <e p="UIButton_ShowNext.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Standard Shaders" t="Include">
+              <e p="BuiltIn" t="Include">
+                <e p="CS_Lite Standard (Specular setup) Cutout.shader" t="Include" />
+                <e p="CS_Lite Standard (Specular setup) Opaque.shader" t="Include" />
+                <e p="CS_Lite Standard (Specular setup) Transparent.shader" t="Include" />
+                <e p="CS_Standard (Specular setup) Cutout.shader" t="Include" />
+                <e p="CS_Standard (Specular setup) Opaque.shader" t="Include" />
+                <e p="CS_Standard (Specular setup) Transparent.shader" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="FindAudio.cs" t="Include" />
         <e p="Linde's stuff" t="Include">
           <e p="creditsToEndscreen.cs" t="Include" />
         </e>
@@ -13,8 +39,8 @@
           <e p="AudioVolume.cs" t="Include" />
           <e p="RestartGame.cs" t="Include" />
         </e>
-        <e p="QuitGame.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="ActivateLocation.cs" t="Include" />
           <e p="Amkes_Scripts" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="CameraFollow.cs" t="Include" />
@@ -27,11 +53,15 @@
             <e p="MoveAroundIsland.cs" t="Include" />
             <e p="NoiseMapGeneration.cs" t="Include" />
             <e p="OnTerugButtonClicked.cs" t="Include" />
+            <e p="OnVideoEnd.cs" t="Include" />
             <e p="RotateAroundIsland.cs" t="Include" />
+            <e p="SkipButtonManager.cs" t="Include" />
+            <e p="StartRotation.cs" t="Include" />
             <e p="TileGeneration.cs" t="Include" />
             <e p="TimeScript.cs" t="Include" />
             <e p="ZoomOnIsland.cs" t="Include" />
           </e>
+          <e p="BG_Volume_Effect.cs" t="Include" />
           <e p="boids" t="Include">
             <e p="BahaviorScripts" t="Include">
               <e p="AllignmentBehavior.cs" t="Include" />
@@ -55,9 +85,6 @@
             <e p="FlockAgent.cs" t="Include" />
             <e p="FlockBehavior.cs" t="Include" />
             <e p="moveBetweenPointsSupport.cs" t="Include" />
-          </e>
-          <e p="Camera" t="Include">
-            <e p="ActivateLocation.cs" t="Include" />
           </e>
           <e p="Cinematic" t="Include">
             <e p="ActivateOnCinematicFinish.cs" t="Include" />
@@ -83,6 +110,7 @@
             <e p="ResetPlayerInfo.cs" t="Include" />
             <e p="UIInputWindow.cs" t="Include" />
           </e>
+          <e p="QuitGame.cs" t="Include" />
           <e p="scenes" t="Include">
             <e p="ScenemanagerGameScene.cs" t="Include" />
             <e p="SceneManagerResolutionScreen.cs" t="Include" />
@@ -98,6 +126,7 @@
           <e p="tasks" t="Include">
             <e p="Buildings" t="Include">
               <e p="Building.cs" t="Include" />
+              <e p="CloseBuilding.cs" t="Include" />
               <e p="CompleteTask.cs" t="Include" />
             </e>
             <e p="TaskManager.cs" t="Include" />

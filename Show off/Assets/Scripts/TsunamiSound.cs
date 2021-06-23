@@ -5,7 +5,7 @@ using UnityEngine;
 public class TsunamiSound : MonoBehaviour
 {
     public GameObject ActiveCamera;
-    GameObject dayObject;
+    public GameObject dayObject;
     public AudioSource stage1;
     public AudioSource stage2;
     public AudioSource stage3;
@@ -18,7 +18,7 @@ public class TsunamiSound : MonoBehaviour
 
     void Start()
     {
-        GameObject dayObject = GameObject.Find("TimeText");
+        //GameObject dayObject = GameObject.Find("TimeText");
         TimeScript timeScript = dayObject.GetComponent<TimeScript>();
         Day = timeScript.dayNumber;
     }
