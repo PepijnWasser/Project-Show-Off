@@ -9,9 +9,9 @@ public class StartRotation : MonoBehaviour
 
     private void Update()
     {
-        if (inputField.activeSelf == true)
+        if (inputField.activeInHierarchy == true)
         {
-            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + (1 * rotateSpeed), 0.0f);
+            transform.eulerAngles = new Vector3(0.0f, transform.eulerAngles.y + rotateSpeed, 0.0f);
             rotateSpeed = Mathf.Clamp(rotateSpeed, rotateSpeed, rotateSpeed);
         }
     }
