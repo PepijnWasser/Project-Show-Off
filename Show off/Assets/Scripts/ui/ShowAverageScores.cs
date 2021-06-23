@@ -9,6 +9,6 @@ public class ShowAverageScores : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Text>().text = "Gemiddlede: " + highScoreTable.GetAverageScores().ToString();
+        GetComponent<Text>().text = "Gemiddelde: " + highScoreTable.GetAverageScores().ToString();
     }
 }
