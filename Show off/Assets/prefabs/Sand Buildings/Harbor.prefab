@@ -631,7 +631,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1950428183582616616}
   m_HandleRect: {fileID: 8525396828783291790}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 2571635184972113270}
   - component: {fileID: 9172850844944428935}
   - component: {fileID: 9212324238084721037}
-  - component: {fileID: 4805860087945489986}
+  - component: {fileID: 6311182223120836212}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -757,8 +757,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9172850844944428935}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4805860087945489986
+      m_Calls:
+      - m_Target: {fileID: 6311182223120836212}
+        m_TargetAssemblyTypeName: CloseBuilding, Scripts
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6311182223120836212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -767,11 +779,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5689037414024341149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b506cc0236920409d3e7eec0398161, type: 3}
+  m_Script: {fileID: 11500000, guid: d455dc31306e49c418e5e99216a83193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terugButton: {fileID: 9212324238084721037}
-  buildingPopup: {fileID: 4624656690312842266}
+  building: {fileID: 0}
 --- !u!1 &6421968274726672082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1759902802390076366, guid: e2f9cd644f604404cbf396e92682717c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.21
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1759902802390076366, guid: e2f9cd644f604404cbf396e92682717c, type: 3}
       propertyPath: m_LocalPosition.z

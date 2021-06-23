@@ -26848,13 +26848,13 @@ MonoBehaviour:
   - {fileID: 6058616442326749321, guid: b6b4156d736421841a8acc98a98f7b25, type: 3}
   - {fileID: 7274875004500096565, guid: 02d5f15b4f20ba14ba3d93589aa1aff1, type: 3}
   sandTiles:
-  - {fileID: 428357798183887086, guid: 30a508974f197d94bb9334927fc219d8, type: 3}
-  - {fileID: 1072450301090340806, guid: 281ef7a1e9a1f314cbca531e4854949b, type: 3}
-  - {fileID: 8484308875876920978, guid: 1aa1f9357991e90479fdecf717b923f4, type: 3}
-  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
-  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
-  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
-  - {fileID: 1859055775288037257, guid: 3efba05db9325fc4b832a368f54526b5, type: 3}
+  - {fileID: 805726377670242149, guid: f14d456877518fb40823c0aefef2bb3e, type: 3}
+  - {fileID: 7969301020384457925, guid: c00eedd56adc59344b183650ef3e8341, type: 3}
+  - {fileID: 3464733404698926559, guid: e45f5f689c77a184ab5a6a2260dcf1df, type: 3}
+  - {fileID: 545523989739239892, guid: 3ff6cd1ba8d335d43912488cda87e1f0, type: 3}
+  - {fileID: 545523989739239892, guid: 3ff6cd1ba8d335d43912488cda87e1f0, type: 3}
+  - {fileID: 545523989739239892, guid: 3ff6cd1ba8d335d43912488cda87e1f0, type: 3}
+  - {fileID: 545523989739239892, guid: 3ff6cd1ba8d335d43912488cda87e1f0, type: 3}
   seaTile: {fileID: 4056456742765699537, guid: c210755c35b6b3f41b38fac112de4121, type: 3}
   coralTile: {fileID: 6144643836250847379, guid: b114a995272d7594ab496fd962cd9ca3, type: 3}
   specialGrassTiles:
@@ -26933,6 +26933,8 @@ MonoBehaviour:
   sandTags:
   - Sand
   - Resort
+  - Haven
+  - Fishery
   seaTags:
   - Sea
 --- !u!1 &1895893248
