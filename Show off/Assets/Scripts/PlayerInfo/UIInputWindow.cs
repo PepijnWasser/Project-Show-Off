@@ -12,6 +12,7 @@ public class UIInputWindow : MonoBehaviour
     public Text resolutionText;
 
     public GameObject sceneObjects;
+    public GameObject objectToDisable;
 
     public int MaxLengthName;
 
@@ -44,7 +45,7 @@ public class UIInputWindow : MonoBehaviour
     {
         if(validName && validAge)
         {
-            gameObject.SetActive(false);
+            objectToDisable.SetActive(false);
             sceneObjects.SetActive(true);
             if(playerInfo != null)
             {
