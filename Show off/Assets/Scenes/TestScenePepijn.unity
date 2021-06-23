@@ -18345,6 +18345,7 @@ MonoBehaviour:
   ageField: {fileID: 1763670537}
   resolutionText: {fileID: 918284069}
   sceneObjects: {fileID: 960606011}
+  objectToDisable: {fileID: 498566102}
   MaxLengthName: 10
   camControlScript: {fileID: 8557608754263875644}
   startCinematics: {fileID: 340434247}
