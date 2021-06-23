@@ -13,7 +13,7 @@ public class HighScoreTable : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteKey("highScoreTable");
+        //PlayerPrefs.DeleteKey("highScoreTable");
         highScores = GetHighScores();
 
         if (highScores == null)
