@@ -8,6 +8,7 @@ public class OnVideoEnd : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject startCinematics;
     public GameObject controlsUI;
+    [SerializeField] private GameObject audioManager;
 
     private void Update()
     {
@@ -15,6 +16,7 @@ public class OnVideoEnd : MonoBehaviour
         {
             startCinematics.SetActive(false);
             controlsUI.SetActive(true);
+            audioManager.SetActive(true);
         }
     }
 }
