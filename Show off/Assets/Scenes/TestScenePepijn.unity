@@ -27080,6 +27080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 6
+  health: 0
   IncreaseCoral: {fileID: 569451464}
   DecreaseCoral: {fileID: 440397888}
 --- !u!1 &1808490657
@@ -27140,6 +27141,9 @@ MonoBehaviour:
   tasksAvailible: 4
   positiveCoralTasksToGenerate: 2
   energy: 3
+  popularityText: {fileID: 6805157824049255784}
+  popularityDifficultyRange: 100
+  coralHealthScript: {fileID: 1777541653}
 --- !u!4 &1808490659
 Transform:
   m_ObjectHideFlags: 0

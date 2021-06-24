@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpdateCoralHealth : MonoBehaviour
 {
     public float startHealth = 6;
-    float health;
+    public float health;
     Text healthText;
     public ParticleSystem IncreaseCoral;
     public ParticleSystem DecreaseCoral;

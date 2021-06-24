@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class TaskManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class TaskManager : MonoBehaviour
     public int tasksAvailible;
     public int positiveCoralTasksToGenerate;
     public int energy;
+
+    [SerializeField] private Text popularityText;
+    [SerializeField] private float popularityDifficultyRange;
+    [SerializeField] private UpdateCoralHealth coralHealthScript;
 
     public delegate void CurrentTasksChanged();
     public static event CurrentTasksChanged onCurrentTasksChanged;
@@ -59,6 +64,7 @@ public class TaskManager : MonoBehaviour
 
     void GenerateNewDay()
     {
+        CheckCoralHealth();
         GenerateTasksForNewDay();
         StartTasks(currentTasks);
     }
@@ -78,10 +84,10 @@ public class TaskManager : MonoBehaviour
         {
             for (int i = 0; i < positiveCoralTasksToGenerate; i++)
             {
-                int r = Random.Range(0, positivePopularityTasks.Count);
+                int r = UnityEngine.Random.Range(0, positivePopularityTasks.Count);
                 while (newTasks.Contains(positiveCoralTasks[r]))
                 {
-                    r = Random.Range(0, positiveCoralTasks.Count);
+                    r = UnityEngine.Random.Range(0, positiveCoralTasks.Count);
                 }
                 newTasks.Add(positiveCoralTasks[r]);
             }
@@ -98,10 +104,10 @@ public class TaskManager : MonoBehaviour
         {
             for (int i = 0; i < tasksAvailible - positiveCoralTasksToGenerate; i++)
             {
-                int r = Random.Range(0, positivePopularityTasks.Count);
+                int r = UnityEngine.Random.Range(0, positivePopularityTasks.Count);
                 while (newTasks.Contains(positivePopularityTasks[r]))
                 {
-                    r = Random.Range(0, positivePopularityTasks.Count);
+                    r = UnityEngine.Random.Range(0, positivePopularityTasks.Count);
                 }
                 newTasks.Add(positivePopularityTasks[r]);
             }
@@ -157,5 +163,16 @@ public class TaskManager : MonoBehaviour
             }
         }
 
+    }
+
+    private void CheckCoralHealth()
+    {
+        float popularityNum = Int32.Parse(popularityText.text);
+
+        if (popularityNum >= popularityDifficultyRange)
+        {
+            Debug.Log("Subtracting 1 coral-health");
+            coralHealthScript.health--;
+        }
     }
 }
