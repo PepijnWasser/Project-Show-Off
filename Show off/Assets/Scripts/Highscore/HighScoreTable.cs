@@ -25,16 +25,16 @@ public class HighScoreTable : MonoBehaviour
 
         if(highScores.highScoreEntryList.Count == 0)
         {
-            AddHighScoreEntry(90, "t1");
-            AddHighScoreEntry(80, "t2");
-            AddHighScoreEntry(70, "t3");
-            AddHighScoreEntry(60, "t4");
-            AddHighScoreEntry(50, "t5");
-            AddHighScoreEntry(40, "t6");
-            AddHighScoreEntry(30, "t7");
-            AddHighScoreEntry(20, "t8");
-            AddHighScoreEntry(10, "t9");
-            AddHighScoreEntry(0, "t10");
+            AddHighScoreEntry(90, "Luc");
+            AddHighScoreEntry(80, "Pepijn");
+            AddHighScoreEntry(70, "Linde");
+            AddHighScoreEntry(60, "Amke");
+            AddHighScoreEntry(50, "Chiel");
+            AddHighScoreEntry(40, "Mirthe");
+            AddHighScoreEntry(30, "Nick");
+            AddHighScoreEntry(20, "Furkan");
+            AddHighScoreEntry(10, "Kevin");
+            AddHighScoreEntry(0, "Leroy");
             highScores = GetHighScores();
         }
         SortEntries(highScores.highScoreEntryList);
