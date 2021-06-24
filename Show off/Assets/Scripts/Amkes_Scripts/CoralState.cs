@@ -30,6 +30,11 @@ public class CoralState : MonoBehaviour
     [Header("Designer-tool: Set Coral States")]
     public CoralStates[] coralLevels;
 
+    private void Start()
+    {
+        SetState(0.6f);
+    }
+
     private void Update()
     {
         float healthScore = Int32.Parse(healthText.text);
