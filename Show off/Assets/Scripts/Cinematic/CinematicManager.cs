@@ -30,7 +30,7 @@ public class CinematicManager : MonoBehaviour
         PlayerInfo playerInfo = GameObject.FindObjectOfType<PlayerInfo>();
         if (playerInfo != null)
         {
-            if(playerInfo.score >= minScoreForGoodEnd)
+            if(playerInfo.coralHealth >= minScoreForGoodEnd)
             {
                 badEndingBool = false;
             }

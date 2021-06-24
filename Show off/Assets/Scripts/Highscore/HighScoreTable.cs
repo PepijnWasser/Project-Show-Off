@@ -25,16 +25,16 @@ public class HighScoreTable : MonoBehaviour
 
         if(highScores.highScoreEntryList.Count == 0)
         {
-            AddHighScoreEntry(666, "GOD=DOG");
-            AddHighScoreEntry(555, "SatanIsReal");
-            AddHighScoreEntry(101, "GGStandForGreedyGandalf");
-            AddHighScoreEntry(90, "Peppipeps");
-            AddHighScoreEntry(77, "Vanu");
-            AddHighScoreEntry(50, "QuintessentialQ");
-            AddHighScoreEntry(15, "Pontiff");
-            AddHighScoreEntry(9, "Reimu");
-            AddHighScoreEntry(-1, "The doctor");
-            AddHighScoreEntry(-10, "KOWI");
+            AddHighScoreEntry(90, "t1");
+            AddHighScoreEntry(80, "t2");
+            AddHighScoreEntry(70, "t3");
+            AddHighScoreEntry(60, "t4");
+            AddHighScoreEntry(50, "t5");
+            AddHighScoreEntry(40, "t6");
+            AddHighScoreEntry(30, "t7");
+            AddHighScoreEntry(20, "t8");
+            AddHighScoreEntry(10, "t9");
+            AddHighScoreEntry(0, "t10");
             highScores = GetHighScores();
         }
         SortEntries(highScores.highScoreEntryList);
