@@ -36,7 +36,7 @@ public class PlayerInfoTests : MonoBehaviour
         child.GetComponent<Text>().text = "2";
         child.transform.SetParent(parent.transform);
 
-        playerInfo.GetComponent<PlayerInfo>().GetPlayerScore();
+        playerInfo.GetComponent<PlayerInfo>().GetPlayerStats();
 
         int i = playerInfo.GetComponent<PlayerInfo>().score;
 

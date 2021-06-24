@@ -11,6 +11,7 @@ public class PlayerInfo : MonoBehaviour
     public int score = 000;
     public int age = 999;
     public string playerName = "TempName";
+    public int coralHealth = 0;
 
 
     public static PlayerInfo Instance
@@ -33,15 +34,15 @@ public class PlayerInfo : MonoBehaviour
             instance = this;
         }
 
-        ScenemanagerGameScene.onChangingScene += GetPlayerScore;
+        ScenemanagerGameScene.onChangingScene += GetPlayerStats;
     }
 
     private void OnDestroy()
     {
-        ScenemanagerGameScene.onChangingScene -= GetPlayerScore;
+        ScenemanagerGameScene.onChangingScene -= GetPlayerStats;
     }
 
-    public void GetPlayerScore()
+    public void GetPlayerStats()
     {
         string popularity = GameObject.Find("Popularity").gameObject.GetComponentInChildren<Text>().text;
         if (popularity != null)
@@ -53,6 +54,16 @@ public class PlayerInfo : MonoBehaviour
             Debug.Log("no popularity found");
         }
 
+        string health = GameObject.Find("CoralHealthText").GetComponent<Text>().text;
+        if (health != null)
+        {
+            coralHealth = Int32.Parse(health);
+        }
+        else
+        {
+            Debug.Log("no health found");
+        }
+
     }
 
     public void ResetVariables()
@@ -60,5 +71,6 @@ public class PlayerInfo : MonoBehaviour
         score = 0;
         age = 999;
         playerName = "TempName";
+        coralHealth = 0;
     }
 }
