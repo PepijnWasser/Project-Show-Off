@@ -30,7 +30,7 @@ public class TimeScript : MonoBehaviour
     private void AddDay()
     {
         dayNumber += 1;
-        timeText.text = "Day: " + dayNumber;
+        timeText.text = "Dag: " + dayNumber;
         onDayNumberChanged?.Invoke();
     }
 }
