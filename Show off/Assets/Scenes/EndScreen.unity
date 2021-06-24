@@ -328,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.2, y: -12.6}
-  m_SizeDelta: {x: 175.0102, y: 27.5992}
+  m_AnchoredPosition: {x: -100.2, y: -14.405}
+  m_SizeDelta: {x: 175.0102, y: 39.844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120760048
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 45db831375362904aa4de5f605917636, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Score:'
+  m_Text: 'Jouw Score:'
 --- !u!222 &202938498
 CanvasRenderer:
   m_ObjectHideFlags: 0
