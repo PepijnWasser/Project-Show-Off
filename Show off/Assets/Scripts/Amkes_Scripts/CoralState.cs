@@ -8,15 +8,12 @@ public class CoralState : MonoBehaviour
 {
     public Text healthText;
 
-    [SerializeField] private Material coral1Material;
-    [SerializeField] private Material coral2Material;
-    [SerializeField] private Material coral3Material;
-    [SerializeField] private Material coral4Material;
     [SerializeField] private float numberDead;
     [SerializeField] private float numberOnTheBrink;
     [SerializeField] private float numberFairlyDamaged;
     [SerializeField] private float numberFairlyHealthy;
     [SerializeField] private float numberThriving;
+    [SerializeField] private List<Material> coralMaterials = new List<Material>();
 
     public enum CoralStates
     {
@@ -74,9 +71,9 @@ public class CoralState : MonoBehaviour
 
     private void SetState(float stateNum)
     {
-        coral1Material.SetFloat("CoralHealth", stateNum);
-        coral2Material.SetFloat("CoralHealth", stateNum);
-        coral3Material.SetFloat("CoralHealth", stateNum);
-        coral4Material.SetFloat("CoralHealth", stateNum);
+        for (int i = 0; i < coralMaterials.Count; i++)
+        {
+            coralMaterials[i].SetFloat("CoralHealth", stateNum);
+        }
     }
 }
