@@ -16,15 +16,15 @@ public class ReadInText : MonoBehaviour
     {
         counter = 0;
 
-        dutchLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialNederlands.txt");
-        englishLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialEnglish.txt");
+        dutchLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialNederlandsCijfers.txt");
+        englishLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialEnglishNumbers.txt");
 
         WriteCurrentLine();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             counter++;
 
@@ -32,7 +32,6 @@ public class ReadInText : MonoBehaviour
             {
                 counter = 0;
             }
-            Debug.Log("Counter: " + counter);
 
             WriteCurrentLine();
         }
@@ -40,11 +39,11 @@ public class ReadInText : MonoBehaviour
 
     private void WriteCurrentLine()
     {
-        if (languageIconManagerScript.startLanguage == "EN")
+        if (languageIconManagerScript.currentLanguage == "EN")
         {
             bubbleText.text = englishLines[counter];
         }
-        else if (languageIconManagerScript.startLanguage == "NL")
+        else if (languageIconManagerScript.currentLanguage == "NL")
         {
             bubbleText.text = dutchLines[counter];
         }

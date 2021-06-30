@@ -7,6 +7,7 @@ public class LanguageIconManager : MonoBehaviour
 {
     [Header("Please write EN (English) or NL (Nederlands)")]
     public string startLanguage;
+    public string currentLanguage;
     
     [SerializeField] private Button dutchButton;
     [SerializeField] private Button englishButton;
@@ -37,6 +38,7 @@ public class LanguageIconManager : MonoBehaviour
         Debug.Log("Verandert naar Nederlands");
         SetButtonTransparency(dutchButton, solidFloat);
         SetButtonTransparency(englishButton, transparentFloat);
+        currentLanguage = "NL";
     }
 
     public void ChangeToEnglish()
@@ -44,6 +46,7 @@ public class LanguageIconManager : MonoBehaviour
         Debug.Log("Changed to English");
         SetButtonTransparency(englishButton, solidFloat);
         SetButtonTransparency(dutchButton, transparentFloat);
+        currentLanguage = "EN";
     }
 
     private void SetButtonTransparency(Button button, float alpha)
