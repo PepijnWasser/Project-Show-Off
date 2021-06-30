@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LanguageManager : MonoBehaviour
+public class LanguageIconManager : MonoBehaviour
 {
+    [Header("Please write EN (English) or NL (Nederlands)")]
+    public string startLanguage;
+    
     [SerializeField] private Button dutchButton;
     [SerializeField] private Button englishButton;
     private Color tempColor;
@@ -13,21 +16,30 @@ public class LanguageManager : MonoBehaviour
 
     private void Start()
     {
-        Button dbtn = dutchButton.GetComponent<Button>();
-        dbtn.onClick.AddListener(ChangeToDutch);
-
-        Button ebtn = englishButton.GetComponent<Button>();
-        ebtn.onClick.AddListener(ChangeToEnglish);
+        if (startLanguage == "EN")
+        {
+            Debug.Log("Starting language is english");
+            ChangeToEnglish();
+        }    
+        else if (startLanguage == "NL")
+        {
+            Debug.Log("Starttaal is Nederlands");
+            ChangeToDutch();
+        }
+        else
+        {
+            Debug.LogError("Please write a valid response");
+        }
     }
 
-    private void ChangeToDutch()
+    public void ChangeToDutch()
     {
         Debug.Log("Verandert naar Nederlands");
         SetButtonTransparency(dutchButton, solidFloat);
         SetButtonTransparency(englishButton, transparentFloat);
     }
 
-    private void ChangeToEnglish()
+    public void ChangeToEnglish()
     {
         Debug.Log("Changed to English");
         SetButtonTransparency(englishButton, solidFloat);
