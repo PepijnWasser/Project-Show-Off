@@ -27176,6 +27176,9 @@ MonoBehaviour:
   coralStateScript: {fileID: 2116992712}
   easyDifficultyScore: 6
   hardDifficultyScore: 8
+  amountOfPositiveCoralTasksEasy: 3
+  amountOfPositiveCoralTasksMedium: 2
+  amountOfPositiveCoralTasksHard: 1
 --- !u!1 &1834563585
 GameObject:
   m_ObjectHideFlags: 0

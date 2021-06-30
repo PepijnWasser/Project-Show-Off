@@ -10,6 +10,9 @@ public class DynamicDifficulty : MonoBehaviour
     [SerializeField] private CoralState coralStateScript;
     [SerializeField] private int easyDifficultyScore;
     [SerializeField] private int hardDifficultyScore;
+    [SerializeField] private int amountOfPositiveCoralTasksEasy;
+    [SerializeField] private int amountOfPositiveCoralTasksMedium;
+    [SerializeField] private int amountOfPositiveCoralTasksHard;
 
     bool checkedDay3;
     bool checkedDay6;
@@ -41,15 +44,15 @@ public class DynamicDifficulty : MonoBehaviour
     {
         if(healthScore <= easyDifficultyScore)
         {
-            taskManagerScript.positiveCoralTasksToGenerate = 3;
+            taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksEasy;
         }
         else if (healthScore <= hardDifficultyScore)
         {
-            taskManagerScript.positiveCoralTasksToGenerate = 2;
+            taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksMedium;
         }
         else
         {
-            taskManagerScript.positiveCoralTasksToGenerate = 1;
+            taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksHard;
         }
     }
 }
