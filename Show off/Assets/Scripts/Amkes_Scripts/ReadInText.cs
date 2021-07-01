@@ -32,9 +32,8 @@ public class ReadInText : MonoBehaviour
             {
                 counter = 0;
             }
-
-            WriteCurrentLine();
         }
+        WriteCurrentLine();
     }
 
     private void WriteCurrentLine()
