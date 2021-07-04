@@ -5569,18 +5569,6 @@ MonoBehaviour:
   cameraControllerScript: {fileID: 8557608754263875644}
   ActiveCamera: {fileID: 0}
   MainCam: {fileID: 1360438640}
-  CoralReefCam: {fileID: 218536339}
-  AnimalFarmCam: {fileID: 1360438639}
-  BusStationCam: {fileID: 1360438638}
-  CityHallCam: {fileID: 1360438637}
-  CropFarmCam: {fileID: 1360438636}
-  FactoryCam: {fileID: 1360438635}
-  FisheryCam: {fileID: 1360438634}
-  HarborCam: {fileID: 1360438633}
-  HotelCam: {fileID: 1360438632}
-  LabCam: {fileID: 1360438631}
-  ShopCam: {fileID: 1360438641}
-  TaskboardCam: {fileID: 346485695}
   offset: {x: 1.5, y: 10, z: -4}
   cameras:
   - {fileID: 1360438640}
@@ -6126,7 +6114,7 @@ GameObject:
   - component: {fileID: 218536341}
   m_Layer: 0
   m_Name: CM vcam11 CoralReef
-  m_TagString: Untagged
+  m_TagString: CoralReef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17190,6 +17178,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}
       propertyPath: m_Name
       value: PSO_Asset_CoralReefs_Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}
+      propertyPath: m_TagString
+      value: CoralReef
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0fde382b7e6cf443aa9138f5b6fcab3, type: 3}

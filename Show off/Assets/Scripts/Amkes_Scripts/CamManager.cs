@@ -7,18 +7,7 @@ public class CamManager : MonoBehaviour
     public CameraController cameraControllerScript;
     public GameObject ActiveCamera;
     public GameObject MainCam;
-    public GameObject CoralReefCam;
-    public GameObject AnimalFarmCam;
-    public GameObject BusStationCam;
-    public GameObject CityHallCam;
-    public GameObject CropFarmCam;
-    public GameObject FactoryCam;
-    public GameObject FisheryCam;
-    public GameObject HarborCam;
-    public GameObject HotelCam;
-    public GameObject LabCam;
-    public GameObject ShopCam;
-    public GameObject TaskboardCam;
+    public List<GameObject> publicCameras { get; private set; }
 
     [SerializeField] private Vector3 offset;
     [SerializeField] private List<GameObject> cameras = new List<GameObject>();
@@ -27,6 +16,7 @@ public class CamManager : MonoBehaviour
     private void Start()
     {
         isCamerasPlaced = false;
+        publicCameras = cameras;
     }
 
     private void Update()
@@ -118,35 +108,27 @@ public class CamManager : MonoBehaviour
 
     private void SetAllVirtualCameras()
     {
-        SetVirtualCamera(AnimalFarmCam, "Animal Farm");
-        SetVirtualCamera(BusStationCam, "BusStop");
-        SetVirtualCamera(CityHallCam, "Stadhuis");
-        SetVirtualCamera(CropFarmCam, "CropFarm");
-        SetVirtualCamera(FactoryCam, "Fabriek");
-        SetVirtualCamera(FisheryCam, "Fishery");
-        SetVirtualCamera(HarborCam, "Haven");
-        SetVirtualCamera(HotelCam, "Hotel");
-        SetVirtualCamera(LabCam, "Lab");
-        SetVirtualCamera(ShopCam, "Winkel");
-        SetVirtualCamera(TaskboardCam, "TaakBord");
-
-        isCamerasPlaced = true;
-    }
-
-    private void SetVirtualCamera(GameObject camera, string tagname)
-    {
-        //Set up a camera in front of the building
-        if (camera.transform != null)
+        for (int i = 0; i < cameras.Count; i++)
         {
-            if (GameObject.FindGameObjectWithTag(tagname) != null)
+            if (cameras[i].tag == "MainCamera" || cameras[i].tag == "CoralReef")
             {
-                Vector3 buildingPos = GameObject.FindGameObjectWithTag(tagname).transform.position;
-                camera.transform.position = buildingPos + offset;
+                continue;
             }
-            else
+
+            if (cameras[i].transform != null)
             {
-                camera.gameObject.SetActive(false);
+                if (GameObject.FindGameObjectWithTag(cameras[i].tag) != null)
+                {
+                    Vector3 buildingPos = GameObject.FindGameObjectWithTag(cameras[i].tag).transform.position;
+                    cameras[i].transform.position = buildingPos + offset;
+                }
+                else
+                {
+                    cameras[i].gameObject.SetActive(false);
+                }
             }
         }
+
+        isCamerasPlaced = true;
     }
 }

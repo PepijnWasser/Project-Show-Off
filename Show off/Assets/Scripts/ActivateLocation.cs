@@ -15,39 +15,55 @@ public class ActivateLocation : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject.Find("TaskList").gameObject.SetActive(false);
+
         if (this.name == "Winkel")
         {
-            manager.ActivateCamera(manager.ShopCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("Winkel").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Hotel")
         {
-            manager.ActivateCamera(manager.HotelCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("Hotel").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "TaakBord")
         {
-            manager.ActivateCamera(manager.TaskboardCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("TaakBord").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Haven")
         {
-            manager.ActivateCamera(manager.HarborCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("Haven").GetComponent<Building>().showMenu = true;
         }
         else if (this.name == "Stadhuis")
         {
-            manager.ActivateCamera(manager.CityHallCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("Stadhuis").GetComponent<Building>().showMenu = true;
         }
         else if(this.name == "Lab")
         {
-            manager.ActivateCamera(manager.LabCam);
+            manager.ActivateCamera(FindCameraWithTag(this.name));
             GameObject.FindGameObjectWithTag("Lab").GetComponent<Building>().showMenu = true;
         }
         else
         {
             Debug.Log(this.name);
         }
+    }
+
+    private GameObject FindCameraWithTag(string pName)
+    {
+        GameObject chosenCam = null;
+
+        for (int i = 0; i < manager.publicCameras.Count; i++)
+        {
+            if (pName == manager.publicCameras[i].tag)
+            {
+                chosenCam = manager.publicCameras[i];
+            }
+        }
+
+        return chosenCam;
     }
 }

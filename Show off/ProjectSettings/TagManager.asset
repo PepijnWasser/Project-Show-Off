@@ -27,6 +27,7 @@ TagManager:
   - TestSite2
   - Harbor
   - CamManager
+  - CoralReef
   layers:
   - Default
   - TransparentFX
