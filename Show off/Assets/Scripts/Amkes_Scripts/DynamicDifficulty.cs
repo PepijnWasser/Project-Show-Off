@@ -13,6 +13,7 @@ public class DynamicDifficulty : MonoBehaviour
     [SerializeField] private int amountOfPositiveCoralTasksEasy;
     [SerializeField] private int amountOfPositiveCoralTasksMedium;
     [SerializeField] private int amountOfPositiveCoralTasksHard;
+    //TODO: use tooltip
 
     bool checkedDay3;
     bool checkedDay6;
@@ -42,6 +43,7 @@ public class DynamicDifficulty : MonoBehaviour
 
     void ModifyDificulty(float healthScore)
     {
+        //TODO: check to be sure it checks out
         if(healthScore <= easyDifficultyScore)
         {
             taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksEasy;
