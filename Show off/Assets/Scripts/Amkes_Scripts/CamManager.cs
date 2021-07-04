@@ -45,49 +45,17 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "TaakBord")
+                for (int i = 0; i < cameras.Count; i++)
                 {
-                    ActivateCamera(TaskboardCam);
-                }
-                if (hit.transform.tag == "Winkel")
-                {
-                    ActivateCamera(ShopCam);
-                }
-                if (hit.transform.tag == "Lab")
-                {
-                    ActivateCamera(LabCam);
-                }
-                if (hit.transform.tag == "Haven")
-                {
-                    ActivateCamera(HarborCam);
-                }
-                if (hit.transform.tag == "Stadhuis")
-                {
-                    ActivateCamera(CityHallCam);
-                }
-                if (hit.transform.tag == "Hotel")
-                {
-                    ActivateCamera(HotelCam);
-                }
-                if (hit.transform.tag == "Animal Farm")
-                {
-                    ActivateCamera(AnimalFarmCam);
-                }
-                if (hit.transform.tag == "BusStop")
-                {
-                    ActivateCamera(BusStationCam);
-                }
-                if (hit.transform.tag == "CropFarm")
-                {
-                    ActivateCamera(CropFarmCam);
-                }
-                if (hit.transform.tag == "Fabriek")
-                {
-                    ActivateCamera(FactoryCam);
-                }
-                if (hit.transform.tag == "Fishery")
-                {
-                    ActivateCamera(FisheryCam);
+                    if (cameras[i].tag == hit.transform.tag)
+                    {
+                        ActivateCamera(cameras[i]);
+
+                        if (cameras[i].GetComponent<Building>() != null)
+                        {
+                            cameras[i].GetComponent<Building>().showMenu = true;
+                        }
+                    }
                 }
             }
         }
