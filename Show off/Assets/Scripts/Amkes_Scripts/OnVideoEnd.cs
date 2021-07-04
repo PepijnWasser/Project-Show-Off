@@ -5,9 +5,9 @@ using UnityEngine.Video;
 
 public class OnVideoEnd : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
-    public GameObject startCinematics;
-    public GameObject controlsUI;
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private GameObject startCinematics;
+    [SerializeField] private GameObject controlsUI;
     [SerializeField] private GameObject audioManager;
 
     private void Update()

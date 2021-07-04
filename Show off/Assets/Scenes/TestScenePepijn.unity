@@ -27068,6 +27068,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 868176281168993714, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
   m_PrefabInstance: {fileID: 2116992710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1777541650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1094861541115759219, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+  m_PrefabInstance: {fileID: 2116992710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777541649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1777541653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33330,6 +33341,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
+      propertyPath: _healthText
+      value: 
+      objectReference: {fileID: 1777541650}
+    - target: {fileID: 1595816362677600389, guid: e65423ce8d4128745ab6e6dba205f7bd, type: 3}
       propertyPath: coral1Material
       value: 
       objectReference: {fileID: 2100000, guid: 20b30052601b6d94ca58ead9a40157d8, type: 2}
@@ -38441,7 +38456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f3beecd3bf61342a915b768b385eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayNumber: 1
   timeText: {fileID: 6805157823310648985}
 --- !u!224 &6805157823310649062
 RectTransform:
@@ -38538,7 +38552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ae9b7fb9c08914db56abfcb0c5fbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyAmount: 0
   fullEnergy: {fileID: 21300000, guid: 9202ddd77fdb5d44f9c052b94bf2755a, type: 3}
   emptyEnergy: {fileID: 21300000, guid: 26530042d7f890741b6e13300ca8b10f, type: 3}
   energyImage: {fileID: 6805157823232835126}
@@ -39551,9 +39564,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -39679,8 +39692,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8557608753025192609}
-  m_LocalRotation: {x: 0.7822167, y: 0.00000005960465, z: -0.000000014901163, w: 0.6230065}
-  m_LocalPosition: {x: -0.0000009536743, y: 10.658097, z: 2.4465055}
+  m_LocalRotation: {x: -0.61600727, y: -0.6021584, z: -0.28079098, w: 0.42319816}
+  m_LocalPosition: {x: -66.23452, y: -50.101265, z: -13.672054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1187762930}

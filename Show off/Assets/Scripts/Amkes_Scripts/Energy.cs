@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-    public int energyAmount;
+    public int energyAmount { get; private set; }
 
     [SerializeField] private Sprite fullEnergy;
     [SerializeField] private Sprite emptyEnergy;

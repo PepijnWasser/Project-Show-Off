@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class SkipButtonManager : MonoBehaviour
 {
-    public Image skipButtonImage;
-    public GameObject controlsUI;
-    public GameObject startCinematics;
-    public CameraController cameraControllerScript;
+    [SerializeField] private Image skipButtonImage;
+    [SerializeField] private GameObject controlsUI;
+    [SerializeField] private GameObject startCinematics;
+    [SerializeField] private CameraController cameraControllerScript;
 
     private Color skipButtoncolorVisible;
     private Color skipButtoncolorTransparent;

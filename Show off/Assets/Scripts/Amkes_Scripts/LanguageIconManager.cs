@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LanguageIconManager : MonoBehaviour
 {
     [Header("Please write EN (English) or NL (Nederlands)")]
-    public string startLanguage;
+    [SerializeField] private string startLanguage;
     public string currentLanguage { get; private set; }
     
     [SerializeField] private Button dutchButton;

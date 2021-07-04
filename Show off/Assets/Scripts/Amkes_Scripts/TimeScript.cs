@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour
 {
-    public int dayNumber = 1;
+    public int dayNumber { get; private set; }
 
     [SerializeField] private Text timeText;
     
@@ -19,6 +19,7 @@ public class TimeScript : MonoBehaviour
 
     private void Start()
     {
+        dayNumber = 1;
         timeText.text = "Dag: " + dayNumber;
     }
 

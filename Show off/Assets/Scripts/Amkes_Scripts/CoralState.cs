@@ -6,8 +6,9 @@ using System;
 
 public class CoralState : MonoBehaviour
 {
-    public Text healthText;
+    public Text healthText { get; private set; }
 
+    [SerializeField] private Text _healthText;
     [SerializeField] private float numberDead;
     [SerializeField] private float numberOnTheBrink;
     [SerializeField] private float numberFairlyDamaged;
@@ -24,12 +25,12 @@ public class CoralState : MonoBehaviour
         Thriving
     };
 
-    [Header("Designer-tool: Set Coral States")]
     public CoralStates[] coralLevels;
 
     private void Start()
     {
         SetState(0.6f);
+        healthText = _healthText;
     }
 
     private void Update()
