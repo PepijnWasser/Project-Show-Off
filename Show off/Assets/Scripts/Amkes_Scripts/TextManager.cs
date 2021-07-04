@@ -16,8 +16,11 @@ public class TextManager : MonoBehaviour
     {
         counter = 0;
 
-        dutchLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialNederlandsCijfers.txt");
-        englishLines = File.ReadAllLines("Assets/Amkes_Files/A_Txt/TutorialEnglishNumbers.txt");
+        string readFromFilePathEN = Application.streamingAssetsPath + "/TutorialTexts/" + "TutorialEnglishNumbers" + ".txt";
+        string readFromFilePathNL = Application.streamingAssetsPath + "/TutorialTexts/" + "TutorialNederlandsCijfers" + ".txt";
+
+        englishLines = File.ReadAllLines(readFromFilePathEN);
+        dutchLines = File.ReadAllLines(readFromFilePathNL);
 
         WriteCurrentLine();
     }
