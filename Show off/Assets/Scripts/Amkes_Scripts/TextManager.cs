@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using TMPro;
 
-public class ReadInText : MonoBehaviour
+public class TextManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text bubbleText;
     [SerializeField] private LanguageIconManager languageIconManagerScript;
@@ -32,9 +32,8 @@ public class ReadInText : MonoBehaviour
             {
                 counter = 0;
             }
-
-            WriteCurrentLine();
         }
+        WriteCurrentLine();
     }
 
     private void WriteCurrentLine()
