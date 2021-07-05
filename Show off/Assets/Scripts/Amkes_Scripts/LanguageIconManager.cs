@@ -19,12 +19,10 @@ public class LanguageIconManager : MonoBehaviour
     {
         if (startLanguage == "EN")
         {
-            //Debug.Log("Starting language is english");
             ChangeToEnglish();
         }    
         else if (startLanguage == "NL")
         {
-            //Debug.Log("Starttaal is Nederlands");
             ChangeToDutch();
         }
         else
@@ -35,7 +33,6 @@ public class LanguageIconManager : MonoBehaviour
 
     public void ChangeToDutch()
     {
-        //Debug.Log("Verandert naar Nederlands");
         SetButtonTransparency(dutchButton, solidFloat);
         SetButtonTransparency(englishButton, transparentFloat);
         currentLanguage = "NL";
@@ -43,7 +40,6 @@ public class LanguageIconManager : MonoBehaviour
 
     public void ChangeToEnglish()
     {
-        //Debug.Log("Changed to English");
         SetButtonTransparency(englishButton, solidFloat);
         SetButtonTransparency(dutchButton, transparentFloat);
         currentLanguage = "EN";
