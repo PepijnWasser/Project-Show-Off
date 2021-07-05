@@ -13,10 +13,14 @@ public class DynamicDifficulty : MonoBehaviour
     [SerializeField] private int amountOfPositiveCoralTasksEasy;
     [SerializeField] private int amountOfPositiveCoralTasksMedium;
     [SerializeField] private int amountOfPositiveCoralTasksHard;
-    //TODO: use tooltip
 
     bool checkedDay3;
     bool checkedDay6;
+
+    private void Start()
+    {
+        CheckForErrors();
+    }
 
     private void Update()
     {
@@ -41,9 +45,8 @@ public class DynamicDifficulty : MonoBehaviour
         }
     }
 
-    void ModifyDificulty(float healthScore)
+    private void ModifyDificulty(float healthScore)
     {
-        //TODO: check to be sure it checks out
         if(healthScore <= easyDifficultyScore)
         {
             taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksEasy;
@@ -55,6 +58,38 @@ public class DynamicDifficulty : MonoBehaviour
         else
         {
             taskManagerScript.positiveCoralTasksToGenerate = amountOfPositiveCoralTasksHard;
+        }
+    }
+
+    private void CheckForErrors()
+    {
+        //Check for errors in difficulty score
+        if (easyDifficultyScore > hardDifficultyScore)
+        {
+            Debug.LogError("easyDifficultyScore is bigger than hardDifficultyScore. Please lower this number.");
+        }
+
+        //Check for errors in more positive tasks than available tasks
+        if (amountOfPositiveCoralTasksEasy > taskManagerScript.tasksAvailible ||
+            amountOfPositiveCoralTasksMedium > taskManagerScript.tasksAvailible ||
+            amountOfPositiveCoralTasksHard > taskManagerScript.tasksAvailible)
+        {
+            Debug.LogError("amountOfPositiveCoralTasks is bigger than tasksAvailable. Please lower this number.");
+        }
+        
+        //Check for errors in amount of positive coral tasks
+        if (amountOfPositiveCoralTasksEasy > amountOfPositiveCoralTasksHard)
+        {
+            Debug.LogError("amountOfPositiveCoralTasksEasy is bigger than amountOfPositiveCoralTasksHard. Please lower this number.");
+        }
+        else if (amountOfPositiveCoralTasksEasy > amountOfPositiveCoralTasksMedium)
+        {
+            Debug.LogError("amountOfPositiveCoralTasksEasy is bigger than amountOfPositiveCoralTasksMedium. Please lower this number.");
+        }
+        
+        if (amountOfPositiveCoralTasksMedium > amountOfPositiveCoralTasksHard)
+        {
+            Debug.LogError("amountOfPositiveCoralTasksMedium is bigger than amountOfPositiveCoralTasksHard. Please lower this number.");
         }
     }
 }
