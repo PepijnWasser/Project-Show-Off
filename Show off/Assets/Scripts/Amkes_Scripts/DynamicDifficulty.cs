@@ -78,16 +78,16 @@ public class DynamicDifficulty : MonoBehaviour
         }
         
         //Check for errors in amount of positive coral tasks
-        if (amountOfPositiveCoralTasksEasy > amountOfPositiveCoralTasksHard)
+        if (amountOfPositiveCoralTasksEasy < amountOfPositiveCoralTasksHard)
         {
             Debug.LogError("amountOfPositiveCoralTasksEasy is bigger than amountOfPositiveCoralTasksHard. Please lower this number.");
         }
-        else if (amountOfPositiveCoralTasksEasy > amountOfPositiveCoralTasksMedium)
+        else if (amountOfPositiveCoralTasksEasy < amountOfPositiveCoralTasksMedium)
         {
             Debug.LogError("amountOfPositiveCoralTasksEasy is bigger than amountOfPositiveCoralTasksMedium. Please lower this number.");
         }
         
-        if (amountOfPositiveCoralTasksMedium > amountOfPositiveCoralTasksHard)
+        if (amountOfPositiveCoralTasksMedium < amountOfPositiveCoralTasksHard)
         {
             Debug.LogError("amountOfPositiveCoralTasksMedium is bigger than amountOfPositiveCoralTasksHard. Please lower this number.");
         }

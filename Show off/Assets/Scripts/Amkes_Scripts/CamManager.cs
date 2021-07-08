@@ -35,12 +35,14 @@ public class CamManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                //Search in cameras-list for camera with same tag as hit building
                 for (int i = 0; i < cameras.Count; i++)
                 {
                     if (cameras[i].tag == hit.transform.tag)
                     {
                         ActivateCamera(cameras[i]);
 
+                        //If building has a menu attached, open it
                         if (cameras[i].GetComponent<Building>() != null)
                         {
                             cameras[i].GetComponent<Building>().showMenu = true;
@@ -122,10 +124,10 @@ public class CamManager : MonoBehaviour
                     Vector3 buildingPos = GameObject.FindGameObjectWithTag(cameras[i].tag).transform.position;
                     cameras[i].transform.position = buildingPos + offset;
                 }
-                else
-                {
-                    cameras[i].gameObject.SetActive(false);
-                }
+            }
+            else
+            {
+                cameras[i].gameObject.SetActive(false);
             }
         }
 
