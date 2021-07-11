@@ -12,6 +12,7 @@ public class CamManager : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private List<GameObject> cameras = new List<GameObject>();
     private bool isCamerasPlaced;
+    private GameObject buildingWithSameTag;
 
     private void Start()
     {
@@ -119,9 +120,12 @@ public class CamManager : MonoBehaviour
 
             if (cameras[i].transform != null)
             {
-                if (GameObject.FindGameObjectWithTag(cameras[i].tag) != null)
+                //Finding the object with same tag works, because function searches for active gameobjects
+                //The camera is inactive and therefor the function will only find the building with the same tag
+                buildingWithSameTag = GameObject.FindGameObjectWithTag(cameras[i].tag);
+                if (buildingWithSameTag != null)
                 {
-                    Vector3 buildingPos = GameObject.FindGameObjectWithTag(cameras[i].tag).transform.position;
+                    Vector3 buildingPos = buildingWithSameTag.transform.position;
                     cameras[i].transform.position = buildingPos + offset;
                 }
             }
