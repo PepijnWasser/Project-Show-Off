@@ -11769,6 +11769,7 @@ MonoBehaviour:
   taskManager: {fileID: 1808490658}
   taskListButton: {fileID: 6805157822921427305}
   arrow: {fileID: 1916717816}
+  textManagerGameScript: {fileID: 655562707}
   tutorialMessages:
   - Ik ga binnenkort met pensioen en zoek een waardige opvolger. Ik denk dat jij
     een goede burgemeester zal zijn, maar je moet jezelf eerst bewijzen. Zou je deze
@@ -16845,8 +16846,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655562705}
-  - component: {fileID: 655562707}
   - component: {fileID: 655562706}
+  - component: {fileID: 655562707}
   m_Layer: 0
   m_Name: LanguageManager
   m_TagString: Untagged
@@ -16861,12 +16862,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655562704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.15261, y: 11.890361, z: 7.180929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 960606012}
-  m_RootOrder: 8
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &655562706
 MonoBehaviour:
@@ -16892,11 +16893,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 655562704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c63b78479f8f94db19830c8414ee56, type: 3}
+  m_Script: {fileID: 11500000, guid: 40098f47f4479e942832687ef20d0c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: {fileID: 0}
-  languageIconManagerScript: {fileID: 0}
+  languageIconManagerScript: {fileID: 655562706}
+  currentLines: []
+  posCorLines: []
+  neuCorLines: []
+  negCorLines: []
 --- !u!1 &660692324
 GameObject:
   m_ObjectHideFlags: 0
@@ -17971,7 +17975,6 @@ Transform:
   - {fileID: 1235579201}
   - {fileID: 58904836}
   - {fileID: 1808490659}
-  - {fileID: 655562705}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34763,6 +34766,14 @@ PrefabInstance:
     - target: {fileID: 1498885407432680654, guid: 35424f9d730666240a1838832e34b15d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498885407432680654, guid: 35424f9d730666240a1838832e34b15d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498885407432680654, guid: 35424f9d730666240a1838832e34b15d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1498885407432680654, guid: 35424f9d730666240a1838832e34b15d, type: 3}
       propertyPath: m_LocalPosition.x

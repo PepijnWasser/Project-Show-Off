@@ -9,8 +9,9 @@ public class TutorialManager : MonoBehaviour
     public TaskManager taskManager;
     public Button taskListButton;
     public GameObject arrow;
+    public TextManagerGame textManagerGameScript;
 
-    public List<string> tutorialMessages;
+    private List<string> curLines = new List<string>();
 
     public int messageIndex = 0;
 
@@ -31,7 +32,8 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+        curLines = textManagerGameScript.currentLines;
+        dialogueManager.UseTutorialMessage(curLines[messageIndex]);
         messageIndex += 1;
     }
 
@@ -51,7 +53,7 @@ public class TutorialManager : MonoBehaviour
             {
                 taskManager.gameObject.SetActive(true);
                 arrow.SetActive(false);
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                dialogueManager.UseTutorialMessage(curLines[messageIndex]);
                 messageIndex += 1; 
             }
         }
@@ -59,7 +61,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                dialogueManager.UseTutorialMessage(curLines[messageIndex]);
                 messageIndex += 1;
             }
         }
@@ -72,45 +74,45 @@ public class TutorialManager : MonoBehaviour
                 {
                     if(popularityOutcome > 0)
                     {
-                        newMessage = "Een zeer goede keuze! De populariteit is niet alleen gestegen, maar het koraalrif is ook gezonder. Goed gedaan!";
+                        newMessage = textManagerGameScript.posCorLines[0];
                     }
                     else if (popularityOutcome == 0)
                     {
-                        newMessage = "Het koraalrif is gezonder geworden. Goed gedaan!";
+                        newMessage = textManagerGameScript.posCorLines[1];
                     }
                     else
                     {
-                        newMessage = "Het koraalrif is gezonder geworden, maar ten koste van de populariteit. Hier moeten we voor oppassen.";
+                        newMessage = textManagerGameScript.posCorLines[2];
                     }
                 }
                 else if(coralOutcome == 0)
                 {
                     if (popularityOutcome > 0)
                     {
-                        newMessage = "The popularity of our island went up without sacrificing coral health!";
+                        newMessage = textManagerGameScript.neuCorLines[0];
                     }
                     else if (popularityOutcome == 0)
                     {
-                        newMessage = "your changes resulted in a neutral outcome for the coral and popularity.";
+                        newMessage = textManagerGameScript.neuCorLines[1];
                     }
                     else
                     {
-                        newMessage = "Aah, you lost some popularity. At least the coral is healthy";
+                        newMessage = textManagerGameScript.neuCorLines[2];
                     }
                 }
                 else if(coralOutcome < 0)
                 {
                     if (popularityOutcome > 0)
                     {
-                        newMessage = "De populariteit is gestegen, maar ten koste van de gezondheid van het koraalrif. Hier moeten we voor oppassen.";
+                        newMessage = textManagerGameScript.negCorLines[0];
                     }
                     else if (popularityOutcome == 0)
                     {
-                        newMessage = "Ooh, we lost some coral health. no problem, it is only your first day";
+                        newMessage = textManagerGameScript.negCorLines[1];
                     }
                     else
                     {
-                        newMessage = "That was a bad choice. Both the coral and popularity went down.";
+                        newMessage = textManagerGameScript.negCorLines[2];
                     }
                 }
 
@@ -123,7 +125,7 @@ public class TutorialManager : MonoBehaviour
 
             if (firstDayCompleted)
             {
-                dialogueManager.UseTutorialMessage(tutorialMessages[messageIndex]);
+                dialogueManager.UseTutorialMessage(curLines[messageIndex]);
                 messageIndex += 1; //display last message when energy runs out day 1
             }
         }
