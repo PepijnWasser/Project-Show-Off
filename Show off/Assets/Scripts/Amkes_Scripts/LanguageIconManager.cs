@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class LanguageIconManager : MonoBehaviour
 {
-    [Header("Please write EN (English) or NL (Nederlands)")]
-    [SerializeField] private string startLanguage;
     public string currentLanguage { get; private set; }
-    
+
     [SerializeField] private Button dutchButton;
     [SerializeField] private Button englishButton;
     private Color tempColor;
@@ -17,18 +15,8 @@ public class LanguageIconManager : MonoBehaviour
 
     private void Start()
     {
-        if (startLanguage == "EN")
-        {
-            ChangeToEnglish();
-        }    
-        else if (startLanguage == "NL")
-        {
-            ChangeToDutch();
-        }
-        else
-        {
-            Debug.LogError("Please write a valid response");
-        }
+        SetButtonTransparency(dutchButton, transparentFloat);
+        SetButtonTransparency(englishButton, transparentFloat);
     }
 
     public void ChangeToDutch()

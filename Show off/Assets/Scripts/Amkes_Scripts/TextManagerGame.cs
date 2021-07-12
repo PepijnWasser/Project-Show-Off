@@ -15,13 +15,20 @@ public class TextManagerGame : MonoBehaviour
     private string[] neutralCoralEN;
     private string[] negativeCoralNL;
     private string[] negativeCoralEN;
-    public List<string> currentLines = new List<string>();
-    public List<string> posCorLines = new List<string>();
-    public List<string> neuCorLines = new List<string>();
-    public List<string> negCorLines = new List<string>();
+    private string prevLanguage;
+
+    public List<string> currentLines { get; private set; }
+    public List<string> posCorLines { get; private set; }
+    public List<string> neuCorLines { get; private set; }
+    public List<string> negCorLines { get; private set; }
 
     private void Start()
     {
+        currentLines = new List<string>();
+        posCorLines = new List<string>();
+        neuCorLines = new List<string>();
+        negCorLines = new List<string>();
+
         string readFromFilePathEN = Application.streamingAssetsPath + "/TutorialDialogueGame/" + "TutorialDialogueEnglish" + ".txt";
         string readFromFilePathNL = Application.streamingAssetsPath + "/TutorialDialogueGame/" + "TutorialDialogueNederlands" + ".txt";
         string readPosCorNL = Application.streamingAssetsPath + "/TutorialDialogueGame/" + "CoralOutcomePositiveNL" + ".txt";
@@ -40,24 +47,35 @@ public class TextManagerGame : MonoBehaviour
         negativeCoralNL = File.ReadAllLines(readNegCorNL);
         negativeCoralEN = File.ReadAllLines(readNegCorEN);
 
-        if (languageIconManagerScript.currentLanguage == "EN")
+        prevLanguage = languageIconManagerScript.currentLanguage;
+    }
+
+    private void Update()
+    {
+        if (languageIconManagerScript.currentLanguage != prevLanguage)
         {
-            WriteArrayIntoList(englishLines, currentLines);
-            WriteArrayIntoList(positiveCoralEN, posCorLines);
-            WriteArrayIntoList(neutralCoralEN, neuCorLines);
-            WriteArrayIntoList(negativeCoralEN, negCorLines);
-        }
-        else if (languageIconManagerScript.currentLanguage == "NL")
-        {
-            WriteArrayIntoList(dutchLines, currentLines);
-            WriteArrayIntoList(positiveCoralNL, posCorLines);
-            WriteArrayIntoList(neutralCoralNL, neuCorLines);
-            WriteArrayIntoList(negativeCoralNL, negCorLines);
+            if (languageIconManagerScript.currentLanguage == "EN")
+            {
+                WriteArrayIntoList(englishLines, currentLines);
+                WriteArrayIntoList(positiveCoralEN, posCorLines);
+                WriteArrayIntoList(neutralCoralEN, neuCorLines);
+                WriteArrayIntoList(negativeCoralEN, negCorLines);
+            }
+            else if (languageIconManagerScript.currentLanguage == "NL")
+            {
+                WriteArrayIntoList(dutchLines, currentLines);
+                WriteArrayIntoList(positiveCoralNL, posCorLines);
+                WriteArrayIntoList(neutralCoralNL, neuCorLines);
+                WriteArrayIntoList(negativeCoralNL, negCorLines);
+            }
+            prevLanguage = languageIconManagerScript.currentLanguage;
         }
     }
 
     private void WriteArrayIntoList(string[] lines, List<string> list)
     {
+        list.Clear();
+
         for (int i = 0; i < lines.Length; i++)
         {
             list.Add(lines[i]);
